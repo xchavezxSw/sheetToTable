@@ -36,8 +36,11 @@ def addReserva(values):
  try:
     email=values['emailCandidato']
     newDict = list(filter(lambda elem: elem['Email Candidato'] if str(elem['Email Candidato']).lower()==str(email).lower() else None, data))[0]
+    print(email)
+    print(newDict)
     modificarReservar(values)
- except:
+ except Exception as e:
+    print(e)
     newDict={"datos":"vacio"}
     curDT = datetime.now()
     date_time = curDT.strftime("%m/%d/%Y, %H:%M:%S")
@@ -51,7 +54,7 @@ def addReserva(values):
     tperfil=tipoPerfil
     idReserva=values['idReserva']
     comment=values['comment']
-    #reservas.append_row([date_time,email,emailCandidato,naCandi,lkCandi,tcandi,tperfil,idReserva,comment])
+    reservas.append_row([date_time,email,emailCandidato,naCandi,lkCandi,tcandi,tperfil,idReserva,comment])
 
 def addInforme(values):
         EsSource=values['EsSource']
@@ -96,8 +99,9 @@ def devolverReserva(email):
 
 
 def modificarReservar(values):
-    cell = reservado.find(values['emailCandidato'], in_column=3)
+    cell = reservado.find(str(values['emailCandidato']).lower(), in_column=3)
     row = cell.row
+    print(row)
     email = values['email']
     emailCandidato = values['emailCandidato']
     naCandi = values['naCandi']
