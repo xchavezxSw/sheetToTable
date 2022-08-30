@@ -18,7 +18,7 @@ def Informe():
     return make_response(jsonify(data), 200)
 
 @app.route('/insert', methods=['GET', 'POST'])
-def parse_request():
+def insertreserva():
     if request.method == 'POST':
         value={  "email":request.form.get('email'),
                 "emailCandidato":request.form.get('emailCandidato'),
@@ -33,7 +33,7 @@ def parse_request():
     return 'ok', 200
 
 @app.route('/solicitudInforme', methods=['GET', 'POST'])
-def parse_request():
+def solinforme():
     if request.method == 'POST':
         value={  "Email":request.form.get('Email'),
                 "EMailCandidato":request.form.get('EMailCandidato'),
