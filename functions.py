@@ -120,7 +120,7 @@ def busquedasPrioritarias():
       variable=[]
       for i in data:
           if i[0]=='ALTA':
-            variable.append(i[0]+"-"+i[3]+"-"+i[4])
+            variable.append({'nube':i[0]+"-"+i[3]+"-"+i[4] })
          #with open('busquedas.txt') as f:
           #      lines = f.readlines()
            # download_thread = threading.Thread(target=busquedasPrioritariasFile, name="Downloader")
