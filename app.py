@@ -72,3 +72,17 @@ def reservaemail():
 def _quit():
     os._exit(0)
 
+@app.route('/modreserva', methods=['GET', 'POST'])
+def modreserva():
+    if request.method == 'POST':
+        value={  "email":request.form.get('email'),
+                "emailCandidato":request.form.get('emailCandidato'),
+                "naCandi":request.form.get('naCandi'),
+                "lkCandi":request.form.get('lkCandi'),
+                "tcandi":request.form.getlist('tcandi[]'),
+                "tperfil":request.form.getlist('tperfil[]'),
+                "idReserva":request.form.get('idReserva'),
+                "comment":request.form.get('comment')
+                }
+        modificarReservar(value)
+    return 'ok', 200
