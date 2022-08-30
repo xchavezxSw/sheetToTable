@@ -29,6 +29,13 @@ def busquedas():
 
 
 def addReserva(values):
+ data=reservado.get_all_records()#obtenemos los registros del excel
+ try:
+    email=values['emailCandidato']
+    newDict = list(filter(lambda elem: elem['Email Candidato'] if str(elem['Email Candidato']).lower()==str(email).lower() else None, data))[0]
+    modificarReservar(values)
+ except:
+    newDict={"datos":"vacio"}
     curDT = datetime.now()
     date_time = curDT.strftime("%m/%d/%Y, %H:%M:%S")
     email=values['email']
@@ -43,7 +50,7 @@ def addReserva(values):
     comment=values['comment']
     #reservas.append_row([date_time,email,emailCandidato,naCandi,lkCandi,tcandi,tperfil,idReserva,comment])
 
-    def addInforme(values):
+def addInforme(values):
         EsSource=value['EsSource']
         Email= values['Email']
         EMailCandidato = values['EMailCandidato']
