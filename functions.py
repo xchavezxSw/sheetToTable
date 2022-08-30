@@ -71,7 +71,6 @@ def jsonReservas():
         nuevo.append(i)
     return json.loads(json.dumps(nuevo).encode('utf-8').decode('ascii'))
 
-
 def InformeRechazados():
     sheet4 = client.open('[FueraDeProceso]InformeRechazado').worksheet('FueraDeProcesoInformeRechazado')  # Open the spreadsheet
     data=sheet4.get_all_values()
@@ -84,3 +83,23 @@ def devolverReserva(email):
    except:
        newDict={"datos":"vacio"}
    return json.loads(json.dumps(newDict).encode('utf-8').decode('ascii'))
+
+
+def modificarReservar(values):
+    cell = reservado.find(values['emailCandidato'], in_column=3)
+    row = cell.row
+    email = values['email']
+    emailCandidato = values['emailCandidato']
+    naCandi = values['naCandi']
+    lkCandi = values['lkCandi']
+    tecnologias = ",".join(values['tcandi'])
+    tcandi = tecnologias
+    tipoPerfil = ",".join(values['tperfil'])
+    tperfil = tipoPerfil
+    idReserva = values['idReserva']
+    comment = values['comment']
+    curDT = datetime.now()
+    date_time = curDT.strftime("%m/%d/%Y, %H:%M:%S")
+    reservado.delete_row(row)
+    reservado.insert_row([date_time, email, emailCandidato, naCandi, lkCandi, tcandi, tperfil, idReserva, comment],
+                         index=row)
