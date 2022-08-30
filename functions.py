@@ -9,6 +9,7 @@ credentials = ServiceAccountCredentials.from_json_keyfile_name('ultimo.json', sc
 client = gspread.authorize(credentials)
 reservas = client.open('[AUT]PedidosReservas').worksheet('PedidosReservas')  # Open the spreadsheet
 reservado=client.open('[EnProceso]EnConexionReservado').worksheet('EnProcesoEnConexionReservado')
+SolicitudInforme=client.open('[EnProceso-Semi]PedidosInformes&InfARevisar').worksheet('EnProcesoSemiPedidosInformesyInfARevisar')
 def jsonsheet():
     client = gspread.authorize(credentials)
     sheet4 = client.open('[EnProceso]EnCliente').worksheet('EnProcesoEnCliente')  # Open the spreadsheet
@@ -32,7 +33,27 @@ def addReserva(values):
     tperfil=tipoPerfil
     idReserva=values['idReserva']
     comment=values['comment']
-    reservas.append_row([date_time,email,emailCandidato,naCandi,lkCandi,tcandi,tperfil,idReserva,comment])
+    #reservas.append_row([date_time,email,emailCandidato,naCandi,lkCandi,tcandi,tperfil,idReserva,comment])
+
+    def addInforme(values):
+        EsSource=value['EsSource']
+        Email= values['Email']
+        EMailCandidato = values['EMailCandidato']
+        NombreyApellidodelCandidato = values['NombreyApellidodelCandidato']
+        IdsaEnviar = values['IdsaEnviar']
+        RemuneracionPretendidaMensual = values['RemuneracionPretendidaMensual']
+        NiveldeIngles=values["NiveldeIngles"]
+        Locacion=values["Locacion"]
+        LKCandi = values['LKCandi']
+        tecnologias = ",".join(values['TecnoCandi'])
+        TecnoCandi = tecnologias
+        tipoPerfil = ",".join(values['TpCandi'])
+        TpCandi = tipoPerfil
+        comment = values['Comment']
+        #SolicitudInforme.append_row(["","","","","","", Direccióndecorreoelectrónico,
+        # EsSource, EmailCandidato, IdsaEnviar, TecnoCandi, TpCandi, Likedin, Commentario,
+        # CvEspañol, InfoEntrevista, CvIngles, InfoEntrevistaIngles, RemuneracionPretendidaMensual,
+        # NombreyApellidodelCandidato, MotivoRechazo])
 
 def jsonReservas():
     data=reservado.get_all_records()
@@ -41,3 +62,11 @@ def jsonReservas():
         i['url']='<button>edit</button>'
         nuevo.append(i)
     return json.loads(json.dumps(nuevo).encode('utf-8').decode('ascii'))
+
+
+def InformeRechazados():
+    sheet4 = client.open('[FueraDeProceso]InformeRechazado').worksheet('FueraDeProcesoInformeRechazado')  # Open the spreadsheet
+    data=sheet4.get_all_values()
+    return json.loads(json.dumps(data).encode('utf-8').decode('ascii'))
+
+print(InformeRechazados())
