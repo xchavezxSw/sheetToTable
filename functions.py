@@ -117,7 +117,10 @@ def modificarReservar(values):
 def busquedasPrioritarias():
     #try:
       data = busquedasAbiertas.get_all_values()
-      lines = list(filter(lambda elem: elem[3] if str(elem[0]).lower() == str("ALTA").lower() else None, data))
+      variable=[]
+      for i in data:
+          if i[0]=='ALTA':
+            variable.append(i[0]+"-"+i[3]+"-"+i[4])
          #with open('busquedas.txt') as f:
           #      lines = f.readlines()
            # download_thread = threading.Thread(target=busquedasPrioritariasFile, name="Downloader")
@@ -125,7 +128,7 @@ def busquedasPrioritarias():
        # except:
           #  download_thread = threading.Thread(target=busquedasPrioritariasFile, name="Downloader")
            # download_thread.start()
-      return json.loads(json.dumps(lines).encode('utf-8').decode('ascii'))
+      return json.loads(json.dumps(variable).encode('utf-8').decode('ascii'))
 
 
 #def busquedasPrioritariasFile():
@@ -134,3 +137,4 @@ def busquedasPrioritarias():
 #    with open('busquedas.txt', 'w') as f:
 #        for i in newDict:
 #            f.write(str(i))
+print(busquedasPrioritarias())
