@@ -3,6 +3,8 @@ from datetime import datetime
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 import json
+import threading
+
 scope = ["https://spreadsheets.google.com/feeds", 'https://www.googleapis.com/auth/spreadsheets',
              "https://www.googleapis.com/auth/drive.file", "https://www.googleapis.com/auth/drive"]
 credentials = ServiceAccountCredentials.from_json_keyfile_name('ultimo.json', scope)
@@ -11,6 +13,7 @@ reservas = client.open('[AUT]PedidosReservas').worksheet('PedidosReservas')  # O
 reservado=client.open('[EnProceso]EnConexionReservado').worksheet('EnProcesoEnConexionReservado')
 SolicitudInforme=client.open('[EnProceso-Semi]PedidosInformes&InfARevisar').worksheet('EnProcesoSemiPedidosInformesyInfARevisar')
 busquedasAbiertas=client.open('Maestro').worksheet('Busquedas')
+
 def jsonsheet():
     client = gspread.authorize(credentials)
     sheet4 = client.open('[EnProceso]EnCliente').worksheet('EnProcesoEnCliente')  # Open the spreadsheet
@@ -51,7 +54,7 @@ def addReserva(values):
     #reservas.append_row([date_time,email,emailCandidato,naCandi,lkCandi,tcandi,tperfil,idReserva,comment])
 
 def addInforme(values):
-        EsSource=value['EsSource']
+        EsSource=values['EsSource']
         Email= values['Email']
         EMailCandidato = values['EMailCandidato']
         NombreyApellidodelCandidato = values['NombreyApellidodelCandidato']
@@ -110,3 +113,24 @@ def modificarReservar(values):
     reservado.delete_row(row)
     reservado.insert_row([date_time, email, emailCandidato, naCandi, lkCandi, tcandi, tperfil, idReserva, comment],
                          index=row)
+
+def busquedasPrioritarias():
+    #try:
+      data = busquedasAbiertas.get_all_values()
+      lines = list(filter(lambda elem: elem[3] if str(elem[0]).lower() == str("ALTA").lower() else None, data))
+         #with open('busquedas.txt') as f:
+          #      lines = f.readlines()
+           # download_thread = threading.Thread(target=busquedasPrioritariasFile, name="Downloader")
+            #download_thread.start()
+       # except:
+          #  download_thread = threading.Thread(target=busquedasPrioritariasFile, name="Downloader")
+           # download_thread.start()
+      return json.loads(json.dumps(lines).encode('utf-8').decode('ascii'))
+
+
+#def busquedasPrioritariasFile():
+#    data = busquedasAbiertas.get_all_values()
+#    newDict = list(filter(lambda elem: elem[3] if str(elem[0]).lower() == str("ALTA").lower() else None, data))
+#    with open('busquedas.txt', 'w') as f:
+#        for i in newDict:
+#            f.write(str(i))
