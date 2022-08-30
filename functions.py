@@ -45,7 +45,7 @@ def addReserva(values):
     curDT = datetime.now()
     date_time = curDT.strftime("%m/%d/%Y, %H:%M:%S")
     email=values['email']
-    emailCandidato=values['emailCandidato']
+    emailCandidato=str(values['emailCandidato']).lower()
     naCandi=values['naCandi']
     lkCandi=values['lkCandi']
     tecnologias=",".join(values['tcandi'])
@@ -103,7 +103,7 @@ def modificarReservar(values):
     row = cell.row
     print(row)
     email = values['email']
-    emailCandidato = values['emailCandidato']
+    emailCandidato = str(values['emailCandidato']).lower()
     naCandi = values['naCandi']
     lkCandi = values['lkCandi']
     tecnologias = ",".join(values['tcandi'])
