@@ -55,6 +55,19 @@ def parse_request():
 def reserva():
     data=jsonReservas()
     return make_response(jsonify(data), 200)
+
+
+@app.route('/busquedas')
+def busqueda():
+    data=busquedas()
+    return make_response(jsonify(data), 200)
+
+@app.route('/Getreservas',methods=['GET', 'POST'])
+def reservaemail():
+    if request.method == 'POST':
+        email=request.form.get('emailCandidato')
+        data=devolverReserva(email)
+        return make_response(jsonify(data), 200)
 @app.route('/quit')
 def _quit():
     os._exit(0)

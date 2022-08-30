@@ -10,6 +10,7 @@ client = gspread.authorize(credentials)
 reservas = client.open('[AUT]PedidosReservas').worksheet('PedidosReservas')  # Open the spreadsheet
 reservado=client.open('[EnProceso]EnConexionReservado').worksheet('EnProcesoEnConexionReservado')
 SolicitudInforme=client.open('[EnProceso-Semi]PedidosInformes&InfARevisar').worksheet('EnProcesoSemiPedidosInformesyInfARevisar')
+busquedasAbiertas=client.open('Maestro').worksheet('Busquedas')
 def jsonsheet():
     client = gspread.authorize(credentials)
     sheet4 = client.open('[EnProceso]EnCliente').worksheet('EnProcesoEnCliente')  # Open the spreadsheet
@@ -19,6 +20,13 @@ def jsonsheet():
         i['url']='<button>clau</button>'
         nuevo.append(i)
     return json.loads(json.dumps(nuevo).encode('utf-8').decode('ascii'))
+
+
+def busquedas():
+    busquedas = client.open('Maestro').worksheet('Busquedas')
+    data=busquedas.get_all_values()
+    return json.loads(json.dumps(data).encode('utf-8').decode('ascii'))
+
 
 def addReserva(values):
     curDT = datetime.now()
@@ -69,4 +77,10 @@ def InformeRechazados():
     data=sheet4.get_all_values()
     return json.loads(json.dumps(data).encode('utf-8').decode('ascii'))
 
-print(InformeRechazados())
+def devolverReserva(email):
+   data=reservado.get_all_records()#obtenemos los registros del excel
+   try:
+    newDict = list(filter(lambda elem: elem['Email Candidato'] if elem['Email Candidato']==email else None, data))[0]
+   except:
+       newDict={"datos":"vacio"}
+   return json.loads(json.dumps(newDict).encode('utf-8').decode('ascii'))
