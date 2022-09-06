@@ -6,6 +6,7 @@ import json
 from flask import jsonify,request, make_response
 from flask_cors import CORS
 CORS(app)
+
 @app.route('/')
 def hello():
     data=jsonsheet()
@@ -48,14 +49,17 @@ def solinforme():
                 "TpCandi":request.form.get('TpCandi[]'),
                 "Comment":request.form.get('Comment')
                 }
-        addReserva(value)
+        addInforme(value)
     return 'ok', 200
 
-@app.route('/reservas')
+    @app.route('/reservas')
 def reserva():
     data=jsonReservas()
     return make_response(jsonify(data), 200)
-
+@app.route('/getInformesArevisar')
+def infarevisar():
+    data=getInformesArevisar()
+    return make_response(jsonify(data), 200)
 
 @app.route('/busquedas')
 def busqueda():

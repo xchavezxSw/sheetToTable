@@ -57,20 +57,20 @@ def addReserva(values):
     reservas.append_row([date_time,email,emailCandidato,naCandi,lkCandi,tcandi,tperfil,idReserva,comment])
 
 def addInforme(values):
-        EsSource=values['EsSource']
-        Email= values['Email']
-        EMailCandidato = values['EMailCandidato']
-        NombreyApellidodelCandidato = values['NombreyApellidodelCandidato']
-        IdsaEnviar = values['IdsaEnviar']
-        RemuneracionPretendidaMensual = values['RemuneracionPretendidaMensual']
-        NiveldeIngles=values["NiveldeIngles"]
-        Locacion=values["Locacion"]
-        LKCandi = values['LKCandi']
-        tecnologias = ",".join(values['TecnoCandi'])
+        EsSource=values['EsSourceInf']
+        Email= values['EmailInf']
+        EMailCandidato = values['EMailCandidatoInf']
+        NombreyApellidodelCandidato = values['NombreyApellidodelCandidatoInf']
+        IdsaEnviar = values['IdsaEnviarInf']
+        RemuneracionPretendidaMensual = values['RemuneracionPretendidaMensualInf']
+        NiveldeIngles=values["NiveldeInglesInf"]
+        Locacion=values["LocacionInf"]
+        LKCandi = values['LKCandiInf']
+        tecnologias = ",".join(values['TecnoCandiInf'])
         TecnoCandi = tecnologias
-        tipoPerfil = ",".join(values['TpCandi'])
+        tipoPerfil = ",".join(values['TpCandiInf'])
         TpCandi = tipoPerfil
-        comment = values['Comment']
+        comment = values['CommentInf']
         #SolicitudInforme.append_row(["","","","","","", Direccióndecorreoelectrónico,
         # EsSource, EmailCandidato, IdsaEnviar, TecnoCandi, TpCandi, Likedin, Commentario,
         # CvEspañol, InfoEntrevista, CvIngles, InfoEntrevistaIngles, RemuneracionPretendidaMensual,
@@ -87,6 +87,10 @@ def jsonReservas():
 def InformeRechazados():
     sheet4 = client.open('[FueraDeProceso]InformeRechazado').worksheet('FueraDeProcesoInformeRechazado')  # Open the spreadsheet
     data=sheet4.get_all_values()
+    return json.loads(json.dumps(data).encode('utf-8').decode('ascii'))
+
+def getInformesArevisar():
+    data=SolicitudInforme.get_all_values()
     return json.loads(json.dumps(data).encode('utf-8').decode('ascii'))
 
 def devolverReserva(email):
@@ -125,12 +129,4 @@ def busquedasPrioritarias():
       for i in data:
           if i[0]=='ALTA':
             variable.append({'nube':i[0]+"-"+i[3]+"-"+i[4] })
-         #with open('busquedas.txt') as f:
-          #      lines = f.readlines()
-           # download_thread = threading.Thread(target=busquedasPrioritariasFile, name="Downloader")
-            #download_thread.start()
-       # except:
-          #  download_thread = threading.Thread(target=busquedasPrioritariasFile, name="Downloader")
-           # download_thread.start()
       return json.loads(json.dumps(variable).encode('utf-8').decode('ascii'))
-
