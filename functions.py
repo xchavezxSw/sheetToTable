@@ -90,7 +90,7 @@ def InformeRechazados():
     return json.loads(json.dumps(data).encode('utf-8').decode('ascii'))
 
 def getInformesArevisar():
-    data=SolicitudInforme.get_all_values()
+    data=SolicitudInforme.get_all_records()
     return json.loads(json.dumps(data).encode('utf-8').decode('ascii'))
 
 def devolverReserva(email):
