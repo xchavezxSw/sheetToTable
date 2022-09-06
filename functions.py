@@ -36,8 +36,6 @@ def addReserva(values):
  try:
     email=values['emailCandidato']
     newDict = list(filter(lambda elem: elem['Email Candidato'] if str(elem['Email Candidato']).lower()==str(email).lower() else None, data))[0]
-    print(email)
-    print(newDict)
     modificarReservar(values)
  except Exception as e:
     print(e)
@@ -96,7 +94,7 @@ def getInformesArevisar():
     dataframe = pd.DataFrame(data)
     dataframe.columns = dataframe.iloc[0]
     dataframe = dataframe.iloc[1:].reset_index(drop=True)
-    return dataframe.to_json().encode('utf-8').decode('ascii')
+    return json.loads(json.dumps(data).encode('utf-8').decode('ascii'))
 
 def devolverReserva(email):
    data=reservado.get_all_records()#obtenemos los registros del excel
@@ -136,4 +134,3 @@ def busquedasPrioritarias():
             variable.append({'nube':i[0]+"-"+i[3]+"-"+i[4] })
       return json.loads(json.dumps(variable).encode('utf-8').decode('ascii'))
 
-print(getInformesArevisar())
