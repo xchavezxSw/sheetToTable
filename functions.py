@@ -4,7 +4,7 @@ import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 import json
 import threading
-
+import pandas as pd
 scope = ["https://spreadsheets.google.com/feeds", 'https://www.googleapis.com/auth/spreadsheets',
              "https://www.googleapis.com/auth/drive.file", "https://www.googleapis.com/auth/drive"]
 credentials = ServiceAccountCredentials.from_json_keyfile_name('ultimo.json', scope)
@@ -90,8 +90,13 @@ def InformeRechazados():
     return json.loads(json.dumps(data).encode('utf-8').decode('ascii'))
 
 def getInformesArevisar():
-    data=SolicitudInforme.get_all_records()
-    return json.loads(json.dumps(data).encode('utf-8').decode('ascii'))
+    data=SolicitudInforme.get_all_values()
+    data[0][1]="Fecha"
+    data[0][0]="aprobado"
+    dataframe = pd.DataFrame(data)
+    dataframe.columns = dataframe.iloc[0]
+    dataframe = dataframe.iloc[1:].reset_index(drop=True)
+    return dataframe.to_json().encode('utf-8').decode('ascii')
 
 def devolverReserva(email):
    data=reservado.get_all_records()#obtenemos los registros del excel
@@ -130,3 +135,5 @@ def busquedasPrioritarias():
           if i[0]=='ALTA':
             variable.append({'nube':i[0]+"-"+i[3]+"-"+i[4] })
       return json.loads(json.dumps(variable).encode('utf-8').decode('ascii'))
+
+print(getInformesArevisar())
