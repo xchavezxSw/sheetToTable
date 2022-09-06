@@ -134,7 +134,3 @@ def busquedasPrioritarias():
            # download_thread.start()
       return json.loads(json.dumps(variable).encode('utf-8').decode('ascii'))
 
-
-cell = reservado.find(values['emailCandidato'], in_column=3)
-row = cell.row
-print(row)
