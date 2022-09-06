@@ -52,7 +52,7 @@ def solinforme():
         addInforme(value)
     return 'ok', 200
 
-    @app.route('/reservas')
+@app.route('/reservas')
 def reserva():
     data=jsonReservas()
     return make_response(jsonify(data), 200)
