@@ -135,10 +135,6 @@ def busquedasPrioritarias():
       return json.loads(json.dumps(variable).encode('utf-8').decode('ascii'))
 
 
-#def busquedasPrioritariasFile():
-#    data = busquedasAbiertas.get_all_values()
-#    newDict = list(filter(lambda elem: elem[3] if str(elem[0]).lower() == str("ALTA").lower() else None, data))
-#    with open('busquedas.txt', 'w') as f:
-#        for i in newDict:
-#            f.write(str(i))
-print(busquedasPrioritarias())
+cell = reservado.find(values['emailCandidato'], in_column=3)
+row = cell.row
+print(row)
