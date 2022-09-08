@@ -81,7 +81,7 @@ def addInforme(values):
         SolicitudInforme.append_row([False,"", "","","",date_time,Email,
          EsSource, EMailCandidato, IdsaEnviar, TecnoCandi, TpCandi, LKCandi, comment,
          CvEspañol, InfoEntrevista, CvIngles, InfoEntrevistaIngles, RemuneracionPretendidaMensual,
-         NiveldeIngles[0],Locacion[0],
+         NiveldeIngles,Locacion[0],
          NombreyApellidodelCandidato, ""])
 
 def jsonReservas():
