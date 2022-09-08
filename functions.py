@@ -98,13 +98,14 @@ def InformeRechazados():
     return json.loads(json.dumps(data).encode('utf-8').decode('ascii'))
 
 def getInformesArevisar():
+    algo=[]
     data=SolicitudInforme.get_all_values()
     data[0][1]="Fecha"
     data[0][0]="aprobado"
-    dataframe = pd.DataFrame(data)
-    dataframe.columns = dataframe.iloc[0]
-    dataframe = dataframe.iloc[1:].reset_index(drop=True)
-    return json.loads(json.dumps(data).encode('utf-8').decode('ascii'))
+    for i in data:
+        algo.append("<input type='checkbox'/>",data)
+    dataframe = pd.DataFrame(algo)
+    return json.loads(json.dumps(algo).encode('utf-8').decode('ascii'))
 
 def devolverReserva(email):
    data=reservado.get_all_records()#obtenemos los registros del excel
