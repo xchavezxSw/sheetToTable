@@ -36,20 +36,20 @@ def insertreserva():
 @app.route('/solicitudInforme', methods=['GET', 'POST'])
 def solinforme():
     if request.method == 'POST':
-        value={  "EmailInf":request.form.get('EmailInf'),
-                "EMailCandidatoInf":request.form.get('EMailCandidatoInf'),
-                "NombreyApellidodelCandidatoInf":request.form.get('NombreyApellidodelCandidatoInf'),
+        value={  "EmailInf":request.form.get('emailInf'),
+                "EMailCandidatoInf":request.form.get('emailCandidatoInf'),
+                "NombreyApellidodelCandidatoInf":request.form.get('naCandiInf'),
                 "EsSourceInf":request.form.get('EsSourceInf[]'),
-                "IdsaEnviarInf": request.form.get('IdsaEnviarInf'),
-                "RemuneracionPretendidaMensualInf":request.form.get('RemuneracionPretendidaMensualInf'),
-                "NiveldeInglesInf":request.form.getlist('NiveldeInglesInf[]'),
-                "LocacionInf":request.form.getlist('LocacionInf[]'),
-                "LKCandiInf":request.form.get('LKCandiInf'),
-                "TecnoCandiInf":request.form.getlist('TecnoCandiInf[]'),
+                "IdsaEnviarInf": request.form.get('idReservaInf'),
+                "RemuneracionPretendidaMensualInf":request.form.get('remuneracionPretendidaMensualInf'),
+                "NiveldeInglesInf":request.form.getlist('niveldeInglesInf[]'),
+                "LocacionInf":request.form.getlist('locacionInf[]'),
+                "LKCandiInf":request.form.get('lkCandiInf'),
+                "TecnoCandiInf":request.form.getlist('tcandiInf[]'),
                 "TpCandiInf":request.form.get('TpCandiInf[]'),
-                "CommentInf":request.form.get('CommentInf'),
-                 "informeEntEsp":request.form.get('informeEntEsp'),
-                 "informeEntIng":request.form.get('informeEntIng')
+                "CommentInf":request.form.get('commentInf'),
+                 "informeEntEsp":request.form.get('informeEntEspInf'),
+                 "informeEntIng":request.form.get('informeEntIngInf')
                 }
         addInforme(value)
     return 'ok', 200
