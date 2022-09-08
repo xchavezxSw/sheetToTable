@@ -69,10 +69,16 @@ def addInforme(values):
         tipoPerfil = ",".join(values['TpCandiInf'])
         TpCandi = tipoPerfil
         comment = values['CommentInf']
-        #SolicitudInforme.append_row(["","","","","","", Direccióndecorreoelectrónico,
-        # EsSource, EmailCandidato, IdsaEnviar, TecnoCandi, TpCandi, Likedin, Commentario,
-        # CvEspañol, InfoEntrevista, CvIngles, InfoEntrevistaIngles, RemuneracionPretendidaMensual,
-        # NombreyApellidodelCandidato, MotivoRechazo])
+        CvEspañol= ""#values['CvEspanolInf']
+        InfoEntrevista= values['informeEntEsp']
+        CvIngles= ""#values['CvInglesInf']
+        InfoEntrevistaIngles= values['informeEntIng']
+
+        SolicitudInforme.append_row(["","", "","","","",Email,
+         EsSource, EMailCandidato, IdsaEnviar, TecnoCandi, TpCandi, LKCandi, comment,
+         CvEspañol, InfoEntrevista, CvIngles, InfoEntrevistaIngles, RemuneracionPretendidaMensual,
+         NiveldeIngles,Locacion,
+         NombreyApellidodelCandidato, ""])
 
 def jsonReservas():
     data=reservado.get_all_records()
