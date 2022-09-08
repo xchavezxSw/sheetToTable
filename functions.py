@@ -107,6 +107,7 @@ def getInformesArevisar():
            # i.append("acciones")
             numero=1
         else:
+          if i[4]!="Anclada":
             if '_' in i[9] :
                 for j in i[9].split("_"):
                     i[9]=j
