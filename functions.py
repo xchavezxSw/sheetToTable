@@ -75,7 +75,7 @@ def addInforme(values):
         CvIngles= ""#values['CvInglesInf']
         InfoEntrevistaIngles= values['informeEntIng']
 
-        SolicitudInforme.append_row([False,"", "","","","",Email,
+        SolicitudInforme.append_row([False,"", "","","","7/9/2022 14:21:07",Email,
          EsSource, EMailCandidato, IdsaEnviar, TecnoCandi, TpCandi, LKCandi, comment,
          CvEspañol, InfoEntrevista, CvIngles, InfoEntrevistaIngles, RemuneracionPretendidaMensual,
          NiveldeIngles,Locacion,
