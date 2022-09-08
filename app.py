@@ -45,7 +45,7 @@ def solinforme():
                 "NiveldeInglesInf":request.form.getlist('niveldeInglesInf[]'),
                 "LocacionInf":request.form.getlist('locacionInf'),
                 "LKCandiInf":request.form.get('lkCandiInf'),
-                "TecnoCandiInf":request.form.getlist('tcandiInf[]'),
+                "TecnoCandiInf":request.form.getlist('TecnoCandiInf[]'),
                 "TpCandiInf":request.form.get('TpCandiInf[]'),
                 "CommentInf":request.form.get('commentInf'),
                  "informeEntEsp":request.form.get('informeEntEspInf'),
