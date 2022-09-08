@@ -74,7 +74,11 @@ def addInforme(values):
         InfoEntrevista= values['informeEntEsp']
         CvIngles= ""#values['CvInglesInf']
         InfoEntrevistaIngles= values['informeEntIng']
-
+        print([False,"", "","","","7/9/2022 14:21:07",Email,
+         EsSource, EMailCandidato, IdsaEnviar, TecnoCandi, TpCandi, LKCandi, comment,
+         CvEspañol, InfoEntrevista, CvIngles, InfoEntrevistaIngles, RemuneracionPretendidaMensual,
+         NiveldeIngles,Locacion,
+         NombreyApellidodelCandidato, ""])
         SolicitudInforme.append_row([False,"", "","","","7/9/2022 14:21:07",Email,
          EsSource, EMailCandidato, IdsaEnviar, TecnoCandi, TpCandi, LKCandi, comment,
          CvEspañol, InfoEntrevista, CvIngles, InfoEntrevistaIngles, RemuneracionPretendidaMensual,
