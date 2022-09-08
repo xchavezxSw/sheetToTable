@@ -158,5 +158,3 @@ def busquedasPrioritarias():
             variable.append({'nube':i[0]+"-"+i[3]+"-"+i[4] })
       return json.loads(json.dumps(variable).encode('utf-8').decode('ascii'))
 
-
-getInformesArevisar()
