@@ -113,6 +113,7 @@ def getInformesArevisar():
                     i[9]=j.replace("ID","")
                     i.append("""<button style="border:none; background-color: transparent;" id="aprobar"><img width="30px" src="https://static.vecteezy.com/system/resources/previews/010/153/967/non_2x/tick-icon-accept-approve-sign-design-free-png.png" alt=""></button>
                         <button style="border:none; background-color: transparent;" id="rechazar"> <img width="30px"  src="https://geoinn.com/wp-content/uploads/2018/08/010_x-3-512.png" alt=""></button>""")
+                    algo.append(i)
             else:
                 i.append("""<button style="border:none; background-color: transparent;" id="aprobar"><img width="30px" src="https://static.vecteezy.com/system/resources/previews/010/153/967/non_2x/tick-icon-accept-approve-sign-design-free-png.png" alt=""></button>
     <button style="border:none; background-color: transparent;" id="rechazar"> <img width="30px"  src="https://geoinn.com/wp-content/uploads/2018/08/010_x-3-512.png" alt=""></button>""")
