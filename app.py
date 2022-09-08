@@ -36,18 +36,20 @@ def insertreserva():
 @app.route('/solicitudInforme', methods=['GET', 'POST'])
 def solinforme():
     if request.method == 'POST':
-        value={  "Email":request.form.get('Email'),
-                "EMailCandidato":request.form.get('EMailCandidato'),
-                "NombreyApellidodelCandidato":request.form.get('NombreyApellidodelCandidato'),
-                "EsSourcer":request.form.get('EsSourcer[]'),
-                "IDsaEnviar": request.form.get('IDsaEnviar'),
-                "RemuneracionPretendidaMensual":request.form.get('RemuneracionPretendidaMensual'),
-                "NivelDeIngles":request.form.getlist('NiveldeIngles[]'),
-                "Locacion":request.form.getlist('Locacion[]'),
-                "LKCandi":request.form.get('LKCandi'),
-                "TecnoCandi":request.form.getlist('TecnoCandi[]'),
-                "TpCandi":request.form.get('TpCandi[]'),
-                "Comment":request.form.get('Comment')
+        value={  "EmailInf":request.form.get('EmailInf'),
+                "EMailCandidatoInf":request.form.get('EMailCandidatoInf'),
+                "NombreyApellidodelCandidatoInf":request.form.get('NombreyApellidodelCandidatoInf'),
+                "EsSourceInf":request.form.get('EsSourceInf[]'),
+                "IdsaEnviarInf": request.form.get('IdsaEnviarInf'),
+                "RemuneracionPretendidaMensualInf":request.form.get('RemuneracionPretendidaMensualInf'),
+                "NiveldeInglesInf":request.form.getlist('NiveldeInglesInf[]'),
+                "LocacionInf":request.form.getlist('LocacionInf[]'),
+                "LKCandiInf":request.form.get('LKCandiInf'),
+                "TecnoCandiInf":request.form.getlist('TecnoCandiInf[]'),
+                "TpCandiInf":request.form.get('TpCandiInf[]'),
+                "CommentInf":request.form.get('CommentInf')
+                 "informeEntEsp":request.form.get('informeEntEsp'),
+                 "informeEntIng":request.form.get('informeEntIng')
                 }
         addInforme(value)
     return 'ok', 200
