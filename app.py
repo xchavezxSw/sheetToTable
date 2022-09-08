@@ -47,7 +47,7 @@ def solinforme():
                 "LKCandiInf":request.form.get('LKCandiInf'),
                 "TecnoCandiInf":request.form.getlist('TecnoCandiInf[]'),
                 "TpCandiInf":request.form.get('TpCandiInf[]'),
-                "CommentInf":request.form.get('CommentInf')
+                "CommentInf":request.form.get('CommentInf'),
                  "informeEntEsp":request.form.get('informeEntEsp'),
                  "informeEntIng":request.form.get('informeEntIng')
                 }
