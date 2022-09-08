@@ -112,7 +112,7 @@ def getInformesArevisar():
                 splitear=i[9].split("_")
                 for j in splitear:
                     i[9]=j.replace("ID","")
-                    i.append("""<button style="border:none; background-color: transparent;" id="aprobar"><img width="30px" src="https://static.vecteezy.com/system/resources/previews/010/153/967/non_2x/tick-icon-accept-approve-sign-design-free-png.png" alt=""></button>
+                    i.append("""<button style="border:none; background-color: transparent;" id="aprobar"><img style="border-radius: 20px;" width="30px" src="https://img2.freepng.es/20180403/dtw/kisspng-computer-icons-check-mark-presentation-symbol-check-list-5ac41357e304a0.5127533215227994479299.jpg" alt=""></button>
                         <button style="border:none; background-color: transparent;" id="rechazar"> <img width="30px"  src="https://geoinn.com/wp-content/uploads/2018/08/010_x-3-512.png" alt=""></button>""")
                     algo.append(i)
             else:
@@ -120,6 +120,7 @@ def getInformesArevisar():
     <button style="border:none; background-color: transparent;" id="rechazar"> <img width="30px"  src="https://geoinn.com/wp-content/uploads/2018/08/010_x-3-512.png" alt=""></button>""")
             algo.append(i)
     dataframe = pd.DataFrame(algo)
+    print(algo)
     return json.loads(json.dumps(algo).encode('utf-8').decode('ascii'))
 
 def devolverReserva(email):
@@ -158,5 +159,4 @@ def busquedasPrioritarias():
           if i[0]=='ALTA':
             variable.append({'nube':i[0]+"-"+i[3]+"-"+i[4] })
       return json.loads(json.dumps(variable).encode('utf-8').decode('ascii'))
-
 
