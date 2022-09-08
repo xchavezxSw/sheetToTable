@@ -57,7 +57,6 @@ def addReserva(values):
     reservas.append_row([date_time,email,emailCandidato,naCandi,lkCandi,tcandi,tperfil,idReserva,comment])
 
 def addInforme(values):
-        print(values)
         EsSource=values['EsSourceInf']
         Email= values['EmailInf']
         EMailCandidato = values['EMailCandidatoInf']
@@ -125,7 +124,6 @@ def devolverReserva(email):
 def modificarReservar(values):
     cell = reservado.find(str(values['emailCandidato']).lower(), in_column=3)
     row = cell.row
-    print(row)
     email = values['email']
     emailCandidato = str(values['emailCandidato']).lower()
     naCandi = values['naCandi']
