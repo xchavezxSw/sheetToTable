@@ -5,6 +5,8 @@ from oauth2client.service_account import ServiceAccountCredentials
 import json
 import threading
 import pandas as pd
+from datetime import date
+
 scope = ["https://spreadsheets.google.com/feeds", 'https://www.googleapis.com/auth/spreadsheets',
              "https://www.googleapis.com/auth/drive.file", "https://www.googleapis.com/auth/drive"]
 credentials = ServiceAccountCredentials.from_json_keyfile_name('ultimo.json', scope)
@@ -74,15 +76,12 @@ def addInforme(values):
         InfoEntrevista= values['informeEntEsp']
         CvIngles= ""#values['CvInglesInf']
         InfoEntrevistaIngles= values['informeEntIng']
-        print([False,"", "","","","7/9/2022 14:21:07",Email,
+        curDT = datetime.now()
+        date_time = curDT.strftime("%m/%d/%Y, %H:%M:%S")
+        SolicitudInforme.append_row([False,"", "","","",date_time,Email,
          EsSource, EMailCandidato, IdsaEnviar, TecnoCandi, TpCandi, LKCandi, comment,
          CvEspañol, InfoEntrevista, CvIngles, InfoEntrevistaIngles, RemuneracionPretendidaMensual,
-         NiveldeIngles,Locacion,
-         NombreyApellidodelCandidato, ""])
-        SolicitudInforme.append_row([False,"", "","","","7/9/2022 14:21:07",Email,
-         EsSource, EMailCandidato, IdsaEnviar, TecnoCandi, TpCandi, LKCandi, comment,
-         CvEspañol, InfoEntrevista, CvIngles, InfoEntrevistaIngles, RemuneracionPretendidaMensual,
-         NiveldeIngles,Locacion,
+         NiveldeIngles[0],Locacion[0],
          NombreyApellidodelCandidato, ""])
 
 def jsonReservas():
@@ -144,4 +143,5 @@ def busquedasPrioritarias():
           if i[0]=='ALTA':
             variable.append({'nube':i[0]+"-"+i[3]+"-"+i[4] })
       return json.loads(json.dumps(variable).encode('utf-8').decode('ascii'))
+
 
