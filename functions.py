@@ -64,7 +64,7 @@ def addInforme(values):
         NombreyApellidodelCandidato = values['NombreyApellidodelCandidatoInf']
         IdsaEnviar = values['IdsaEnviarInf']
         RemuneracionPretendidaMensual = values['RemuneracionPretendidaMensualInf']
-        NiveldeIngles=values["NiveldeInglesInf"]
+        NiveldeIngles=values["niveldeInglesInf"]
         Locacion=values["LocacionInf"]
         LKCandi = values['LKCandiInf']
         tecnologias = ",".join(values['TecnoCandiInf'])
