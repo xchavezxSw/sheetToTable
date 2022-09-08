@@ -102,9 +102,13 @@ def getInformesArevisar():
     data=SolicitudInforme.get_all_values()
     data[0][1]="Fecha"
     data[0][0]="aprobado"
+    numero=0
     for i in data:
-        print(i)
-        i.append(",<input type='checkbox'/>")
+        if numero == 0:
+            i.append("acciones")
+            numero=1
+        else:
+            i.append("<input type='checkbox'/>")
         algo.append(i)
     dataframe = pd.DataFrame(algo)
     return json.loads(json.dumps(algo).encode('utf-8').decode('ascii'))
