@@ -104,7 +104,7 @@ def getInformesArevisar():
     numero=0
     for i in data:
         if numero == 0:
-            i.append("acciones")
+           # i.append("acciones")
             numero=1
         else:
             i.append("<input type='checkbox'/>")
