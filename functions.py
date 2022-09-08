@@ -108,7 +108,7 @@ def getInformesArevisar():
             numero=1
         else:
             i.append("<input type='checkbox'/>")
-        algo.append(i)
+            algo.append(i)
     dataframe = pd.DataFrame(algo)
     return json.loads(json.dumps(algo).encode('utf-8').decode('ascii'))
 
