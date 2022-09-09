@@ -74,7 +74,9 @@ def busquedasPrio():
 
 @app.route('/revisarAprobado')
 def revisar():
-    data=revisarAprob()
+    if request.method == 'POST':
+        value = {"EmailInf": request.form.get('emailInf')}
+    data=revisarAprob(value)
     return make_response(jsonify(data), 200)
 
 @app.route('/Getreservas',methods=['GET', 'POST'])
