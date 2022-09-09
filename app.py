@@ -71,6 +71,12 @@ def busqueda():
 def busquedasPrio():
     data=busquedasPrioritarias()
     return make_response(jsonify(data), 200)
+
+@app.route('/revisarAprobado')
+def revisar():
+    data=revisarAprob()
+    return make_response(jsonify(data), 200)
+
 @app.route('/Getreservas',methods=['GET', 'POST'])
 def reservaemail():
     if request.method == 'POST':
