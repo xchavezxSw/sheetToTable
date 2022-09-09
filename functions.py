@@ -82,8 +82,8 @@ def addInforme(values):
          CvEspañol, InfoEntrevista, CvIngles, InfoEntrevistaIngles, RemuneracionPretendidaMensual,
          NiveldeIngles,Locacion[0],
          NombreyApellidodelCandidato, ""])
-def revisarAprob():
-    return 'hola'
+def revisarAprob(values):
+    return 'chau'
 def jsonReservas():
     data=reservado.get_all_records()
     nuevo=[]
