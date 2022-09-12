@@ -13,7 +13,7 @@ credentials = ServiceAccountCredentials.from_json_keyfile_name('ultimo.json', sc
 client = gspread.authorize(credentials)
 reservas = client.open('[AUT]PedidosReservas').worksheet('PedidosReservas')  # Open the spreadsheet
 reservado=client.open('[EnProceso]EnConexionReservado').worksheet('EnProcesoEnConexionReservado')
-SolicitudInforme=client.open('[EnProceso-Semi]PedidosInformes&InfARevisar').worksheet('EnProcesoSemiPedidosInformesyInfARevisar')
+SolicitudInforme=client.open('Copy of [EnProceso-Semi]PedidosInformes&InfARevisar').worksheet('EnProcesoSemiPedidosInformesyInfARevisar')
 busquedasAbiertas=client.open('Maestro').worksheet('Busquedas')
 
 def jsonsheet():
@@ -82,8 +82,65 @@ def addInforme(values):
          CvEspañol, InfoEntrevista, CvIngles, InfoEntrevistaIngles, RemuneracionPretendidaMensual,
          NiveldeIngles,Locacion[0],
          NombreyApellidodelCandidato, ""])
-def revisarAprob(value):
-    return 'chau'+value['EmailInf']
+def revisarAprob(values):
+    StatusEnBase= values['StatusEnBaseInf']
+    EsSource=values['EsSourceInf']
+    Email= values['EmailInf']
+    EMailCandidato = values['EMailCandidatoInf']
+    NombreyApellidodelCandidato = values['NombreyApellidodelCandidatoInf']
+    IdsaEnviar = values['IdsaEnviarInf']
+    RemuneracionPretendidaMensual = values['RemuneracionPretendidaMensualInf']
+    NiveldeIngles="".join(values["NiveldeInglesInf"])
+    Locacion=values["LocacionInf"]
+    LKCandi = values['LKCandiInf']
+    tecnologias = ",".join(values['TecnoCandiInf'])
+    TecnoCandi = tecnologias
+    tipoPerfil = ",".join(values['TpCandiInf'])
+    TpCandi = tipoPerfil
+    comment = values['CommentInf']
+    CvEspañol= ""#values['CvEspanolInf']
+    InfoEntrevista= values['informeEntEsp']
+    CvIngles= ""#values['CvInglesInf']
+    InfoEntrevistaIngles= values['informeEntIng']
+    MotivoRechazo= values['MotivvoRechazoInf']
+    curDT = datetime.now()
+    date_time = curDT.strftime("%m/%d/%Y, %H:%M:%S")
+    SolicitudInforme.append_row([True,"", IdsaEnviar,"",StatusEnBase,date_time,Email,
+    EsSource, EMailCandidato, IdsaEnviar, TecnoCandi, TpCandi, LKCandi, comment,
+    CvEspañol, InfoEntrevista, CvIngles, InfoEntrevistaIngles, RemuneracionPretendidaMensual,
+    NiveldeIngles,Locacion[0],
+    NombreyApellidodelCandidato, MotivoRechazo])
+    return  
+
+def revisarRechaz(values):
+    StatusEnBase= values['StatusEnBaseInf']
+    EsSource=values['EsSourceInf']
+    Email= values['EmailInf']
+    EMailCandidato = values['EMailCandidatoInf']
+    NombreyApellidodelCandidato = values['NombreyApellidodelCandidatoInf']
+    IdsaEnviar = values['IdsaEnviarInf']
+    RemuneracionPretendidaMensual = values['RemuneracionPretendidaMensualInf']
+    NiveldeIngles="".join(values["NiveldeInglesInf"])
+    Locacion=values["LocacionInf"]
+    LKCandi = values['LKCandiInf']
+    tecnologias = ",".join(values['TecnoCandiInf'])
+    TecnoCandi = tecnologias
+    tipoPerfil = ",".join(values['TpCandiInf'])
+    TpCandi = tipoPerfil
+    comment = values['CommentInf']
+    CvEspañol= ""#values['CvEspanolInf']
+    InfoEntrevista= values['informeEntEsp']
+    CvIngles= ""#values['CvInglesInf']
+    InfoEntrevistaIngles= values['informeEntIng']
+    MotivoRechazo= values['MotivvoRechazoInf']
+    curDT = datetime.now()
+    date_time = curDT.strftime("%m/%d/%Y, %H:%M:%S")
+    SolicitudInforme.append_row([True,"","" ,IdsaEnviar,StatusEnBase,date_time,Email,
+    EsSource, EMailCandidato, IdsaEnviar, TecnoCandi, TpCandi, LKCandi, comment,
+    CvEspañol, InfoEntrevista, CvIngles, InfoEntrevistaIngles, RemuneracionPretendidaMensual,
+    NiveldeIngles,Locacion[0],
+    NombreyApellidodelCandidato, MotivoRechazo])
+    return  
 
 def jsonReservas():
     data=reservado.get_all_records()

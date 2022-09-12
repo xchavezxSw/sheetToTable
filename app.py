@@ -72,11 +72,34 @@ def busquedasPrio():
     data=busquedasPrioritarias()
     return make_response(jsonify(data), 200)
 
-@app.route('/revisarAprobado')
+@app.route('/revisarAprobado', methods=['GET', 'POST']) 
 def revisar():
     if request.method == 'POST':
-        value = {"EmailInf": request.form.get('emailInf')}
-    data=revisarAprob(value)
+        value = {
+                "StatusEnBaseInf": request.form.get('stEnBaseInf'),
+                "EmailInf": request.form.get('emailInf'),
+                "EMailCandidatoInf": request.form.get('emailCandiInf'),
+                "IdsaEnviarInf": request.form.get('idInf'),
+                "EsSourceInf": request.form.get('esSourceInf'),
+                "NombreyApellidodelCandidatoInf": request.form.get('nombreCandiInf'),
+                "RemuneracionPretendidaMensualInf": request.form.get('remuneracionPretendida'),
+                "NiveldeInglesInf": request.form.get('nivelInglesInf'),
+                "LocacionInf": request.form.get('locacionInf'),
+                "LKCandiInf": request.form.get('lkCandiInf'),
+                "TecnoCandiInf": request.form.get('tecCandiInf'),
+                "TpCandiInf": request.form.get('tPCandiInf'),
+                "CommentInf": request.form.get('comentInf'),
+                "CvEspanolInf": request.form.get('cvEspInf'),
+                "informeEntEsp": request.form.get('infEntEsp'),
+                "CvInglesInf": request.form.get('cvIngInf'),
+                "informeEntIng": request.form.get('infEntIng'),
+                "MotivvoRechazoInf": request.form.get('motivoRechInf'),
+            }
+   
+    if request.form.get('status')=='True':
+        data=revisarAprob(value)
+    else:
+        data=revisarRechaz(value)    
     return make_response(jsonify(data), 200)
 
 @app.route('/Getreservas',methods=['GET', 'POST'])
