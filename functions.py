@@ -93,9 +93,9 @@ def revisarAprob(values):
     NiveldeIngles="".join(values["NiveldeInglesInf"])
     Locacion=values["LocacionInf"]
     LKCandi = values['LKCandiInf']
-    tecnologias = ",".join(values['TecnoCandiInf'])
+    tecnologias = "".join(values['TecnoCandiInf'])
     TecnoCandi = tecnologias
-    tipoPerfil = ",".join(values['TpCandiInf'])
+    tipoPerfil = "".join(values['TpCandiInf'])
     TpCandi = tipoPerfil
     comment = values['CommentInf']
     CvEspañol= ""#values['CvEspanolInf']
@@ -108,7 +108,7 @@ def revisarAprob(values):
     SolicitudInforme.append_row([True,"", IdsaEnviar,"",StatusEnBase,date_time,Email,
     EsSource, EMailCandidato, IdsaEnviar, TecnoCandi, TpCandi, LKCandi, comment,
     CvEspañol, InfoEntrevista, CvIngles, InfoEntrevistaIngles, RemuneracionPretendidaMensual,
-    NiveldeIngles,Locacion[0],
+    NiveldeIngles,Locacion,
     NombreyApellidodelCandidato, MotivoRechazo])
     return  
 
@@ -123,9 +123,9 @@ def revisarRechaz(values):
     NiveldeIngles="".join(values["NiveldeInglesInf"])
     Locacion=values["LocacionInf"]
     LKCandi = values['LKCandiInf']
-    tecnologias = ",".join(values['TecnoCandiInf'])
+    tecnologias = "".join(values['TecnoCandiInf'])
     TecnoCandi = tecnologias
-    tipoPerfil = ",".join(values['TpCandiInf'])
+    tipoPerfil = "".join(values['TpCandiInf'])
     TpCandi = tipoPerfil
     comment = values['CommentInf']
     CvEspañol= ""#values['CvEspanolInf']
@@ -138,7 +138,7 @@ def revisarRechaz(values):
     SolicitudInforme.append_row([True,"","" ,IdsaEnviar,StatusEnBase,date_time,Email,
     EsSource, EMailCandidato, IdsaEnviar, TecnoCandi, TpCandi, LKCandi, comment,
     CvEspañol, InfoEntrevista, CvIngles, InfoEntrevistaIngles, RemuneracionPretendidaMensual,
-    NiveldeIngles,Locacion[0],
+    NiveldeIngles,Locacion,
     NombreyApellidodelCandidato, MotivoRechazo])
     return  
 
@@ -173,22 +173,25 @@ def getInformesArevisar():
     export=[]
     nn=0
 
-    for i in range(0,len(algo)):
-        if '_' in algo[i][9]:
-            splitear = algo[i][9].split("_")
+    for i in algo:
+        if '_' in i[9]:
+            splitear = i[9].split("_")
             for j in splitear:
-                valor = algo[i]
-                export.insert(nn, valor)
-                export[nn][9]=j
-                print(export[nn][9])
-                print(export[nn])
-                nn=nn+1
+                print(j)
+                export.append([i[4],i[5],
+                i[6],i[7],i[8],j,i[10],
+                i[11],i[12],i[13],i[14],
+                i[15],i[16],i[17],i[18],
+                i[19],i[20],i[21],i[22],
+                i[23]])
         else:
-            valor=algo[i]
-            export.insert(nn,valor)
-            nn = nn + 1
-
-
+            export.append([i[4],i[5],
+                i[6],i[7],i[8],i[9],i[10],
+                i[11],i[12],i[13],i[14],
+                i[15],i[16],i[17],i[18],
+                i[19],i[20],i[21],i[22],
+                i[23]])
+        print(i)
     return json.loads(json.dumps(export).encode('utf-8').decode('ascii'))
 
 def devolverReserva(email):

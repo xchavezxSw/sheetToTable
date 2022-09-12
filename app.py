@@ -94,8 +94,7 @@ def revisar():
                 "CvInglesInf": request.form.get('cvIngInf'),
                 "informeEntIng": request.form.get('infEntIng'),
                 "MotivvoRechazoInf": request.form.get('motivoRechInf'),
-            }
-   
+            }      
     if request.form.get('status')=='True':
         data=revisarAprob(value)
     else:
