@@ -105,12 +105,13 @@ def revisarAprob(values):
     MotivoRechazo= values['MotivvoRechazoInf']
     curDT = datetime.now()
     date_time = curDT.strftime("%m/%d/%Y, %H:%M:%S")
+    eliminar_guiones(EMailCandidato, IdsaEnviar, Email)
     SolicitudInforme.append_row([True,"", IdsaEnviar,"",StatusEnBase,date_time,Email,
     EsSource, EMailCandidato, IdsaEnviar, TecnoCandi, TpCandi, LKCandi, comment,
     CvEspañol, InfoEntrevista, CvIngles, InfoEntrevistaIngles, RemuneracionPretendidaMensual,
     NiveldeIngles,Locacion,
     NombreyApellidodelCandidato, MotivoRechazo])
-    eliminar_guiones(EMailCandidato, IdsaEnviar, Email)
+
     return  
 
 def revisarRechaz(values):
@@ -136,12 +137,12 @@ def revisarRechaz(values):
     MotivoRechazo= values['MotivvoRechazoInf']
     curDT = datetime.now()
     date_time = curDT.strftime("%m/%d/%Y, %H:%M:%S")
+    eliminar_guiones(EMailCandidato, IdsaEnviar, Email)
     SolicitudInforme.append_row([True,"","" ,IdsaEnviar,StatusEnBase,date_time,Email,
     EsSource, EMailCandidato, IdsaEnviar, TecnoCandi, TpCandi, LKCandi, comment,
     CvEspañol, InfoEntrevista, CvIngles, InfoEntrevistaIngles, RemuneracionPretendidaMensual,
     NiveldeIngles,Locacion,
     NombreyApellidodelCandidato, MotivoRechazo])
-    eliminar_guiones(EMailCandidato, IdsaEnviar, Email)
     return  
 
 def jsonReservas():
@@ -236,22 +237,25 @@ def busquedasPrioritarias():
 def eliminar_guiones(candidato,id,sourcer):
     datos=SolicitudInforme.get_all_records()
     n=2
+    splite2=''
     for i in datos:
-        print(i)
         if i['Dirección de correo electrónico']==sourcer \
             and str(id) in str(i['IDs a Enviar a Cliente separados con "_" y sin la palabra "ID" y sin espacios']) \
-            and i['E-Mail Candidato']==candidato:
-            split=i['IDs a Enviar a Cliente separados con "_" y sin la palabra "ID" y sin espacios']
+            and i['E-Mail Candidato']==candidato\
+            and '_' in str(i['IDs a Enviar a Cliente separados con "_" y sin la palabra "ID" y sin espacios']):
+            splite2=i['IDs a Enviar a Cliente separados con "_" y sin la palabra "ID" y sin espacios']
             eliminar=n
+            print("________1")
+            print(splite2)
         n=n+1
-    print(eliminar)
     nuevo=[]
-    print(split)
-    for i in split.split("_"):
-        if i != id:
-            nuevo.append(str(i))
-    print(nuevo)
-    valores='_'.join(nuevo )
-    print(valores)
-    SolicitudInforme.update('j'+str(eliminar),valores )
+    if '_' in str(splite2):
+        for i in splite2.split("_"):
+            if i != id:
+                print("DDDD")
+                print(i)
+                nuevo.append(str(i))
+    if len(nuevo)>1:
+        valores='_'.join(nuevo )
+        SolicitudInforme.update('j'+str(eliminar),valores )
 
