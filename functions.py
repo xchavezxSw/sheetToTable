@@ -110,6 +110,7 @@ def revisarAprob(values):
     CvEspañol, InfoEntrevista, CvIngles, InfoEntrevistaIngles, RemuneracionPretendidaMensual,
     NiveldeIngles,Locacion,
     NombreyApellidodelCandidato, MotivoRechazo])
+    eliminar_guiones(EMailCandidato, IdsaEnviar, Email)
     return  
 
 def revisarRechaz(values):
@@ -140,6 +141,7 @@ def revisarRechaz(values):
     CvEspañol, InfoEntrevista, CvIngles, InfoEntrevistaIngles, RemuneracionPretendidaMensual,
     NiveldeIngles,Locacion,
     NombreyApellidodelCandidato, MotivoRechazo])
+    eliminar_guiones(EMailCandidato, IdsaEnviar, Email)
     return  
 
 def jsonReservas():
@@ -230,4 +232,26 @@ def busquedasPrioritarias():
           if i[0]=='ALTA':
             variable.append({'nube':i[0]+"-"+i[3]+"-"+i[4] })
       return json.loads(json.dumps(variable).encode('utf-8').decode('ascii'))
+
+def eliminar_guiones(candidato,id,sourcer):
+    datos=SolicitudInforme.get_all_records()
+    n=2
+    for i in datos:
+        print(i)
+        if i['Dirección de correo electrónico']==sourcer \
+            and str(id) in str(i['IDs a Enviar a Cliente separados con "_" y sin la palabra "ID" y sin espacios']) \
+            and i['E-Mail Candidato']==candidato:
+            split=i['IDs a Enviar a Cliente separados con "_" y sin la palabra "ID" y sin espacios']
+            eliminar=n
+        n=n+1
+    print(eliminar)
+    nuevo=[]
+    print(split)
+    for i in split.split("_"):
+        if i != id:
+            nuevo.append(str(i))
+    print(nuevo)
+    valores='_'.join(nuevo )
+    print(valores)
+    SolicitudInforme.update('j'+str(eliminar),valores )
 
