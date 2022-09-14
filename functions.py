@@ -34,7 +34,7 @@ def busquedas():
     data=busquedas.get_all_values()
     return json.loads(json.dumps(data).encode('utf-8').decode('ascii'))
 
-def permitido(email):
+def permitidof(email):
     retorno=list(filter(None,map(lambda x:True if x['Email Reclutador User'].lower()==email.lower() else None,UsersList)))
     data=dict()
     if len(retorno)>0:

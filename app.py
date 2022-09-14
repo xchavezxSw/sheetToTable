@@ -117,7 +117,7 @@ def reservaemail():
 def permitido():
     if request.method == 'POST':
         email = request.form.get('email')
-        data = permitido(email)
+        data = permitidof(email)
         if data['permitido']:
             return make_response(jsonify(data), 200)
         else:
