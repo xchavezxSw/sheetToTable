@@ -35,12 +35,12 @@ def busquedas():
     return json.loads(json.dumps(data).encode('utf-8').decode('ascii'))
 
 def permitidof(email):
-    retorno=list(filter(None,map(lambda x:True if x['Email Reclutador User'].lower()==email.lower() else None,UsersList)))
+    retorno=list(filter(None,map(lambda x:True if x[0].lower()==email.lower() else None,UsersList)))
     data=dict()
     if len(retorno)>0:
         if retorno[0]:
             data['permitido']=True
-    retorno = list(filter(None,map(lambda x: True if str(x['Email Reclutador Directo']).lower() == email.lower() else None, DirectosList)))
+    retorno = list(filter(None,map(lambda x: True if str(x[0]).lower() == email.lower() else None, DirectosList)))
     if len(retorno)>0:
         if retorno[0]:
             data['permitido'] = True
