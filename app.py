@@ -1,9 +1,10 @@
 import os
-from flask import Flask
+from flask import Flask,request,current_app, flash, jsonify, make_response, redirect, request, url_for
+
 from functions import *
 app = Flask(__name__)
 import json
-from flask import jsonify,request, make_response
+
 from flask_cors import CORS
 CORS(app)
 
@@ -30,8 +31,11 @@ def insertreserva():
                 "idReserva":request.form.get('idReserva'),
                 "comment":request.form.get('comment')
                 }
-        addReserva(value)
-    return 'ok', 200
+        devuelvo=addReserva(value)
+    if devuelvo=='403':
+        return 'el candidato fue contratado con anterioridad', 403
+    else:
+        return 'ok', 200
 
 @app.route('/solicitudInforme', methods=['GET', 'POST'])
 def solinforme():
@@ -74,6 +78,7 @@ def busquedasPrio():
 
 @app.route('/revisarAprobado', methods=['GET', 'POST']) 
 def revisar():
+    value={  }
     if request.method == 'POST':
         value = {
                 "StatusEnBaseInf": request.form.get('stEnBaseInf'),
@@ -94,7 +99,8 @@ def revisar():
                 "CvInglesInf": request.form.get('cvIngInf'),
                 "informeEntIng": request.form.get('infEntIng'),
                 "MotivvoRechazoInf": request.form.get('motivoRechInf'),
-            }      
+            }
+
     if request.form.get('status')=='True':
         data=revisarAprob(value)
     else:
@@ -107,6 +113,16 @@ def reservaemail():
         email=request.form.get('emailCandidato')
         data=devolverReserva(email)
         return make_response(jsonify(data), 200)
+@app.route('/getPermitido',methods=['GET', 'POST'])
+def permitido():
+    if request.method == 'POST':
+        email = request.form.get('email')
+        data = permitido(email)
+        if data['permitido']:
+            return make_response(jsonify(data), 200)
+        else:
+            return make_response(jsonify(data), 403)
+
 @app.route('/quit')
 def _quit():
     os._exit(0)

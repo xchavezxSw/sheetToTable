@@ -15,7 +15,9 @@ reservas = client.open('[AUT]PedidosReservas').worksheet('PedidosReservas')  # O
 reservado=client.open('[EnProceso]EnConexionReservado').worksheet('EnProcesoEnConexionReservado')
 SolicitudInforme=client.open('Copy of [EnProceso-Semi]PedidosInformes&InfARevisar').worksheet('EnProcesoSemiPedidosInformesyInfARevisar')
 busquedasAbiertas=client.open('Maestro').worksheet('Busquedas')
-
+UsersList=client.open('[Gestion]Accesos').worksheet('UsersList').get_all_records()
+DirectosList=client.open('[Gestion]Accesos').worksheet('DirectosList').get_all_records()
+contratados=client.open('[FueraDeProceso]Contratados').worksheet('FueraDeProcesoContratados').get_all_records()
 def jsonsheet():
     client = gspread.authorize(credentials)
     sheet4 = client.open('[EnProceso]EnCliente').worksheet('EnProcesoEnCliente')  # Open the spreadsheet
@@ -32,12 +34,30 @@ def busquedas():
     data=busquedas.get_all_values()
     return json.loads(json.dumps(data).encode('utf-8').decode('ascii'))
 
+def permitido(email):
+    retorno=list(filter(None,map(lambda x:True if x['Email Reclutador User'].lower()==email.lower() else None,UsersList)))
+    data=dict()
+    if len(retorno)>0:
+        if retorno[0]:
+            data['permitido']=True
+    retorno = list(filter(None,map(lambda x: True if str(x['Email Reclutador Directo']).lower() == email.lower() else None, DirectosList)))
+    if len(retorno)>0:
+        if retorno[0]:
+            data['permitido'] = True
+    if len(data)==0:
+        data['permitido']=False
+    return data
 
 def addReserva(values):
  data=reservado.get_all_records()#obtenemos los registros del excel
  try:
     email=values['emailCandidato']
     newDict = list(filter(lambda elem: elem['Email Candidato'] if str(elem['Email Candidato']).lower()==str(email).lower() else None, data))[0]
+    contratado=list(filter(
+        lambda elem: elem['Email Address'] if str(elem['Email Address']).lower() == str(email).lower() else None,
+        contratados))[0]
+    if contratado != '' or contratado is not None:
+        return '403'
     modificarReservar(values)
  except Exception as e:
     print(e)
@@ -54,6 +74,7 @@ def addReserva(values):
     tperfil=tipoPerfil
     idReserva=values['idReserva']
     comment=values['comment']
+
     reservas.append_row([date_time,email,emailCandidato,naCandi,lkCandi,tcandi,tperfil,idReserva,comment])
 
 def addInforme(values):
@@ -245,8 +266,8 @@ def eliminar_guiones(candidato,id,sourcer):
             and '_' in str(i['IDs a Enviar a Cliente separados con "_" y sin la palabra "ID" y sin espacios']):
             splite2=i['IDs a Enviar a Cliente separados con "_" y sin la palabra "ID" y sin espacios']
             eliminar=n
-            print("________1")
-            print(splite2)
+
+
         n=n+1
     nuevo=[]
     if '_' in str(splite2):
