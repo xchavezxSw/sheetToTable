@@ -48,7 +48,7 @@ motivo,status,ComentariosAdicionales,FECHA    ) VALUES (0, '"+values['email']+"'
                                                             "'', " \
                                                             "'1', " \
                                                             "'"+values['comment']+"', " \
-                                                            "'"+datetime.date.today()+"' )"
+                                                            "'"+datetime.date.today().strftime("%m/%d/%Y, %H:%M:%S")+"' )"
 
         a.execute(sql)
         conexion.commit()
