@@ -75,6 +75,7 @@ def addReserva(values):
     tperfil=tipoPerfil
     idReserva=values['idReserva']
     comment=values['comment']
+
     reservas.append_row([date_time,email,emailCandidato,naCandi,lkCandi,tcandi,tperfil,idReserva,comment])
 
 def addInforme(values):
