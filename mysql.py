@@ -14,14 +14,18 @@ def encliente():
 
 
 def reservados():
-    try:
+
         a = conexion.cursor()
         consulta = "select * from reserva;"
         a.execute(consulta)
-        result = a.fetchall()
-        return json.loads(json.dumps(result).encode('utf-8').decode('ascii'))
-    except:
-        print("falle")
+        row_headers = [x[0] for x in a.description]  # this will extract row headers
+        results = a.fetchall()
+        json_data = []
+        for result in results:
+            json_data.append(dict(zip(row_headers, result)))
+
+        return json_data
+
 def contratados():
     try:
         a = conexion.cursor()
