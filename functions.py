@@ -15,9 +15,9 @@ reservas = client.open('[AUT]PedidosReservas').worksheet('PedidosReservas')  # O
 reservado=client.open('[EnProceso]EnConexionReservado').worksheet('EnProcesoEnConexionReservado')
 SolicitudInforme=client.open('Copy of [EnProceso-Semi]PedidosInformes&InfARevisar').worksheet('EnProcesoSemiPedidosInformesyInfARevisar')
 busquedasAbiertas=client.open('Maestro').worksheet('Busquedas')
-UsersList=client.open('[Gestion]Accesos').worksheet('UsersList').get_all_records()
-DirectosList=client.open('[Gestion]Accesos').worksheet('DirectosList').get_all_records()
-contratados=client.open('[FueraDeProceso]Contratados').worksheet('FueraDeProcesoContratados').get_all_records()
+UsersList=client.open('[Gestion]Accesos').worksheet('UsersList').get_all_values()
+DirectosList=client.open('[Gestion]Accesos').worksheet('DirectosList').get_all_values()
+contratados=client.open('[FueraDeProceso]Contratados').worksheet('FueraDeProcesoContratados').get_all_values()
 
 def jsonsheet():
     client = gspread.authorize(credentials)
