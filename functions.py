@@ -5,7 +5,6 @@ from oauth2client.service_account import ServiceAccountCredentials
 import json
 import threading
 import pandas as pd
-from datetime import date
 from mysql import *
 scope = ["https://spreadsheets.google.com/feeds", 'https://www.googleapis.com/auth/spreadsheets',
              "https://www.googleapis.com/auth/drive.file", "https://www.googleapis.com/auth/drive"]
@@ -75,7 +74,7 @@ def addReserva(values):
     tperfil=tipoPerfil
     idReserva=values['idReserva']
     comment=values['comment']
-
+    insertreserva(values)
     reservas.append_row([date_time,email,emailCandidato,naCandi,lkCandi,tcandi,tperfil,idReserva,comment])
 
 def addInforme(values):
@@ -104,7 +103,7 @@ def addInforme(values):
          CvEspañol, InfoEntrevista, CvIngles, InfoEntrevistaIngles, RemuneracionPretendidaMensual,
          NiveldeIngles,Locacion[0],
          NombreyApellidodelCandidato, ""])
-        insertreserva(values)
+
 def revisarAprob(values):
     StatusEnBase= values['StatusEnBaseInf']
     EsSource=values['EsSourceInf']
