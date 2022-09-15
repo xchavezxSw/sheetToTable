@@ -179,7 +179,7 @@ def InformeRechazados():
     sheet4 = client.open('[FueraDeProceso]InformeRechazado').worksheet('FueraDeProcesoInformeRechazado')  # Open the spreadsheet
     data=sheet4.get_all_values()
     return json.loads(json.dumps(data).encode('utf-8').decode('ascii'))
-
+InformeRechazados()
 def getInformesArevisar():
     algo=[]
     data=SolicitudInforme.get_all_values()
