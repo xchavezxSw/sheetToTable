@@ -75,7 +75,7 @@ def addReserva(values):
     idReserva=values['idReserva']
     comment=values['comment']
     insertreserva(values)
-    reservas.append_row([date_time,email,emailCandidato,naCandi,lkCandi,tcandi,tperfil,idReserva,comment])
+    #reservas.append_row([date_time,email,emailCandidato,naCandi,lkCandi,tcandi,tperfil,idReserva,comment])
 
 def addInforme(values):
         EsSource=values['EsSourceInf']
