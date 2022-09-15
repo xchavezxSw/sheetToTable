@@ -38,7 +38,7 @@ EmailAddres,emailcandidato, \
 nombreyapellidodelcandidato, \
 idreserva,Linkedin, \
 tecnologiasquesabeelcandidato,tipodeperfildelcandidato, \
-motivo,status,ComentariosAdicionales,FECHA    ) VALUES (%i, %s, %s, %i, %s, %s, %s, %s, %s, %s, %s, %d )"
+motivo,status,ComentariosAdicionales,FECHA    ) VALUES (%i, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %d )"
         a.execute(sql, (0,
                         values['email'],
                         values['emailCandidato'],
