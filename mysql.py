@@ -22,7 +22,7 @@ def reservados():
         results = a.fetchall()
         json_data = []
         for result in results:
-            json_data.append(dict(zip(row_headers, str(result))))
+            json_data.append(dict(zip(row_headers, result)))
 
         return json_data
 
