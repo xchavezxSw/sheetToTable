@@ -39,7 +39,7 @@ nombreyapellidodelcandidato, \
 idreserva,Linkedin, \
 tecnologiasquesabeelcandidato,tipodeperfildelcandidato, \
 motivo,status,ComentariosAdicionales,FECHA    ) VALUES (%i, %s, %s, %i, %s, %s, %s, %s, %s, %s, %s, %d )"
-        a.execute(sql, (None,
+        a.execute(sql, (0,
                         values['email'],
                         values['emailCandidato'],
                         values['naCandi'],
