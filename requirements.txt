@@ -4,3 +4,4 @@ oauth2client
 flask
 flask_cors
 pandas
+pymysql

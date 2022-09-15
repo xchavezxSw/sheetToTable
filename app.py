@@ -1,6 +1,6 @@
 import os
 from flask import Flask,request,current_app, flash, jsonify, make_response, redirect, request, url_for
-
+from mysql import *
 from functions import *
 app = Flask(__name__)
 import json
@@ -141,3 +141,18 @@ def modreserva():
                 }
         modificarReservar(value)
     return 'ok', 200
+"""conexion a mysq"""
+@app.route('/getCliente')
+def getencliente():
+    data=encliente()
+    return make_response(jsonify(data), 200)
+
+@app.route('/getReservados')
+def getreservados():
+    data=reservados()
+    return make_response(jsonify(data), 200)
+
+@app.route('/getContratados')
+def getcontratados():
+    data=contratados()
+    return make_response(jsonify(data), 200)
