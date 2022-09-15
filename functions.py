@@ -62,7 +62,7 @@ def addReserva(values):
  except Exception as e:
     print(e)
     newDict={"datos":"vacio"}
-    curDT = datetime.now()
+    curDT = datetime.datetime.now()
     date_time = curDT.strftime("%m/%d/%Y, %H:%M:%S")
     email=values['email']
     emailCandidato=str(values['emailCandidato']).lower()
@@ -96,7 +96,7 @@ def addInforme(values):
         InfoEntrevista= values['informeEntEsp']
         CvIngles= ""#values['CvInglesInf']
         InfoEntrevistaIngles= values['informeEntIng']
-        curDT = datetime.now()
+        curDT = datetime.datetime.now()
         date_time = curDT.strftime("%m/%d/%Y, %H:%M:%S")
         SolicitudInforme.append_row([False,"", "","","",date_time,Email,
          EsSource, EMailCandidato, IdsaEnviar, TecnoCandi, TpCandi, LKCandi, comment,
@@ -125,7 +125,7 @@ def revisarAprob(values):
     CvIngles= ""#values['CvInglesInf']
     InfoEntrevistaIngles= values['informeEntIng']
     MotivoRechazo= values['MotivvoRechazoInf']
-    curDT = datetime.now()
+    curDT = datetime.datetime.now()
     date_time = curDT.strftime("%m/%d/%Y, %H:%M:%S")
     eliminar_guiones(EMailCandidato, IdsaEnviar, Email)
     SolicitudInforme.append_row([True,"", IdsaEnviar,"",StatusEnBase,date_time,Email,
@@ -157,7 +157,7 @@ def revisarRechaz(values):
     CvIngles= ""#values['CvInglesInf']
     InfoEntrevistaIngles= values['informeEntIng']
     MotivoRechazo= values['MotivvoRechazoInf']
-    curDT = datetime.now()
+    curDT = datetime.datetime.now()
     date_time = curDT.strftime("%m/%d/%Y, %H:%M:%S")
     eliminar_guiones(EMailCandidato, IdsaEnviar, Email)
     SolicitudInforme.append_row([True,"","" ,IdsaEnviar,StatusEnBase,date_time,Email,
@@ -241,7 +241,7 @@ def modificarReservar(values):
     tperfil = tipoPerfil
     idReserva = values['idReserva']
     comment = values['comment']
-    curDT = datetime.now()
+    curDT = datetime.datetime.now()
     date_time = curDT.strftime("%m/%d/%Y, %H:%M:%S")
     reservado.delete_row(row)
     reservado.insert_row([date_time, email, emailCandidato, naCandi, lkCandi, tcandi, tperfil, idReserva, comment],
