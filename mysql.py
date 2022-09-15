@@ -57,3 +57,4 @@ motivo,status,ComentariosAdicionales,FECHA    ) VALUES (%i, %s, %s, %i, %s, %s, 
         return json.loads(json.dumps(result).encode('utf-8').decode('ascii'))
     except:
         print("falle")
+contratados()

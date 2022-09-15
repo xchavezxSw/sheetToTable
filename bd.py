@@ -1,5 +1,4 @@
 import pymysql as dd
-print(dir(dd))
 conexion= dd.Connect(
     host="127.0.0.1",
     user="root",
