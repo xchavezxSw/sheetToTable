@@ -39,6 +39,18 @@ nombreyapellidodelcandidato, \
 idreserva,Linkedin, \
 tecnologiasquesabeelcandidato,tipodeperfildelcandidato, \
 motivo,status,ComentariosAdicionales,FECHA    ) VALUES (%i, %s, %s, %s, %i, %s, %s, %s, %s, %s, %s, %d )"
+        print(sql,(0,
+                        values['email'],
+                        values['emailCandidato'],
+                        values['naCandi'],
+                        int(values['idReserva']),values['lkCandi'],
+                        ",".join(values['tcandi']),
+                        ",".join(values['tperfil']),
+                        None,
+                        '1',
+                         values['comment'],
+                        datetime.date.today()
+                        ))
         a.execute(sql, (0,
                         values['email'],
                         values['emailCandidato'],
