@@ -40,15 +40,15 @@ idreserva,Linkedin, \
 tecnologiasquesabeelcandidato,tipodeperfildelcandidato, \
 motivo,status,ComentariosAdicionales,FECHA    ) VALUES (%i, %s, %s, %i, %s, %s, %s, %s, %s, %s, %s, %d )"
         a.execute(sql, (None,
-                        values['EmailInf'],
-                        values['EMailCandidatoInf'],
-                        values['NombreyApellidodelCandidatoInf'],
-                        values['IdsaEnviarInf'],values['LKCandiInf'],
-                        ",".join(values['TecnoCandiInf']),
-                        ",".join(values['TpCandiInf']),
+                        values['email'],
+                        values['emailCandidato'],
+                        values['naCandi'],
+                        values['idReserva'],values['lkCandi'],
+                        ",".join(values['tcandi']),
+                        ",".join(values['tperfil']),
                         None,
                         '1',
-                         values['CommentInf'],
+                         values['comment'],
                         datetime.date.today()
                         ))
         conexion.commit()
