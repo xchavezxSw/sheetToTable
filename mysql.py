@@ -32,7 +32,6 @@ def contratados():
     except:
         print("falle")
 def insertreserva(values):
-    try:
         a = conexion.cursor()
         sql = "INSERT INTO `reserva` ( id, \
 EmailAddres,emailcandidato, \
@@ -55,6 +54,3 @@ motivo,status,ComentariosAdicionales,FECHA    ) VALUES (%i, %s, %s, %i, %s, %s, 
         conexion.commit()
         result='ok'
         return json.loads(json.dumps(result).encode('utf-8').decode('ascii'))
-    except:
-        print("falle")
-contratados()
