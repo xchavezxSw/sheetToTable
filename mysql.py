@@ -38,12 +38,12 @@ EmailAddres,emailcandidato, \
 nombreyapellidodelcandidato, \
 idreserva,Linkedin, \
 tecnologiasquesabeelcandidato,tipodeperfildelcandidato, \
-motivo,status,ComentariosAdicionales,FECHA    ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %d )"
+motivo,status,ComentariosAdicionales,FECHA    ) VALUES (%i, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %d )"
         a.execute(sql, (0,
                         values['email'],
                         values['emailCandidato'],
                         values['naCandi'],
-                        values['idReserva'],values['lkCandi'],
+                        int(values['idReserva']),values['lkCandi'],
                         ",".join(values['tcandi']),
                         ",".join(values['tperfil']),
                         None,
