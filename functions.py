@@ -260,12 +260,12 @@ def modificarReservar(values):
     if len(values['TecnoCandiInf']) > 1:
         tecnologias = ",".join(values['TecnoCandiInf'])
     else:
-        tecnologias = values['TecnoCandiInf']
+        tecnologias = values['TecnoCandiInf'][0]
     tcandi = tecnologias
     if len(values['TpCandiInf']) > 1:
         tipoPerfil = ",".join(values['TpCandiInf'])
     else:
-        tipoPerfil = values['TpCandiInf']
+        tipoPerfil = values['TpCandiInf'][0]
     tperfil = tipoPerfil
     idReserva = values['idReserva']
     comment = values['comment']
