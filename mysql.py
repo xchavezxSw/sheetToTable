@@ -164,6 +164,7 @@ def insertEstado11(emailCandi,idSt,emailSt,statusSt,salarioMensualAcordadoSt,fec
                                         '" + fechaIngresoSt + "');"
     a.execute(sql)
     conexion.commit()
+    insertEstado(emailCandi,idSt,emailSt,statusSt)
     result = 'ok'
     return json.loads(json.dumps(result).encode('utf-8').decode('ascii'))
 
