@@ -155,7 +155,7 @@ def insertEstado11(emailCandi,idSt,emailSt,statusSt,salarioMensualAcordadoSt,fec
                                         salario, \
                                         Comentarios, \
                                         FECHAcontratado ) VALUES ( \
-                                        '',  \
+                                        0,  \
                                          '" +emailSt + "',  \
                                          '" + emailCandi + "',  \
                                         '" + idSt+ "', \
