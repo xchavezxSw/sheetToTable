@@ -6,6 +6,7 @@ import json
 import threading
 import pandas as pd
 from mysql import *
+
 scope = ["https://spreadsheets.google.com/feeds", 'https://www.googleapis.com/auth/spreadsheets',
              "https://www.googleapis.com/auth/drive.file", "https://www.googleapis.com/auth/drive"]
 credentials = ServiceAccountCredentials.from_json_keyfile_name('ultimo.json', scope)
@@ -90,7 +91,10 @@ def addInforme(values):
         print(values['TecnoCandiInf'])
         tecnologias = ",".join(values['TecnoCandiInf'])
         TecnoCandi = tecnologias
-        tipoPerfil = ",".join(values['TpCandiInf'])
+        if len(values['TpCandiInf'])>1:
+            tipoPerfil = ",".join(values['TpCandiInf'])
+        else:
+            tipoPerfil=values['TpCandiInf']
         TpCandi = tipoPerfil
         comment = values['CommentInf']
         CvEspañol= ""#values['CvEspanolInf']
@@ -99,6 +103,7 @@ def addInforme(values):
         InfoEntrevistaIngles= values['informeEntIng']
         curDT = datetime.datetime.now()
         date_time = curDT.strftime("%m/%d/%Y, %H:%M:%S")
+        print(TecnoCandi)
         SolicitudInforme.append_row([False,"", "","","",date_time,Email,
          EsSource, EMailCandidato, IdsaEnviar, TecnoCandi, TpCandi, LKCandi, comment,
          CvEspañol, InfoEntrevista, CvIngles, InfoEntrevistaIngles, RemuneracionPretendidaMensual,
@@ -294,4 +299,3 @@ def eliminar_guiones(candidato,id,sourcer):
     if len(nuevo)>1:
         valores='_'.join(nuevo )
         SolicitudInforme.update('j'+str(eliminar),valores )
-
