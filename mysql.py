@@ -3,6 +3,8 @@ import datetime
 from bd import conexion
 import json
 def status(id):
+    if id=="1":
+        return 'Reservado'
     if id=="2":
         return 'En Cliente'
     if id == "1":
