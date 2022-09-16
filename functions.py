@@ -91,12 +91,12 @@ def addInforme(values):
         if len(values['TecnoCandiInf']) > 1:
             tecnologias = ",".join(values['TecnoCandiInf'])
         else:
-            tecnologias = values['TecnoCandiInf']
+            tecnologias = values['TecnoCandiInf'][0]
         TecnoCandi = tecnologias
         if len(values['TpCandiInf'])>1:
             tipoPerfil = ",".join(values['TpCandiInf'])
         else:
-            tipoPerfil=values['TpCandiInf']
+            tipoPerfil=values['TpCandiInf'][0]
         TpCandi = tipoPerfil
         comment = values['CommentInf']
         CvEspañol= ""#values['CvEspanolInf']
@@ -105,7 +105,6 @@ def addInforme(values):
         InfoEntrevistaIngles= values['informeEntIng']
         curDT = datetime.datetime.now()
         date_time = curDT.strftime("%m/%d/%Y, %H:%M:%S")
-        print(TecnoCandi)
         SolicitudInforme.append_row([False,"", "","","",date_time,Email,
          EsSource, EMailCandidato, IdsaEnviar, TecnoCandi, TpCandi, LKCandi, comment,
          CvEspañol, InfoEntrevista, CvIngles, InfoEntrevistaIngles, RemuneracionPretendidaMensual,
