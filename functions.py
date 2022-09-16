@@ -91,12 +91,14 @@ def addInforme(values):
         if len(values['TecnoCandiInf']) > 1:
             tecnologias = ",".join(values['TecnoCandiInf'])
         else:
-            tecnologias = values['TecnoCandiInf'][0]
+            if len(values['TecnoCandiInf'])==1:
+                tecnologias = values['TecnoCandiInf'][0]
         TecnoCandi = tecnologias
         if len(values['TpCandiInf'])>1:
             tipoPerfil = ",".join(values['TpCandiInf'])
         else:
-            tipoPerfil=values['TpCandiInf'][0]
+            if len(values['TpCandiInf']) == 1:
+                tipoPerfil=values['TpCandiInf'][0]
         TpCandi = tipoPerfil
         comment = values['CommentInf']
         CvEspañol= ""#values['CvEspanolInf']
