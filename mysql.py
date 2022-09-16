@@ -32,7 +32,7 @@ def reservados():
        # json_data.append(row_headers)
         for result in results:
             json_data.append( [result[0],result[1],result[2],result[3],result[4],result[5],
-                                                    result[6],result[7],result[8],result[9],result[10],str(result[11])])
+                                                    result[6],result[7],status(str(result[8])),result[9],result[10],str(result[11])])
         return json.loads(json.dumps(json_data).encode('utf-8').decode('ascii'))
 
 def contratados():
