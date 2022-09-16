@@ -158,4 +158,3 @@ def getcontratados():
     print(data)
     return make_response(jsonify(data), 200)
 
-getcontratados()
