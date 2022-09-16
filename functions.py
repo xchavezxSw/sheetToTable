@@ -18,7 +18,7 @@ busquedasAbiertas=client.open('Maestro').worksheet('Busquedas')
 UsersList=client.open('[Gestion]Accesos').worksheet('UsersList').get_all_values()
 DirectosList=client.open('[Gestion]Accesos').worksheet('DirectosList').get_all_values()
 contratados=client.open('[FueraDeProceso]Contratados').worksheet('FueraDeProcesoContratados').get_all_values()
-cambios=client.open('[AUT]PedidosCambios').worksheet('AUTPedidosCambios')
+#cambios=client.open('[AUT]PedidosCambios').worksheet('AUTPedidosCambios')
 
 def jsonsheet():
     client = gspread.authorize(credentials)
