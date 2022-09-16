@@ -77,6 +77,7 @@ def insertCliente(values):
                                      '"+values['EMailCandidatoInf']+"',  \
                                      '" + values['IdsaEnviarInf'] + "',  \
                                         '2',  \
+                                    '" + values['lkCandiInf'] + "',  \
                                         '',  \
                                         '',  \
                                         '',  \
