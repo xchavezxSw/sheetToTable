@@ -171,7 +171,7 @@ def cambioEstado():
     if request.method == 'POST':
         emailCandi = request.form.get('emailCandidatoSt')
         idSt = request.form.get('idSt')
-        emailSt = request.form.get('emailCandidatoSt')
+        emailSt = request.form.get('emailSt')
         statusSt = request.form.get('statusSt')
         data=insertEstado(emailCandi,idSt,emailSt,statusSt)
         return make_response(jsonify(None), 200)
