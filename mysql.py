@@ -73,7 +73,7 @@ def insertCliente(values):
                                     Inf2Ingles, \
                                     ComentariosInforme, \
                                     FECHA    ) VALUES ( \
-                                    '"+values['email']+"',  \
+                                    '"+values['EmailInf']+"',  \
                                      '"+values['EMailCandidatoInf']+"',  \
                                      '" + values['IdsaEnviarInf'] + "',  \
                                         '2',  \
