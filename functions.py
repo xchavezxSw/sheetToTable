@@ -153,6 +153,7 @@ def revisarRechaz(values):
     NiveldeIngles="".join(values["NiveldeInglesInf"])
     Locacion=values["LocacionInf"]
     LKCandi = values['LKCandiInf']
+    print(values['TecnoCandiInf'])
     tecnologias = "".join(values['TecnoCandiInf'])
     TecnoCandi = tecnologias
     tipoPerfil = "".join(values['TpCandiInf'])
@@ -191,7 +192,8 @@ def InformeRechazados():
     sheet4 = client.open('[FueraDeProceso]InformeRechazado').worksheet('FueraDeProcesoInformeRechazado')  # Open the spreadsheet
     data=sheet4.get_all_values()
     return json.loads(json.dumps(data).encode('utf-8').decode('ascii'))
-InformeRechazados()
+
+
 def getInformesArevisar():
     algo=[]
     data=SolicitudInforme.get_all_values()
