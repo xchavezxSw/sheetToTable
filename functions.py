@@ -88,8 +88,10 @@ def addInforme(values):
         NiveldeIngles="".join(values["NiveldeInglesInf"])
         Locacion=values["LocacionInf"]
         LKCandi = values['LKCandiInf']
-        print(values['TecnoCandiInf'])
-        tecnologias = ",".join(values['TecnoCandiInf'])
+        if len(values['TecnoCandiInf']) > 1:
+            tecnologias = ",".join(values['TecnoCandiInf'])
+        else:
+            tecnologias = values['TecnoCandiInf']
         TecnoCandi = tecnologias
         if len(values['TpCandiInf'])>1:
             tipoPerfil = ",".join(values['TpCandiInf'])
@@ -254,9 +256,15 @@ def modificarReservar(values):
     emailCandidato = str(values['emailCandidato']).lower()
     naCandi = values['naCandi']
     lkCandi = values['lkCandi']
-    tecnologias = ",".join(values['tcandi'])
+    if len(values['TecnoCandiInf']) > 1:
+        tecnologias = ",".join(values['TecnoCandiInf'])
+    else:
+        tecnologias = values['TecnoCandiInf']
     tcandi = tecnologias
-    tipoPerfil = ",".join(values['tperfil'])
+    if len(values['TpCandiInf']) > 1:
+        tipoPerfil = ",".join(values['TpCandiInf'])
+    else:
+        tipoPerfil = values['TpCandiInf']
     tperfil = tipoPerfil
     idReserva = values['idReserva']
     comment = values['comment']
