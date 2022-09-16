@@ -155,7 +155,4 @@ def getreservados():
 @app.route('/getContratados')
 def getcontratados():
     data=contratados()
-    if len(data)>0:
-        return make_response(jsonify(data), 200)
-    else:
-        return make_response(jsonify('ok'), 200)
+    return make_response(jsonify(data), 200)
