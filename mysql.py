@@ -58,3 +58,33 @@ motivo,status,ComentariosAdicionales,FECHA    ) VALUES (0, '"+values['email']+"'
         conexion.commit()
         result='ok'
         return json.loads(json.dumps(result).encode('utf-8').decode('ascii'))
+
+
+def insertCliente(values):
+    a = conexion.cursor()
+    sql = "INSERT INTO `cliente` ( EmailAddres, \
+                                   emailcandidato, \
+                                    idBusqueda, \
+                                    idstatus, \
+                                    Linkedin, \
+                                    CV1Español, \
+                                    CV2Ingles, \
+                                    Inf1Español, \
+                                    Inf2Ingles, \
+                                    ComentariosInforme, \
+                                    FECHA    ) VALUES ( \
+                                    '"+values['email']+"',  \
+                                     '"+values['EMailCandidatoInf']+"',  \
+                                     '" + values['IdsaEnviarInf'] + "',  \
+                                        '2',  \
+                                        '',  \
+                                        '',  \
+                                        '',  \
+                                        '',  \
+                                        '" + values['CommentInf'] + "',  \
+                                        curdate()); "
+
+    a.execute(sql)
+    conexion.commit()
+    result = 'ok'
+    return json.loads(json.dumps(result).encode('utf-8').decode('ascii'))

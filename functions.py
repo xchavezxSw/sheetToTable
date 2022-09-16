@@ -147,6 +147,7 @@ def revisarAprob(values):
     CvEspañol, InfoEntrevista, CvIngles, InfoEntrevistaIngles, RemuneracionPretendidaMensual,
     NiveldeIngles,Locacion,
     NombreyApellidodelCandidato, MotivoRechazo])
+    insertCliente(values)
 
     return  'ok'
 
