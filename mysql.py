@@ -159,7 +159,7 @@ def insertEstado11(emailCandi,idSt,emailSt,statusSt,salarioMensualAcordadoSt,fec
                                          '" +emailSt + "',  \
                                          '" + emailCandi + "',  \
                                         '" + idSt+ "', \
-                                        " + float(salarioMensualAcordadoSt) + ",  \
+                                        " + str(float(salarioMensualAcordadoSt)) + ",  \
                                         '" + comentariosSt + "',  \
                                         '" + fechaIngresoSt + "');"
     a.execute(sql)
