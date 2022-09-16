@@ -149,7 +149,7 @@ def insertEstado(emailCandi,idSt,emailSt,statusSt):
     return json.loads(json.dumps(result).encode('utf-8').decode('ascii'))
 def insertEstado11(emailCandi,idSt,emailSt,statusSt,salarioMensualAcordadoSt,fechaIngresoSt,comentariosSt):
     a = conexion.cursor()
-    sql = "INSERT INTO `cliente` ( id,EmailAddres, \
+    sql = "INSERT INTO `contratados` ( id,EmailAddres, \
                                        emailcandidato, \
                                         idBusqueda, \
                                         salario, \
