@@ -59,7 +59,7 @@ def contratadosFun():
         results = a.fetchall()
         json_data = []
         for result in results:
-            json_data.append([result[0], result[1], result[2], result[3], str(result[4]), result[5]
+            json_data.append([result[0], result[1], result[2], result[3], str(result[4]), result[5], result[6]
                               ])
         return json.loads(json.dumps(json_data).encode('utf-8').decode('ascii'))
 
