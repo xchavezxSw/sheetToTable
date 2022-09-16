@@ -120,7 +120,7 @@ def devolvercambiostado(emailCandi,id):
 
 def insertEstado(emailCandi,idSt,emailSt,statusSt):
     a = conexion.cursor()
-    sql = "update cliente set status='"+statusSt+"' " \
+    sql = "update cliente set idstatus='"+statusSt+"' " \
           "where emailcandidato='"+emailCandi+"' " \
           " and idBusqueda='"+idSt+"' " \
           " and EmailAddres='"+emailSt+"'"
