@@ -75,7 +75,7 @@ def addReserva(values):
     idReserva=values['idReserva']
     comment=values['comment']
     insertreserva(values)
-    #reservas.append_row([date_time,email,emailCandidato,naCandi,lkCandi,tcandi,tperfil,idReserva,comment])
+    reservas.append_row([date_time,email,emailCandidato,naCandi,lkCandi,tcandi,tperfil,idReserva,comment])
 
 def addInforme(values):
         EsSource=values['EsSourceInf']
@@ -134,7 +134,7 @@ def revisarAprob(values):
     NiveldeIngles,Locacion,
     NombreyApellidodelCandidato, MotivoRechazo])
 
-    return  
+    return  'ok'
 
 def revisarRechaz(values):
     StatusEnBase= values['StatusEnBaseInf']
@@ -165,7 +165,7 @@ def revisarRechaz(values):
     CvEspañol, InfoEntrevista, CvIngles, InfoEntrevistaIngles, RemuneracionPretendidaMensual,
     NiveldeIngles,Locacion,
     NombreyApellidodelCandidato, MotivoRechazo])
-    return  
+    return  'Ok'
 
 def jsonReservas():
     data=reservado.get_all_records()
