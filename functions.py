@@ -87,6 +87,7 @@ def addInforme(values):
         NiveldeIngles="".join(values["NiveldeInglesInf"])
         Locacion=values["LocacionInf"]
         LKCandi = values['LKCandiInf']
+        print(values['TecnoCandiInf'])
         tecnologias = ",".join(values['TecnoCandiInf'])
         TecnoCandi = tecnologias
         tipoPerfil = ",".join(values['TpCandiInf'])
@@ -153,7 +154,6 @@ def revisarRechaz(values):
     NiveldeIngles="".join(values["NiveldeInglesInf"])
     Locacion=values["LocacionInf"]
     LKCandi = values['LKCandiInf']
-    print(values['TecnoCandiInf'])
     tecnologias = "".join(values['TecnoCandiInf'])
     TecnoCandi = tecnologias
     tipoPerfil = "".join(values['TpCandiInf'])
