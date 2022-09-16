@@ -58,7 +58,6 @@ def contratadosFun():
         a.execute(consulta)
         results = a.fetchall()
         json_data = []
-        print(results)
         for result in results:
             json_data.append([result[0], result[1], result[2], result[3], result[4], result[5]
                               ])
