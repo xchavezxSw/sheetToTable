@@ -7,8 +7,26 @@ def status(id):
         return 'En Cliente'
     if id == "1":
         return 'Reservado'
-
-
+    if id == "4":
+        return 'Entrevista Con Cliente (no técnica)'
+    if id=="4" :
+        return  'Entrevista Con Cliente (no técnica)'
+    if id=="5" :
+        return  'Entrevista Técnica'
+    if id=="6" :
+        return  'Ejercicio Técnico'
+    if id=="7" :
+        return  'Trámites Ingreso'
+    if id=="8" :
+        return  'Oferta'
+    if id=="9" :
+        return  'On Hold '
+    if id=="10" :
+        return  'Pre-Offer '
+    if id=="11" :
+        return  'Ingreso'
+    if id=="12" :
+        return  'Fuera de proceso'
 def encliente():
 
             a=conexion.cursor()
