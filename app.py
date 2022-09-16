@@ -176,12 +176,19 @@ def cambioEstado():
         salarioMensualAcordadoSt=request.form.get('salarioMensualAcordadoSt')
         fechaIngresoSt=request.form.get('fechaIngresoSt')
         comentariosSt=request.form.get('comentariosSt')
+        salarioMensualOfrecidoClienteSt=request.form.get('salarioMensualOfrecidoClienteSt')
+        salarioMensualPretendidoSt=request.form.get('salarioMensualPretendidoSt')
+        motivoFinCandi=request.form.get('motivoFinCandi')
+        motivoFinCliente=request.form.get('motivoFinCliente')
         if statusSt not in [ '11','12']:
             data=insertEstado(emailCandi,idSt,emailSt,statusSt)
         if statusSt == '11':
             data=insertEstado11(emailCandi,idSt,emailSt,statusSt,salarioMensualAcordadoSt,fechaIngresoSt,comentariosSt)
         if statusSt == '12':
-            data=insertEstado12(emailCandi,idSt,emailSt,statusSt)
+            data=insertEstado12(emailCandi,idSt,emailSt,statusSt,salarioMensualOfrecidoClienteSt,salarioMensualPretendidoSt,motivoFinCandi,motivoFinCliente)
+
+
+
         return make_response(jsonify(None), 200)
 
 
