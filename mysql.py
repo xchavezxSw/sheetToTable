@@ -104,7 +104,12 @@ def insertCliente(values):
 
 def devolvercambiostado(emailCandi,id):
         a = conexion.cursor()
-        consulta = "select * from cliente where emailcandidato='"+emailCandi+"' and idBusqueda="+id+";"
+        where=' 1=1 '
+        if emailCandi is None or emailCandi != '':
+            where=where+" and emailcandidato='"+emailCandi+"'"
+        if id is None or id != '':
+           where=" and idBusqueda = "+id+""
+        consulta = "select * from cliente where "+where +";"
         a.execute(consulta)
         results = a.fetchall()
         json_data = []

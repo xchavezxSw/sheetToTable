@@ -161,7 +161,7 @@ def getcontratados():
 @app.route('/getCambioEstado',methods=['GET', 'POST'])
 def getcambiostatus():
     if request.method == 'POST':
-        emailCandi=request.form.get('emailCandidatoSt')
+        emailCandi=request.form.get('3')
         id = request.form.get('idSt')
         data=devolvercambiostado(emailCandi, id)
         return make_response(jsonify(data), 200)
