@@ -118,3 +118,14 @@ def devolvercambiostado(emailCandi,id):
                               result[6], result[7], result[8], result[9], result[10], str(result[11])])
         return json.loads(json.dumps(json_data).encode('utf-8').decode('ascii'))
 
+def insertEstado(emailCandi,idSt,emailSt,statusSt):
+    a = conexion.cursor()
+    sql = "update cliente set status='"+statusSt+"' " \
+          "where emailcandidato='"+emailCandi+"' " \
+          " and idBusqueda='"+idSt+"' " \
+          " and EmailAddres='"+emailSt+"'"
+
+    a.execute(sql)
+    conexion.commit()
+    result = 'ok'
+    return json.loads(json.dumps(result).encode('utf-8').decode('ascii'))
