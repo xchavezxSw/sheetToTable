@@ -155,4 +155,5 @@ def getreservados():
 @app.route('/getContratados')
 def getcontratados():
     data=contratados()
+    print(data)
     return make_response(jsonify(data), 200)
