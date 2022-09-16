@@ -184,20 +184,4 @@ def cambioEstado():
             data=insertEstado12(emailCandi,idSt,emailSt,statusSt)
         return make_response(jsonify(None), 200)
 
-    emailSt:
-    emailCandidatoSt:
-    idSt:
-    statusSt: 11
-    descripcionSt:
-    statusS3St: Cliente
-    salarioMensualOfrecidoClienteSt:
-    salarioMensualPretendidoSt:
-    motivoFinCandi: Remuneración
-    ofrecida
-    del cliente
-    :
-    :
-    :
-    ﻿
-    ﻿
 
