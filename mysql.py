@@ -147,3 +147,34 @@ def insertEstado(emailCandi,idSt,emailSt,statusSt):
     conexion.commit()
     result = 'ok'
     return json.loads(json.dumps(result).encode('utf-8').decode('ascii'))
+def insertEstado11(emailCandi,idSt,emailSt,statusSt,salarioMensualAcordadoSt,fechaIngresoSt,comentariosSt):
+    a = conexion.cursor()
+    sql = "INSERT INTO `cliente` ( id,EmailAddres, \
+                                       emailcandidato, \
+                                        idBusqueda, \
+                                        salario, \
+                                        Comentarios, \
+                                        FECHAcontratado ) VALUES ( \
+                                        '',  \
+                                         '" +emailSt + "',  \
+                                         '" + emailCandi + "',  \
+                                        '" + idSt+ "', \
+                                        '" + salarioMensualAcordadoSt + "',  \
+                                        '" + comentariosSt + "',  \
+                                        '" + fechaIngresoSt + "');"
+    a.execute(sql)
+    conexion.commit()
+    result = 'ok'
+    return json.loads(json.dumps(result).encode('utf-8').decode('ascii'))
+
+def insertEstado12(emailCandi,idSt,emailSt,statusSt):
+    a = conexion.cursor()
+    sql = "update cliente set idstatus='"+statusSt+"' " \
+          "where emailcandidato='"+emailCandi+"' " \
+          " and idBusqueda='"+idSt+"' " \
+          " and EmailAddres='"+emailSt+"'"
+
+    a.execute(sql)
+    conexion.commit()
+    result = 'ok'
+    return json.loads(json.dumps(result).encode('utf-8').decode('ascii'))
