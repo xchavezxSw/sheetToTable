@@ -34,16 +34,23 @@ def reservados():
             json_data.append( [result[0],result[1],result[2],result[3],result[4],result[5],
                                                     result[6],result[7],result[8],status(str(result[9])),result[10],str(result[11])])
         return json.loads(json.dumps(json_data).encode('utf-8').decode('ascii'))
-print(reservados())
+
 def contratados():
     try:
         a = conexion.cursor()
         consulta = "select * from contratados;"
         a.execute(consulta)
-        result = a.fetchall()
-        return json.loads(json.dumps(result).encode('utf-8').decode('ascii'))
+        results = a.fetchall()
+        json_data = []
+        # json_data.append(row_headers)
+        print(results)
+        for result in results:
+            json_data.append([result[0], result[1], result[2], result[3], result[4], result[5],
+                              result[6], result[7], result[8], status(str(result[9])), result[10], str(result[11])])
+        return json.loads(json.dumps(json_data).encode('utf-8').decode('ascii'))
     except:
         print("falle")
+
 def insertreserva(values):
         a = conexion.cursor()
         sql = "INSERT INTO `reserva` ( id, \
