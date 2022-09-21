@@ -32,7 +32,7 @@ def status(id):
 def encliente():
 
             a=conexion.cursor()
-            consulta = "select * from cliente where idstatus not in ('11','12') union all select * from reserva "
+            consulta = "select * from cliente where idstatus not in ('11','12')"
             a.execute(consulta)
             results = a.fetchall()
             json_data = []
