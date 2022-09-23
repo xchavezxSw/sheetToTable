@@ -330,6 +330,7 @@ def modificarStatus(emailCandi,idSt,emailSt,statusSt):
     searchValues=[]
     ar = [{"rowIndex": i, "value": e} for i, e in enumerate(
         data) if e[2] == emailCandi  and e[0]== emailSt and e[3]==idSt]
+    ar[0]['value'][19] = status(statusSt)
     if str(statusSt)=='4':
         ar[0]['value'][7]=datetime.datetime.today().strftime('%Y-%m-%d %H:%M')
     if str(statusSt)=='5':
@@ -344,6 +345,7 @@ def modificarStatus(emailCandi,idSt,emailSt,statusSt):
         ar[0]['value'][12]=datetime.datetime.today().strftime('%Y-%m-%d %H:%M')
     if str(statusSt)=='10':
         ar[0]['value'][21]=datetime.datetime.today().strftime('%Y-%m-%d %H:%M')
+
     sheet4.delete_row(ar[0]['rowIndex'])
     sheet4.append_row(ar[0]['value'])
 
