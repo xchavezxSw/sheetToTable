@@ -180,6 +180,7 @@ def login(usuario,contrasena):
     a = conexion.cursor()
     where = ' 1=1 '
     consulta = "select count(*) ,role from users where email='"+usuario+"' and password='"+contrasena+"' group by role;"
+    print(consulta)
     a.execute(consulta)
     results = a.fetchall()
     if len(results)>=1:
