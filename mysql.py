@@ -176,6 +176,13 @@ def devolvercambiostado(emailCandi,id):
             json_data.append([result[0], result[1], result[2], str(result[3]), result[4], result[5],
                               result[6], result[7], result[8], result[9], result[10], str(result[11])])
         return json.loads(json.dumps(json_data).encode('utf-8').decode('ascii'))
+def login(usuario,contrasena):
+    a = conexion.cursor()
+    where = ' 1=1 '
+    consulta = "select count(*) ,role from users where email='"+usuario+"' and password='"+contrasena+"' group by role;"
+    a.execute(consulta)
+    results = a.fetchall()
+    return results[0][0],results[0][1]
 
 def insertEstado(emailCandi,idSt,emailSt,statusSt):
     a = conexion.cursor()
