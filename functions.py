@@ -53,7 +53,9 @@ def permitidof(email):
 def addReserva(values):
  data=reservado.get_all_records()#obtenemos los registros del excel
  try:
+    print(data)
     email=values['emailCandidato']
+    print(email)
     newDict = list(filter(lambda elem: elem['Email Candidato'] if str(elem['Email Candidato']).lower().strip()==str(email).lower().strip() else None, data))[0]
     contratado=list(filter(
         lambda elem: elem['Email Address'] if str(elem['Email Address']).lower().strip() == str(email).lower().strip() else None,
