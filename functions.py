@@ -279,6 +279,7 @@ def modificarReservar(values):
     curDT = datetime.datetime.now()
     date_time = curDT.strftime("%m/%d/%Y, %H:%M:%S")
     reservado.delete_row(row)
+    print([date_time, email, emailCandidato, naCandi, lkCandi, tcandi, tperfil, idReserva, comment])
     reservado.insert_row([date_time, email, emailCandidato, naCandi, lkCandi, tcandi, tperfil, idReserva, comment],
                          index=row)
     print("modifico")
