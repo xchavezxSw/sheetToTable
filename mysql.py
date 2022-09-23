@@ -65,6 +65,7 @@ def metrica():
     return json.loads(json.dumps(json_data).encode('utf-8').decode('ascii'))
 
 
+
 def contratadosFun():
         a = conexion.cursor()
         consulta = "select * from contratados;"

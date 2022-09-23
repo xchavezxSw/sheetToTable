@@ -158,6 +158,11 @@ def getmetrica():
     print(data)
     return make_response(jsonify(data), 200)
 
+@app.route('/getContratados')
+def getContratados():
+    data=contratadosFun()
+    return make_response(jsonify(data), 200)
+
 @app.route('/getCambioEstado',methods=['GET', 'POST'])
 def getcambiostatus():
     if request.method == 'POST':
