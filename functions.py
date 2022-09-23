@@ -268,6 +268,7 @@ def modificarReservar(values):
     naCandi = values['naCandi']
     lkCandi = values['lkCandi']
     print("modifico4")
+    print(values)
     if len(values['TecnoCandiInf']) > 1:
         tecnologias = ",".join(values['TecnoCandiInf'])
     else:
