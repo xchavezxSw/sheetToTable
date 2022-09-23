@@ -58,11 +58,11 @@ def addReserva(values):
     contratado=list(filter(
         lambda elem: elem[2] if str(elem[2]).lower().strip() == str(email).lower().strip() else None,
         contratados))
-    print(contratado)
     if len(contratado)>0:
         print(contratado)
         if contratado != '' or contratado is not None:
             return '403'
+    print("asd")
     modificarReservar(values)
  except Exception as e:
     print(e)
@@ -281,6 +281,7 @@ def modificarReservar(values):
     reservado.delete_row(row)
     reservado.insert_row([date_time, email, emailCandidato, naCandi, lkCandi, tcandi, tperfil, idReserva, comment],
                          index=row)
+    print("modifico")
 
 def busquedasPrioritarias():
     #try:

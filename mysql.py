@@ -63,6 +63,7 @@ def contratadosFun():
 
 
 def insertreserva(values):
+        print("inserto")
         a = conexion.cursor()
         sql = "INSERT INTO `reserva` ( id, \
 EmailAddres,emailcandidato, \
