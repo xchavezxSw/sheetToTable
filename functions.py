@@ -18,6 +18,8 @@ busquedasAbiertas=client.open('Maestro').worksheet('Busquedas')
 UsersList=client.open('[Gestion]Accesos').worksheet('UsersList').get_all_values()
 DirectosList=client.open('[Gestion]Accesos').worksheet('DirectosList').get_all_values()
 contratados=client.open('[FueraDeProceso]Contratados').worksheet('FueraDeProcesoContratados').get_all_values()
+contratadossheet=client.open('[FueraDeProceso]Contratados').worksheet('FueraDeProcesoContratados')
+rechazados=client.open('[FueraDeProceso]ProcesoRechazado').worksheet('FueraDeProcesoProcesoRechazado')
 #cambios=client.open('[AUT]PedidosCambios').worksheet('AUTPedidosCambios')
 
 def jsonsheet():
@@ -258,7 +260,7 @@ def devolverReserva(email):
 
 
 def modificarReservar(values):
-    cell = reservado.find(str(values['emailCandidato']).lower(), in_column=3)
+    cell = reservado.find(str(values['emailCandidato']).lower(), case_sensitive=True)
     row = cell.row
     email = values['email']
     emailCandidato = str(values['emailCandidato']).lower()
@@ -320,3 +322,88 @@ def eliminar_guiones(candidato,id,sourcer):
     if len(nuevo)>1:
         valores='_'.join(nuevo )
         SolicitudInforme.update('j'+str(eliminar),valores )
+
+def modificarStatus(emailCandi,idSt,emailSt,statusSt):
+    client = gspread.authorize(credentials)
+    sheet4 = client.open('[EnProceso]EnCliente').worksheet('EnProcesoEnCliente')  # Open the spreadsheet
+    data=sheet4.get_all_values()
+    searchValues=[]
+    ar = [{"rowIndex": i, "value": e} for i, e in enumerate(
+        data) if e[2] == emailCandi  and e[0]== emailSt and e[3]==idSt]
+    if str(statusSt)=='4':
+        ar[0]['value'][7]=datetime.datetime.today().strftime('%Y-%m-%d %H:%M')
+    if str(statusSt)=='5':
+        ar[0]['value'][8]=datetime.datetime.today().strftime('%Y-%m-%d %H:%M')
+    if str(statusSt)=='6':
+        ar[0]['value'][9]=datetime.datetime.today().strftime('%Y-%m-%d %H:%M')
+    if str(statusSt)=='7':
+        ar[0]['value'][11]=datetime.datetime.today().strftime('%Y-%m-%d %H:%M')
+    if str(statusSt)=='8':
+        ar[0]['value'][10]=datetime.datetime.today().strftime('%Y-%m-%d %H:%M')
+    if str(statusSt)=='9':
+        ar[0]['value'][12]=datetime.datetime.today().strftime('%Y-%m-%d %H:%M')
+    if str(statusSt)=='10':
+        ar[0]['value'][21]=datetime.datetime.today().strftime('%Y-%m-%d %H:%M')
+    sheet4.delete_row(ar[0]['rowIndex'])
+    sheet4.insert_row(ar[0]['value'])
+
+def modificarStatus11(emailCandi,idSt,emailSt,statusSt,salarioMensualAcordadoSt,fechaIngresoSt,comentariosSt):
+    client = gspread.authorize(credentials)
+    sheet4 = client.open('[EnProceso]EnCliente').worksheet('EnProcesoEnCliente')  # Open the spreadsheet
+    data = sheet4.get_all_values()
+    searchValues = []
+    ar = [{"rowIndex": i, "value": e} for i, e in enumerate(
+        data) if e[2] == emailCandi and e[0] == emailSt and e[3] == idSt]
+    if str(statusSt)=='11':
+        sheet4.delete_row(ar[0]['rowIndex'])
+        contratadossheet.add_rows(1)
+        contratadossheet.insert_row([datetime.datetime.today().strftime('%Y-%m-%d %H:%M'),
+                               ar[0]['value'][0],
+                               ar[0]['value'][2],
+                               ar[0]['value'][3],
+                               'Ingresó (Solo colocar este estado cuando el candidato entró a trabajar)',
+                               comentariosSt,
+                                '',
+                                '',
+                                '',
+                                '',
+                                '',
+                                salarioMensualAcordadoSt,
+                                '',
+                                'CambioAc'
+                               ''
+                               ])
+
+def modificarStatus12(emailCandi,idSt,emailSt,statusSt,salarioMensualOfrecidoClienteSt,salarioMensualPretendidoSt,motivoFinCandi,motivoFinCliente):
+    client = gspread.authorize(credentials)
+    sheet4 = client.open('[EnProceso]EnCliente').worksheet('EnProcesoEnCliente')  # Open the spreadsheet
+    data = sheet4.get_all_values()
+    searchValues = []
+    ar = [{"rowIndex": i, "value": e} for i, e in enumerate(
+        data) if e[2] == emailCandi and e[0] == emailSt and e[3] == idSt]
+    if str(statusSt)=='11':
+        sheet4.delete_row(ar[0]['rowIndex'])
+        rechazados.add_rows(1)
+        if motivoFinCandi != '' or motivoFinCandi.strip() is None:
+            cancelado='Candidato'
+        else:
+            if motivoFinCliente != '' or motivoFinCliente.strip() is None:
+                 cancelado='Cliente'
+            else:
+                cancelado='Conexion'
+
+        rechazados.insert_row([datetime.datetime.today().strftime('%Y-%m-%d %H:%M'),
+                               ar[0]['value'][0],
+                               ar[0]['value'][2],
+                               ar[0]['value'][3],
+                               'FueraDeProceso (Casos donde estamos 100% seguros que no va a haber contratacion). En la siguiente pregunta colocar el Motivo o SubEstado)',
+                               '',
+                                cancelado,
+                                salarioMensualOfrecidoClienteSt,
+                                salarioMensualPretendidoSt,
+                                motivoFinCandi,
+                                motivoFinCliente,
+                                '',
+                                '',
+                                'CambioAc'
+                               ])

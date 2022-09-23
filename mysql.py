@@ -193,12 +193,34 @@ def insertEstado11(emailCandi,idSt,emailSt,statusSt,salarioMensualAcordadoSt,fec
     result = 'ok'
     return json.loads(json.dumps(result).encode('utf-8').decode('ascii'))
 
-def insertEstado12(emailCandi,idSt,emailSt,statusSt):
+def insertEstado12(emailCandi,idSt,emailSt,statusSt,salarioMensualOfrecidoClienteSt,salarioMensualPretendidoSt,motivoFinCandi,motivoFinCliente):
     a = conexion.cursor()
-    sql = "update cliente set idstatus='"+statusSt+"' " \
-          "where emailcandidato='"+emailCandi+"' " \
-          " and idBusqueda='"+idSt+"' " \
-          " and EmailAddres='"+emailSt+"'"
+    if motivoFinCandi != '' or motivoFinCandi.strip() is None:
+        sql = "INSERT INTO conexion.rechazados (" \
+              "emailCandidato, idbusqueda, emailAddress, " \
+              "status, salarioMensualOfrecidoCliente, salarioMensualPretendido, " \
+              "motivorechazo, rechazadoPor) " \
+              "VALUES('"+emailCandi+"', " \
+                     "'"+idSt+"', " \
+                     "'"+emailSt+"', " \
+                     "'"+statusSt+"', " \
+                     "'"+salarioMensualOfrecidoClienteSt+"', " \
+                     "'"+salarioMensualPretendidoSt+"', " \
+                     "'"+motivoFinCandi+"', " \
+                     "'candidato');"
+    else:
+        sql = "INSERT INTO conexion.rechazados (" \
+              "emailCandidato, idbusqueda, emailAddress, " \
+              "status, salarioMensualOfrecidoCliente, salarioMensualPretendido, " \
+              "motivorechazo, rechazadoPor) " \
+              "VALUES('"+emailCandi+"', " \
+                     "'"+idSt+"', " \
+                     "'"+emailSt+"', " \
+                     "'"+statusSt+"', " \
+                     "'"+salarioMensualOfrecidoClienteSt+"', " \
+                     "'"+salarioMensualPretendidoSt+"', " \
+                     "'"+motivoFinCliente+"', " \
+                     "'cliente');"
 
     a.execute(sql)
     conexion.commit()
