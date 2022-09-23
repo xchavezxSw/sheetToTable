@@ -183,9 +183,9 @@ def login(usuario,contrasena):
     a.execute(consulta)
     results = a.fetchall()
     if len(results)>=1:
-        return 0,None
+        results[0][0],results[0][1]
     else:
-        return results[0][0],results[0][1]
+        return 0,None
 
 def insertEstado(emailCandi,idSt,emailSt,statusSt):
     a = conexion.cursor()
