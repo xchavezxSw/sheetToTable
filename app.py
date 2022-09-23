@@ -208,9 +208,8 @@ def setcookie():
     if request.method == 'POST':
         user = request.form['user']
         password=request.form['password']
-    print(user)
-    print(password)
-    resp =make_response(jsonify(None), 200)
+
+    resp =make_response(jsonify(json.loads(json.dumps(['logueado','admin']).encode('utf-8').decode('ascii'))), 200)
     resp.set_cookie('userID', user)
 
     return resp
