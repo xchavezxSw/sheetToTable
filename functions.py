@@ -345,8 +345,8 @@ def modificarStatus(emailCandi,idSt,emailSt,statusSt):
         ar[0]['value'][12]=datetime.datetime.today().strftime('%Y-%m-%d %H:%M')
     if str(statusSt)=='10':
         ar[0]['value'][21]=datetime.datetime.today().strftime('%Y-%m-%d %H:%M')
-
-    sheet4.delete_row(ar[0]['rowIndex']-1)
+    print(ar[0]['rowIndex'])
+    sheet4.delete_row(ar[0]['rowIndex'])
     sheet4.append_row(ar[0]['value'])
 
 def modificarStatus11(emailCandi,idSt,emailSt,statusSt,salarioMensualAcordadoSt,fechaIngresoSt,comentariosSt):
