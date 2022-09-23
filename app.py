@@ -203,3 +203,18 @@ def cambioEstado():
         return make_response(jsonify(None), 200)
 
 
+@app.route('/setcookie', methods=['POST', 'GET'])
+def setcookie():
+    if request.method == 'POST':
+        user = request.form['user']
+        password=request.form['password']
+
+    resp =make_response(jsonify(None), 200)
+    resp.set_cookie('userID', user)
+
+    return resp
+
+@app.route('/getcookie')
+def getcookie():
+   name = request.cookies.get('userID')
+   return '<h1>welcome ' + name + '</h1>'
