@@ -258,33 +258,26 @@ def devolverReserva(email):
 
 
 def modificarReservar(values):
-    print("modifico1")
     cell = reservado.find(str(values['emailCandidato']).lower(), in_column=3)
-    print("modifico2")
     row = cell.row
     email = values['email']
-    print("modifico3")
     emailCandidato = str(values['emailCandidato']).lower()
     naCandi = values['naCandi']
     lkCandi = values['lkCandi']
-    print("modifico4")
-    print(values)
-    if len(values['TecnoCandiInf']) > 1:
-        tecnologias = ",".join(values['TecnoCandiInf'])
+    if len(values['tcandi']) > 1:
+        tecnologias = ",".join(values['tcandi'])
     else:
-        tecnologias = values['TecnoCandiInf'][0]
-    print("modifico5")
+        tecnologias = values['tcandi'][0]
     tcandi = tecnologias
-    if len(values['TpCandiInf']) > 1:
-        tipoPerfil = ",".join(values['TpCandiInf'])
+    if len(values['tperfil']) > 1:
+        tipoPerfil = ",".join(values['tperfil'])
     else:
-        tipoPerfil = values['TpCandiInf'][0]
+        tipoPerfil = values['tperfil'][0]
     tperfil = tipoPerfil
     idReserva = values['idReserva']
     comment = values['comment']
     curDT = datetime.datetime.now()
     date_time = curDT.strftime("%m/%d/%Y, %H:%M:%S")
-    print("modifico6")
     reservado.delete_row(row)
     reservado.insert_row([date_time, email, emailCandidato, naCandi, lkCandi, tcandi, tperfil, idReserva, comment],
                          index=row)
