@@ -283,7 +283,7 @@ def modificarReservar(values):
     reservado.delete_row(row)
     reservado.add_rows(1)
     updateReserva(date_time, email, emailCandidato, naCandi, lkCandi, tcandi, tperfil, idReserva, comment)
-    reservado.insert_row([date_time, email, emailCandidato, naCandi, lkCandi, tcandi, tperfil, idReserva, comment,],
+    reservado.append_row([date_time, email, emailCandidato, naCandi, lkCandi, tcandi, tperfil, idReserva, comment,],
                          index=row)
     print("modifico")
 
@@ -345,7 +345,7 @@ def modificarStatus(emailCandi,idSt,emailSt,statusSt):
     if str(statusSt)=='10':
         ar[0]['value'][21]=datetime.datetime.today().strftime('%Y-%m-%d %H:%M')
     sheet4.delete_row(ar[0]['rowIndex'])
-    sheet4.insert_row(ar[0]['value'])
+    sheet4.append_row(ar[0]['value'])
 
 def modificarStatus11(emailCandi,idSt,emailSt,statusSt,salarioMensualAcordadoSt,fechaIngresoSt,comentariosSt):
     client = gspread.authorize(credentials)
@@ -357,7 +357,7 @@ def modificarStatus11(emailCandi,idSt,emailSt,statusSt,salarioMensualAcordadoSt,
     if str(statusSt)=='11':
         sheet4.delete_row(ar[0]['rowIndex'])
         contratadossheet.add_rows(1)
-        contratadossheet.insert_row([datetime.datetime.today().strftime('%Y-%m-%d %H:%M'),
+        contratadossheet.append_row([datetime.datetime.today().strftime('%Y-%m-%d %H:%M'),
                                ar[0]['value'][0],
                                ar[0]['value'][2],
                                ar[0]['value'][3],
@@ -392,7 +392,7 @@ def modificarStatus12(emailCandi,idSt,emailSt,statusSt,salarioMensualOfrecidoCli
             else:
                 cancelado='Conexion'
 
-        rechazados.insert_row([datetime.datetime.today().strftime('%Y-%m-%d %H:%M'),
+        rechazados.append_row([datetime.datetime.today().strftime('%Y-%m-%d %H:%M'),
                                ar[0]['value'][0],
                                ar[0]['value'][2],
                                ar[0]['value'][3],
