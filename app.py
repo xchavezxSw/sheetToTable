@@ -221,4 +221,4 @@ def setcookie():
 @app.route('/getcookie')
 def getcookie():
    name = request.cookies.get('userID')
-   return  name
+   return  make_response(name, 200)
