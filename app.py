@@ -222,6 +222,6 @@ def setcookie():
 def getcookie():
    name = request.cookies.get('userID')
    if name is None:
-       return  make_response(None, 200)
+       return  make_response(jsonify(json.loads(json.dumps([None]).encode('utf-8').decode('ascii'))), 200)
    else:
-       return make_response(name, 200)
+       return make_response(jsonify(json.loads(json.dumps([name]).encode('utf-8').decode('ascii'))), 200)
