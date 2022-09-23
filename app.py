@@ -165,13 +165,7 @@ def getcambiostatus():
         id = request.form.get('idSt')
         data=devolvercambiostado(emailCandi, id)
         return make_response(jsonify(data), 200)
-@app.route('/getCambioEstado',methods=['GET', 'POST'])
-def getcambiostatus():
-    if request.method == 'POST':
-        emailCandi=request.form.get('emailCandidatoSt')
-        id = request.form.get('idSt')
-        data=devolvercambiostado(emailCandi, id)
-        return make_response(jsonify(data), 200)
+
 
 @app.route('/cambioEstado',methods=['GET', 'POST'])
 def cambioEstado():
