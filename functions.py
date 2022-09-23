@@ -108,6 +108,7 @@ def addInforme(values):
         InfoEntrevistaIngles= values['informeEntIng']
         curDT = datetime.datetime.now()
         date_time = curDT.strftime("%m/%d/%Y, %H:%M:%S")
+        insertinforme(IdsaEnviar,Email,EMailCandidato)
         SolicitudInforme.append_row([False,"", "","","",date_time,Email,
          EsSource, EMailCandidato, IdsaEnviar, TecnoCandi, TpCandi, LKCandi, comment,
          CvEspañol, InfoEntrevista, CvIngles, InfoEntrevistaIngles, RemuneracionPretendidaMensual,

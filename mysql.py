@@ -7,10 +7,6 @@ def status(id):
         return 'Reservado'
     if id=="2":
         return 'En Cliente'
-    if id == "1":
-        return 'Reservado'
-    if id == "4":
-        return 'Entrevista Con Cliente (no técnica)'
     if id=="4" :
         return  'Entrevista Con Cliente (no técnica)'
     if id=="5" :
@@ -91,6 +87,18 @@ motivo,status,ComentariosAdicionales,FECHA    ) VALUES (0, '"+values['email']+"'
         return json.loads(json.dumps(result).encode('utf-8').decode('ascii'))
 
 
+def insertinforme(idbusqueda,emailAddress,emailCandidato):
+        a = conexion.cursor()
+        sql = "INSERT INTO conexion.cargaInforme (" \
+              "idbusqueda, emailAddress, emailCandidato)" \
+              " VALUES ('"+idbusqueda+"', " \
+              "'"+emailAddress+"', " \
+              "'" +emailCandidato + "') "
+
+        a.execute(sql)
+        conexion.commit()
+        result='ok'
+        return json.loads(json.dumps(result).encode('utf-8').decode('ascii'))
 def insertCliente(values):
     a = conexion.cursor()
     sql = "INSERT INTO `cliente` ( EmailAddres, \
