@@ -209,10 +209,14 @@ def setcookie():
         user = request.form['user']
         password=request.form['password']
     validar,rol=login(user, password)
-    resp =make_response(jsonify(json.loads(json.dumps(['logueado',rol]).encode('utf-8').decode('ascii'))), 200)
-    resp.set_cookie('userID', user)
-    resp.set_cookie('rol', rol)
-    return resp
+    if validar >=1:
+        resp =make_response(jsonify(json.loads(json.dumps(['logueado',rol]).encode('utf-8').decode('ascii'))), 200)
+        resp.set_cookie('userID', user)
+        resp.set_cookie('rol', rol)
+        return resp
+    else:
+        return make_response(jsonify(None), 403)
+
 
 @app.route('/getcookie')
 def getcookie():
