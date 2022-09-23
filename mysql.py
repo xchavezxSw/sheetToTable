@@ -178,13 +178,12 @@ def devolvercambiostado(emailCandi,id):
         return json.loads(json.dumps(json_data).encode('utf-8').decode('ascii'))
 def login(usuario,contrasena):
     a = conexion.cursor()
-    where = ' 1=1 '
     consulta = "select count(*) ,role from users where email='"+usuario+"' and password='"+contrasena+"' group by role;"
     print(consulta)
     a.execute(consulta)
     results = a.fetchall()
     if len(results)>=1:
-        results[0][0],results[0][1]
+        return results[0][0],results[0][1]
     else:
         return 0,None
 
