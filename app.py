@@ -218,7 +218,7 @@ def setcookie():
         return make_response(jsonify(None), 403)
 
 
-@app.route('/getcookie')
+@app.route('/getcookie', methods=['POST', 'GET'])
 def getcookie():
    name = request.cookies.get('userID')
    return  make_response(name, 200)
