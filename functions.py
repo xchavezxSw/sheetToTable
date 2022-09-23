@@ -357,7 +357,7 @@ def modificarStatus11(emailCandi,idSt,emailSt,statusSt,salarioMensualAcordadoSt,
     ar = [{"rowIndex": i, "value": e} for i, e in enumerate(
         data) if e[2] == emailCandi and e[0] == emailSt and e[3] == idSt]
     if str(statusSt)=='11':
-        sheet4.delete_row(ar[0]['rowIndex'])
+        sheet4.delete_row(ar[0]['rowIndex']+1)
         contratadossheet.add_rows(1)
         contratadossheet.append_row([datetime.datetime.today().strftime('%Y-%m-%d %H:%M'),
                                ar[0]['value'][0],
@@ -384,7 +384,7 @@ def modificarStatus12(emailCandi,idSt,emailSt,statusSt,salarioMensualOfrecidoCli
     ar = [{"rowIndex": i, "value": e} for i, e in enumerate(
         data) if e[2] == emailCandi and e[0] == emailSt and e[3] == idSt]
     if str(statusSt)=='11':
-        sheet4.delete_row(ar[0]['rowIndex'])
+        sheet4.delete_row(ar[0]['rowIndex']+1)
         rechazados.add_rows(1)
         if motivoFinCandi != '' or motivoFinCandi.strip() is None:
             cancelado='Candidato'
