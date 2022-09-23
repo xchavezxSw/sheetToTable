@@ -214,7 +214,7 @@ def setcookie():
         password=request.form['password']
     validar,rol=login(user, password)
     if validar >=1:
-        resp =make_response(jsonify(json.loads(json.dumps(['logueado',rol]).encode('utf-8').decode('ascii'))), 200)
+        resp =make_response(jsonify(json.loads(json.dumps(['logueado',rol,user]).encode('utf-8').decode('ascii'))), 200)
         resp.set_cookie('userID', user)
         return resp
     else:
