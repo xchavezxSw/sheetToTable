@@ -62,12 +62,13 @@ def contratadosFun():
         return json.loads(json.dumps(json_data).encode('utf-8').decode('ascii'))
 
 
-def updateReserva(date_time, email, emailCandidato, naCandi, lkCandi, tcandi, tperfil, idReserva, ):
+def updateReserva(date_time, email, emailCandidato, naCandi, lkCandi, tcandi, tperfil, idReserva, comment):
     a = conexion.cursor()
     sql="update reserva set " \
         "Linkedin='"+lkCandi+"'" \
         ",tecnologiasquesabeelcandidato='"+tcandi+"'" \
         ",tipodeperfildelcandidato='"+tperfil+"'" \
+        ",ComentariosAdicionales='" + comment + "'" \
         ",FECHA=curdate() " \
         "where EmailAddres='"+email+"' and " \
         "emailcandidato='"+emailCandidato+"' and " \
