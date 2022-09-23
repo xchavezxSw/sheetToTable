@@ -221,4 +221,7 @@ def setcookie():
 @app.route('/getcookie', methods=['POST', 'GET'])
 def getcookie():
    name = request.cookies.get('userID')
-   return  make_response(name, 200)
+   if name is None:
+       return  make_response(None, 200)
+   else:
+       return make_response(name, 200)
