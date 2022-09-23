@@ -183,7 +183,7 @@ def login(usuario,contrasena):
     a.execute(consulta)
     results = a.fetchall()
     if len(results)>=1:
-        return None,None
+        return 0,None
     else:
         return results[0][0],results[0][1]
 
