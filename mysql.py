@@ -62,6 +62,20 @@ def contratadosFun():
         return json.loads(json.dumps(json_data).encode('utf-8').decode('ascii'))
 
 
+def updateReserva(date_time, email, emailCandidato, naCandi, lkCandi, tcandi, tperfil, idReserva, ):
+    a = conexion.cursor()
+    sql="update reserva set " \
+        "Linkedin='"+lkCandi+"'" \
+        ",tecnologiasquesabeelcandidato='"+tcandi+"'" \
+        ",tipodeperfildelcandidato='"+tperfil+"'" \
+        ",FECHA=curdate() " \
+        "where EmailAddres='"+email+"' and " \
+        "emailcandidato='"+emailCandidato+"' and " \
+        "idreserva='" + idReserva + "'"
+    a.execute(sql)
+    conexion.commit()
+    result = 'ok'
+    return json.loads(json.dumps(result).encode('utf-8').decode('ascii'))
 def insertreserva(values):
         print("inserto")
         a = conexion.cursor()
