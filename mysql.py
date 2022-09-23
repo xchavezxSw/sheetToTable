@@ -110,7 +110,7 @@ def insertinforme(idbusqueda,emailAddress,emailCandidato):
               " VALUES ('"+idbusqueda+"', " \
               "'"+emailAddress+"', " \
               "'" +emailCandidato + "') "
-
+        print(sql)
         a.execute(sql)
         conexion.commit()
         result='ok'
