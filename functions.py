@@ -57,9 +57,11 @@ def addReserva(values):
     email=values['emailCandidato']
     print(email)
     newDict = list(filter(lambda elem: elem['Email Candidato'] if str(elem['Email Candidato']).lower().strip()==str(email).lower().strip() else None, data))[0]
+    print(newDict)
     contratado=list(filter(
         lambda elem: elem['Email Address'] if str(elem['Email Address']).lower().strip() == str(email).lower().strip() else None,
         contratados))[0]
+    print(contratado)
     if contratado != '' or contratado is not None:
         return '403'
     modificarReservar(values)
