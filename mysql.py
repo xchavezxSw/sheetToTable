@@ -182,7 +182,10 @@ def login(usuario,contrasena):
     consulta = "select count(*) ,role from users where email='"+usuario+"' and password='"+contrasena+"' group by role;"
     a.execute(consulta)
     results = a.fetchall()
-    return results[0][0],results[0][1]
+    if len(results)>=1:
+        return None,None
+    else:
+        return results[0][0],results[0][1]
 
 def insertEstado(emailCandi,idSt,emailSt,statusSt):
     a = conexion.cursor()
