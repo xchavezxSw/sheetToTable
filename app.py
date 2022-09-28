@@ -148,9 +148,10 @@ def modreserva():
 """conexion a mysq"""
 @app.route('/getCliente')
 def getencliente():
-    usuario=request.form.get('usuario')
+    args = request.args
+    usuario=args.get('usuario')
     print(usuario)
-    if usuario!='':
+    if usuario!='' or usuario is not None:
         data=encliente(usuario)
     else:
         data=encliente()
