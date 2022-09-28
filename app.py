@@ -149,6 +149,7 @@ def modreserva():
 @app.route('/getCliente')
 def getencliente():
     usuario=request.form.get('usuario')
+    print(usuario)
     if usuario!='':
         data=encliente(usuario)
     else:
