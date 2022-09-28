@@ -212,7 +212,11 @@ def setcookie():
     if request.method == 'POST':
         user = request.form['user']
         password=request.form['password']
+    print(user)
+    print(password)
     validar,rol=login(user, password)
+    print(validar)
+    print(rol)
     if validar >=1:
         resp =make_response(jsonify(json.loads(json.dumps(['logueado',rol,user]).encode('utf-8').decode('ascii'))), 200)
         resp.set_cookie('userID', user)
