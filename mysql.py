@@ -41,7 +41,7 @@ def encliente(usuario=''):
 
 def reservados(usuario=''):
         a = conexion.cursor()
-        consulta = "select * from reserva"
+        consulta = "select * from reserva "
         if usuario != '':
             consulta = consulta + " and EmailAddres='" + usuario +"'"
         a.execute(consulta)
@@ -55,7 +55,7 @@ def reservados(usuario=''):
         return json.loads(json.dumps(json_data).encode('utf-8').decode('ascii'))
 def metrica(usuario=''):
     a = conexion.cursor()
-    consulta = "select * from metricas m;"
+    consulta = "select * from metricas m "
     if usuario != '':
         consulta = consulta + " and EmailAddres='" + usuario + "'"
     a.execute(consulta)
@@ -74,7 +74,7 @@ def metrica(usuario=''):
 
 def contratadosFun(usuario=''):
         a = conexion.cursor()
-        consulta = "select * from contratados;"
+        consulta = "select * from contratados "
         if usuario != '':
             consulta = consulta + " and EmailAddres='" + usuario + "'"
         a.execute(consulta)
