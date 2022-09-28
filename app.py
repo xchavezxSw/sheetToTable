@@ -150,7 +150,6 @@ def modreserva():
 def getencliente():
     args = request.args
     usuario=args.get('usuario')
-    print(usuario)
     if usuario!='' or usuario is not None:
         data=encliente(usuario)
     else:
@@ -159,18 +158,34 @@ def getencliente():
 
 @app.route('/getReservados')
 def getreservados():
-    data=reservados()
+
+    args = request.args
+    usuario=args.get('usuario')
+    if usuario!='' or usuario is not None:
+        data=reservados(usuario)
+    else:
+        data=reservados()
     return make_response(jsonify(data), 200)
 
 @app.route('/getmetricas')
 def getmetrica():
-    data=metrica()
-    print(data)
+    args = request.args
+    usuario = args.get('usuario')
+    if usuario != '' or usuario is not None:
+        data = metrica(usuario)
+    else:
+        data = metrica()
     return make_response(jsonify(data), 200)
 
 @app.route('/getContratados')
 def getContratados():
-    data=contratadosFun()
+    args = request.args
+    usuario = args.get('usuario')
+    if usuario != '' or usuario is not None:
+        data=contratadosFun(usuario)
+    else:
+        data=contratadosFun()
+
     return make_response(jsonify(data), 200)
 
 @app.route('/getCambioEstado',methods=['GET', 'POST'])
