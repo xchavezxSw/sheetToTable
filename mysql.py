@@ -41,9 +41,9 @@ def encliente(usuario=''):
 
 def reservados(usuario=''):
         a = conexion.cursor()
-        consulta = "select * from reserva;"
+        consulta = "select * from reserva"
         if usuario != '':
-            consulta = consulta + " and EmailAddres='" + usuario + "'"
+            consulta = consulta + " and EmailAddres='" + usuario +"'"
         a.execute(consulta)
         #row_headers = [x[0] for x in a.description]  # this will extract row headers
         results = a.fetchall()
