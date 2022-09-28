@@ -25,10 +25,12 @@ def status(id):
         return  'Ingreso'
     if id=="12" :
         return  'Fuera de proceso'
-def encliente():
+def encliente(usuario=''):
 
             a=conexion.cursor()
             consulta = "select * from cliente where idstatus not in ('11','12')"
+            if usuario !='':
+                consulta=consulta+" and EmailAddres='"+usuario+"'"
             a.execute(consulta)
             results = a.fetchall()
             json_data = []
@@ -37,9 +39,11 @@ def encliente():
                                   result[6], result[7], result[8], result[9], result[10], str(result[11])])
             return json.loads(json.dumps(json_data).encode('utf-8').decode('ascii'))
 
-def reservados():
+def reservados(usuario=''):
         a = conexion.cursor()
         consulta = "select * from reserva;"
+        if usuario != '':
+            consulta = consulta + " and EmailAddres='" + usuario + "'"
         a.execute(consulta)
         #row_headers = [x[0] for x in a.description]  # this will extract row headers
         results = a.fetchall()
@@ -49,9 +53,11 @@ def reservados():
             json_data.append( [result[0],result[1],result[2],result[3],result[4],result[5],
                                                     result[6],result[7],result[8],status(str(result[9])),result[10],str(result[11])])
         return json.loads(json.dumps(json_data).encode('utf-8').decode('ascii'))
-def metrica():
+def metrica(usuario=''):
     a = conexion.cursor()
     consulta = "select * from metricas m;"
+    if usuario != '':
+        consulta = consulta + " and EmailAddres='" + usuario + "'"
     a.execute(consulta)
     # row_headers = [x[0] for x in a.description]  # this will extract row headers
     results = a.fetchall()
@@ -66,9 +72,11 @@ def metrica():
 
 
 
-def contratadosFun():
+def contratadosFun(usuario=''):
         a = conexion.cursor()
         consulta = "select * from contratados;"
+        if usuario != '':
+            consulta = consulta + " and EmailAddres='" + usuario + "'"
         a.execute(consulta)
         results = a.fetchall()
         json_data = []
