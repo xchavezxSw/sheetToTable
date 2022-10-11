@@ -2,22 +2,24 @@ import os
 from flask import Flask,request,current_app, flash, jsonify, make_response, redirect, request, url_for
 from mysql import *
 from functions import *
-
+import json
+from flask_cors import CORS,cross_origin
 app = Flask(__name__)
+CORS(app)
 app.config["SESSION_PERMANENT"] = False
 app.config["SESSION_TYPE"] = "filesystem"
 app.config["SESSION_COOKIE_SAMESITE"] = "None"
-import json
+app.config['CORS_HEADERS'] = 'Content-Type'
 
-from flask_cors import CORS
-CORS(app)
 
 @app.route('/')
+@cross_origin()
 def hello():
     data=jsonsheet()
     print(data)
     return make_response(jsonify(data), 200)
 @app.route('/Informe')
+@cross_origin()
 def Informe():
     data=InformeRechazados()
     print(data)
@@ -229,6 +231,7 @@ def cambioEstado():
 
 
 @app.route('/setcookie', methods=['POST', 'GET'])
+@cross_origin()
 def setcookie():
     if request.method == 'POST':
         user = request.form['user']
