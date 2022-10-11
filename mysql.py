@@ -186,6 +186,7 @@ def devolvercambiostado(emailCandi,id):
                               result[6], result[7], result[8], result[9], result[10], str(result[11])])
         return json.loads(json.dumps(json_data).encode('utf-8').decode('ascii'))
 def login(usuario,contrasena):
+    from bd import conexion
     a = conexion.cursor()
     consulta = "select count(*) ,role from users where trim(email)=trim('"+usuario+"') and trim(password)=trim('"+contrasena+"') group by role;"
     print(consulta)
