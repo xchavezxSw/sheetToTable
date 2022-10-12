@@ -9,7 +9,6 @@ app = Flask(__name__)
 
 if __name__ == "__main__":
     app.run(debug=True)
-"""
 
 @app.after_request
 def add_headers(response):
@@ -17,7 +16,7 @@ def add_headers(response):
     response.headers.add('Access-Control-Allow-Headers', 'Content-Type,Authorization')
     response.headers.add('Access-Control-Allow-Methods', 'OPTIONS, HEAD, GET, POST, DELETE, PUT')
     return response
-"""
+
 @app.route('/')
 def hello():
     data=jsonsheet()
