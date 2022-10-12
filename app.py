@@ -14,6 +14,13 @@ app.config['CORS_HEADERS'] = 'Content-Type'
 if __name__ == "__main__":
     app.run(debug=True)
 
+
+@app.after_request
+def add_headers(response):
+    response.headers.add('Access-Control-Allow-Origin', '*')
+    response.headers.add('Access-Control-Allow-Headers', 'Content-Type,Authorization')
+    return response
+
 @app.route('/')
 @cross_origin()
 def hello():
