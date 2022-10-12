@@ -14,7 +14,7 @@ if __name__ == "__main__":
 def add_headers(response):
     response.headers.add('Access-Control-Allow-Origin', 'http://conexion.techne.net.ar')
     response.headers.add('Access-Control-Allow-Headers', 'Content-Type,Authorization')
-    response.headers.add('Access-Control-Allow-Methods', 'OPTIONS, HEAD, GET, POST, DELETE, PUT')
+    response.headers.add('Access-Control-Allow-Methods', ' GET, POST')
     return response
 
 @app.route('/')
