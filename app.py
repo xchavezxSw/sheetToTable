@@ -23,13 +23,11 @@ def add_headers(response):
     return response
 
 @app.route('/')
-@cross_origin()
 def hello():
     data=jsonsheet()
     print(data)
     return make_response(jsonify(data), 200)
 @app.route('/Informe')
-@cross_origin()
 def Informe():
     data=InformeRechazados()
     print(data)
