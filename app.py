@@ -5,14 +5,13 @@ from functions import *
 import json
 from flask_cors import CORS,cross_origin
 app = Flask(__name__)
-#CORS(app)
+CORS(app)
 
 if __name__ == "__main__":
     app.run(debug=True)
 
 @app.after_request
 def add_headers(response):
-    response.headers.add('Access-Control-Allow-Origin', 'http://conexion.techne.net.ar')
     response.headers.add('Access-Control-Allow-Headers', 'Content-Type,Authorization')
     response.headers.add('Access-Control-Allow-Methods', ' GET, POST')
     return response
