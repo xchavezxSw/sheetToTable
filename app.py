@@ -16,17 +16,21 @@ def add_headers(response):
     response.headers.add('Access-Control-Allow-Methods', ' GET, POST')
     return response
 
+@cross_origin()
 @app.route('/')
 def hello():
     data=jsonsheet()
     print(data)
     return make_response(jsonify(data), 200)
+
+@cross_origin()
 @app.route('/Informe')
 def Informe():
     data=InformeRechazados()
     print(data)
     return make_response(jsonify(data), 200)
 
+@cross_origin()
 @app.route('/insert', methods=['GET', 'POST'])
 def insertreserva():
     if request.method == 'POST':
@@ -44,7 +48,7 @@ def insertreserva():
         return 'el candidato fue contratado con anterioridad', 403
     else:
         return 'ok', 200
-
+@cross_origin()
 @app.route('/solicitudInforme', methods=['GET', 'POST'])
 def solinforme():
     if request.method == 'POST':
@@ -66,10 +70,13 @@ def solinforme():
         addInforme(value)
     return 'ok', 200
 
+@cross_origin()
 @app.route('/reservas')
 def reserva():
     data=jsonReservas()
     return make_response(jsonify(data), 200)
+
+@cross_origin()
 @app.route('/getInformesArevisar')
 def infarevisar():
     data=getInformesArevisar()
@@ -86,7 +93,7 @@ def busqueda():
 def busquedasPrio():
     data=busquedasPrioritarias()
     return make_response(jsonify(data), 200)
-
+@cross_origin()
 @app.route('/revisarAprobado', methods=['GET', 'POST']) 
 def revisar():
     value={  }
@@ -117,13 +124,16 @@ def revisar():
     else:
         data=revisarRechaz(value)    
     return make_response(jsonify(data), 200)
-
+@cross_origin()
 @app.route('/Getreservas',methods=['GET', 'POST'])
 def reservaemail():
     if request.method == 'POST':
         email=request.form.get('emailCandidato')
         data=devolverReserva(email)
         return make_response(jsonify(data), 200)
+
+
+@cross_origin()
 @app.route('/getPermitido',methods=['GET', 'POST'])
 def permitido():
     if request.method == 'POST':
@@ -133,11 +143,12 @@ def permitido():
             return make_response(jsonify(data), 200)
         else:
             return make_response(jsonify(data), 403)
-
+@cross_origin()
 @app.route('/quit')
 def _quit():
     os._exit(0)
 
+@cross_origin()
 @app.route('/modreserva', methods=['GET', 'POST'])
 def modreserva():
     if request.method == 'POST':
@@ -153,6 +164,8 @@ def modreserva():
         modificarReservar(value)
     return 'ok', 200
 """conexion a mysq"""
+
+@cross_origin()
 @app.route('/getCliente')
 def getencliente():
     args = request.args
@@ -162,7 +175,7 @@ def getencliente():
     else:
         data=encliente()
     return make_response(jsonify(data), 200)
-
+@cross_origin()
 @app.route('/getReservados')
 def getreservados():
 
@@ -173,7 +186,7 @@ def getreservados():
     else:
         data=reservados()
     return make_response(jsonify(data), 200)
-
+@cross_origin()
 @app.route('/getmetricas')
 def getmetrica():
     args = request.args
@@ -183,7 +196,7 @@ def getmetrica():
     else:
         data = metrica()
     return make_response(jsonify(data), 200)
-
+@cross_origin()
 @app.route('/getContratados')
 def getContratados():
     args = request.args
@@ -194,7 +207,7 @@ def getContratados():
         data=contratadosFun()
 
     return make_response(jsonify(data), 200)
-
+@cross_origin()
 @app.route('/getCambioEstado',methods=['GET', 'POST'])
 def getcambiostatus():
     if request.method == 'POST':
@@ -203,7 +216,7 @@ def getcambiostatus():
         data=devolvercambiostado(emailCandi, id)
         return make_response(jsonify(data), 200)
 
-
+@cross_origin()
 @app.route('/cambioEstado',methods=['GET', 'POST'])
 def cambioEstado():
     if request.method == 'POST':
@@ -249,7 +262,7 @@ def setcookie():
     else:
         return make_response(jsonify(None), 403)
 
-
+@cross_origin()
 @app.route('/getcookie', methods=['POST', 'GET'])
 def getcookie():
    name = request.cookies.get('userID')
