@@ -75,10 +75,13 @@ def infarevisar():
     data=getInformesArevisar()
     return make_response(jsonify(data), 200)
 
+@cross_origin()
 @app.route('/busquedas')
 def busqueda():
     data=busquedas()
     return make_response(jsonify(data), 200)
+
+@cross_origin()
 @app.route('/busquedasPrioritarias')
 def busquedasPrio():
     data=busquedasPrioritarias()
@@ -231,9 +234,8 @@ def cambioEstado():
 
         return make_response(jsonify(None), 200)
 
-
-@app.route('/setcookie', methods=['POST', 'GET'])
 @cross_origin()
+@app.route('/setcookie', methods=['POST', 'GET'])
 def setcookie():
     if request.method == 'POST':
         user = request.form['user']
