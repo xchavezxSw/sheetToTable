@@ -1,7 +1,8 @@
-import pymysql as dd
-conexion= dd.Connect(
+import mysql as dd
+conexion= dd.connector.connect(
     host="127.0.0.1",
     user="root",
     password="Oracle50",
     database="conexion"
 )
+print(dir(conexion))
