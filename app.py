@@ -194,8 +194,9 @@ def getreservados():
 def getmetrica():
     args = request.args
     usuario = args.get('usuario')
+    rol = args.get('rol')
     if usuario != '' or usuario is not None:
-        data = metrica(usuario)
+        data = metrica(usuario,rol)
     else:
         data = metrica()
     return make_response(jsonify(data), 200)

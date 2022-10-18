@@ -54,10 +54,10 @@ def reservados(usuario=''):
             json_data.append( [result[0],result[1],result[2],result[3],result[4],result[5],
                                                     result[6],result[7],result[8],status(str(result[9])),result[10],str(result[11])])
         return json.loads(json.dumps(json_data).encode('utf-8').decode('ascii'))
-def metrica(usuario=''):
+def metrica(usuario='',rol=''):
     a = conexion.cursor()
     consulta = "select * from metricas m  where 1=1  "
-    if usuario != '':
+    if usuario != '' and rol != 'admin':
         consulta = consulta + " and EmailAddres='" + usuario + "'"
     a.execute(consulta)
     # row_headers = [x[0] for x in a.description]  # this will extract row headers
