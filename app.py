@@ -7,8 +7,11 @@ from flask_cors import CORS,cross_origin
 app = Flask(__name__)
 CORS(app)
 
-if __name__ == "__main__":
-    app.run(debug=True)
+from OpenSSL import SSL
+context = SSL.Context(SSL.TLSv1_2_METHOD)
+context.use_privatekey_file('/root/ssl/conexion.key')
+context.use_certificate_file('/root/ssl/conexion.crt')  
+app.run(debug=True, ssl_context=context        )
 
 @app.after_request
 def add_headers(response):

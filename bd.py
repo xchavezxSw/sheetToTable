@@ -1,5 +1,5 @@
-import mysql as dd
-conexion= dd.connector.connect(
+from mysql import connector
+conexion= connector.connect(
     host="127.0.0.1",
     user="root",
     password="Oracle50",
