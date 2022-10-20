@@ -119,18 +119,12 @@ def addInforme(values):
           values['StatusEnBaseInf']=13
           values['MotivvoRechazoInf']=''
           revisarAprob(values)
-          print([False, "", "", "", "", date_time, Email,
+          """SolicitudInforme.append_row([False, "", "", "", "", date_time, Email,
                                        EsSource, EMailCandidato, IdsaEnviar, TecnoCandi, TpCandi, LKCandi, comment,
                                        CvEspañol, InfoEntrevista, CvIngles, InfoEntrevistaIngles,
                                        RemuneracionPretendidaMensual,
                                        NiveldeIngles, Locacion[0].replace("\n","").replace("\n","").replace("\n",""),
-                                       NombreyApellidodelCandidato, ""])
-          SolicitudInforme.append_row([False, "", "", "", "", date_time, Email,
-                                       EsSource, EMailCandidato, IdsaEnviar, TecnoCandi, TpCandi, LKCandi, comment,
-                                       CvEspañol, InfoEntrevista, CvIngles, InfoEntrevistaIngles,
-                                       RemuneracionPretendidaMensual,
-                                       NiveldeIngles, Locacion[0].replace("\n","").replace("\n","").replace("\n",""),
-                                       NombreyApellidodelCandidato, ""])
+                                       NombreyApellidodelCandidato, ""])"""
       else:
         EsSource=values['EsSourceInf']
         Email= values['EmailInf']
@@ -198,6 +192,9 @@ def revisarAprob(values):
             SolicitudInforme.delete_row(ind)
         ind=ind+1
     insertCliente(values)
+    if len(Locacion)>0:
+        Locacion=Locacion[0]
+    print(Locacion)
     SolicitudInforme.append_row([True,"", IdsaEnviar,"",StatusEnBase,date_time,Email,
     EsSource, EMailCandidato, IdsaEnviar, TecnoCandi, TpCandi, LKCandi, comment,
     CvEspañol, InfoEntrevista, CvIngles, InfoEntrevistaIngles, RemuneracionPretendidaMensual,
