@@ -25,6 +25,8 @@ def status(id):
         return  'Ingreso'
     if id=="12" :
         return  'Fuera de proceso'
+    if id=="13" :
+        return  'Informe Cargado'
 def miscandidatos(usuario=''):
     a = conexion.cursor()
     consulta = "select EmailAddres,emailcandidato,idbusqueda,idstatus from metricas where 1=1"

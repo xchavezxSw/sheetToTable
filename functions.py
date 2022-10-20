@@ -85,6 +85,45 @@ def addReserva(values):
     reservas.append_row([date_time,email,emailCandidato,naCandi,lkCandi,tcandi,tperfil,idReserva,comment])
 
 def addInforme(values):
+      if 'conexion-hr.com' in values['EmailInf']:
+          EsSource = values['EsSourceInf']
+          Email = values['EmailInf']
+          EMailCandidato = values['EMailCandidatoInf']
+          NombreyApellidodelCandidato = values['NombreyApellidodelCandidatoInf']
+          IdsaEnviar = values['IdsaEnviarInf']
+          RemuneracionPretendidaMensual = values['RemuneracionPretendidaMensualInf']
+          NiveldeIngles = "".join(values["NiveldeInglesInf"])
+          Locacion = values["LocacionInf"]
+          LKCandi = values['LKCandiInf']
+          if len(values['TecnoCandiInf']) > 1:
+              tecnologias = ",".join(values['TecnoCandiInf'])
+          else:
+              if len(values['TecnoCandiInf']) == 1:
+                  tecnologias = values['TecnoCandiInf'][0]
+          TecnoCandi = tecnologias
+          if len(values['TpCandiInf']) > 1:
+              tipoPerfil = ",".join(values['TpCandiInf'])
+          else:
+              if len(values['TpCandiInf']) == 1:
+                  tipoPerfil = values['TpCandiInf'][0]
+          TpCandi = tipoPerfil
+          comment = values['CommentInf']
+          CvEspañol = ""  # values['CvEspanolInf']
+          InfoEntrevista = values['informeEntEsp']
+          CvIngles = ""  # values['CvInglesInf']
+          InfoEntrevistaIngles = values['informeEntIng']
+          curDT = datetime.datetime.now()
+          date_time = curDT.strftime("%m/%d/%Y, %H:%M:%S")
+          values['StatusEnBaseInf']=13
+          values['MotivvoRechazoInf']=''
+          revisarAprob(values)
+          SolicitudInforme.append_row([False, "", "", "", "", date_time, Email,
+                                       EsSource, EMailCandidato, IdsaEnviar, TecnoCandi, TpCandi, LKCandi, comment,
+                                       CvEspañol, InfoEntrevista, CvIngles, InfoEntrevistaIngles,
+                                       RemuneracionPretendidaMensual,
+                                       NiveldeIngles, Locacion[0],
+                                       NombreyApellidodelCandidato, ""])
+      else:
         EsSource=values['EsSourceInf']
         Email= values['EmailInf']
         EMailCandidato = values['EMailCandidatoInf']
