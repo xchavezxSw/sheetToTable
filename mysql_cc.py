@@ -25,6 +25,18 @@ def status(id):
         return  'Ingreso'
     if id=="12" :
         return  'Fuera de proceso'
+def miscandidatos(usuario=''):
+    a = conexion.cursor()
+    consulta = "select EmailAddres,emailcandidato,idbusqueda,idstatus from metricas where 1=1"
+    if usuario != '':
+        consulta = consulta + " and EmailAddres='" + usuario + "'"
+    a.execute(consulta)
+    results = a.fetchall()
+    json_data = []
+    for result in results:
+        json_data.append([result[0], result[1], result[2], status(str(result[3]))])
+    return json.loads(json.dumps(json_data).encode('utf-8').decode('ascii'))
+
 def encliente(usuario=''):
 
             a=conexion.cursor()

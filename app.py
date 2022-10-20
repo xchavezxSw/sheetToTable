@@ -168,6 +168,17 @@ def modreserva():
         modificarReservar(value)
     return 'ok', 200
 """conexion a mysq"""
+@cross_origin()
+@app.route('/getMisCandis')
+def getencliente():
+    args = request.args
+    usuario=args.get('usuario')
+    if usuario!='' or usuario is not None:
+        usuario = unquote(usuario)
+        data=miscandidatos(usuario)
+    else:
+        data=miscandidatos()
+    return make_response(jsonify(data), 200)
 
 @cross_origin()
 @app.route('/getCliente')
