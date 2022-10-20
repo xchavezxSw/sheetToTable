@@ -170,7 +170,7 @@ def modreserva():
 """conexion a mysq"""
 @cross_origin()
 @app.route('/getMisCandis')
-def getencliente():
+def getMisCandis():
     args = request.args
     usuario=args.get('usuario')
     if usuario!='' or usuario is not None:
