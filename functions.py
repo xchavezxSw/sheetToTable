@@ -22,6 +22,8 @@ contratadossheet=client.open('[FueraDeProceso]Contratados').worksheet('FueraDePr
 rechazados=client.open('[FueraDeProceso]ProcesoRechazado').worksheet('FueraDeProcesoProcesoRechazado')
 #cambios=client.open('[AUT]PedidosCambios').worksheet('AUTPedidosCambios')
 
+
+
 def jsonsheet():
     client = gspread.authorize(credentials)
     sheet4 = client.open('[EnProceso]EnCliente').worksheet('EnProcesoEnCliente')  # Open the spreadsheet
