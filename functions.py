@@ -117,11 +117,17 @@ def addInforme(values):
           values['StatusEnBaseInf']=13
           values['MotivvoRechazoInf']=''
           revisarAprob(values)
+          print([False, "", "", "", "", date_time, Email,
+                                       EsSource, EMailCandidato, IdsaEnviar, TecnoCandi, TpCandi, LKCandi, comment,
+                                       CvEspañol, InfoEntrevista, CvIngles, InfoEntrevistaIngles,
+                                       RemuneracionPretendidaMensual,
+                                       NiveldeIngles, Locacion[0].replace("\n","").replace("\n","").replace("\n",""),
+                                       NombreyApellidodelCandidato, ""])
           SolicitudInforme.append_row([False, "", "", "", "", date_time, Email,
                                        EsSource, EMailCandidato, IdsaEnviar, TecnoCandi, TpCandi, LKCandi, comment,
                                        CvEspañol, InfoEntrevista, CvIngles, InfoEntrevistaIngles,
                                        RemuneracionPretendidaMensual,
-                                       NiveldeIngles, Locacion[0],
+                                       NiveldeIngles, Locacion[0].replace("\n","").replace("\n","").replace("\n",""),
                                        NombreyApellidodelCandidato, ""])
       else:
         EsSource=values['EsSourceInf']
