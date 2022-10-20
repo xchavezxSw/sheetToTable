@@ -4,6 +4,7 @@ from mysql import *
 from functions import *
 import json
 from flask_cors import CORS,cross_origin
+from urllib.parse import unquote
 app = Flask(__name__)
 CORS(app)
 
@@ -174,6 +175,7 @@ def getencliente():
     args = request.args
     usuario=args.get('usuario')
     if usuario!='' or usuario is not None:
+        usuario = unquote(usuario)
         data=encliente(usuario)
     else:
         data=encliente()
@@ -185,6 +187,7 @@ def getreservados():
     args = request.args
     usuario=args.get('usuario')
     if usuario!='' or usuario is not None:
+        usuario = unquote(usuario)
         data=reservados(usuario)
     else:
         data=reservados()
@@ -194,8 +197,10 @@ def getreservados():
 def getmetrica():
     args = request.args
     usuario = args.get('usuario')
+
     rol = args.get('rol')
     if usuario != '' or usuario is not None:
+        usuario = unquote(usuario)
         data = metrica(usuario,rol)
     else:
         data = metrica()
@@ -206,6 +211,7 @@ def getContratados():
     args = request.args
     usuario = args.get('usuario')
     if usuario != '' or usuario is not None:
+        usuario = unquote('usuario')
         data=contratadosFun(usuario)
     else:
         data=contratadosFun()
@@ -273,4 +279,5 @@ def getcookie():
    if name is None:
        return  make_response(jsonify(json.loads(json.dumps([None]).encode('utf-8').decode('ascii'))), 200)
    else:
+       name = unquote(name)
        return make_response(jsonify(json.loads(json.dumps([name]).encode('utf-8').decode('ascii'))), 200)
