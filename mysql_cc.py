@@ -31,7 +31,7 @@ def miscandidatos(usuario=''):
     a = conexion.cursor()
     consulta = "select EmailAddres,emailcandidato,idbusqueda,idstatus from metricas where 1=1"
     if usuario != '':
-        consulta = consulta + " and EmailAddres='" + usuario + "'"
+        consulta = consulta + " and lower(trim(EmailAddres))=lower(trim('" + usuario + "'))"
     a.execute(consulta)
     results = a.fetchall()
     json_data = []
