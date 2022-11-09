@@ -170,6 +170,7 @@ def addInforme(values):
          NombreyApellidodelCandidato, ""])
 
 def revisarAprob(values):
+    print(values)
     StatusEnBase= values['StatusEnBaseInf']
     EsSource=values['EsSourceInf']
     Email= values['EmailInf']
