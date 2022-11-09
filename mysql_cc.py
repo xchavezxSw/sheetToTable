@@ -156,6 +156,7 @@ def insertinforme(idbusqueda,emailAddress,emailCandidato):
         return json.loads(json.dumps(result).encode('utf-8').decode('ascii'))
 def insertCliente(values):
     a = conexion.cursor()
+    print(values)
     sql = "INSERT INTO `cliente` ( EmailAddres, \
                                    emailcandidato, \
                                     idBusqueda, \
@@ -179,6 +180,7 @@ def insertCliente(values):
                                         '" + values['CommentInf'] + "',  \
                                         curdate()); "
 
+    print(sql)
     a.execute(sql)
     conexion.commit()
     result = 'ok'
