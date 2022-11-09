@@ -88,6 +88,7 @@ def addReserva(values):
 
 def addInforme(values):
       if 'conexion-hr.com' in values['EmailInf']:
+          print(values)
           EsSource = values['EsSourceInf']
           Email = values['EmailInf']
           EMailCandidato = values['EMailCandidatoInf']
@@ -139,6 +140,7 @@ def addInforme(values):
         NiveldeIngles="".join(values["NiveldeInglesInf"])
         Locacion=values["LocacionInf"]
         LKCandi = values['LKCandiInf']
+        tipoPerfil = ''
         if len(values['TecnoCandiInf']) > 1:
             tecnologias = ",".join(values['TecnoCandiInf'])
         else:
