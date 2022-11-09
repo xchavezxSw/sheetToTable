@@ -105,6 +105,8 @@ def addInforme(values):
           TecnoCandi=''
           if tecnologias != None:
             TecnoCandi = tecnologias
+          TecnoCandi = tecnologias
+          tipoPerfil=''
           if len(values['TpCandiInf']) > 1:
               tipoPerfil = ",".join(values['TpCandiInf'])
           else:
