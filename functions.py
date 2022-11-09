@@ -180,9 +180,19 @@ def revisarAprob(values):
     NiveldeIngles="".join(values["NiveldeInglesInf"])
     Locacion=values["LocacionInf"]
     LKCandi = values['LKCandiInf']
-    tecnologias = "".join(values['TecnoCandiInf'])
+    tecnologias=''
+    if len(values['TecnoCandiInf']) > 1:
+        tecnologias = ",".join(values['TecnoCandiInf'])
+    else:
+        if len(values['TecnoCandiInf']) == 1:
+            tecnologias = values['TecnoCandiInf'][0]
     TecnoCandi = tecnologias
-    tipoPerfil = "".join(values['TpCandiInf'])
+    tipoPerfil=''
+    if len(values['TpCandiInf']) > 1:
+        tipoPerfil = ",".join(values['TpCandiInf'])
+    else:
+        if len(values['TpCandiInf']) == 1:
+            tipoPerfil = values['TpCandiInf'][0]
     TpCandi = tipoPerfil
     comment = values['CommentInf']
     CvEspañol= ""#values['CvEspanolInf']
