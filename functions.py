@@ -98,6 +98,7 @@ def addInforme(values):
           NiveldeIngles = "".join(values["NiveldeInglesInf"])
           Locacion = values["LocacionInf"]
           LKCandi = values['LKCandiInf']
+          tecnologias=''
           if len(values['TecnoCandiInf']) > 1:
               tecnologias = ",".join(values['TecnoCandiInf'])
           else:
