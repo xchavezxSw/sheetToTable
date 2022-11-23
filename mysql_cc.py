@@ -1,6 +1,6 @@
 import datetime
 
-from bd import conexion
+from bd import conexion,connectar
 import json
 def status(id):
     if id=="1":
@@ -28,7 +28,8 @@ def status(id):
     if id=="13" :
         return  'Informe Cargado'
 def miscandidatos(usuario=''):
-    a = conexion.cursor()
+    db=connectar()
+    a = db.cursor()
     consulta = "select EmailAddres,emailcandidato,idbusqueda,idstatus from metricas where 1=1"
     if usuario != '':
         consulta = consulta + " and lower(trim(EmailAddres))=lower(trim('" + usuario + "'))"
