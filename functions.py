@@ -70,21 +70,39 @@ def addReserva(values):
     modificarReservar(values)
  except Exception as e:
     print(e)
-    newDict={"datos":"vacio"}
-    curDT = datetime.datetime.now()
-    date_time = curDT.strftime("%m/%d/%Y, %H:%M:%S")
-    email=values['email']
-    emailCandidato=str(values['emailCandidato']).lower()
-    naCandi=values['naCandi']
-    lkCandi=values['lkCandi']
-    tecnologias=",".join(values['tcandi'])
-    tcandi=tecnologias
-    tipoPerfil=",".join(values['tperfil'])
-    tperfil=tipoPerfil
-    idReserva=values['idReserva']
-    comment=values['comment']
-    insertreserva(values)
-    reservas.append_row([date_time,email,emailCandidato,naCandi,lkCandi,tcandi,tperfil,idReserva,comment])
+    if '_' in values['idReserva']:
+        for i in values['idReserva'].split('_'):
+            newDict = {"datos": "vacio"}
+            curDT = datetime.datetime.now()
+            date_time = curDT.strftime("%m/%d/%Y, %H:%M:%S")
+            email = values['email']
+            emailCandidato = str(values['emailCandidato']).lower()
+            naCandi = values['naCandi']
+            lkCandi = values['lkCandi']
+            tecnologias = ",".join(values['tcandi'])
+            tcandi = tecnologias
+            tipoPerfil = ",".join(values['tperfil'])
+            tperfil = tipoPerfil
+            idReserva = i
+            comment = values['comment']
+            insertreserva(values)
+            reservas.append_row([date_time, email, emailCandidato, naCandi, lkCandi, tcandi, tperfil, idReserva, comment])
+    else:
+        newDict={"datos":"vacio"}
+        curDT = datetime.datetime.now()
+        date_time = curDT.strftime("%m/%d/%Y, %H:%M:%S")
+        email=values['email']
+        emailCandidato=str(values['emailCandidato']).lower()
+        naCandi=values['naCandi']
+        lkCandi=values['lkCandi']
+        tecnologias=",".join(values['tcandi'])
+        tcandi=tecnologias
+        tipoPerfil=",".join(values['tperfil'])
+        tperfil=tipoPerfil
+        idReserva=values['idReserva']
+        comment=values['comment']
+        insertreserva(values)
+        reservas.append_row([date_time,email,emailCandidato,naCandi,lkCandi,tcandi,tperfil,idReserva,comment])
 
 def addInforme(values):
       if 'conexion-hr.com' in values['EmailInf']:
