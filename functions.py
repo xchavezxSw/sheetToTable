@@ -85,7 +85,9 @@ def addReserva(values):
             tperfil = tipoPerfil
             idReserva = i
             comment = values['comment']
-            insertreserva(values)
+            nuevo=values
+            nuevo['idReserva']=i
+            insertreserva(nuevo)
             reservas.append_row([date_time, email, emailCandidato, naCandi, lkCandi, tcandi, tperfil, idReserva, comment])
     else:
         newDict={"datos":"vacio"}

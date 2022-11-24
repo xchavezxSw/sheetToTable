@@ -122,7 +122,6 @@ def updateReserva(date_time, email, emailCandidato, naCandi, lkCandi, tcandi, tp
     result = 'ok'
     return json.loads(json.dumps(result).encode('utf-8').decode('ascii'))
 def insertreserva(values):
-        print("inserto")
         a = conexion.cursor()
         sql = "INSERT INTO `reserva` ( id, \
 EmailAddres,emailcandidato, \
