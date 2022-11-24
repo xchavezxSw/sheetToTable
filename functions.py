@@ -143,6 +143,7 @@ def addInforme(values):
         Locacion=values["LocacionInf"]
         LKCandi = values['LKCandiInf']
         tipoPerfil = ''
+        tecnologias=''
         if len(values['TecnoCandiInf']) > 1:
             tecnologias = ",".join(values['TecnoCandiInf'])
         else:
