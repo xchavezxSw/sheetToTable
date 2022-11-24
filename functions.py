@@ -170,7 +170,6 @@ def addInforme(values):
          NombreyApellidodelCandidato, ""])
 
 def revisarAprob(values):
-    print(values)
     StatusEnBase= values['StatusEnBaseInf']
     EsSource=values['EsSourceInf']
     Email= values['EmailInf']
@@ -254,6 +253,7 @@ def revisarRechaz(values):
             indice = ind
             SolicitudInforme.delete_row(ind)
         ind=ind+1
+    insertEstado(EMailCandidato,IdsaEnviar,Email,'12')
     SolicitudInforme.append_row([True,"","" ,IdsaEnviar,StatusEnBase,date_time,Email,
     EsSource, EMailCandidato, IdsaEnviar, TecnoCandi, TpCandi, LKCandi, comment,
     CvEspañol, InfoEntrevista, CvIngles, InfoEntrevistaIngles, RemuneracionPretendidaMensual,
