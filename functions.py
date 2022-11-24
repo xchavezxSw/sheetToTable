@@ -345,33 +345,60 @@ def devolverReserva(email):
 
 
 def modificarReservar(values):
-    cell = reservado.find(str(values['emailCandidato']).lower(), case_sensitive=True)
-    row = cell.row
-    email = values['email']
-    emailCandidato = str(values['emailCandidato']).lower()
-    naCandi = values['naCandi']
-    lkCandi = values['lkCandi']
-    if len(values['tcandi']) > 1:
-        tecnologias = ",".join(values['tcandi'])
+    if '_' in values['idReserva']:
+        for i in values['idReserva'].split('_'):
+            cell = reservado.find(str(values['emailCandidato']).lower(), case_sensitive=True)
+            row = cell.row
+            email = values['email']
+            emailCandidato = str(values['emailCandidato']).lower()
+            naCandi = values['naCandi']
+            lkCandi = values['lkCandi']
+            if len(values['tcandi']) > 1:
+                tecnologias = ",".join(values['tcandi'])
+            else:
+                tecnologias = values['tcandi'][0]
+            tcandi = tecnologias
+            if len(values['tperfil']) > 1:
+                tipoPerfil = ",".join(values['tperfil'])
+            else:
+                tipoPerfil = values['tperfil'][0]
+            tperfil = tipoPerfil
+            idReserva = i
+            comment = values['comment']
+            curDT = datetime.datetime.now()
+            date_time = curDT.strftime("%m/%d/%Y, %H:%M:%S")
+            reservado.delete_row(row)
+            reservado.add_rows(1)
+            updateReserva(date_time, email, emailCandidato, naCandi, lkCandi, tcandi, tperfil, idReserva, comment)
+            reservado.append_row([date_time, email, emailCandidato, naCandi, lkCandi, tcandi, tperfil, idReserva, comment,],
+                                 index=row)
     else:
-        tecnologias = values['tcandi'][0]
-    tcandi = tecnologias
-    if len(values['tperfil']) > 1:
-        tipoPerfil = ",".join(values['tperfil'])
-    else:
-        tipoPerfil = values['tperfil'][0]
-    tperfil = tipoPerfil
-    idReserva = values['idReserva']
-    comment = values['comment']
-    curDT = datetime.datetime.now()
-    date_time = curDT.strftime("%m/%d/%Y, %H:%M:%S")
-    reservado.delete_row(row)
-    reservado.add_rows(1)
-    updateReserva(date_time, email, emailCandidato, naCandi, lkCandi, tcandi, tperfil, idReserva, comment)
-    reservado.append_row([date_time, email, emailCandidato, naCandi, lkCandi, tcandi, tperfil, idReserva, comment,],
-                         index=row)
-    print("modifico")
-
+        cell = reservado.find(str(values['emailCandidato']).lower(), case_sensitive=True)
+        row = cell.row
+        email = values['email']
+        emailCandidato = str(values['emailCandidato']).lower()
+        naCandi = values['naCandi']
+        lkCandi = values['lkCandi']
+        if len(values['tcandi']) > 1:
+            tecnologias = ",".join(values['tcandi'])
+        else:
+            tecnologias = values['tcandi'][0]
+        tcandi = tecnologias
+        if len(values['tperfil']) > 1:
+            tipoPerfil = ",".join(values['tperfil'])
+        else:
+            tipoPerfil = values['tperfil'][0]
+        tperfil = tipoPerfil
+        idReserva = values['idReserva']
+        comment = values['comment']
+        curDT = datetime.datetime.now()
+        date_time = curDT.strftime("%m/%d/%Y, %H:%M:%S")
+        reservado.delete_row(row)
+        reservado.add_rows(1)
+        updateReserva(date_time, email, emailCandidato, naCandi, lkCandi, tcandi, tperfil, idReserva, comment)
+        reservado.append_row(
+            [date_time, email, emailCandidato, naCandi, lkCandi, tcandi, tperfil, idReserva, comment, ],
+            index=row)
 
 
 def busquedasPrioritarias():
