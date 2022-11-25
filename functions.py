@@ -335,13 +335,22 @@ def getInformesArevisar():
         print(i)
     return json.loads(json.dumps(export).encode('utf-8').decode('ascii'))
 
+
+
 def devolverReserva(email):
-   data=reservado.get_all_records()#obtenemos los registros del excel
-   try:
-    newDict = list(filter(lambda elem: elem['Email Candidato'] if str(elem['Email Candidato']).lower()==str(email).lower() else None, data))[0]
-   except:
-       newDict={"datos":"vacio"}
-   return json.loads(json.dumps(newDict).encode('utf-8').decode('ascii'))
+    contratado = list(filter(
+        lambda elem: elem[2] if str(elem[2]).lower().strip() == str(email).lower().strip() else None,
+        contratados))
+    if len(contratado) > 0:
+        if contratado != '' or contratado is not None:
+            return '502'
+    else:
+       data=reservado.get_all_records()#obtenemos los registros del excel
+       try:
+        newDict = list(filter(lambda elem: elem['Email Candidato'] if str(elem['Email Candidato']).lower()==str(email).lower() else None, data))[0]
+       except:
+           newDict={"datos":"vacio"}
+       return json.loads(json.dumps(newDict).encode('utf-8').decode('ascii'))
 
 
 def modificarReservar(values):

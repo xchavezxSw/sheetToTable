@@ -135,7 +135,10 @@ def reservaemail():
     if request.method == 'POST':
         email=request.form.get('emailCandidato')
         data=devolverReserva(email)
-        return make_response(jsonify(data), 200)
+        if data=='502':
+            return make_response(jsonify(data), 502)
+        else:
+            return make_response(jsonify(data), 200)
 
 
 @cross_origin()
