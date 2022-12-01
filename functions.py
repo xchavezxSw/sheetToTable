@@ -145,13 +145,19 @@ def addInforme(values):
           date_time = curDT.strftime("%m/%d/%Y, %H:%M:%S")
           values['StatusEnBaseInf']=13
           values['MotivvoRechazoInf']=''
-          revisarAprob(values)
-          """SolicitudInforme.append_row([False, "", "", "", "", date_time, Email,
+          retorno = list(
+              filter(None, map(lambda x: True if str(x[0]).lower() == Email.lower() else None, DirectosList)))
+          if len(retorno) > 0:
+              if retorno[0]:
+                revisarAprob(values)
+              else:
+                insertinforme(IdsaEnviar, Email, EMailCandidato)
+                SolicitudInforme.append_row([False, "", "", "", "", date_time, Email,
                                        EsSource, EMailCandidato, IdsaEnviar, TecnoCandi, TpCandi, LKCandi, comment,
                                        CvEspañol, InfoEntrevista, CvIngles, InfoEntrevistaIngles,
                                        RemuneracionPretendidaMensual,
                                        NiveldeIngles, Locacion[0].replace("\n","").replace("\n","").replace("\n",""),
-                                       NombreyApellidodelCandidato, ""])"""
+                                       NombreyApellidodelCandidato, ""])
       else:
         EsSource=values['EsSourceInf']
         Email= values['EmailInf']
