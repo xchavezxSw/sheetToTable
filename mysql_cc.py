@@ -70,7 +70,8 @@ def reservados(usuario=''):
                                                     result[6],result[7],result[8],status(str(result[9])),result[10],str(result[11])])
         return json.loads(json.dumps(json_data).encode('utf-8').decode('ascii'))
 def metrica(usuario='',rol=''):
-    a = conexion.cursor()
+    db = connectar()
+    a = db.cursor()
     consulta = "select * from metricas m  where 1=1  "
     if usuario != '' and rol != 'admin':
         consulta = consulta + " and EmailAddres='" + usuario + "'"
@@ -93,7 +94,8 @@ def metrica(usuario='',rol=''):
 
 
 def contratadosFun(usuario=''):
-        a = conexion.cursor()
+        db = connectar()
+        a = db.cursor()
         consulta = "select * from contratados  where 1=1 "
         if usuario != '':
             consulta = consulta + " and EmailAddres='" + usuario + "'"
