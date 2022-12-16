@@ -68,7 +68,7 @@ def addReserva(values):
             return '403'
     print("asd")
     valor = pertenencia(email)
-    if valor == 'OK':
+    if valor != 'OK':
         return 410
     modificarReservar(values)
  except Exception as e:
@@ -355,6 +355,7 @@ def devolverReserva(email):
     if len(contratado) > 0:
         if contratado != '' or contratado is not None:
             return '502'
+
     else:
        data=reservado.get_all_records()#obtenemos los registros del excel
        try:
