@@ -90,11 +90,13 @@ def pertenencia(usuario=''):
     # json_data.append(row_headers)
     pertenencia=0
     reserva=0
+    valor=''
     for result in results:
         if result[0]!=0:
             pertenencia=1
         if result[1]!=0:
             reserva=1
+        valor=result[2]
     if pertenencia==1:
         texto='El candidato tiene pertenencia con otro reclutador'
     if reserva==1:
@@ -102,8 +104,8 @@ def pertenencia(usuario=''):
         if pertenencia==1:
             texto=texto+ ' y ademas esta en pertencia con otro reclutador'
     if pertenencia==0 & reserva==0:
-        return 'OK',result[2]
-    return texto,result[2]
+        return 'OK',valor
+    return texto,valor
 def metrica(usuario='',rol=''):
     db = connectar()
     a = db.cursor()
