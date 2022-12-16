@@ -137,15 +137,16 @@ def revisar():
 def reservaemail():
     if request.method == 'POST':
         email=request.form.get('emailCandidato')
+        emailrec = request.form.get('email')
         data=devolverReserva(email)
         valor,reclutador = pertenencia(email)
-        if valor != 'OK':
+        if valor != 'OK' and reclutador!=emailrec:
             data= '510'
         if data=='502':
             return make_response(jsonify(data), 502)
 
         else:
-            if data == '510':
+            if data == '510' and reclutador != :
                 return make_response(jsonify(data), 502)
             else:
                 return make_response(jsonify(data), 200)
