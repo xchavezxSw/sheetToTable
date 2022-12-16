@@ -87,8 +87,12 @@ def addReserva(values):
             comment = values['comment']
             nuevo=values
             nuevo['idReserva']=i
-            insertreserva(nuevo)
-            reservas.append_row([date_time, email, emailCandidato, naCandi, lkCandi, tcandi, tperfil, idReserva, comment])
+            valor=pertenencia(emailCandidato)
+            if valor=='OK':
+                insertreserva(nuevo)
+                reservas.append_row([date_time, email, emailCandidato, naCandi, lkCandi, tcandi, tperfil, idReserva, comment])
+            else:
+                return 403
     else:
         newDict={"datos":"vacio"}
         curDT = datetime.datetime.now()
@@ -103,8 +107,12 @@ def addReserva(values):
         tperfil=tipoPerfil
         idReserva=values['idReserva']
         comment=values['comment']
-        insertreserva(values)
-        reservas.append_row([date_time,email,emailCandidato,naCandi,lkCandi,tcandi,tperfil,idReserva,comment])
+        valor = pertenencia(emailCandidato)
+        if valor == 'OK':
+            insertreserva(values)
+            reservas.append_row([date_time,email,emailCandidato,naCandi,lkCandi,tcandi,tperfil,idReserva,comment])
+        else:
+            return 403
 
 def addInforme(values):
       if 'conexion-hr.com' in values['EmailInf']:
