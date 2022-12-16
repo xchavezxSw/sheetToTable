@@ -67,6 +67,9 @@ def addReserva(values):
         if contratado != '' or contratado is not None:
             return '403'
     print("asd")
+    valor = pertenencia(email)
+    if valor == 'OK':
+        return 410
     modificarReservar(values)
  except Exception as e:
     print(e)
