@@ -146,7 +146,7 @@ def reservaemail():
             return make_response(jsonify(data), 502)
 
         else:
-            if data == '510' and reclutador != :
+            if data == '510' and reclutador != emailrec:
                 return make_response(jsonify(data), 502)
             else:
                 return make_response(jsonify(data), 200)
