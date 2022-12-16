@@ -51,7 +51,10 @@ def insertreserva():
     if devuelvo=='403':
         return 'el candidato fue contratado con anterioridad', 403
     else:
-        return 'ok', 200
+        if devuelvo == '410':
+            return 'el candidato esta reservado o en pertenencia con otro reclutador', 410
+        else:
+            return 'ok', 200
 @cross_origin()
 @app.route('/solicitudInforme', methods=['GET', 'POST'])
 def solinforme():

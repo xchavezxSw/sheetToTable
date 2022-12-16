@@ -95,7 +95,7 @@ def addReserva(values):
                 insertreserva(nuevo)
                 reservas.append_row([date_time, email, emailCandidato, naCandi, lkCandi, tcandi, tperfil, idReserva, comment])
             else:
-                return 403
+                return 410
     else:
         newDict={"datos":"vacio"}
         curDT = datetime.datetime.now()
@@ -115,7 +115,7 @@ def addReserva(values):
             insertreserva(values)
             reservas.append_row([date_time,email,emailCandidato,naCandi,lkCandi,tcandi,tperfil,idReserva,comment])
         else:
-            return 403
+            return 410
 
 def addInforme(values):
       if 'conexion-hr.com' in values['EmailInf']:
