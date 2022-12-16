@@ -74,7 +74,8 @@ def reservados(usuario=''):
 def pertenencia(usuario=''):
     a = conexion.cursor()
     consulta = """select str_to_date(informe ,'%Y-%m-%d' ) >= CURRENT_DATE - INTERVAL 90 DAY informe, 
-                        str_to_date(reservado ,'%Y-%m-%d' ) >= CURRENT_DATE - INTERVAL 30 DAY reserva 
+                        str_to_date(reservado ,'%Y-%m-%d' ) >= CURRENT_DATE - INTERVAL 30 DAY reserva ,
+                        EmailAddres 
                 from metricas m where 
                 (str_to_date(informe ,'%Y-%m-%d' ) >= CURRENT_DATE - INTERVAL 90 DAY
                 or 
@@ -101,8 +102,8 @@ def pertenencia(usuario=''):
         if pertenencia==1:
             texto=texto+ ' y ademas esta en pertencia con otro reclutador'
     if pertenencia==0 & reserva==0:
-        return 'OK'
-    return texto
+        return 'OK',result[2]
+    return texto,result[2]
 def metrica(usuario='',rol=''):
     db = connectar()
     a = db.cursor()

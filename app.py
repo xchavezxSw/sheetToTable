@@ -138,7 +138,7 @@ def reservaemail():
     if request.method == 'POST':
         email=request.form.get('emailCandidato')
         data=devolverReserva(email)
-        valor = pertenencia(email)
+        valor,reclutador = pertenencia(email)
         if valor != 'OK':
             data= '510'
         if data=='502':

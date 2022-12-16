@@ -67,8 +67,8 @@ def addReserva(values):
         if contratado != '' or contratado is not None:
             return '403'
     print("asd")
-    valor = pertenencia(email)
-    if valor != 'OK':
+    valor,reclutador = pertenencia(email)
+    if valor != 'OK' and reclutador != values['email']:
         return 410
     modificarReservar(values)
  except Exception as e:
@@ -90,12 +90,17 @@ def addReserva(values):
             comment = values['comment']
             nuevo=values
             nuevo['idReserva']=i
-            valor=pertenencia(emailCandidato)
+            valor,reclutador=pertenencia(emailCandidato)
             if valor=='OK':
                 insertreserva(nuevo)
                 reservas.append_row([date_time, email, emailCandidato, naCandi, lkCandi, tcandi, tperfil, idReserva, comment])
             else:
-                return 410
+                if reclutador==email:
+                    insertreserva(nuevo)
+                    reservas.append_row(
+                        [date_time, email, emailCandidato, naCandi, lkCandi, tcandi, tperfil, idReserva, comment])
+                else:
+                    return 410
     else:
         newDict={"datos":"vacio"}
         curDT = datetime.datetime.now()
@@ -110,12 +115,17 @@ def addReserva(values):
         tperfil=tipoPerfil
         idReserva=values['idReserva']
         comment=values['comment']
-        valor = pertenencia(emailCandidato)
+        valor,reclutador = pertenencia(emailCandidato)
         if valor == 'OK':
             insertreserva(values)
             reservas.append_row([date_time,email,emailCandidato,naCandi,lkCandi,tcandi,tperfil,idReserva,comment])
         else:
-            return 410
+            if reclutador == email:
+                insertreserva(values)
+                reservas.append_row(
+                    [date_time, email, emailCandidato, naCandi, lkCandi, tcandi, tperfil, idReserva, comment])
+            else:
+                return 410
 
 def addInforme(values):
       if 'conexion-hr.com' in values['EmailInf']:
