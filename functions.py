@@ -23,7 +23,6 @@ rechazados=client.open('[FueraDeProceso]ProcesoRechazado').worksheet('FueraDePro
 #cambios=client.open('[AUT]PedidosCambios').worksheet('AUTPedidosCambios')
 
 
-
 def jsonsheet():
     client = gspread.authorize(credentials)
     sheet4 = client.open('[EnProceso]EnCliente').worksheet('EnProcesoEnCliente')  # Open the spreadsheet
@@ -145,7 +144,18 @@ def addInforme(values):
           date_time = curDT.strftime("%m/%d/%Y, %H:%M:%S")
           values['StatusEnBaseInf']=13
           values['MotivvoRechazoInf']=''
-          revisarAprob(values)
+          nuevaLista = []
+          for x in DirectosList:
+            nuevaLista.append(x[0])
+          if Email in nuevaLista:
+                revisarAprob(values)
+          else: 
+            insertinforme(IdsaEnviar,Email,EMailCandidato)
+            SolicitudInforme.append_row([False,"", "","","",date_time,Email,
+            EsSource, EMailCandidato, IdsaEnviar, TecnoCandi, TpCandi, LKCandi, comment,
+            CvEspañol, InfoEntrevista, CvIngles, InfoEntrevistaIngles, RemuneracionPretendidaMensual,
+            NiveldeIngles,Locacion[0],
+            NombreyApellidodelCandidato, ""])
           """SolicitudInforme.append_row([False, "", "", "", "", date_time, Email,
                                        EsSource, EMailCandidato, IdsaEnviar, TecnoCandi, TpCandi, LKCandi, comment,
                                        CvEspañol, InfoEntrevista, CvIngles, InfoEntrevistaIngles,
