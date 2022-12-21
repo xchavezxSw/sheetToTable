@@ -66,6 +66,9 @@ def addReserva(values):
         if contratado != '' or contratado is not None:
             return '403'
     print("asd")
+    valor,reclutador = pertenencia(email)
+    if valor != 'OK' and reclutador != values['email']:
+        return 410
     modificarReservar(values)
  except Exception as e:
     print(e)
@@ -86,8 +89,17 @@ def addReserva(values):
             comment = values['comment']
             nuevo=values
             nuevo['idReserva']=i
-            insertreserva(nuevo)
-            reservas.append_row([date_time, email, emailCandidato, naCandi, lkCandi, tcandi, tperfil, idReserva, comment])
+            valor,reclutador=pertenencia(emailCandidato)
+            if valor=='OK':
+                insertreserva(nuevo)
+                reservas.append_row([date_time, email, emailCandidato, naCandi, lkCandi, tcandi, tperfil, idReserva, comment])
+            else:
+                if reclutador==email:
+                    insertreserva(nuevo)
+                    reservas.append_row(
+                        [date_time, email, emailCandidato, naCandi, lkCandi, tcandi, tperfil, idReserva, comment])
+                else:
+                    return 410
     else:
         newDict={"datos":"vacio"}
         curDT = datetime.datetime.now()
@@ -102,12 +114,22 @@ def addReserva(values):
         tperfil=tipoPerfil
         idReserva=values['idReserva']
         comment=values['comment']
-        insertreserva(values)
-        reservas.append_row([date_time,email,emailCandidato,naCandi,lkCandi,tcandi,tperfil,idReserva,comment])
+        valor,reclutador = pertenencia(emailCandidato)
+        if valor == 'OK':
+            insertreserva(values)
+            reservas.append_row([date_time,email,emailCandidato,naCandi,lkCandi,tcandi,tperfil,idReserva,comment])
+        else:
+            if reclutador == email:
+                insertreserva(values)
+                reservas.append_row(
+                    [date_time, email, emailCandidato, naCandi, lkCandi, tcandi, tperfil, idReserva, comment])
+            else:
+                return 410
 
 def addInforme(values):
+      if values['TpCandiInf'] is None:
+          values['TpCandiInf']=''
       if 'conexion-hr.com' in values['EmailInf']:
-          print(values)
           EsSource = values['EsSourceInf']
           Email = values['EmailInf']
           EMailCandidato = values['EMailCandidatoInf']
@@ -354,6 +376,7 @@ def devolverReserva(email):
     if len(contratado) > 0:
         if contratado != '' or contratado is not None:
             return '502'
+
     else:
        data=reservado.get_all_records()#obtenemos los registros del excel
        try:

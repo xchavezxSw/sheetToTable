@@ -55,7 +55,10 @@ def insertreserva():
     if devuelvo=='403':
         return 'el candidato fue contratado con anterioridad', 403
     else:
-        return 'ok', 200
+        if devuelvo == '410':
+            return 'el candidato esta reservado o en pertenencia con otro reclutador', 410
+        else:
+            return 'ok', 200
 @cross_origin()
 @app.route('/solicitudInforme', methods=['GET', 'POST'])
 def solinforme():
@@ -75,7 +78,6 @@ def solinforme():
                  "informeEntEsp":request.form.get('informeEntEspInf'),
                  "informeEntIng":request.form.get('informeEntIngInf')
                 }
-        print(value)
         addInforme(value)
     return 'ok', 200
 
@@ -138,11 +140,19 @@ def revisar():
 def reservaemail():
     if request.method == 'POST':
         email=request.form.get('emailCandidato')
+        emailrec = request.form.get('email')
         data=devolverReserva(email)
+        valor,reclutador = pertenencia(email)
+        if valor != 'OK' and reclutador!=emailrec:
+            data= '510'
         if data=='502':
             return make_response(jsonify(data), 502)
+
         else:
-            return make_response(jsonify(data), 200)
+            if data == '510' and reclutador != emailrec:
+                return make_response(jsonify(data), 502)
+            else:
+                return make_response(jsonify(data), 200)
 
 
 @cross_origin()

@@ -69,6 +69,43 @@ def reservados(usuario=''):
             json_data.append( [result[0],result[1],result[2],result[3],result[4],result[5],
                                                     result[6],result[7],result[8],status(str(result[9])),result[10],str(result[11])])
         return json.loads(json.dumps(json_data).encode('utf-8').decode('ascii'))
+
+
+def pertenencia(usuario=''):
+    a = conexion.cursor()
+    consulta = """select str_to_date(informe ,'%Y-%m-%d' ) >= CURRENT_DATE - INTERVAL 90 DAY informe, 
+                        str_to_date(reservado ,'%Y-%m-%d' ) >= CURRENT_DATE - INTERVAL 30 DAY reserva ,
+                        EmailAddres 
+                from metricas m where 
+                (str_to_date(informe ,'%Y-%m-%d' ) >= CURRENT_DATE - INTERVAL 90 DAY
+                or 
+                str_to_date(reservado ,'%Y-%m-%d' ) >= CURRENT_DATE - INTERVAL 30 DAY
+                ) """
+    if usuario != '':
+        consulta = consulta + " and emailcandidato='" + usuario + "'"
+    a.execute(consulta)
+    # row_headers = [x[0] for x in a.description]  # this will extract row headers
+    results = a.fetchall()
+    json_data = []
+    # json_data.append(row_headers)
+    pertenencia=0
+    reserva=0
+    valor=''
+    for result in results:
+        if result[0]!=0:
+            pertenencia=1
+        if result[1]!=0:
+            reserva=1
+        valor=result[2]
+    if pertenencia==1:
+        texto='El candidato tiene pertenencia con otro reclutador'
+    if reserva==1:
+        texto='El candidato esta reservado para otra reclutador'
+        if pertenencia==1:
+            texto=texto+ ' y ademas esta en pertencia con otro reclutador'
+    if pertenencia==0 & reserva==0:
+        return 'OK',valor
+    return texto,valor
 def metrica(usuario='',rol=''):
     db = connectar()
     a = db.cursor()
