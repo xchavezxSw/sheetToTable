@@ -74,7 +74,6 @@ def solinforme():
                  "informeEntEsp":request.form.get('informeEntEspInf'),
                  "informeEntIng":request.form.get('informeEntIngInf')
                 }
-        print(value)
         addInforme(value)
     return 'ok', 200
 

@@ -128,8 +128,9 @@ def addReserva(values):
                 return 410
 
 def addInforme(values):
+      if values['TpCandiInf'] is None:
+          values['TpCandiInf']=''
       if 'conexion-hr.com' in values['EmailInf']:
-          print(values)
           EsSource = values['EsSourceInf']
           Email = values['EmailInf']
           EMailCandidato = values['EMailCandidatoInf']
