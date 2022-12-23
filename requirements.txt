@@ -6,3 +6,4 @@ flask_cors
 pandas
 pymysql
 mysql
+mysql-connector-python
