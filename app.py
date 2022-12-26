@@ -9,7 +9,7 @@ app = Flask(__name__)
 CORS(app)
 import socket
 myhost = socket.gethostname()
-if 'DESKTOP-EKG5FVQ'==myhost:
+if 'DESKTOP-A3850LN'==myhost:
     app.run(debug=True     )
 else:
     from OpenSSL import SSL
@@ -75,9 +75,11 @@ def solinforme():
                 "TecnoCandiInf":request.form.getlist('TecnoCandiInf[]'),
                 "TpCandiInf":request.form.get('TpCandiInf[]'),
                 "CommentInf":request.form.get('commentInf'),
-                 "informeEntEsp":request.form.get('informeEntEspInf'),
-                 "informeEntIng":request.form.get('informeEntIngInf')
+                "informeEntEsp":request.form.get('informeEntEspInf'),
+                "informeEntIng":request.form.get('informeEntIngInf'),
+                "CvEspañol":request.form.get('cvespInf'),
                 }
+        print(value)
         addInforme(value)
     return 'ok', 200
 

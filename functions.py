@@ -158,7 +158,8 @@ def addInforme(values):
                       tipoPerfil = values['TpCandiInf'][0]
           TpCandi = tipoPerfil
           comment = values['CommentInf']
-          CvEspañol = ""  # values['CvEspanolInf']
+          Cvespañol = values['CvEspañol']
+          print(values)
           InfoEntrevista = values['informeEntEsp']
           CvIngles = ""  # values['CvInglesInf']
           InfoEntrevistaIngles = values['informeEntIng']
@@ -175,7 +176,7 @@ def addInforme(values):
             insertinforme(IdsaEnviar,Email,EMailCandidato)
             SolicitudInforme.append_row([False,"", "","","",date_time,Email,
             EsSource, EMailCandidato, IdsaEnviar, TecnoCandi, TpCandi, LKCandi, comment,
-            CvEspañol, InfoEntrevista, CvIngles, InfoEntrevistaIngles, RemuneracionPretendidaMensual,
+            Cvespañol, InfoEntrevista, CvIngles, InfoEntrevistaIngles, RemuneracionPretendidaMensual,
             NiveldeIngles,Locacion[0],
             NombreyApellidodelCandidato, ""])
           """SolicitudInforme.append_row([False, "", "", "", "", date_time, Email,
@@ -209,7 +210,7 @@ def addInforme(values):
                 tipoPerfil=values['TpCandiInf'][0]
         TpCandi = tipoPerfil
         comment = values['CommentInf']
-        CvEspañol= ""#values['CvEspanolInf']
+        Cvespañol= values['CvEspañol']
         InfoEntrevista= values['informeEntEsp']
         CvIngles= ""#values['CvInglesInf']
         InfoEntrevistaIngles= values['informeEntIng']
@@ -218,7 +219,7 @@ def addInforme(values):
         insertinforme(IdsaEnviar,Email,EMailCandidato)
         SolicitudInforme.append_row([False,"", "","","",date_time,Email,
          EsSource, EMailCandidato, IdsaEnviar, TecnoCandi, TpCandi, LKCandi, comment,
-         CvEspañol, InfoEntrevista, CvIngles, InfoEntrevistaIngles, RemuneracionPretendidaMensual,
+         Cvespañol, InfoEntrevista, CvIngles, InfoEntrevistaIngles, RemuneracionPretendidaMensual,
          NiveldeIngles,Locacion[0],
          NombreyApellidodelCandidato, ""])
 
@@ -341,7 +342,7 @@ def getInformesArevisar():
         else:
           if i[4]!="Anclada":
                     i.append("""<button style="border:none; background-color: transparent;" id="aprobar"><img style="border-radius: 20px;" width="30px" src="https://img2.freepng.es/20180403/dtw/kisspng-computer-icons-check-mark-presentation-symbol-check-list-5ac41357e304a0.5127533215227994479299.jpg" alt=""></button>
-                        <button style="border:none; background-color: transparent;" id="rechazar"> <img width="30px"  src="https://geoinn.com/wp-content/uploads/2018/08/010_x-3-512.png" alt=""></button>""")
+                    <button style="border:none; background-color: transparent;" id="rechazar"> <img width="30px"  src="https://geoinn.com/wp-content/uploads/2018/08/010_x-3-512.png" alt=""></button>""")
                     algo.append(i)
     export=[]
     nn=0
@@ -350,7 +351,6 @@ def getInformesArevisar():
         if '_' in i[9]:
             splitear = i[9].split("_")
             for j in splitear:
-                print(j)
                 export.append([i[4],i[5],
                 i[6],i[7],i[8],j,i[10],
                 i[11],i[12],i[13],i[14],
@@ -358,13 +358,15 @@ def getInformesArevisar():
                 i[19],i[20],i[21],i[22],
                 i[23]])
         else:
+            comentario='<input style="color:black" type="text" value="'+i[13]+'">'
+            i[13]= comentario
             export.append([i[4],i[5],
                 i[6],i[7],i[8],i[9],i[10],
                 i[11],i[12],i[13],i[14],
                 i[15],i[16],i[17],i[18],
                 i[19],i[20],i[21],i[22],
                 i[23]])
-        print(i)
+            print('PRINTTTTTT'+i[13])
     return json.loads(json.dumps(export).encode('utf-8').decode('ascii'))
 
 
