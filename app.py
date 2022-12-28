@@ -96,7 +96,7 @@ def base64():
         emailc = args.get('emailc')
     data=base64decode(id,email,emailc)
     buffer = BytesIO.BytesIO()
-    content = base64.b64decode(data)
+    content = base64.decodestring(data)
     buffer.write(content)
     response=make_response( buffer.getvalue())
     response.headers['Content-Type'] = 'application/pdf'
