@@ -171,12 +171,13 @@ def addInforme(values):
           for x in DirectosList:
             nuevaLista.append(x[0])
           if Email in nuevaLista:
-                revisarAprob(values)
+                revisarAprob(values) 
           else: 
-            insertinforme(IdsaEnviar,Email,EMailCandidato)
+            insertinforme(IdsaEnviar,Email,EMailCandidato,Cvespañol)
+            cvEspañolUrl = 'https://conexion.techne.net.ar:80/base64?id='+IdsaEnviar+'&email='+Email+'&emailc='+EMailCandidato+'&campo=cvespinf'
             SolicitudInforme.append_row([False,"", "","","",date_time,Email,
             EsSource, EMailCandidato, IdsaEnviar, TecnoCandi, TpCandi, LKCandi, comment,
-            Cvespañol, InfoEntrevista, CvIngles, InfoEntrevistaIngles, RemuneracionPretendidaMensual,
+            cvEspañolUrl, InfoEntrevista, CvIngles, InfoEntrevistaIngles, RemuneracionPretendidaMensual,
             NiveldeIngles,Locacion[0],
             NombreyApellidodelCandidato, ""])
           """SolicitudInforme.append_row([False, "", "", "", "", date_time, Email,
@@ -216,10 +217,11 @@ def addInforme(values):
         InfoEntrevistaIngles= values['informeEntIng']
         curDT = datetime.datetime.now()
         date_time = curDT.strftime("%m/%d/%Y, %H:%M:%S")
-        insertinforme(IdsaEnviar,Email,EMailCandidato)
+        insertinforme(IdsaEnviar,Email,EMailCandidato,Cvespañol)
+        cvEspañolUrl = 'https://conexion.techne.net.ar:80/base64?id='+IdsaEnviar+'&email='+Email+'&emailc='+EMailCandidato+'&campo=cvespinf'
         SolicitudInforme.append_row([False,"", "","","",date_time,Email,
          EsSource, EMailCandidato, IdsaEnviar, TecnoCandi, TpCandi, LKCandi, comment,
-         Cvespañol, InfoEntrevista, CvIngles, InfoEntrevistaIngles, RemuneracionPretendidaMensual,
+         cvEspañolUrl, InfoEntrevista, CvIngles, InfoEntrevistaIngles, RemuneracionPretendidaMensual,
          NiveldeIngles,Locacion[0],
          NombreyApellidodelCandidato, ""])
 
@@ -359,6 +361,9 @@ def getInformesArevisar():
                 i[23]])
         else:
             comentario='<input style="color:black" type="text" value="'+i[13]+'">'
+            if i[14]!='':
+                link='<a style="color:white" target="-" href="'+i[14]+'">Descargar cv español</a>'
+                i[14]=link
             i[13]= comentario
             export.append([i[4],i[5],
                 i[6],i[7],i[8],i[9],i[10],
