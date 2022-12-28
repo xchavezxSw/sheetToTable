@@ -193,7 +193,7 @@ motivo,status,ComentariosAdicionales,FECHA    ) VALUES (0, '"+values['email']+"'
 def insertinforme(idbusqueda,emailAddress,emailCandidato,cvEspInf,InfoEntrevista,CvIngles,InfoEntrevistaIngles):
         db = connectar()
         a = db.cursor()
-
+        print("llegue")
         if cvEspInf is None:
             cvEspInf=''
         if InfoEntrevista is None:
@@ -213,7 +213,7 @@ def insertinforme(idbusqueda,emailAddress,emailCandidato,cvEspInf,InfoEntrevista
               "'" +InfoEntrevista + "'"+ "," \
               "'" +InfoEntrevistaIngles + "'"\
               ") "
-        print(sql)
+
         a.execute(sql)
         conexion.commit()
         result='ok'

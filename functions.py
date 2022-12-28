@@ -291,15 +291,18 @@ def revisarAprob(values):
             indice = ind
             SolicitudInforme.delete_row(ind)
         ind=ind+1
+    print("aca")
     insertCliente(values)
+    print("aca2")
     if len(Locacion)>0:
         Locacion=Locacion[0]
-    print(Locacion)
+    print("aca3")
     SolicitudInforme.append_row([True,"", IdsaEnviar,"",StatusEnBase,date_time,Email,
     EsSource, EMailCandidato, IdsaEnviar, TecnoCandi, TpCandi, LKCandi, comment,
     CvEspañol, InfoEntrevista, CvIngles, InfoEntrevistaIngles, RemuneracionPretendidaMensual,
     NiveldeIngles,Locacion,
     NombreyApellidodelCandidato, MotivoRechazo])
+    print("aca5")
 
 
     return  'ok'
