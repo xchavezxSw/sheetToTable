@@ -202,6 +202,7 @@ def insertinforme(idbusqueda,emailAddress,emailCandidato,cvEspInf,InfoEntrevista
             CvIngles=''
         if InfoEntrevistaIngles is None:
             InfoEntrevistaIngles=''
+
         sql = "INSERT INTO conexion.cargaInforme (" \
               "idbusqueda, emailAddress, emailCandidato,cvespInf,cvingInf,informeesp,informeing)" \
               " VALUES ('"+idbusqueda+"', " \
@@ -212,6 +213,7 @@ def insertinforme(idbusqueda,emailAddress,emailCandidato,cvEspInf,InfoEntrevista
               "'" +InfoEntrevista + "'"+ "," \
               "'" +InfoEntrevistaIngles + "'"\
               ") "
+        print(sql)
         a.execute(sql)
         conexion.commit()
         result='ok'
