@@ -82,6 +82,13 @@ def solinforme():
     return 'ok', 200
 
 @cross_origin()
+@app.route('/base64')
+def base64():
+    data=base64decode(id,email,emailc)
+    return make_response(jsonify(data), 200)
+
+
+@cross_origin()
 @app.route('/reservas')
 def reserva():
     data=jsonReservas()

@@ -33,6 +33,10 @@ def jsonsheet():
         nuevo.append(i)
     return json.loads(json.dumps(nuevo).encode('utf-8').decode('ascii'))
 
+def base64decode(id,email,emailc):
+    nuevo=base64decomysql(id,email,emailc)
+    return json.loads(json.dumps(nuevo).encode('utf-8').decode('ascii'))
+
 
 def busquedas():
     busquedas = client.open('Maestro').worksheet('Busquedas')

@@ -197,6 +197,19 @@ def insertinforme(idbusqueda,emailAddress,emailCandidato):
         conexion.commit()
         result='ok'
         return json.loads(json.dumps(result).encode('utf-8').decode('ascii'))
+
+
+def base64decomysql(idbusqueda, emailAddress, emailCandidato):
+    a = conexion.cursor()
+    sql = "select * from conexion.cargaInforme where " \
+          " idbusqueda='"+idbusqueda+"'" \
+         " and emailAddress='" + emailAddress + "'" \
+        " and emailCandidato='" + emailCandidato + "'"
+
+    a.execute(sql)
+    conexion.commit()
+    result = 'ok'
+    return json.loads(json.dumps(result).encode('utf-8').decode('ascii'))
 def insertCliente(values):
     a = conexion.cursor()
     print(values)
