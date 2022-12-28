@@ -2,6 +2,7 @@ import datetime
 
 from bd import conexion,connectar
 import json
+import base64
 def status(id):
     if id=="1":
         return 'Reservado'
@@ -204,7 +205,7 @@ def base64decomysql(idbusqueda, emailAddress, emailCandidato):
     print(idbusqueda)
     print(emailAddress)
     print(emailCandidato)
-    sql = "select * from conexion.cargaInforme where " \
+    sql = "select FROM_BASE64( substR(cvespInf,instr(cvespInf,';base64,')+8)) from conexion.cargaInforme where " \
           " idbusqueda='"+idbusqueda+"'" \
          " and emailAddress='" + emailAddress + "'" \
         " and emailCandidato='" + emailCandidato + "'"
@@ -214,7 +215,7 @@ def base64decomysql(idbusqueda, emailAddress, emailCandidato):
     file=''
 
     for result in results:
-        file=str(result[3])
+        file=str(result[0])
 
     return file
 def insertCliente(values):
