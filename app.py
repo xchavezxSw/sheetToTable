@@ -99,11 +99,11 @@ def base64():
         email = args.get('email')
         emailc = args.get('emailc')
         campo = args.get('campo')
-    data=base64decode(id,email,emailc,campo)
+    data,contenttype=base64decode(id,email,emailc,campo)
     content =b64.decodebytes(data)
     response=make_response( content)
-    response.headers['Content-Type'] = 'application/pdf'
-    response.headers['Content-Disposition'] = 'attachment; filename='+id+'-'+hash+'.pdf'
+    response.headers['Content-Type'] = contenttype
+    response.headers['Content-Disposition'] = 'attachment; filename='+id+'-'+hash+'.'+contenttype.replace('application/','')
     response.headers['Content-Transfer-Encoding'] = 'binary'
     return response
 

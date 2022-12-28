@@ -203,7 +203,7 @@ def insertinforme(idbusqueda,emailAddress,emailCandidato):
 def base64decomysql(idbusqueda, emailAddress, emailCandidato,campo):
     db = connectar()
     a = db.cursor()
-    sql = "select REPLACE("+campo+" ,'data:application/pdf;base64,','')   from conexion.cargaInforme where " \
+    sql = "select REPLACE("+campo+" ,'data:application/pdf;base64,','') , substr(cvespInf ,instr(cvespInf,'application/'),instr(cvespInf,'base64,')-7) content  from conexion.cargaInforme where " \
           " idbusqueda='"+idbusqueda+"'" \
          " and emailAddress='" + emailAddress + "'" \
         " and emailCandidato='" + emailCandidato + "'"
@@ -213,7 +213,8 @@ def base64decomysql(idbusqueda, emailAddress, emailCandidato,campo):
     file=''
     for result in results:
         file=result[0]
-    return file
+        content=result[1]
+    return file,content
 def insertCliente(values):
     a = conexion.cursor()
     print(values)
