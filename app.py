@@ -93,7 +93,9 @@ def base64():
         email = args.get('email')
         emailc = args.get('emailc')
     data=base64decode(id,email,emailc)
-    return make_response(data, 200)
+    response=make_response(data, 200)
+    response.headers['Content-Type'] = 'application/pdf'
+    return response
 
 
 @cross_origin()
