@@ -96,6 +96,7 @@ def base64():
         email = args.get('email')
         emailc = args.get('emailc')
     data=base64decode(id,email,emailc)
+    print(data)
     data = encode(data, 'utf-8')
     print(data)
     content =b64.decodebytes(data)
