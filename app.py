@@ -83,6 +83,7 @@ def solinforme():
                 "CvEspañol":request.form.get('cvespInf'),
                 "CvInglesInf": request.form.get('cvingInf'),
                 }
+        print(value)
         addInforme(value)
 
     return 'ok', 200
