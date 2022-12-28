@@ -201,7 +201,8 @@ def insertinforme(idbusqueda,emailAddress,emailCandidato):
 
 
 def base64decomysql(idbusqueda, emailAddress, emailCandidato,campo):
-    a = conexion.cursor()
+    db = connectar()
+    a = db.cursor()
     sql = "select REPLACE("+campo+" ,'data:application/pdf;base64,','')   from conexion.cargaInforme where " \
           " idbusqueda='"+idbusqueda+"'" \
          " and emailAddress='" + emailAddress + "'" \
