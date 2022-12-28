@@ -262,7 +262,7 @@ def insertCliente(values):
 
     print(sql)
     a.execute(sql)
-    conexion.commit()
+    a.commit()
     result = 'ok'
     return json.loads(json.dumps(result).encode('utf-8').decode('ascii'))
 
