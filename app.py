@@ -10,7 +10,7 @@ CORS(app)
 import socket
 myhost = socket.gethostname()
 if 'DESKTOP-EKG5FVQ'==myhost:
-    app.run(debug=True     )
+    app.run(debug=True)
 else:
     from OpenSSL import SSL
     context = SSL.Context(SSL.TLSv1_2_METHOD)
@@ -84,6 +84,9 @@ def solinforme():
 @cross_origin()
 @app.route('/base64')
 def base64():
+    id=request.form.get('id')
+    email=request.form.get('email')
+    emailc=request.form.get('emailc')
     data=base64decode(id,email,emailc)
     return make_response(jsonify(data), 200)
 
