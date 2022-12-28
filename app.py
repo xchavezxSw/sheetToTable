@@ -104,7 +104,7 @@ def base64():
     response=make_response( content)
 
     response.headers['Content-Type'] = contenttype
-    response.headers['Content-Disposition'] = 'attachment; filename='+id+'-'+hash+'.'+contenttype
+    response.headers['Content-Disposition'] = 'attachment; filename='+id+'-'+hash+'.'+contenttype.replace('application/','')
     response.headers['Content-Transfer-Encoding'] = 'binary'
     return response
 
