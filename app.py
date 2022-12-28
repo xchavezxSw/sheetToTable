@@ -84,7 +84,7 @@ def solinforme():
                 "CvInglesInf": request.form.get('cvingInf'),
                 }
         addInforme(value)
-     
+
     return 'ok', 200
 
 @cross_origin()
@@ -303,14 +303,14 @@ def cambioEstado():
         motivoFinCliente=request.form.get('motivoFinCliente')
 
         if statusSt not in [ '11','12']:
-            data=insertEstado(emailCandi,idSt,emailSt,statusSt)
+            data=insertEstado(emailCandi,idSt,emailSt,statusSt,comentariosSt)
             modificarStatus(emailCandi, idSt, emailSt, statusSt)
         if statusSt == '11':
-            data = insertEstado(emailCandi, idSt, emailSt, statusSt)
+            data = insertEstado(emailCandi, idSt, emailSt, statusSt,comentariosSt)
             data=insertEstado11(emailCandi,idSt,emailSt,statusSt,salarioMensualAcordadoSt,fechaIngresoSt,comentariosSt)
             modificarStatus11(emailCandi,idSt,emailSt,statusSt,salarioMensualAcordadoSt,fechaIngresoSt,comentariosSt)
         if statusSt == '12':
-            data = insertEstado(emailCandi, idSt, emailSt, statusSt)
+            data = insertEstado(emailCandi, idSt, emailSt, statusSt,comentariosSt)
             data=insertEstado12(emailCandi,idSt,emailSt,statusSt,salarioMensualOfrecidoClienteSt,salarioMensualPretendidoSt,motivoFinCandi,motivoFinCliente)
             modificarStatus12(emailCandi,idSt,emailSt,statusSt,salarioMensualOfrecidoClienteSt,salarioMensualPretendidoSt,motivoFinCandi,motivoFinCliente)
 
