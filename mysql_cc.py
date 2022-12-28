@@ -76,13 +76,13 @@ def reservados(usuario=''):
 def pertenencia(usuario=''):
     db = connectar()
     a = db.cursor()
-    consulta = """select str_to_date(informe ,'%Y-%m-%d' ) >= CURRENT_DATE - INTERVAL 90 DAY informe, 
-                        str_to_date(reservado ,'%Y-%m-%d' ) >= CURRENT_DATE - INTERVAL 30 DAY reserva ,
+    consulta = """select str_to_date(informe ,'%Y-%m-%d' ) >= CURRENT_DATE - INTERVAL 30 DAY informe, 
+                        str_to_date(reservado ,'%Y-%m-%d' ) >= CURRENT_DATE - INTERVAL 5 DAY reserva ,
                         EmailAddres 
                 from metricas m where 
-                (str_to_date(informe ,'%Y-%m-%d' ) >= CURRENT_DATE - INTERVAL 90 DAY
+                (str_to_date(informe ,'%Y-%m-%d' ) >= CURRENT_DATE - INTERVAL 30 DAY
                 or 
-                str_to_date(reservado ,'%Y-%m-%d' ) >= CURRENT_DATE - INTERVAL 30 DAY
+                str_to_date(reservado ,'%Y-%m-%d' ) >= CURRENT_DATE - INTERVAL 5 DAY
                 ) """
     if usuario != '':
         consulta = consulta + " and emailcandidato='" + usuario + "'"
