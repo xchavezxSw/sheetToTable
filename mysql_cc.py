@@ -42,8 +42,8 @@ def miscandidatos(usuario=''):
     return json.loads(json.dumps(json_data).encode('utf-8').decode('ascii'))
 
 def encliente(usuario=''):
-
-            a=conexion.cursor()
+            db = connectar()
+            a = db.cursor()
             consulta = "select * from cliente where idstatus not in ('11','12')"
             if usuario !='':
                 consulta=consulta+" and EmailAddres='"+usuario+"'"
@@ -56,7 +56,8 @@ def encliente(usuario=''):
             return json.loads(json.dumps(json_data).encode('utf-8').decode('ascii'))
 
 def reservados(usuario=''):
-        a = conexion.cursor()
+        db = connectar()
+        a = db.cursor()
         consulta = "select * from reserva where 1=1 "
         if usuario != '':
             consulta = consulta + " and EmailAddres='" + usuario +"'"
@@ -73,7 +74,8 @@ def reservados(usuario=''):
 
 
 def pertenencia(usuario=''):
-    a = conexion.cursor()
+    db = connectar()
+    a = db.cursor()
     consulta = """select str_to_date(informe ,'%Y-%m-%d' ) >= CURRENT_DATE - INTERVAL 90 DAY informe, 
                         str_to_date(reservado ,'%Y-%m-%d' ) >= CURRENT_DATE - INTERVAL 30 DAY reserva ,
                         EmailAddres 
@@ -147,7 +149,8 @@ def contratadosFun(usuario=''):
 
 
 def updateReserva(date_time, email, emailCandidato, naCandi, lkCandi, tcandi, tperfil, idReserva, comment):
-    a = conexion.cursor()
+    db = connectar()
+    a = db.cursor()
     sql="update reserva set " \
         "Linkedin='"+lkCandi+"'" \
         ",tecnologiasquesabeelcandidato='"+tcandi+"'" \
@@ -162,7 +165,8 @@ def updateReserva(date_time, email, emailCandidato, naCandi, lkCandi, tcandi, tp
     result = 'ok'
     return json.loads(json.dumps(result).encode('utf-8').decode('ascii'))
 def insertreserva(values):
-        a = conexion.cursor()
+        db = connectar()
+        a = db.cursor()
         sql = "INSERT INTO `reserva` ( id, \
 EmailAddres,emailcandidato, \
 nombreyapellidodelcandidato, \
@@ -187,7 +191,8 @@ motivo,status,ComentariosAdicionales,FECHA    ) VALUES (0, '"+values['email']+"'
 
 
 def insertinforme(idbusqueda,emailAddress,emailCandidato,cvEspInf,InfoEntrevista,CvIngles,InfoEntrevistaIngles):
-        a = conexion.cursor()
+        db = connectar()
+        a = db.cursor()
         sql = "INSERT INTO conexion.cargaInforme (" \
               "idbusqueda, emailAddress, emailCandidato,cvespInf,cvingInf,informeesp,informeing)" \
               " VALUES ('"+idbusqueda+"', " \
@@ -219,8 +224,8 @@ def base64decomysql(idbusqueda, emailAddress, emailCandidato,campo):
         content=result[1]
     return file,content
 def insertCliente(values):
-    a = conexion.cursor()
-    print(values)
+    db = connectar()
+    a = db.cursor()
     sql = "INSERT INTO `cliente` ( EmailAddres, \
                                    emailcandidato, \
                                     idBusqueda, \
@@ -251,7 +256,8 @@ def insertCliente(values):
     return json.loads(json.dumps(result).encode('utf-8').decode('ascii'))
 
 def devolvercambiostado(emailCandi,id):
-        a = conexion.cursor()
+        db = connectar()
+        a = db.cursor()
         where=' 1=1 '
         if emailCandi is None or emailCandi != '':
             where=where+" and emailcandidato='"+emailCandi+"'"
@@ -267,7 +273,8 @@ def devolvercambiostado(emailCandi,id):
         return json.loads(json.dumps(json_data).encode('utf-8').decode('ascii'))
 def login(usuario,contrasena):
     from bd import conexion
-    a = conexion.cursor()
+    db = connectar()
+    a = db.cursor()
     consulta = "select count(*) ,role from users where trim(email)=trim('"+usuario+"') and trim(password)=trim('"+contrasena+"') group by role;"
     print(consulta)
     a.execute(consulta)
@@ -278,7 +285,8 @@ def login(usuario,contrasena):
         return 0,None
 
 def insertEstado(emailCandi,idSt,emailSt,statusSt,comentarios=''):
-    a = conexion.cursor()
+    db = connectar()
+    a = db.cursor()
     sql = "update cliente set idstatus='"+statusSt+"', " \
             "ComentariosInforme = '"+comentarios+"' " \
           "where emailcandidato='"+emailCandi+"' " \
@@ -290,7 +298,8 @@ def insertEstado(emailCandi,idSt,emailSt,statusSt,comentarios=''):
     result = 'ok'
     return json.loads(json.dumps(result).encode('utf-8').decode('ascii'))
 def insertEstado11(emailCandi,idSt,emailSt,statusSt,salarioMensualAcordadoSt,fechaIngresoSt,comentariosSt):
-    a = conexion.cursor()
+    db = connectar()
+    a = db.cursor()
     sql = "INSERT INTO `contratados` ( id,EmailAddres, \
                                        emailcandidato, \
                                         idBusqueda, \
@@ -311,7 +320,8 @@ def insertEstado11(emailCandi,idSt,emailSt,statusSt,salarioMensualAcordadoSt,fec
     return json.loads(json.dumps(result).encode('utf-8').decode('ascii'))
 
 def insertEstado12(emailCandi,idSt,emailSt,statusSt,salarioMensualOfrecidoClienteSt,salarioMensualPretendidoSt,motivoFinCandi,motivoFinCliente):
-    a = conexion.cursor()
+    db = connectar()
+    a = db.cursor()
     if motivoFinCandi != '' or motivoFinCandi.strip() is None:
         sql = "INSERT INTO conexion.rechazados (" \
               "emailCandidato, idbusqueda, emailAddress, " \
