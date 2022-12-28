@@ -97,6 +97,7 @@ def base64():
         emailc = args.get('emailc')
     data=base64decode(id,email,emailc)
     content =b64.decodebytes(data)
+    print(content)
     response=make_response( content)
     response.headers['Content-Type'] = 'application/pdf'
     response.headers['Content-Disposition'] = 'attachment; filename=clau.pdf'
