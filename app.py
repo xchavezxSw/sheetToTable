@@ -13,7 +13,7 @@ CORS(app)
 import socket
 myhost = socket.gethostname()
 if 'DESKTOP-EKG5FVQ'==myhost:
-    app.run(debug=True)
+    app.run(debug=True     )
 else:
     from OpenSSL import SSL
     context = SSL.Context(SSL.TLSv1_2_METHOD)
@@ -78,8 +78,9 @@ def solinforme():
                 "TecnoCandiInf":request.form.getlist('TecnoCandiInf[]'),
                 "TpCandiInf":request.form.get('TpCandiInf[]'),
                 "CommentInf":request.form.get('commentInf'),
-                 "informeEntEsp":request.form.get('informeEntEspInf'),
-                 "informeEntIng":request.form.get('informeEntIngInf')
+                "informeEntEsp":request.form.get('informeEntEspInf'),
+                "informeEntIng":request.form.get('informeEntIngInf'),
+                "CvEspañol":request.form.get('cvespInf'),
                 }
         addInforme(value)
     return 'ok', 200
