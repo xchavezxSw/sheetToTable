@@ -193,9 +193,9 @@ def insertinforme(idbusqueda,emailAddress,emailCandidato,cvEspInf,InfoEntrevista
               " VALUES ('"+idbusqueda+"', " \
               "'"+emailAddress+"', " \
               "'" +emailCandidato + "'," \
-              "'" +cvEspInf + "'"+ "'," \
-              "'" +CvIngles + "'"+ "'," \
-              "'" +InfoEntrevista + "'"+ "'," \
+              "'" +cvEspInf + "'"+ "," \
+              "'" +CvIngles + "'"+ "," \
+              "'" +InfoEntrevista + "'"+ "," \
               "'" +InfoEntrevistaIngles + "'"\
               ") "
         a.execute(sql)
