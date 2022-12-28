@@ -87,6 +87,9 @@ def base64():
     id=request.form.get('id')
     email=request.form.get('email')
     emailc=request.form.get('emailc')
+    print(id)
+    print(email)
+    print(emailc)
     data=base64decode(id,email,emailc)
     return make_response(jsonify(data), 200)
 
