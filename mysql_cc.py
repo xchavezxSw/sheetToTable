@@ -206,14 +206,11 @@ def base64decomysql(idbusqueda, emailAddress, emailCandidato):
           " idbusqueda='"+idbusqueda+"'" \
          " and emailAddress='" + emailAddress + "'" \
         " and emailCandidato='" + emailCandidato + "'"
-    print(sql)
     a.execute(sql)
     results = a.fetchall()
     file=''
-
     for result in results:
-        file=str(result[0])
-
+        file=result[0]
     return file
 def insertCliente(values):
     a = conexion.cursor()
