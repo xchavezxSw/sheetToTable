@@ -201,11 +201,14 @@ def insertinforme(idbusqueda,emailAddress,emailCandidato):
 
 def base64decomysql(idbusqueda, emailAddress, emailCandidato):
     a = conexion.cursor()
+    print(idbusqueda)
+    print(emailAddress)
+    print(emailCandidato)
     sql = "select * from conexion.cargaInforme where " \
           " idbusqueda='"+idbusqueda+"'" \
          " and emailAddress='" + emailAddress + "'" \
         " and emailCandidato='" + emailCandidato + "'"
-
+    print(sql)
     a.execute(sql)
     conexion.commit()
     result = 'ok'
