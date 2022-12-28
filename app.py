@@ -97,7 +97,8 @@ def base64():
     data=base64decode(id,email,emailc)
     buffer = BytesIO.BytesIO()
     content = b64.b64decode(data)
-    buffer.write(content.decode("utf-8"))
+    content=content.decode("utf-8")
+    buffer.write(content)
     response=make_response( buffer.getvalue())
     response.headers['Content-Type'] = 'application/pdf'
     response.headers['Content-Disposition'] = 'attachment; filename=clau.pdf'
