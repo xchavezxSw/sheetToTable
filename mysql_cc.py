@@ -205,7 +205,7 @@ def base64decomysql(idbusqueda, emailAddress, emailCandidato):
     print(idbusqueda)
     print(emailAddress)
     print(emailCandidato)
-    sql = "select cvespInf from conexion.cargaInforme where " \
+    sql = "select from_base64(cvespInf ) from conexion.cargaInforme where " \
           " idbusqueda='"+idbusqueda+"'" \
          " and emailAddress='" + emailAddress + "'" \
         " and emailCandidato='" + emailCandidato + "'"
