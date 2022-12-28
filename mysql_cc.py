@@ -206,6 +206,7 @@ def base64decomysql(idbusqueda, emailAddress, emailCandidato,campo):
           " idbusqueda='"+idbusqueda+"'" \
          " and emailAddress='" + emailAddress + "'" \
         " and emailCandidato='" + emailCandidato + "'"
+    print(sql)
     a.execute(sql)
     results = a.fetchall()
     file=''
