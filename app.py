@@ -7,6 +7,7 @@ from flask_cors import CORS,cross_origin
 from urllib.parse import unquote
 import io as BytesIO
 import base64 as b64
+from codecs import encode
 app = Flask(__name__)
 CORS(app)
 import socket
@@ -95,9 +96,8 @@ def base64():
         email = args.get('email')
         emailc = args.get('emailc')
     data=base64decode(id,email,emailc)
-    from codecs import encode
-    data=encode(data,'utf-8')
-    content = b64.decodebytes(data)
+    data = encode(data, 'utf-8')
+    content =b64.decodebytes(data)
     response=make_response( content)
     response.headers['Content-Type'] = 'application/pdf'
     response.headers['Content-Disposition'] = 'attachment; filename=clau.pdf'
