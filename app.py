@@ -92,11 +92,8 @@ def base64():
         id = args.get('id')
         email = args.get('email')
         emailc = args.get('emailc')
-    print(id)
-    print(email)
-    print(emailc)
     data=base64decode(id,email,emailc)
-    return make_response(jsonify(data), 200)
+    return make_response(data, 200)
 
 
 @cross_origin()
