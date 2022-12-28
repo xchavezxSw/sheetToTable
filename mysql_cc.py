@@ -193,13 +193,14 @@ motivo,status,ComentariosAdicionales,FECHA    ) VALUES (0, '"+values['email']+"'
 def insertinforme(idbusqueda,emailAddress,emailCandidato,cvEspInf,InfoEntrevista,CvIngles,InfoEntrevistaIngles):
         db = connectar()
         a = db.cursor()
-        if len(cvEspInf) ==0:
+
+        if cvEspInf is None:
             cvEspInf=''
-        if len(InfoEntrevista) ==0:
+        if InfoEntrevista is None:
             InfoEntrevista=''
-        if len(CvIngles) ==0:
+        if CvIngles is None:
             CvIngles=''
-        if len(InfoEntrevistaIngles) ==0:
+        if InfoEntrevistaIngles is None:
             InfoEntrevistaIngles=''
         sql = "INSERT INTO conexion.cargaInforme (" \
               "idbusqueda, emailAddress, emailCandidato,cvespInf,cvingInf,informeesp,informeing)" \
