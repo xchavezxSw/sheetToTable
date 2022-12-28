@@ -96,8 +96,9 @@ def base64():
         emailc = args.get('emailc')
     data=base64decode(id,email,emailc)
     buffer = BytesIO.BytesIO()
-    content = b64.b64decode(data)
-    content=content.decode("utf-8")
+    from codecs import encode
+    data=encode(data,'utf-8')
+    content = b64.decodebytes(data)
     buffer.write(content)
     response=make_response( buffer.getvalue())
     response.headers['Content-Type'] = 'application/pdf'
