@@ -96,8 +96,6 @@ def base64():
         email = args.get('email')
         emailc = args.get('emailc')
     data=base64decode(id,email,emailc)
-    if 'data:application/pdf;base64,' in data:
-        data=data.replace('data:application/pdf;base64,','')
     content =b64.decodebytes(data)
     response=make_response( content)
     response.headers['Content-Type'] = 'application/pdf'
