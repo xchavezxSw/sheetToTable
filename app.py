@@ -203,6 +203,7 @@ def modreserva():
 @app.route('/getMisCandis')
 def getMisCandis():
     args = request.args
+    usuario=args.get('usuario')args = request.args
     usuario=args.get('usuario')
     if usuario!='' or usuario is not None:
         usuario = unquote(usuario)

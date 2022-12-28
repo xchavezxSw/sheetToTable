@@ -35,7 +35,7 @@ def jsonsheet():
 
 def base64decode(id,email,emailc):
     nuevo=base64decomysql(id,email,emailc)
-    return json.loads(json.dumps(nuevo).encode('utf-8').decode('ascii'))
+    return nuevo
 
 
 def busquedas():

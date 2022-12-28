@@ -211,12 +211,12 @@ def base64decomysql(idbusqueda, emailAddress, emailCandidato):
     print(sql)
     a.execute(sql)
     results = a.fetchall()
-    json_data = []
+    file=''
 
     for result in results:
-        json_data.append([result[0], result[1], result[2], str(result[3]), result[4], result[5]])
+        file=str(result[3])
 
-    return json.loads(json.dumps(json_data).encode('utf-8').decode('ascii'))
+    return file
 def insertCliente(values):
     a = conexion.cursor()
     print(values)
