@@ -81,8 +81,10 @@ def solinforme():
                 "informeEntEsp":request.form.get('informeEntEspInf'),
                 "informeEntIng":request.form.get('informeEntIngInf'),
                 "CvEspañol":request.form.get('cvespInf'),
+                "CvInglesInf": request.form.get('cvingInf'),
                 }
         addInforme(value)
+     
     return 'ok', 200
 
 @cross_origin()
