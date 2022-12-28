@@ -87,6 +87,11 @@ def base64():
     id=request.form.get('id')
     email=request.form.get('email')
     emailc=request.form.get('emailc')
+    args = request.args
+    if id is None:
+        id = args.get('id')
+        email = args.get('email')
+        emailc = args.get('emailc')
     print(id)
     print(email)
     print(emailc)
