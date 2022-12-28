@@ -95,6 +95,9 @@ def base64():
     data=base64decode(id,email,emailc)
     response=make_response(data)
     response.headers['Content-Type'] = 'application/pdf'
+    response.headers['Content-Disposition'] = 'attachment; filename=clau.pdf'
+    response.headers['Content-Transfer-Encoding'] = 'binary'
+
     return response
 
 
