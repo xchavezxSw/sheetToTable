@@ -90,12 +90,14 @@ def base64():
     id=request.form.get('id')
     email=request.form.get('email')
     emailc=request.form.get('emailc')
+    campo = request.form.get('campo')
     args = request.args
     if id is None:
         id = args.get('id')
         email = args.get('email')
         emailc = args.get('emailc')
-    data=base64decode(id,email,emailc)
+        campo = args.get('campo')
+    data=base64decode(id,email,emailc,campo)
     content =b64.decodebytes(data)
     response=make_response( content)
     response.headers['Content-Type'] = 'application/pdf'

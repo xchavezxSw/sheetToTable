@@ -200,9 +200,9 @@ def insertinforme(idbusqueda,emailAddress,emailCandidato):
         return json.loads(json.dumps(result).encode('utf-8').decode('ascii'))
 
 
-def base64decomysql(idbusqueda, emailAddress, emailCandidato):
+def base64decomysql(idbusqueda, emailAddress, emailCandidato,campo):
     a = conexion.cursor()
-    sql = "select REPLACE(cvespInf ,'data:application/pdf;base64,','')   from conexion.cargaInforme where " \
+    sql = "select REPLACE("+campo+" ,'data:application/pdf;base64,','')   from conexion.cargaInforme where " \
           " idbusqueda='"+idbusqueda+"'" \
          " and emailAddress='" + emailAddress + "'" \
         " and emailCandidato='" + emailCandidato + "'"
