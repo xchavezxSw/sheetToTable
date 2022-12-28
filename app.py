@@ -87,6 +87,8 @@ def solinforme():
 @cross_origin()
 @app.route('/base64')
 def base64():
+    import hashlib
+
     id=request.form.get('id')
     email=request.form.get('email')
     emailc=request.form.get('emailc')
@@ -101,7 +103,8 @@ def base64():
     content =b64.decodebytes(data)
     response=make_response( content)
     response.headers['Content-Type'] = 'application/pdf'
-    response.headers['Content-Disposition'] = 'attachment; filename='+id+'-'+emailc+'-'+email+'.pdf'
+    digest = hashlib.md5(emailc+'-'+email).digest()
+    response.headers['Content-Disposition'] = 'attachment; filename='+id+'-'+digest+'.pdf'
     response.headers['Content-Transfer-Encoding'] = 'binary'
     return response
 
