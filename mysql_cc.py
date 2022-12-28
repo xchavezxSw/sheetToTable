@@ -210,7 +210,9 @@ def base64decomysql(idbusqueda, emailAddress, emailCandidato):
         " and emailCandidato='" + emailCandidato + "'"
     print(sql)
     a.execute(sql)
-    conexion.commit()
+    results = a.fetchall()
+    for i in results:
+        print(i)
     result = 'ok'
     return json.loads(json.dumps(result).encode('utf-8').decode('ascii'))
 def insertCliente(values):
