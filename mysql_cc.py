@@ -260,7 +260,6 @@ def insertCliente(values):
                                         '" + values['CommentInf'] + "',  \
                                         curdate()); "
 
-    print(sql)
     a.execute(sql)
     a.commit()
     result = 'ok'
@@ -305,7 +304,7 @@ def insertEstado(emailCandi,idSt,emailSt,statusSt,comentarios=''):
           " and EmailAddres='"+emailSt+"'"
 
     a.execute(sql)
-    conexion.commit()
+    a.commit()
     result = 'ok'
     return json.loads(json.dumps(result).encode('utf-8').decode('ascii'))
 def insertEstado11(emailCandi,idSt,emailSt,statusSt,salarioMensualAcordadoSt,fechaIngresoSt,comentariosSt):
@@ -325,7 +324,7 @@ def insertEstado11(emailCandi,idSt,emailSt,statusSt,salarioMensualAcordadoSt,fec
                                         '" + comentariosSt + "',  \
                                         '" + fechaIngresoSt + "');"
     a.execute(sql)
-    conexion.commit()
+    a.commit()
     insertEstado(emailCandi,idSt,emailSt,statusSt)
     result = 'ok'
     return json.loads(json.dumps(result).encode('utf-8').decode('ascii'))
@@ -361,6 +360,6 @@ def insertEstado12(emailCandi,idSt,emailSt,statusSt,salarioMensualOfrecidoClient
                      "'cliente');"
 
     a.execute(sql)
-    conexion.commit()
+    a.commit()
     result = 'ok'
     return json.loads(json.dumps(result).encode('utf-8').decode('ascii'))
