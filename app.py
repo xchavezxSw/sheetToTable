@@ -105,7 +105,7 @@ def base64():
     print(str(contenttype))
     print(str(contenttype).replace('application/',''))
     response.headers['Content-Type'] = 'application/pdf'
-    response.headers['Content-Disposition'] = 'attachment; filename='+id+'-'+hash+'.'+str(contenttype).replace('application/','')
+    response.headers['Content-Disposition'] = 'attachment; filename='+id+'-'+hash+'.'+str(contenttype)
     response.headers['Content-Transfer-Encoding'] = 'binary'
     return response
 
