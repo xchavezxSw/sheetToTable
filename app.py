@@ -102,8 +102,8 @@ def base64():
     data,contenttype=base64decode(id,email,emailc,campo)
     content =b64.decodebytes(data)
     response=make_response( content)
-    response.headers['Content-Type'] = contenttype
-    response.headers['Content-Disposition'] = 'attachment; filename='+id+'-'+hash+'.'+contenttype.replace('application/','')
+    response.headers['Content-Type'] = str(contenttype)
+    response.headers['Content-Disposition'] = 'attachment; filename='+id+'-'+hash+'.'+str(contenttype).replace('application/','')
     response.headers['Content-Transfer-Encoding'] = 'binary'
     return response
 
