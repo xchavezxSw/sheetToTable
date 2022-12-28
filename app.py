@@ -95,12 +95,10 @@ def base64():
         email = args.get('email')
         emailc = args.get('emailc')
     data=base64decode(id,email,emailc)
-    buffer = BytesIO.BytesIO()
     from codecs import encode
     data=encode(data,'utf-8')
     content = b64.decodebytes(data)
-    buffer.write(content)
-    response=make_response( buffer.getvalue())
+    response=make_response( content)
     response.headers['Content-Type'] = 'application/pdf'
     response.headers['Content-Disposition'] = 'attachment; filename=clau.pdf'
     response.headers['Content-Transfer-Encoding'] = 'binary'
