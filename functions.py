@@ -131,6 +131,7 @@ def addInforme(values):
           values['TpCandiInf']=''
       if 'conexion-hr.com' in values['EmailInf']:
           EsSource = values['EsSourceInf']
+          EmSource = values['sourcerEmail']
           Email = values['EmailInf']
           EMailCandidato = values['EMailCandidatoInf']
           NombreyApellidodelCandidato = values['NombreyApellidodelCandidatoInf']
@@ -176,18 +177,21 @@ def addInforme(values):
             insertinforme(IdsaEnviar,Email,EMailCandidato,Cvespañol)
             cvEspañolUrl = 'https://conexion.techne.net.ar:80/base64?id='+IdsaEnviar+'&email='+Email+'&emailc='+EMailCandidato+'&campo=cvespinf'
             SolicitudInforme.append_row([False,"", "","","",date_time,Email,
-            EsSource, EMailCandidato, IdsaEnviar, TecnoCandi, TpCandi, LKCandi, comment,
+            EsSource, EmSource ,EMailCandidato, IdsaEnviar, TecnoCandi, TpCandi, LKCandi, comment,
             cvEspañolUrl, InfoEntrevista, CvIngles, InfoEntrevistaIngles, RemuneracionPretendidaMensual,
             NiveldeIngles,Locacion[0],
             NombreyApellidodelCandidato, ""])
           """SolicitudInforme.append_row([False, "", "", "", "", date_time, Email,
-                                       EsSource, EMailCandidato, IdsaEnviar, TecnoCandi, TpCandi, LKCandi, comment,
+                                       EsSource, 
+                                       EmSource,
+                                       EMailCandidato, IdsaEnviar, TecnoCandi, TpCandi, LKCandi, comment,
                                        CvEspañol, InfoEntrevista, CvIngles, InfoEntrevistaIngles,
                                        RemuneracionPretendidaMensual,
                                        NiveldeIngles, Locacion[0].replace("\n","").replace("\n","").replace("\n",""),
                                        NombreyApellidodelCandidato, ""])"""
       else:
         EsSource=values['EsSourceInf']
+        EmSource = values['sourcerEmail']
         Email= values['EmailInf']
         EMailCandidato = values['EMailCandidatoInf']
         NombreyApellidodelCandidato = values['NombreyApellidodelCandidatoInf']
@@ -220,7 +224,7 @@ def addInforme(values):
         insertinforme(IdsaEnviar,Email,EMailCandidato,Cvespañol)
         cvEspañolUrl = 'https://conexion.techne.net.ar:80/base64?id='+IdsaEnviar+'&email='+Email+'&emailc='+EMailCandidato+'&campo=cvespinf'
         SolicitudInforme.append_row([False,"", "","","",date_time,Email,
-         EsSource, EMailCandidato, IdsaEnviar, TecnoCandi, TpCandi, LKCandi, comment,
+         EsSource,EmSource, EMailCandidato, IdsaEnviar, TecnoCandi, TpCandi, LKCandi, comment,
          cvEspañolUrl, InfoEntrevista, CvIngles, InfoEntrevistaIngles, RemuneracionPretendidaMensual,
          NiveldeIngles,Locacion[0],
          NombreyApellidodelCandidato, ""])
@@ -362,8 +366,17 @@ def getInformesArevisar():
         else:
             comentario='<input style="color:black" type="text" value="'+i[13]+'">'
             if i[14]!='':
-                link='<a style="color:white" target="-" href="'+i[14]+'">Descargar cv español</a>'
-                i[14]=link
+                linkCVESP='<a style="color:white" target="-" href="'+i[14]+'">Descargar cv español</a>'
+                i[14]=linkCVESP
+            if i[15]!='':
+                linkINFESP='<a style="color:white" target="-" href="'+i[15]+'">Descargar informe de entrevista en español</a>'
+                i[15]=linkINFESP
+            if i[16]!='':
+                linkCVING='<a style="color:white" target="-" href="'+i[16]+'">Descargar cv inglés</a>'
+                i[16]=linkCVING
+            if i[17]!='':
+                linkINFING='<a style="color:white" target="-" href="'+i[17]+'">Descargar informe de entrevista en inglés</a>'
+                i[17]=linkINFING
             i[13]= comentario
             export.append([i[4],i[5],
                 i[6],i[7],i[8],i[9],i[10],
