@@ -185,18 +185,35 @@ motivo,status,ComentariosAdicionales,FECHA    ) VALUES (0, '"+values['email']+"'
         return json.loads(json.dumps(result).encode('utf-8').decode('ascii'))
 
 
-def insertinforme(idbusqueda,emailAddress,emailCandidato):
-        a = conexion.cursor()
+def insertinforme(idbusqueda,emailAddress,emailCandidato,cvEspInf,InfoEntrevista,CvIngles,InfoEntrevistaIngles):
+        db = connectar()
+        a = db.cursor()
+        print("llegue")
+        if cvEspInf is None:
+            cvEspInf=''
+        if InfoEntrevista is None:
+            InfoEntrevista=''
+        if CvIngles is None:
+            CvIngles=''
+        if InfoEntrevistaIngles is None:
+            InfoEntrevistaIngles=''
+
         sql = "INSERT INTO conexion.cargaInforme (" \
-              "idbusqueda, emailAddress, emailCandidato)" \
+              "idbusqueda, emailAddress, emailCandidato,cvespInf,cvingInf,informeesp,informeing)" \
               " VALUES ('"+idbusqueda+"', " \
               "'"+emailAddress+"', " \
-              "'" +emailCandidato + "') "
-        print(sql)
+              "'" +emailCandidato + "'," \
+              "'" +cvEspInf + "'"+ "," \
+              "'" +CvIngles + "'"+ "," \
+              "'" +InfoEntrevista + "'"+ "," \
+              "'" +InfoEntrevistaIngles + "'"\
+              ") "
+
         a.execute(sql)
         conexion.commit()
         result='ok'
         return json.loads(json.dumps(result).encode('utf-8').decode('ascii'))
+
 def insertCliente(values):
     a = conexion.cursor()
     print(values)

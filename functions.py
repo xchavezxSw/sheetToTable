@@ -127,11 +127,12 @@ def addReserva(values):
                 return 410
 
 def addInforme(values):
+      print(values)
       if values['TpCandiInf'] is None:
           values['TpCandiInf']=''
       if 'conexion-hr.com' in values['EmailInf']:
+          print("conexion")
           EsSource = values['EsSourceInf']
-          EmSource = values['sourcerEmail']
           Email = values['EmailInf']
           EMailCandidato = values['EMailCandidatoInf']
           NombreyApellidodelCandidato = values['NombreyApellidodelCandidatoInf']
@@ -160,9 +161,8 @@ def addInforme(values):
           TpCandi = tipoPerfil
           comment = values['CommentInf']
           Cvespañol = values['CvEspañol']
-          print(values)
           InfoEntrevista = values['informeEntEsp']
-          CvIngles = ""  # values['CvInglesInf']
+          CvIngles = values['CvInglesInf']
           InfoEntrevistaIngles = values['informeEntIng']
           curDT = datetime.datetime.now()
           date_time = curDT.strftime("%m/%d/%Y, %H:%M:%S")
@@ -172,26 +172,37 @@ def addInforme(values):
           for x in DirectosList:
             nuevaLista.append(x[0])
           if Email in nuevaLista:
+                print("aprob")
                 revisarAprob(values) 
-          else: 
-            insertinforme(IdsaEnviar,Email,EMailCandidato,Cvespañol)
-            cvEspañolUrl = 'https://conexion.techne.net.ar:80/base64?id='+IdsaEnviar+'&email='+Email+'&emailc='+EMailCandidato+'&campo=cvespinf'
+          else:
+            print("informe")
+            insertinforme(IdsaEnviar,Email,EMailCandidato,Cvespañol,InfoEntrevista,CvIngles,InfoEntrevistaIngles)
+            cvEspañolUrl = ''
+            InfoEntrevistaUrl = ''
+            CvInglesurl = ''
+            InfoEntrevistaInglesurl = ''
+            if Cvespañol is not None:
+                cvEspañolUrl = 'https://conexion.techne.net.ar:80/base64?id=' + IdsaEnviar + '&email=' + Email + '&emailc=' + EMailCandidato + '&campo=cvespinf'
+            if InfoEntrevista is not None:
+                InfoEntrevistaUrl = 'https://conexion.techne.net.ar:80/base64?id=' + IdsaEnviar + '&email=' + Email + '&emailc=' + EMailCandidato + '&campo=informeesp'
+            if CvIngles is not None:
+                CvInglesurl = 'https://conexion.techne.net.ar:80/base64?id=' + IdsaEnviar + '&email=' + Email + '&emailc=' + EMailCandidato + '&campo=cvingInf'
+            if InfoEntrevistaIngles is not None:
+                InfoEntrevistaInglesurl = 'https://conexion.techne.net.ar:80/base64?id=' + IdsaEnviar + '&email=' + Email + '&emailc=' + EMailCandidato + '&campo=informeing'
             SolicitudInforme.append_row([False,"", "","","",date_time,Email,
-            EsSource, EmSource ,EMailCandidato, IdsaEnviar, TecnoCandi, TpCandi, LKCandi, comment,
-            cvEspañolUrl, InfoEntrevista, CvIngles, InfoEntrevistaIngles, RemuneracionPretendidaMensual,
+            EsSource, EMailCandidato, IdsaEnviar, TecnoCandi, TpCandi, LKCandi, comment,
+            cvEspañolUrl, InfoEntrevistaUrl, CvInglesurl, InfoEntrevistaInglesurl, RemuneracionPretendidaMensual,
             NiveldeIngles,Locacion[0],
             NombreyApellidodelCandidato, ""])
           """SolicitudInforme.append_row([False, "", "", "", "", date_time, Email,
-                                       EsSource, 
-                                       EmSource,
-                                       EMailCandidato, IdsaEnviar, TecnoCandi, TpCandi, LKCandi, comment,
+                                       EsSource, EMailCandidato, IdsaEnviar, TecnoCandi, TpCandi, LKCandi, comment,
                                        CvEspañol, InfoEntrevista, CvIngles, InfoEntrevistaIngles,
                                        RemuneracionPretendidaMensual,
                                        NiveldeIngles, Locacion[0].replace("\n","").replace("\n","").replace("\n",""),
                                        NombreyApellidodelCandidato, ""])"""
       else:
+        print("else")
         EsSource=values['EsSourceInf']
-        EmSource = values['sourcerEmail']
         Email= values['EmailInf']
         EMailCandidato = values['EMailCandidatoInf']
         NombreyApellidodelCandidato = values['NombreyApellidodelCandidatoInf']
@@ -215,17 +226,28 @@ def addInforme(values):
                 tipoPerfil=values['TpCandiInf'][0]
         TpCandi = tipoPerfil
         comment = values['CommentInf']
-        Cvespañol= values['CvEspañol']
-        InfoEntrevista= values['informeEntEsp']
-        CvIngles= ""#values['CvInglesInf']
-        InfoEntrevistaIngles= values['informeEntIng']
+        Cvespañol = values['CvEspañol']
+        InfoEntrevista = values['informeEntEsp']
+        CvIngles = values['CvInglesInf']
+        InfoEntrevistaIngles = values['informeEntIng']
         curDT = datetime.datetime.now()
         date_time = curDT.strftime("%m/%d/%Y, %H:%M:%S")
-        insertinforme(IdsaEnviar,Email,EMailCandidato,Cvespañol)
-        cvEspañolUrl = 'https://conexion.techne.net.ar:80/base64?id='+IdsaEnviar+'&email='+Email+'&emailc='+EMailCandidato+'&campo=cvespinf'
+        insertinforme(IdsaEnviar,Email,EMailCandidato,Cvespañol,InfoEntrevista,CvIngles,InfoEntrevistaIngles)
+        cvEspañolUrl=''
+        InfoEntrevistaUrl=''
+        CvInglesurl=''
+        InfoEntrevistaInglesurl=''
+        if Cvespañol is not None:
+            cvEspañolUrl = 'https://conexion.techne.net.ar:80/base64?id=' + IdsaEnviar + '&email=' + Email + '&emailc=' + EMailCandidato + '&campo=cvespinf'
+        if InfoEntrevista is not None:
+            InfoEntrevistaUrl = 'https://conexion.techne.net.ar:80/base64?id=' + IdsaEnviar + '&email=' + Email + '&emailc=' + EMailCandidato + '&campo=informeesp'
+        if CvIngles is not None:
+            CvInglesurl = 'https://conexion.techne.net.ar:80/base64?id=' + IdsaEnviar + '&email=' + Email + '&emailc=' + EMailCandidato + '&campo=cvingInf'
+        if InfoEntrevistaIngles is not None:
+            InfoEntrevistaInglesurl = 'https://conexion.techne.net.ar:80/base64?id=' + IdsaEnviar + '&email=' + Email + '&emailc=' + EMailCandidato + '&campo=informeing'
         SolicitudInforme.append_row([False,"", "","","",date_time,Email,
-         EsSource,EmSource, EMailCandidato, IdsaEnviar, TecnoCandi, TpCandi, LKCandi, comment,
-         cvEspañolUrl, InfoEntrevista, CvIngles, InfoEntrevistaIngles, RemuneracionPretendidaMensual,
+         EsSource, EMailCandidato, IdsaEnviar, TecnoCandi, TpCandi, LKCandi, comment,
+         cvEspañolUrl, InfoEntrevistaUrl, CvInglesurl, InfoEntrevistaInglesurl, RemuneracionPretendidaMensual,
          NiveldeIngles,Locacion[0],
          NombreyApellidodelCandidato, ""])
 
@@ -384,7 +406,7 @@ def getInformesArevisar():
                 i[15],i[16],i[17],i[18],
                 i[19],i[20],i[21],i[22],
                 i[23]])
-            print('PRINTTTTTT'+i[13])
+
     return json.loads(json.dumps(export).encode('utf-8').decode('ascii'))
 
 

@@ -79,6 +79,7 @@ def solinforme():
                 "informeEntEsp":request.form.get('informeEntEspInf'),
                 "informeEntIng":request.form.get('informeEntIngInf'),
                 "CvEspañol":request.form.get('cvespInf'),
+                "CvInglesInf": request.form.get('cvingInf'),
                 }
         print(value)
         addInforme(value)
