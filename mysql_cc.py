@@ -185,20 +185,18 @@ motivo,status,ComentariosAdicionales,FECHA    ) VALUES (0, '"+values['email']+"'
         return json.loads(json.dumps(result).encode('utf-8').decode('ascii'))
 
 
-def insertinforme(idbusqueda,emailAddress,emailCandidato,Cvespañol):
+def insertinforme(idbusqueda,emailAddress,emailCandidato):
         a = conexion.cursor()
         sql = "INSERT INTO conexion.cargaInforme (" \
               "idbusqueda, emailAddress, emailCandidato)" \
               " VALUES ('"+idbusqueda+"', " \
               "'"+emailAddress+"', " \
-              "'" +emailCandidato +"', " \
-              "'"+Cvespañol+"'" "') "
+              "'" +emailCandidato + "') "
         print(sql)
         a.execute(sql)
         conexion.commit()
         result='ok'
         return json.loads(json.dumps(result).encode('utf-8').decode('ascii'))
-        
 def insertCliente(values):
     a = conexion.cursor()
     print(values)
