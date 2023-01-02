@@ -44,9 +44,10 @@ def miscandidatos(usuario=''):
 def encliente(usuario=''):
             db = connectar()
             a = db.cursor()
-            consulta = "select * from cliente where idstatus not in ('11','12')"
-            if usuario !='':
-                consulta=consulta+" and EmailAddres='"+usuario+"'"
+            consulta = "select c.* from cliente c left join users u on  u.`role` ='admin' "
+            consulta =consulta+ " and u.email ='"+usuario+"'"
+            consulta = consulta + " where idstatus not in ('11','12') and "
+            consulta = consulta + " case when u.`role` is null THEN  EmailAddres ='"+usuario+"' ELSE  TRUE  end =True "
             a.execute(consulta)
             results = a.fetchall()
             json_data = []
