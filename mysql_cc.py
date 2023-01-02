@@ -302,6 +302,12 @@ def insertEstado(emailCandi,idSt,emailSt,statusSt,comentariost=''):
           "where emailcandidato='"+emailCandi+"' " \
           " and idBusqueda='"+idSt+"' " \
           " and EmailAddres='"+emailSt+"'"
+    if comentariost !='':
+        sql = "update cliente set idstatus='" + statusSt + "', ComentariosInforme='" + comentariost + \
+              "where emailcandidato='" + emailCandi + "' " \
+              " and idBusqueda='" + idSt + "' " \
+              " and EmailAddres='" + emailSt + "'"
+
 
     a.execute(sql)
     db.commit()
