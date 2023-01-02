@@ -131,11 +131,9 @@ def addReserva(values):
                 return 410
 
 def addInforme(values):
-      print(values)
       if values['TpCandiInf'] is None:
           values['TpCandiInf']=''
       if 'conexion-hr.com' in values['EmailInf']:
-          print("conexion")
           EsSource = values['EsSourceInf']
           Email = values['EmailInf']
           EMailCandidato = values['EMailCandidatoInf']
@@ -179,7 +177,6 @@ def addInforme(values):
                 print("aprob")
                 revisarAprob(values) 
           else:
-            print("informe")
             insertinforme(IdsaEnviar,Email,EMailCandidato,Cvespañol,InfoEntrevista,CvIngles,InfoEntrevistaIngles)
             cvEspañolUrl = ''
             InfoEntrevistaUrl = ''
@@ -205,7 +202,6 @@ def addInforme(values):
                                        NiveldeIngles, Locacion[0].replace("\n","").replace("\n","").replace("\n",""),
                                        NombreyApellidodelCandidato, ""])"""
       else:
-        print("else")
         EsSource=values['EsSourceInf']
         Email= values['EmailInf']
         EMailCandidato = values['EMailCandidatoInf']

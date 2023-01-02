@@ -163,7 +163,7 @@ def updateReserva(date_time, email, emailCandidato, naCandi, lkCandi, tcandi, tp
         "emailcandidato='"+emailCandidato+"' and " \
         "idreserva='" + idReserva + "'"
     a.execute(sql)
-    conexion.commit()
+    db.commit()
     result = 'ok'
     return json.loads(json.dumps(result).encode('utf-8').decode('ascii'))
 def insertreserva(values):
@@ -187,7 +187,7 @@ motivo,status,ComentariosAdicionales,FECHA    ) VALUES (0, '"+values['email']+"'
                                                             "curdate() )"
 
         a.execute(sql)
-        conexion.commit()
+        db.commit()
         result='ok'
         return json.loads(json.dumps(result).encode('utf-8').decode('ascii'))
 
@@ -195,7 +195,6 @@ motivo,status,ComentariosAdicionales,FECHA    ) VALUES (0, '"+values['email']+"'
 def insertinforme(idbusqueda,emailAddress,emailCandidato,cvEspInf,InfoEntrevista,CvIngles,InfoEntrevistaIngles):
         db = connectar()
         a = db.cursor()
-        print("llegue")
         if cvEspInf is None:
             cvEspInf=''
         if InfoEntrevista is None:
@@ -217,7 +216,7 @@ def insertinforme(idbusqueda,emailAddress,emailCandidato,cvEspInf,InfoEntrevista
               ") "
 
         a.execute(sql)
-        conexion.commit()
+        db.commit()
         result='ok'
         return json.loads(json.dumps(result).encode('utf-8').decode('ascii'))
 
