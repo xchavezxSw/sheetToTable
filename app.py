@@ -73,7 +73,7 @@ def solinforme():
                 "sourcerEmail":request.form.get('sourcerEmail'),
                 "IdsaEnviarInf": request.form.get('idReservaInf'),
                 "RemuneracionPretendidaMensualInf":request.form.get('remuneracionPretendidaMensualInf'),
-                "NiveldeInglesInf":request.form.getlist('NiveldeInglesInf'),
+                "NiveldeInglesInf":request.form.getlist('niveldeInglesInf'),
                 "LocacionInf":request.form.getlist('locacionInf'),
                 "LKCandiInf":request.form.get('lkCandiInf'),
                 "TecnoCandiInf":request.form.getlist('TecnoCandiInf[]'),
