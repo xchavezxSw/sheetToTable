@@ -260,6 +260,7 @@ def insertCliente(values):
                                         '" + values['CommentInf'] + "',  \
                                         curdate()); "
 
+    print(sql)
     a.execute(sql)
     db.commit()
     result = 'ok'
@@ -294,11 +295,9 @@ def login(usuario,contrasena):
     else:
         return 0,None
 
-def insertEstado(emailCandi,idSt,emailSt,statusSt,comentarios=''):
-    db = connectar()
-    a = db.cursor()
-    sql = "update cliente set idstatus='"+statusSt+"', " \
-            "ComentariosInforme = '"+comentarios+"' " \
+def insertEstado(emailCandi,idSt,emailSt,statusSt):
+    a = conexion.cursor()
+    sql = "update cliente set idstatus='"+statusSt+"' " \
           "where emailcandidato='"+emailCandi+"' " \
           " and idBusqueda='"+idSt+"' " \
           " and EmailAddres='"+emailSt+"'"
