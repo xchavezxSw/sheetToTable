@@ -48,6 +48,7 @@ def encliente(usuario=''):
             consulta =consulta+ " and u.email ='"+usuario+"'"
             consulta = consulta + " where idstatus not in ('11','12') and "
             consulta = consulta + " case when u.`role` is null THEN  EmailAddres ='"+usuario+"' ELSE  TRUE  end =True "
+            print(consulta)
             a.execute(consulta)
             results = a.fetchall()
             json_data = []

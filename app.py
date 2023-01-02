@@ -240,7 +240,7 @@ def getencliente():
         usuario = unquote(usuario)
         data=encliente(usuario)
     else:
-        data=encliente()
+        data=encliente(usuario)
     return make_response(jsonify(data), 200)
 @cross_origin()
 @app.route('/getReservados')
