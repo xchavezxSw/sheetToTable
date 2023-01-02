@@ -296,7 +296,8 @@ def login(usuario,contrasena):
         return 0,None
 
 def insertEstado(emailCandi,idSt,emailSt,statusSt,comentariost=''):
-    a = conexion.cursor()
+    db = connectar()
+    a = db.cursor()
     sql = "update cliente set idstatus='"+statusSt+"' " \
           "where emailcandidato='"+emailCandi+"' " \
           " and idBusqueda='"+idSt+"' " \
