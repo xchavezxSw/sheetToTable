@@ -287,6 +287,16 @@ def getcambiostatus():
         id = request.form.get('idSt')
         data=devolvercambiostado(emailCandi, id)
         return make_response(jsonify(data), 200)
+@cross_origin()
+@app.route('/getcambiosource',methods=['GET', 'POST'])
+def getcambiosource():
+    if request.method == 'POST':
+        emailCandidatoSc=request.form.get('emailCandidatoSc')
+        idSc = request.form.get('idSc')
+        emailRelutadorsc = request.form.get('emailRelutadorSc')
+        sourcesc = request.form.get('sourceSc')
+        data=insertsource(emailCandidatoSc, idSc,emailRelutadorsc,sourcesc)
+        return make_response(jsonify(data), 200)
 
 @cross_origin()
 @app.route('/cambioEstado',methods=['GET', 'POST'])

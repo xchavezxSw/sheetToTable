@@ -294,6 +294,24 @@ def login(usuario,contrasena):
         return results[0][0],results[0][1]
     else:
         return 0,None
+def insertsource(emailCandi,idSt,emailSt,sourceSt,comentariost=''):
+    db = connectar()
+    a = db.cursor()
+    sql = "update cliente set source='"+sourceSt+"' " \
+          "where emailcandidato='"+emailCandi+"' " \
+          " and idBusqueda='"+idSt+"' " \
+          " and EmailAddres='"+emailSt+"'"
+    if comentariost !='':
+        sql = "update cliente set source='" + sourceSt + "', ComentariosInforme='" + comentariost + \
+              "where emailcandidato='" + emailCandi + "' " \
+              " and idBusqueda='" + idSt + "' " \
+              " and EmailAddres='" + emailSt + "'"
+
+
+    a.execute(sql)
+    db.commit()
+    result = 'ok'
+    return json.loads(json.dumps(result).encode('utf-8').decode('ascii'))
 
 def insertEstado(emailCandi,idSt,emailSt,statusSt,comentariost=''):
     db = connectar()
