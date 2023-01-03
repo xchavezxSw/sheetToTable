@@ -282,6 +282,10 @@ def revisarAprob(values):
                 tipoPerfil = values['TpCandiInf'][0]
     TpCandi = tipoPerfil
     comment = values['CommentInf']
+    CvEspañol=''
+    InfoEntrevista = ''
+    CvIngles = ''
+    InfoEntrevistaIngles = ''
     if 'CvEspanolInf' in values:
         CvEspañol= values['CvEspanolInf']
     if 'informeEntEsp' in values:
