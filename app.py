@@ -77,14 +77,13 @@ def solinforme():
                 "LocacionInf":request.form.getlist('locacionInf'),
                 "LKCandiInf":request.form.get('lkCandiInf'),
                 "TecnoCandiInf":request.form.getlist('TecnoCandiInf[]'),
-                "TpCandiInf":request.form.get('TpCandiInf[]'),
+                "TpCandiInf":request.form.getlist('TpCandiInf[]'),
                 "CommentInf":request.form.get('commentInf'),
                 "informeEntEsp":request.form.get('informeEntEspInf'),
                 "informeEntIng":request.form.get('informeEntIngInf'),
                 "CvEspañol":request.form.get('cvespInf'),
                 "CvInglesInf": request.form.get('cvingInf'),
                 }
-        print(value)
         addInforme(value)
 
     return 'ok', 200
