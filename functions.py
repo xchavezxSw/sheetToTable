@@ -521,8 +521,12 @@ def eliminar_guiones(candidato,id,sourcer):
     if len(nuevo)>1:
         valores='_'.join(nuevo )
         SolicitudInforme.update('j'+str(eliminar),valores )
-
-def modificarStatus(emailCandi,idSt,emailSt,statusSt):
+def sendmailstatus(emailCandi,idSt,emailSt,statusSt,comentarios=""):
+    client = gspread.authorize(credentials)
+    sheet4 = client.open('sendMails').worksheet('mails')
+    sheet4.add_rows(1)
+    sheet4.append_row([datetime.datetime.today().strftime('%Y-%m-%d %H:%M'),emailSt,emailCandi,idSt,status(statusSt),comentarios,"","","","","","","","","","",0])
+def modificarStatus(emailCandi,idSt,emailSt,statusSt,comentariosSt=''):
     client = gspread.authorize(credentials)
     sheet4 = client.open('[EnProceso]EnCliente').worksheet('EnProcesoEnCliente')  # Open the spreadsheet
     data=sheet4.get_all_values()
@@ -548,8 +552,10 @@ def modificarStatus(emailCandi,idSt,emailSt,statusSt):
 
         sheet4.delete_row(ar[0]['rowIndex']+1)
         sheet4.append_row(ar[0]['value'])
+        sendmailstatus(emailCandi,idSt,emailSt,statusSt,comentariosSt)
     except:
         cargarcliente(emailCandi,idSt,emailSt,statusSt)
+        sendmailstatus(emailCandi, idSt, emailSt, statusSt,comentariosSt)
 
 def modificarStatus11(emailCandi,idSt,emailSt,statusSt,salarioMensualAcordadoSt,fechaIngresoSt,comentariosSt):
     client = gspread.authorize(credentials)
@@ -577,6 +583,7 @@ def modificarStatus11(emailCandi,idSt,emailSt,statusSt,salarioMensualAcordadoSt,
                                 'CambioAc'
                                ''
                                ])
+        sendmailstatus(emailCandi, idSt, emailSt, statusSt,comentariosSt)
 
 def modificarStatus12(emailCandi,idSt,emailSt,statusSt,salarioMensualOfrecidoClienteSt,salarioMensualPretendidoSt,motivoFinCandi,motivoFinCliente):
     client = gspread.authorize(credentials)
@@ -611,3 +618,4 @@ def modificarStatus12(emailCandi,idSt,emailSt,statusSt,salarioMensualOfrecidoCli
                                 '',
                                 'CambioAc'
                                ])
+        sendmailstatus(emailCandi, idSt, emailSt, statusSt,comentariosSt)

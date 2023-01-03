@@ -315,7 +315,7 @@ def cambioEstado():
 
         if statusSt not in [ '11','12']:
             data=insertEstado(emailCandi,idSt,emailSt,statusSt,comentariosSt)
-            modificarStatus(emailCandi, idSt, emailSt, statusSt)
+            modificarStatus(emailCandi, idSt, emailSt, statusSt,comentariosSt)
         if statusSt == '11':
             data = insertEstado(emailCandi, idSt, emailSt, statusSt,comentariosSt)
             data=insertEstado11(emailCandi,idSt,emailSt,statusSt,salarioMensualAcordadoSt,fechaIngresoSt,comentariosSt)
