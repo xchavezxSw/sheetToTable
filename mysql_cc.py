@@ -335,6 +335,14 @@ def insertEstado(emailCandi,idSt,emailSt,statusSt,comentariost=''):
 def insertEstado11(emailCandi,idSt,emailSt,statusSt,salarioMensualAcordadoSt,fechaIngresoSt,comentariosSt):
     db = connectar()
     a = db.cursor()
+    if salarioMensualAcordadoSt != '':
+        if salarioMensualAcordadoSt is not None:
+            try:
+                salarioMensualAcordadoSt=str(float(salarioMensualAcordadoSt))
+            except:
+                salarioMensualAcordadoSt = str(salarioMensualAcordadoSt)
+
+
     sql = "INSERT INTO `contratados` ( id,EmailAddres, \
                                        emailcandidato, \
                                         idBusqueda, \
@@ -345,7 +353,7 @@ def insertEstado11(emailCandi,idSt,emailSt,statusSt,salarioMensualAcordadoSt,fec
                                          '" +emailSt + "',  \
                                          '" + emailCandi + "',  \
                                         '" + idSt+ "', \
-                                        " + str(float(salarioMensualAcordadoSt)) + ",  \
+                                        " + salarioMensualAcordadoSt + ",  \
                                         '" + comentariosSt + "',  \
                                         '" + fechaIngresoSt + "');"
     a.execute(sql)
