@@ -601,7 +601,7 @@ def modificarStatus11(emailCandi,idSt,emailSt,statusSt,salarioMensualAcordadoSt,
                                ])
         sendmailstatus(emailCandi, idSt, emailSt, statusSt,comentariosSt)
 
-def modificarStatus12(emailCandi,idSt,emailSt,statusSt,salarioMensualOfrecidoClienteSt,salarioMensualPretendidoSt,motivoFinCandi,motivoFinCliente):
+def modificarStatus12(emailCandi,idSt,emailSt,statusSt,salarioMensualOfrecidoClienteSt,salarioMensualPretendidoSt,motivoFinCandi,motivoFinCliente,comentariosSt=''):
     client = gspread.authorize(credentials)
     sheet4 = client.open('[EnProceso]EnCliente').worksheet('EnProcesoEnCliente')  # Open the spreadsheet
     data = sheet4.get_all_values()
@@ -634,4 +634,4 @@ def modificarStatus12(emailCandi,idSt,emailSt,statusSt,salarioMensualOfrecidoCli
                                 '',
                                 'CambioAc'
                                ])
-        sendmailstatus(emailCandi, idSt, emailSt, statusSt,'')
+        sendmailstatus(emailCandi, idSt, emailSt, statusSt,comentariosSt)
