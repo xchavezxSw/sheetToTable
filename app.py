@@ -12,7 +12,7 @@ app = Flask(__name__)
 CORS(app)
 import socket
 myhost = socket.gethostname()
-if 'DESKTOP-EKG5FVQ'==myhost:
+if 'DESKTOP-A3850LN'==myhost:
     app.run(debug=True     )
 else:
     from OpenSSL import SSL
