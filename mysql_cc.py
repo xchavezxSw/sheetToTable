@@ -40,7 +40,27 @@ def miscandidatos(usuario=''):
     for result in results:
         json_data.append([result[0], result[1], result[2], status(str(result[3]))])
     return json.loads(json.dumps(json_data).encode('utf-8').decode('ascii'))
+def cargarcliente(emailCandi,idSt,emailSt,statusSt):
+    import gspread
+    from oauth2client.service_account import ServiceAccountCredentials
+    scope = ["https://spreadsheets.google.com/feeds", 'https://www.googleapis.com/auth/spreadsheets',
+             "https://www.googleapis.com/auth/drive.file", "https://www.googleapis.com/auth/drive"]
+    credentials = ServiceAccountCredentials.from_json_keyfile_name('ultimo.json', scope)
+    db=connectar()
+    a = db.cursor()
+    consulta = "select EmailAddres ,source,emailcandidato ,idBusqueda  from cliente m   " \
+               " where emailcandidato ='"+emailCandi+"' \
+                and EmailAddres ='"+emailSt+"' and idBusqueda ='"+idSt+"'"
 
+    a.execute(consulta)
+    results = a.fetchall()
+    json_data = []
+    client = gspread.authorize(credentials)
+    sheet4 = client.open('[EnProceso]EnCliente').worksheet('EnProcesoEnCliente')
+    for result in results:
+        sheet4.append_row([result[0],result[1],result[2],result[3],""])
+        json_data.append([result[0], result[1], result[2], result[3]])
+    return json.loads(json.dumps(json_data).encode('utf-8').decode('ascii'))
 def encliente(usuario=''):
             db = connectar()
             a = db.cursor()

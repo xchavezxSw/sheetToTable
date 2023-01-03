@@ -529,24 +529,27 @@ def modificarStatus(emailCandi,idSt,emailSt,statusSt):
     searchValues=[]
     ar = [{"rowIndex": i, "value": e} for i, e in enumerate(
         data) if e[2] == emailCandi  and e[0]== emailSt and e[3]==idSt]
-    ar[0]['value'][19] = status(statusSt)
-    if str(statusSt)=='4':
-        ar[0]['value'][7]=datetime.datetime.today().strftime('%Y-%m-%d %H:%M')
-    if str(statusSt)=='5':
-        ar[0]['value'][8]=datetime.datetime.today().strftime('%Y-%m-%d %H:%M')
-    if str(statusSt)=='6':
-        ar[0]['value'][9]=datetime.datetime.today().strftime('%Y-%m-%d %H:%M')
-    if str(statusSt)=='7':
-        ar[0]['value'][11]=datetime.datetime.today().strftime('%Y-%m-%d %H:%M')
-    if str(statusSt)=='8':
-        ar[0]['value'][10]=datetime.datetime.today().strftime('%Y-%m-%d %H:%M')
-    if str(statusSt)=='9':
-        ar[0]['value'][12]=datetime.datetime.today().strftime('%Y-%m-%d %H:%M')
-    if str(statusSt)=='10':
-        ar[0]['value'][21]=datetime.datetime.today().strftime('%Y-%m-%d %H:%M')
-    print(ar[0]['rowIndex'])
-    sheet4.delete_row(ar[0]['rowIndex']+1)
-    sheet4.append_row(ar[0]['value'])
+    try:
+        ar[0]['value'][19] = status(statusSt)
+        if str(statusSt)=='4':
+            ar[0]['value'][7]=datetime.datetime.today().strftime('%Y-%m-%d %H:%M')
+        if str(statusSt)=='5':
+            ar[0]['value'][8]=datetime.datetime.today().strftime('%Y-%m-%d %H:%M')
+        if str(statusSt)=='6':
+            ar[0]['value'][9]=datetime.datetime.today().strftime('%Y-%m-%d %H:%M')
+        if str(statusSt)=='7':
+            ar[0]['value'][11]=datetime.datetime.today().strftime('%Y-%m-%d %H:%M')
+        if str(statusSt)=='8':
+            ar[0]['value'][10]=datetime.datetime.today().strftime('%Y-%m-%d %H:%M')
+        if str(statusSt)=='9':
+            ar[0]['value'][12]=datetime.datetime.today().strftime('%Y-%m-%d %H:%M')
+        if str(statusSt)=='10':
+            ar[0]['value'][21]=datetime.datetime.today().strftime('%Y-%m-%d %H:%M')
+
+        sheet4.delete_row(ar[0]['rowIndex']+1)
+        sheet4.append_row(ar[0]['value'])
+    except:
+        cargarcliente(emailCandi,idSt,emailSt,statusSt)
 
 def modificarStatus11(emailCandi,idSt,emailSt,statusSt,salarioMensualAcordadoSt,fechaIngresoSt,comentariosSt):
     client = gspread.authorize(credentials)
