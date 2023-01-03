@@ -12,7 +12,7 @@ app = Flask(__name__)
 CORS(app)
 import socket
 myhost = socket.gethostname()
-if 'DESKTOP-EKG5FVQ'==myhost:
+if 'DESKTOP-A3850LN'==myhost:
     app.run(debug=True     )
 else:
     from OpenSSL import SSL
@@ -156,6 +156,7 @@ def revisar():
                 "TecnoCandiInf": request.form.get('tecCandiInf'),
                 "TpCandiInf": request.form.get('tPCandiInf'),
                 "CommentInf": request.form.get('comentInf'),
+                "ComentRev": request.form.get('comentRev'),
                 "CvEspanolInf": request.form.get('cvEspInf'),
                 "informeEntEsp": request.form.get('infEntEsp'),
                 "CvInglesInf": request.form.get('cvIngInf'),

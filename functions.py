@@ -278,6 +278,7 @@ def revisarAprob(values):
                 tipoPerfil = values['TpCandiInf'][0]
     TpCandi = tipoPerfil
     comment = values['CommentInf']
+    commentRev = values['ComentRev']
     CvEspañol= ""#values['CvEspanolInf']
     InfoEntrevista= values['informeEntEsp']
     CvIngles= ""#values['CvInglesInf']
@@ -324,6 +325,7 @@ def revisarRechaz(values):
     tipoPerfil = "".join(values['TpCandiInf'])
     TpCandi = tipoPerfil
     comment = values['CommentInf']
+    commentRev = values['ComentRev']
     CvEspañol= ""#values['CvEspanolInf']
     InfoEntrevista= values['informeEntEsp']
     CvIngles= ""#values['CvInglesInf']
@@ -338,7 +340,7 @@ def revisarRechaz(values):
             indice = ind
             SolicitudInforme.delete_row(ind)
         ind=ind+1
-    insertEstado(EMailCandidato,IdsaEnviar,Email,'12')
+    insertEstado(EMailCandidato,IdsaEnviar,Email,'12','',commentRev)
     SolicitudInforme.append_row([True,"","" ,IdsaEnviar,StatusEnBase,date_time,Email,
     EsSource, EMailCandidato, IdsaEnviar, TecnoCandi, TpCandi, LKCandi, comment,
     CvEspañol, InfoEntrevista, CvIngles, InfoEntrevistaIngles, RemuneracionPretendidaMensual,
@@ -389,7 +391,6 @@ def getInformesArevisar():
                 i[19],i[20],i[21],i[22],
                 i[23]])
         else:
-            comentario='<input style="color:black" type="text" value="'+i[13]+'">'
             if i[14]!='':
                 linkCVESP='<a style="color:white" target="-" href="'+i[14]+'">Descargar cv español</a>'
                 i[14]=linkCVESP
@@ -402,10 +403,10 @@ def getInformesArevisar():
             if i[17]!='':
                 linkINFING='<a style="color:white" target="-" href="'+i[17]+'">Descargar informe de entrevista en inglés</a>'
                 i[17]=linkINFING
-            i[13]= comentario
+            comentario = '<input type="text" style="color:black" >'
             export.append([i[4],i[5],
                 i[6],i[7],i[8],i[9],i[10],
-                i[11],i[12],i[13],i[14],
+                i[11],i[12],i[13],comentario,i[14],
                 i[15],i[16],i[17],i[18],
                 i[19],i[20],i[21],i[22],
                 i[23]])

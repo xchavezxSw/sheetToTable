@@ -248,6 +248,7 @@ def insertCliente(values):
                                     Inf1Español, \
                                     Inf2Ingles, \
                                     ComentariosInforme, \
+                                    revisarcomment, \
                                     FECHA    ) VALUES ( \
                                     '"+values['EmailInf']+"',  \
                                      '"+values['EMailCandidatoInf']+"',  \
@@ -259,6 +260,7 @@ def insertCliente(values):
                                         '',  \
                                         '',  \
                                         '" + values['CommentInf'] + "',  \
+                                        '" + values['ComentRev'] + "',  \
                                         curdate()); "
 
     print(sql)
@@ -314,7 +316,7 @@ def insertsource(emailCandi,idSt,emailSt,sourceSt,comentariost=''):
     result = 'ok'
     return json.loads(json.dumps(result).encode('utf-8').decode('ascii'))
 
-def insertEstado(emailCandi,idSt,emailSt,statusSt,comentariost=''):
+def insertEstado(emailCandi,idSt,emailSt,statusSt,comentariost='',comentariosRev=''):
     db = connectar()
     a = db.cursor()
     sql = "update cliente set idstatus='"+statusSt+"' " \
@@ -322,14 +324,22 @@ def insertEstado(emailCandi,idSt,emailSt,statusSt,comentariost=''):
           " and idBusqueda='"+idSt+"' " \
           " and EmailAddres='"+emailSt+"'"
     if comentariost !='':
-        sql = "update cliente set idstatus='" + statusSt + "', ComentariosInforme='" + comentariost + \
+        sql = "update cliente set idstatus='" + statusSt + "', ComentariosInforme='" + comentariost + "' " \
               "where emailcandidato='" + emailCandi + "' " \
               " and idBusqueda='" + idSt + "' " \
               " and EmailAddres='" + emailSt + "'"
 
 
+
     a.execute(sql)
     db.commit()
+    if comentariosRev !='':
+        sql = "update cliente set idstatus='" + statusSt + "', revisarcomment='" + comentariosRev + "' "\
+              "where emailcandidato='" + emailCandi + "' " \
+              " and idBusqueda='" + idSt + "' " \
+              " and EmailAddres='" + emailSt + "'"
+        a.execute(sql)
+        db.commit()
     result = 'ok'
     return json.loads(json.dumps(result).encode('utf-8').decode('ascii'))
 def insertEstado11(emailCandi,idSt,emailSt,statusSt,salarioMensualAcordadoSt,fechaIngresoSt,comentariosSt):
