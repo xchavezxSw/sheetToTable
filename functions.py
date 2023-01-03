@@ -134,7 +134,7 @@ def addInforme(values):
       if values['TpCandiInf'] is None:
           values['TpCandiInf']=''
       if 'conexion-hr.com' in values['EmailInf']:
-          EsSource = values['sourcerEmail']
+          EsSource = values['EsSourceInf']
           Email = values['EmailInf']
           EMailCandidato = values['EMailCandidatoInf']
           NombreyApellidodelCandidato = values['NombreyApellidodelCandidatoInf']
@@ -202,7 +202,7 @@ def addInforme(values):
                                        NiveldeIngles, Locacion[0].replace("\n","").replace("\n","").replace("\n",""),
                                        NombreyApellidodelCandidato, ""])"""
       else:
-        EsSource=values['sourcerEmail']
+        EsSource=values['EsSourceInf']
         Email= values['EmailInf']
         EMailCandidato = values['EMailCandidatoInf']
         NombreyApellidodelCandidato = values['NombreyApellidodelCandidatoInf']
@@ -257,7 +257,7 @@ def addInforme(values):
 
 def revisarAprob(values):
     StatusEnBase= values['StatusEnBaseInf']
-    EsSource=values['sourcerEmail']
+    EsSource=values['EsSourceInf']
     Email= values['EmailInf']
     EMailCandidato = values['EMailCandidatoInf']
     NombreyApellidodelCandidato = values['NombreyApellidodelCandidatoInf']
