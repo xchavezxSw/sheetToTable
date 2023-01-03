@@ -608,7 +608,7 @@ def modificarStatus12(emailCandi,idSt,emailSt,statusSt,salarioMensualOfrecidoCli
     searchValues = []
     ar = [{"rowIndex": i, "value": e} for i, e in enumerate(
         data) if e[2] == emailCandi and e[0] == emailSt and e[3] == idSt]
-    if str(statusSt)=='11':
+    if str(statusSt)=='12':
         sheet4.delete_row(ar[0]['rowIndex']+1)
         rechazados.add_rows(1)
         if motivoFinCandi != '' or motivoFinCandi.strip() is None:
