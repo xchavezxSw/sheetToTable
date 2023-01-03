@@ -617,29 +617,32 @@ def modificarStatus12(emailCandi,idSt,emailSt,statusSt,salarioMensualOfrecidoCli
     ar = [{"rowIndex": i, "value": e} for i, e in enumerate(
         data) if e[2] == emailCandi and e[0] == emailSt and e[3] == idSt]
     if str(statusSt)=='12':
-        sheet4.delete_row(ar[0]['rowIndex']+1)
-        rechazados.add_rows(1)
-        if motivoFinCandi != '' or motivoFinCandi.strip() is None:
-            cancelado='Candidato'
-        else:
-            if motivoFinCliente != '' or motivoFinCliente.strip() is None:
-                 cancelado='Cliente'
+        try:
+            sheet4.delete_row(ar[0]['rowIndex']+1)
+            rechazados.add_rows(1)
+            if motivoFinCandi != '' or motivoFinCandi.strip() is None:
+                cancelado='Candidato'
             else:
-                cancelado='Conexion'
+                if motivoFinCliente != '' or motivoFinCliente.strip() is None:
+                     cancelado='Cliente'
+                else:
+                    cancelado='Conexion'
 
-        rechazados.append_row([datetime.datetime.today().strftime('%Y-%m-%d %H:%M'),
-                               ar[0]['value'][0],
-                               ar[0]['value'][2],
-                               ar[0]['value'][3],
-                               'FueraDeProceso (Casos donde estamos 100% seguros que no va a haber contratacion). En la siguiente pregunta colocar el Motivo o SubEstado)',
-                               '',
-                                cancelado,
-                                salarioMensualOfrecidoClienteSt,
-                                salarioMensualPretendidoSt,
-                                motivoFinCandi,
-                                motivoFinCliente,
-                                '',
-                                '',
-                                'CambioAc'
-                               ])
+            rechazados.append_row([datetime.datetime.today().strftime('%Y-%m-%d %H:%M'),
+                                   ar[0]['value'][0],
+                                   ar[0]['value'][2],
+                                   ar[0]['value'][3],
+                                   'FueraDeProceso (Casos donde estamos 100% seguros que no va a haber contratacion). En la siguiente pregunta colocar el Motivo o SubEstado)',
+                                   '',
+                                    cancelado,
+                                    salarioMensualOfrecidoClienteSt,
+                                    salarioMensualPretendidoSt,
+                                    motivoFinCandi,
+                                    motivoFinCliente,
+                                    '',
+                                    '',
+                                    'CambioAc'
+                                   ])
+        except:
+            None
         sendmailstatus(emailCandi, idSt, emailSt, statusSt,comentariosSt)
