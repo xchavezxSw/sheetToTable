@@ -282,10 +282,14 @@ def revisarAprob(values):
                 tipoPerfil = values['TpCandiInf'][0]
     TpCandi = tipoPerfil
     comment = values['CommentInf']
-    CvEspañol= values['CvEspanolInf']
-    InfoEntrevista= values['informeEntEsp']
-    CvIngles= values['CvInglesInf']
-    InfoEntrevistaIngles= values['informeEntIng']
+    if 'CvEspanolInf' in values:
+        CvEspañol= values['CvEspanolInf']
+    if 'informeEntEsp' in values:
+        InfoEntrevista= values['informeEntEsp']
+    if 'CvInglesInf' in values:
+        CvIngles= values['CvInglesInf']
+    if 'informeEntIng' in values:
+        InfoEntrevistaIngles= values['informeEntIng']
     MotivoRechazo= values['MotivvoRechazoInf']
     curDT = datetime.datetime.now()
     date_time = curDT.strftime("%m/%d/%Y, %H:%M:%S")
