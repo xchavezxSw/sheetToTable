@@ -238,13 +238,17 @@ def addInforme(values):
         CvInglesurl=''
         InfoEntrevistaInglesurl=''
         if Cvespañol is not None:
-            cvEspañolUrl = 'https://conexion.techne.net.ar:80/base64?id=' + IdsaEnviar + '&email=' + Email + '&emailc=' + EMailCandidato + '&campo=cvespinf'
+            if Cvespañol != '':
+                cvEspañolUrl = 'https://conexion.techne.net.ar:80/base64?id=' + IdsaEnviar + '&email=' + Email + '&emailc=' + EMailCandidato + '&campo=cvespinf'
         if InfoEntrevista is not None:
-            InfoEntrevistaUrl = 'https://conexion.techne.net.ar:80/base64?id=' + IdsaEnviar + '&email=' + Email + '&emailc=' + EMailCandidato + '&campo=informeesp'
+            if InfoEntrevista != '':
+                InfoEntrevistaUrl = 'https://conexion.techne.net.ar:80/base64?id=' + IdsaEnviar + '&email=' + Email + '&emailc=' + EMailCandidato + '&campo=informeesp'
         if CvIngles is not None:
-            CvInglesurl = 'https://conexion.techne.net.ar:80/base64?id=' + IdsaEnviar + '&email=' + Email + '&emailc=' + EMailCandidato + '&campo=cvingInf'
+            if CvIngles != '':
+                CvInglesurl = 'https://conexion.techne.net.ar:80/base64?id=' + IdsaEnviar + '&email=' + Email + '&emailc=' + EMailCandidato + '&campo=cvingInf'
         if InfoEntrevistaIngles is not None:
-            InfoEntrevistaInglesurl = 'https://conexion.techne.net.ar:80/base64?id=' + IdsaEnviar + '&email=' + Email + '&emailc=' + EMailCandidato + '&campo=informeing'
+            if InfoEntrevistaIngles != '':
+                InfoEntrevistaInglesurl = 'https://conexion.techne.net.ar:80/base64?id=' + IdsaEnviar + '&email=' + Email + '&emailc=' + EMailCandidato + '&campo=informeing'
         SolicitudInforme.append_row([False,"", "","","",date_time,Email,
          EsSource, EMailCandidato, IdsaEnviar, TecnoCandi, TpCandi, LKCandi, comment,
          cvEspañolUrl, InfoEntrevistaUrl, CvInglesurl, InfoEntrevistaInglesurl, RemuneracionPretendidaMensual,
@@ -278,9 +282,9 @@ def revisarAprob(values):
                 tipoPerfil = values['TpCandiInf'][0]
     TpCandi = tipoPerfil
     comment = values['CommentInf']
-    CvEspañol= ""#values['CvEspanolInf']
+    CvEspañol= values['CvEspanolInf']
     InfoEntrevista= values['informeEntEsp']
-    CvIngles= ""#values['CvInglesInf']
+    CvIngles= values['CvInglesInf']
     InfoEntrevistaIngles= values['informeEntIng']
     MotivoRechazo= values['MotivvoRechazoInf']
     curDT = datetime.datetime.now()
@@ -292,18 +296,30 @@ def revisarAprob(values):
             indice = ind
             SolicitudInforme.delete_row(ind)
         ind=ind+1
-    print("aca")
     insertCliente(values)
-    print("aca2")
     if len(Locacion)>0:
         Locacion=Locacion[0]
-    print("aca3")
+    cvEspañolUrl = ''
+    InfoEntrevistaUrl = ''
+    CvInglesurl = ''
+    InfoEntrevistaInglesurl = ''
+    if CvEspañol is not None:
+        if CvEspañol !='':
+            cvEspañolUrl = 'https://conexion.techne.net.ar:80/base64?id=' + IdsaEnviar + '&email=' + Email + '&emailc=' + EMailCandidato + '&campo=cvespinf'
+    if InfoEntrevista is not None:
+        if InfoEntrevista != '':
+            InfoEntrevistaUrl = 'https://conexion.techne.net.ar:80/base64?id=' + IdsaEnviar + '&email=' + Email + '&emailc=' + EMailCandidato + '&campo=informeesp'
+    if CvIngles is not None:
+        if CvIngles != '':
+            CvInglesurl = 'https://conexion.techne.net.ar:80/base64?id=' + IdsaEnviar + '&email=' + Email + '&emailc=' + EMailCandidato + '&campo=cvingInf'
+    if InfoEntrevistaIngles is not None:
+        if InfoEntrevistaIngles != '':
+            InfoEntrevistaInglesurl = 'https://conexion.techne.net.ar:80/base64?id=' + IdsaEnviar + '&email=' + Email + '&emailc=' + EMailCandidato + '&campo=informeing'
     SolicitudInforme.append_row([True,"", IdsaEnviar,"",StatusEnBase,date_time,Email,
     EsSource, EMailCandidato, IdsaEnviar, TecnoCandi, TpCandi, LKCandi, comment,
-    CvEspañol, InfoEntrevista, CvIngles, InfoEntrevistaIngles, RemuneracionPretendidaMensual,
+    cvEspañolUrl, InfoEntrevistaUrl, CvInglesurl, InfoEntrevistaInglesurl, RemuneracionPretendidaMensual,
     NiveldeIngles,Locacion,
     NombreyApellidodelCandidato, MotivoRechazo])
-    print("aca5")
 
 
     return  'ok'
