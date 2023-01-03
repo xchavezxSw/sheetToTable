@@ -539,9 +539,9 @@ def eliminar_guiones(candidato,id,sourcer):
         SolicitudInforme.update('j'+str(eliminar),valores )
 def sendmailstatus(emailCandi,idSt,emailSt,statusSt,comentarios=""):
     client = gspread.authorize(credentials)
-    sheet4 = client.open('sendMails').worksheet('mails')
-    sheet4.add_rows(1)
-    sheet4.append_row([datetime.datetime.today().strftime('%Y-%m-%d %H:%M'),emailSt,emailCandi,idSt,status(statusSt),comentarios,"","","","","","","","","","",0],table_range="A2:Q5000")
+    sendmails = client.open('sendMails').worksheet('mails')
+    sendmails.add_rows(1)
+    sendmails.append_row([datetime.datetime.today().strftime('%Y-%m-%d %H:%M'),emailSt,emailCandi,idSt,status(statusSt),comentarios,"","","","","","","","","","",0],table_range="A2:Q5000")
 def modificarStatus(emailCandi,idSt,emailSt,statusSt,comentariosSt=''):
     client = gspread.authorize(credentials)
     sheet4 = client.open('[EnProceso]EnCliente').worksheet('EnProcesoEnCliente')  # Open the spreadsheet
