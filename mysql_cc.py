@@ -68,7 +68,6 @@ def encliente(usuario=''):
             consulta =consulta+ " and u.email ='"+usuario+"'"
             consulta = consulta + " where idstatus not in ('11','12') and "
             consulta = consulta + " case when u.`role` is null THEN  EmailAddres ='"+usuario+"' ELSE  TRUE  end =True "
-            print(consulta)
             a.execute(consulta)
             results = a.fetchall()
             json_data = []
@@ -83,7 +82,6 @@ def reservados(usuario=''):
         consulta = "select * from reserva where 1=1 "
         if usuario != '':
             consulta = consulta + " and EmailAddres='" + usuario +"'"
-        print(consulta)
         a.execute(consulta)
         #row_headers = [x[0] for x in a.description]  # this will extract row headers
         results = a.fetchall()
@@ -281,7 +279,6 @@ def insertCliente(values):
                                         '" + values['CommentInf'] + "',  \
                                         curdate()); "
 
-    print(sql)
     a.execute(sql)
     db.commit()
     result = 'ok'
@@ -308,7 +305,6 @@ def login(usuario,contrasena):
     db = connectar()
     a = db.cursor()
     consulta = "select count(*) ,role from users where trim(email)=trim('"+usuario+"') and trim(password)=trim('"+contrasena+"') group by role;"
-    print(consulta)
     a.execute(consulta)
     results = a.fetchall()
     if len(results)>=1:

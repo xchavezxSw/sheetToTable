@@ -67,16 +67,13 @@ def addReserva(values):
         lambda elem: elem[2] if str(elem[2]).lower().strip() == str(email).lower().strip() else None,
         contratados))
     if len(contratado)>0:
-        print(contratado)
         if contratado != '' or contratado is not None:
             return '403'
-    print("asd")
     valor,reclutador = pertenencia(email)
     if valor != 'OK' and reclutador != values['email']:
         return 410
     modificarReservar(values)
  except Exception as e:
-    print(e)
     if '_' in values['idReserva']:
         for i in values['idReserva'].split('_'):
             newDict = {"datos": "vacio"}
@@ -175,8 +172,7 @@ def addInforme(values):
           for x in DirectosList:
             nuevaLista.append(x[0])
           if Email in nuevaLista:
-                print("aprob")
-                revisarAprob(values) 
+                revisarAprob(values)
           else:
             insertinforme(IdsaEnviar,Email,EMailCandidato,Cvespañol,InfoEntrevista,CvIngles,InfoEntrevistaIngles)
             cvEspañolUrl = ''
@@ -540,8 +536,6 @@ def eliminar_guiones(candidato,id,sourcer):
     if '_' in str(splite2):
         for i in splite2.split("_"):
             if i != id:
-                print("DDDD")
-                print(i)
                 nuevo.append(str(i))
     if len(nuevo)>1:
         valores='_'.join(nuevo )

@@ -31,14 +31,12 @@ def add_headers(response):
 @app.route('/')
 def hello():
     data=jsonsheet()
-    print(data)
     return make_response(jsonify(data), 200)
 
 @cross_origin()
 @app.route('/Informe')
 def Informe():
     data=InformeRechazados()
-    print(data)
     return make_response(jsonify(data), 200)
 
 @cross_origin()

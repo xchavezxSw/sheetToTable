@@ -2,7 +2,6 @@ from mysql import connector
 import socket
 myhost = socket.gethostname()
 if 'DESKTOP-A3850LN'==myhost:
-    print(myhost)
     conexion= connector.connect(
     host="127.0.0.1",
     port='3309',
@@ -20,7 +19,6 @@ else:
 conexion.ping()
 def connectar():
     if 'DESKTOP-A3850LN'==myhost:
-        print(myhost)
         conexion= connector.connect(
         host="127.0.0.1",
         port='3309',
