@@ -40,6 +40,33 @@ def miscandidatos(usuario=''):
     for result in results:
         json_data.append([result[0], result[1], result[2], status(str(result[3]))])
     return json.loads(json.dumps(json_data).encode('utf-8').decode('ascii'))
+
+def rechazadosTable(usuario=''):
+    db=connectar()
+    a = db.cursor()
+    consulta = "select r.idbusqueda ,r.emailAddress,r.emailcandidato ,r.motivorechazo ,r.rechazadoPor  from rechazados r   where 1=1"
+    if usuario != '':
+        consulta = consulta + " and lower(trim(emailAddres))=lower(trim('" + usuario + "'))"
+    a.execute(consulta)
+    results = a.fetchall()
+    json_data = []
+    for result in results:
+        json_data.append([result[0], result[1], result[2], result[3], result[4]])
+    return json.loads(json.dumps(json_data).encode('utf-8').decode('ascii'))
+
+def fueraProcesoTable(usuario=''):
+    db=connectar()
+    a = db.cursor()
+    consulta = "select idbusqueda ,EmailAddres ,emailcandidato ,rechazado  from metricas m where rechazado is not null"
+    if usuario != '':
+        consulta = consulta + " and lower(trim(EmailAddres))=lower(trim('" + usuario + "'))"
+    a.execute(consulta)
+    results = a.fetchall()
+    json_data = []
+    for result in results:
+        json_data.append([result[0], result[1], result[2], result[3]])
+    return json.loads(json.dumps(json_data).encode('utf-8').decode('ascii'))
+
 def cargarcliente(emailCandi,idSt,emailSt,statusSt):
     import gspread
     from oauth2client.service_account import ServiceAccountCredentials

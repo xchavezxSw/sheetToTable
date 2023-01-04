@@ -12,7 +12,7 @@ app = Flask(__name__)
 CORS(app)
 import socket
 myhost = socket.gethostname()
-if 'DESKTOP-EKG5FVQ'==myhost:
+if 'DESKTOP-A3850LN'==myhost:
     app.run(debug=True     )
 else:
     from OpenSSL import SSL
@@ -228,6 +228,34 @@ def getMisCandis():
         data=miscandidatos(usuario)
     else:
         data=miscandidatos()
+    return make_response(jsonify(data), 200)
+
+@cross_origin()
+@app.route('/getRechazados')
+def getRechazados():
+    args = request.args
+    usuario=args.get('usuario')
+    print(usuario)
+    if  usuario is not None:
+        if usuario != '':
+            usuario = unquote(usuario)
+            data=rechazadosTable(usuario)
+    else:
+        data=rechazadosTable()
+    return make_response(jsonify(data), 200)
+
+@cross_origin()
+@app.route('/getFueraDeProceso')
+def getFueraDeProceso():
+    args = request.args
+    usuario=args.get('usuario')
+    print(usuario)
+    if  usuario is not None:
+        if usuario != '':
+            usuario = unquote(usuario)
+            data=fueraProcesoTable(usuario)
+    else:
+        data=fueraProcesoTable()
     return make_response(jsonify(data), 200)
 
 @cross_origin()
