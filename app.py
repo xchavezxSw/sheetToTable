@@ -106,7 +106,7 @@ def base64():
     response=make_response( content)
 
     response.headers['Content-Type'] = contenttype
-    if contenttype=='vnd.openxmlformats-officedocument.wordprocessingml.document':
+    if 'vnd.openxmlformats-officedocument.wordprocessingml.document' in contenttype:
         contenttype='docx'
     response.headers['Content-Disposition'] = 'attachment; filename='+id+'-'+hash+'.'+contenttype.replace('application/','')
     response.headers['Content-Transfer-Encoding'] = 'binary'
