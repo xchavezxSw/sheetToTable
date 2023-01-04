@@ -550,7 +550,7 @@ def eliminar_guiones(candidato,id,sourcer):
 def sendmailstatus(emailCandi,idSt,emailSt,statusSt,comentarios=""):
     p = Process(target=enviomail, args=(emailCandi,idSt,emailSt,statusSt,comentarios,))
     p.start()
-    p.join()
+
 def enviomail(emailCandi,idSt,emailSt,statusSt,comentarios=""):
     sendmails.add_rows(1)
     sendmails.append_row([datetime.datetime.today().strftime('%Y-%m-%d %H:%M'),emailSt,emailCandi,idSt,status(statusSt),comentarios,"","","","","","","","","","",0],table_range="A1")
