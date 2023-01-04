@@ -10,6 +10,7 @@ import base64 as b64
 from codecs import encode
 app = Flask(__name__)
 CORS(app)
+
 import socket
 myhost = socket.gethostname()
 if 'DESKTOP-EKG5FVQ'==myhost:
