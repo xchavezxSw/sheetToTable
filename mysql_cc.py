@@ -64,10 +64,9 @@ def cargarcliente(emailCandi,idSt,emailSt,statusSt):
 def encliente(usuario=''):
             db = connectar()
             a = db.cursor()
-            consulta = "select c.* from cliente c left join users u on  u.`role` ='admin' "
-            consulta =consulta+ " and u.email ='"+usuario+"'"
-            consulta = consulta + " where idstatus not in ('11','12') and "
-            consulta = consulta + " case when u.`role` is null THEN  EmailAddres ='"+usuario+"' ELSE  TRUE  end =True "
+            consulta = "select c.* from cliente c "
+            consulta =consulta+ " where c.EmailAddres ='"+usuario+"'"
+            consulta = consulta + " and idstatus not in ('11','12')  "
             a.execute(consulta)
             results = a.fetchall()
             json_data = []
