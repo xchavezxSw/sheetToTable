@@ -6,6 +6,7 @@ import json
 import threading
 import pandas as pd
 from mysql_cc import *
+from multiprocessing import Process
 
 scope = ["https://spreadsheets.google.com/feeds", 'https://www.googleapis.com/auth/spreadsheets',
              "https://www.googleapis.com/auth/drive.file", "https://www.googleapis.com/auth/drive"]
@@ -547,6 +548,10 @@ def eliminar_guiones(candidato,id,sourcer):
         valores='_'.join(nuevo )
         SolicitudInforme.update('j'+str(eliminar),valores )
 def sendmailstatus(emailCandi,idSt,emailSt,statusSt,comentarios=""):
+    p = Process(target=enviomail, args=(emailCandi,idSt,emailSt,statusSt,comentarios,))
+    p.start()
+    p.join()
+def enviomail(emailCandi,idSt,emailSt,statusSt,comentarios=""):
     sendmails.add_rows(1)
     sendmails.append_row([datetime.datetime.today().strftime('%Y-%m-%d %H:%M'),emailSt,emailCandi,idSt,status(statusSt),comentarios,"","","","","","","","","","",0],table_range="A1")
 def modificarStatus(emailCandi,idSt,emailSt,statusSt,comentariosSt=''):
