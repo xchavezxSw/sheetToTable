@@ -194,7 +194,7 @@ tecnologiasquesabeelcandidato,tipodeperfildelcandidato, \
 motivo,status,ComentariosAdicionales,FECHA    ) VALUES (0, '"+values['email']+"', " \
                                                             "'"+values['emailCandidato']+"', " \
                                                             "'"+values['naCandi']+"', " \
-                                                            ""+values['idReserva']+", " \
+                                                            "'"+values['idReserva']+"', " \
                                                             "'"+values['lkCandi']+"', " \
                                                             "'"+",".join(values['tcandi'])+"', " \
                                                             "'"+ ",".join(values['tperfil'])+"', " \
