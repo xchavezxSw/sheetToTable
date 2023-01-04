@@ -21,7 +21,8 @@ contratados=client.open('[FueraDeProceso]Contratados').worksheet('FueraDeProceso
 contratadossheet=client.open('[FueraDeProceso]Contratados').worksheet('FueraDeProcesoContratados')
 rechazados=client.open('[FueraDeProceso]ProcesoRechazado').worksheet('FueraDeProcesoProcesoRechazado')
 #cambios=client.open('[AUT]PedidosCambios').worksheet('AUTPedidosCambios')
-
+client = gspread.authorize(credentials)
+sendmails = client.open('sendMails').worksheet('mails')
 
 def jsonsheet():
     client = gspread.authorize(credentials)
@@ -546,8 +547,6 @@ def eliminar_guiones(candidato,id,sourcer):
         valores='_'.join(nuevo )
         SolicitudInforme.update('j'+str(eliminar),valores )
 def sendmailstatus(emailCandi,idSt,emailSt,statusSt,comentarios=""):
-    client = gspread.authorize(credentials)
-    sendmails = client.open('sendMails').worksheet('mails')
     sendmails.add_rows(1)
     sendmails.append_row([datetime.datetime.today().strftime('%Y-%m-%d %H:%M'),emailSt,emailCandi,idSt,status(statusSt),comentarios,"","","","","","","","","","",0],table_range="A2:Q5000")
 def modificarStatus(emailCandi,idSt,emailSt,statusSt,comentariosSt=''):
