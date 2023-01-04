@@ -299,7 +299,6 @@ def getcambiosource():
 
 @cross_origin()
 @app.route('/cambioEstado',methods=['GET', 'POST'])
-@flask_async
 def cambioEstado():
     if request.method == 'POST':
         emailCandi = request.form.get('emailCandidatoSt')
