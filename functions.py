@@ -621,7 +621,7 @@ def modificarStatus12(emailCandi,idSt,emailSt,statusSt,salarioMensualOfrecidoCli
                      cancelado='Cliente'
                 else:
                     cancelado='Conexion'
-
+            sendmailstatus(emailCandi, idSt, emailSt, statusSt, comentariosSt)
             rechazados.append_row([datetime.datetime.today().strftime('%Y-%m-%d %H:%M'),
                                    ar[0]['value'][0],
                                    ar[0]['value'][2],
