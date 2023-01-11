@@ -642,4 +642,4 @@ def modificarStatus12(emailCandi,idSt,emailSt,statusSt,salarioMensualOfrecidoCli
                                    ])
         except:
             None
-        sendmailstatus(emailCandi, idSt, emailSt, statusSt,comentariosSt)
+            sendmailstatus(emailCandi, idSt, emailSt, statusSt,comentariosSt)
