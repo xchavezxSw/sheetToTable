@@ -400,36 +400,39 @@ def getInformesArevisar():
     nn=0
 
     for i in algo:
+        print(i)
         if '_' in i[9]:
             splitear = i[9].split("_")
             for j in splitear:
-                export.append([i[4],i[5],
-                i[6],i[7],i[8],j,i[10],
-                i[11],i[12],i[13],i[14],
-                i[15],i[16],i[17],i[18],
-                i[19],i[20],i[21],i[22],
-                i[23]])
+                export.append([i[4], i[5],
+                               i[6], i[7], i[8], j, i[10],
+                               i[11], i[12], i[13], i[14],
+                               i[15], i[16], i[17], i[18],
+                               i[19], i[20], i[21], i[22],
+                               i[23], i[24]])
         else:
-            comentario='<input style="color:black" type="text" value="'+i[13]+'">'
-            if i[14]!='':
-                linkCVESP='<a style="color:white" target="-" href="'+i[14]+'">Descargar cv español</a>'
-                i[14]=linkCVESP
-            if i[15]!='':
-                linkINFESP='<a style="color:white" target="-" href="'+i[15]+'">Descargar informe de entrevista en español</a>'
-                i[15]=linkINFESP
-            if i[16]!='':
-                linkCVING='<a style="color:white" target="-" href="'+i[16]+'">Descargar cv inglés</a>'
-                i[16]=linkCVING
-            if i[17]!='':
-                linkINFING='<a style="color:white" target="-" href="'+i[17]+'">Descargar informe de entrevista en inglés</a>'
-                i[17]=linkINFING
-            i[13]= comentario
-            export.append([i[4],i[5],
-                i[6],i[7],i[8],i[9],i[10],
-                i[11],i[12],i[13],i[14],
-                i[15],i[16],i[17],i[18],
-                i[19],i[20],i[21],i[22],
-                i[23]])
+            comentario = '<input style="color:black" type="text" value="' + i[13] + '">'
+            if i[14] != '':
+                linkCVESP = '<a style="color:white" target="-" href="' + i[14] + '">Descargar cv español</a>'
+                i[14] = linkCVESP
+            if i[15] != '':
+                linkINFESP = '<a style="color:white" target="-" href="' + i[
+                    15] + '">Descargar informe de entrevista en español</a>'
+                i[15] = linkINFESP
+            if i[16] != '':
+                linkCVING = '<a style="color:white" target="-" href="' + i[16] + '">Descargar cv inglés</a>'
+                i[16] = linkCVING
+            if i[17] != '':
+                linkINFING = '<a style="color:white" target="-" href="' + i[
+                    17] + '">Descargar informe de entrevista en inglés</a>'
+                i[17] = linkINFING
+            i[13] = comentario
+            export.append([i[4], i[5],
+                           i[6], i[7], i[8], i[9], i[10],
+                           i[11], i[12], i[13], i[23], i[14],
+                           i[15], i[16], i[17], i[18],
+                           i[19], i[20], i[21], i[22],
+                           i[24]])
 
     return json.loads(json.dumps(export).encode('utf-8').decode('ascii'))
 
