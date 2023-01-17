@@ -38,6 +38,17 @@ def hello():
 def Informe():
     data=InformeRechazados()
     return make_response(jsonify(data), 200)
+@cross_origin()
+@app.route('/enrechazados')
+def getenrechazados():
+    args = request.args
+    usuario=args.get('usuario')
+    if usuario!='' or usuario is not None:
+        usuario = unquote(usuario)
+        data=enrechazados(usuario)
+    else:
+        data=enrechazados(usuario)
+    return make_response(jsonify(data), 200)
 
 @cross_origin()
 @app.route('/insert', methods=['GET', 'POST'])

@@ -77,6 +77,22 @@ def encliente(usuario=''):
                                   result[6], result[7], result[8], result[9], result[10], str(result[11])])
             return json.loads(json.dumps(json_data).encode('utf-8').decode('ascii'))
 
+
+def enrechazados(usuario=''):
+    db = connectar()
+    a = db.cursor()
+    consulta = "select c.* from rechazados c "
+    consulta = consulta + " where c.emailAddress ='" + usuario + "'"
+    consulta = consulta + ""
+    a.execute(consulta)
+    results = a.fetchall()
+    json_data = []
+    for result in results:
+        json_data.append([result[0], result[1], result[2], status(str(result[3])), result[4], result[5],
+                          result[6], result[7]])
+    return json.loads(json.dumps(json_data).encode('utf-8').decode('ascii'))
+
+
 def reservados(usuario=''):
         db = connectar()
         a = db.cursor()
