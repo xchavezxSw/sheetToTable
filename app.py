@@ -253,6 +253,17 @@ def getencliente():
         data=encliente(usuario)
     return make_response(jsonify(data), 200)
 @cross_origin()
+@app.route('/getfproceso')
+def getencliente():
+    args = request.args
+    usuario=args.get('usuario')
+    if usuario!='' or usuario is not None:
+        usuario = unquote(usuario)
+        data=fproceso(usuario)
+    else:
+        data=fproceso(usuario)
+    return make_response(jsonify(data), 200)
+@cross_origin()
 @app.route('/getReservados')
 def getreservados():
 
