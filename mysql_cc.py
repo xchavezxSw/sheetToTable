@@ -83,7 +83,7 @@ def fproceso(usuario=''):
     a = db.cursor()
     consulta = "select c.* from cliente c "
     consulta = consulta + " where c.EmailAddres ='" + usuario + "'"
-    consulta = consulta + " and idstatus  in ('12')  "
+    consulta = consulta + " and idstatus  in ('12','14')  "
     a.execute(consulta)
     results = a.fetchall()
     json_data = []
