@@ -254,7 +254,7 @@ def getencliente():
     return make_response(jsonify(data), 200)
 @cross_origin()
 @app.route('/getfproceso')
-def getencliente():
+def getfproceso():
     args = request.args
     usuario=args.get('usuario')
     if usuario!='' or usuario is not None:
