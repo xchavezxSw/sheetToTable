@@ -28,6 +28,8 @@ def status(id):
         return  'Fuera de proceso'
     if id=="13" :
         return  'Informe Cargado'
+    if id=="14" :
+        return  'Reserva Vencida'
 def miscandidatos(usuario=''):
     db=connectar()
     a = db.cursor()
@@ -66,7 +68,7 @@ def encliente(usuario=''):
             a = db.cursor()
             consulta = "select c.* from cliente c "
             consulta =consulta+ " where c.EmailAddres ='"+usuario+"'"
-            consulta = consulta + " and idstatus not in ('11','12')  "
+            consulta = consulta + " and idstatus not in ('11','12','14')  "
             a.execute(consulta)
             results = a.fetchall()
             json_data = []
@@ -78,7 +80,7 @@ def encliente(usuario=''):
 def reservados(usuario=''):
         db = connectar()
         a = db.cursor()
-        consulta = "select * from reserva where 1=1 "
+        consulta = "select * from reserva where 1=1 and status not in (14) "
         if usuario != '':
             consulta = consulta + " and EmailAddres='" + usuario +"'"
         a.execute(consulta)
