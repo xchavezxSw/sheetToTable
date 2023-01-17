@@ -540,9 +540,9 @@ def eliminar_guiones(candidato,id,sourcer):
     if len(nuevo)>1:
         valores='_'.join(nuevo )
         SolicitudInforme.update('j'+str(eliminar),valores )
-def sendmailstatus(emailCandi,idSt,emailSt,statusSt,comentarios=""):
+def sendmailstatus(emailCandi,idSt,emailSt,statusSt,comentarios="",motivofin=""):
     sendmails.add_rows(1)
-    sendmails.append_row([datetime.datetime.today().strftime('%Y-%m-%d %H:%M'),emailSt,emailCandi,idSt,status(statusSt),comentarios,"","","","","","","","","","",0],table_range="A1")
+    sendmails.append_row([datetime.datetime.today().strftime('%Y-%m-%d %H:%M'),emailSt,emailCandi,idSt,status(statusSt),comentarios,motivofin,"","","","","","","","","",0],table_range="A1")
 def modificarStatus(emailCandi,idSt,emailSt,statusSt,comentariosSt=''):
     client = gspread.authorize(credentials)
     sheet4 = client.open('[EnProceso]EnCliente').worksheet('EnProcesoEnCliente')  # Open the spreadsheet
@@ -614,14 +614,17 @@ def modificarStatus12(emailCandi,idSt,emailSt,statusSt,salarioMensualOfrecidoCli
         try:
             sheet4.delete_row(ar[0]['rowIndex']+1)
             rechazados.add_rows(1)
+            envio=""
             if motivoFinCandi != '' or motivoFinCandi.strip() is None:
                 cancelado='Candidato'
+                envio=motivoFinCandi
             else:
                 if motivoFinCliente != '' or motivoFinCliente.strip() is None:
                      cancelado='Cliente'
+                     envio = motivoFinCliente
                 else:
                     cancelado='Conexion'
-
+            sendmailstatus(emailCandi, idSt, emailSt, statusSt, comentariosSt,envio)
             rechazados.append_row([datetime.datetime.today().strftime('%Y-%m-%d %H:%M'),
                                    ar[0]['value'][0],
                                    ar[0]['value'][2],
@@ -639,4 +642,4 @@ def modificarStatus12(emailCandi,idSt,emailSt,statusSt,salarioMensualOfrecidoCli
                                    ])
         except:
             None
-        sendmailstatus(emailCandi, idSt, emailSt, statusSt,comentariosSt)
+            sendmailstatus(emailCandi, idSt, emailSt, statusSt,comentariosSt)
