@@ -400,7 +400,6 @@ def getInformesArevisar():
     nn=0
 
     for i in algo:
-        print(i)
         if '_' in i[9]:
             splitear = i[9].split("_")
             for j in splitear:
@@ -427,6 +426,8 @@ def getInformesArevisar():
                     17] + '">Descargar informe de entrevista en inglés</a>'
                 i[17] = linkINFING
             i[13] = comentario
+            comentario2 = '<input style="color:black" type="text" value="' + i[23] + '">'
+            i[23]=comentario2
             export.append([i[4], i[5],
                            i[6], i[7], i[8], i[9], i[10],
                            i[11], i[12], i[13], i[23], i[14],
