@@ -612,6 +612,7 @@ def modificarStatus12(emailCandi,idSt,emailSt,statusSt,salarioMensualOfrecidoCli
     sheet4 = client.open('[EnProceso]EnCliente').worksheet('EnProcesoEnCliente')  # Open the spreadsheet
     data = sheet4.get_all_values()
     searchValues = []
+    envio=''
     ar = [{"rowIndex": i, "value": e} for i, e in enumerate(
         data) if e[2] == emailCandi and e[0] == emailSt and e[3] == idSt]
     if str(statusSt)=='12':
