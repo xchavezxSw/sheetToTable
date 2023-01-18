@@ -69,6 +69,11 @@ def encliente(usuario=''):
             consulta = "select c.* from cliente c "
             consulta =consulta+ " where c.EmailAddres ='"+usuario+"'"
             consulta = consulta + " and idstatus not in ('11','12','14')  "
+            consulta= consulta + """ union ALL 
+                                     select r.EmailAddres ,r.emailcandidato ,r.idreserva ,r.status 
+                                     ,null,r.Linkedin ,null,null,null,null,r.ComentariosAdicionales ,r.FECHA ,null,null 
+                                     from reserva r  where r.status not in ('14') """
+            consulta= consulta + "   and r.EmailAddres  ='"+usuario+"'"
             a.execute(consulta)
             results = a.fetchall()
             json_data = []
