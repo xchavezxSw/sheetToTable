@@ -628,6 +628,7 @@ def modificarStatus12(emailCandi,idSt,emailSt,statusSt,salarioMensualOfrecidoCli
                      envio = motivoFinCliente
                 else:
                     cancelado='Conexion'
+            print(rechazadopor)
             if rechazadopor !='':
                 cancelado=rechazadopor
             if rechazadopor=='Cliente':
