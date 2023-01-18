@@ -347,7 +347,7 @@ def cambioEstado():
             data = insertEstado(emailCandi, idSt, emailSt, statusSt,comentariosSt)
             data=insertEstado12(emailCandi,idSt,emailSt,statusSt,salarioMensualOfrecidoClienteSt,salarioMensualPretendidoSt,motivoFinCandi,motivoFinCliente)
             modificarStatus12(emailCandi,idSt,emailSt,statusSt,salarioMensualOfrecidoClienteSt,salarioMensualPretendidoSt,motivoFinCandi,motivoFinCliente,comentariosSt,rechazadopor)
-
+            print(rechazadopor)
 
         return make_response(jsonify(None), 200)
 
