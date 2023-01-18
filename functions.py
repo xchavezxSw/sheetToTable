@@ -607,7 +607,7 @@ def modificarStatus11(emailCandi,idSt,emailSt,statusSt,salarioMensualAcordadoSt,
                                ])
         sendmailstatus(emailCandi, idSt, emailSt, statusSt,comentariosSt)
 
-def modificarStatus12(emailCandi,idSt,emailSt,statusSt,salarioMensualOfrecidoClienteSt,salarioMensualPretendidoSt,motivoFinCandi,motivoFinCliente,comentariosSt=''):
+def modificarStatus12(emailCandi,idSt,emailSt,statusSt,salarioMensualOfrecidoClienteSt,salarioMensualPretendidoSt,motivoFinCandi,motivoFinCliente,comentariosSt='',rechazadopor=''):
     client = gspread.authorize(credentials)
     sheet4 = client.open('[EnProceso]EnCliente').worksheet('EnProcesoEnCliente')  # Open the spreadsheet
     data = sheet4.get_all_values()
@@ -628,6 +628,13 @@ def modificarStatus12(emailCandi,idSt,emailSt,statusSt,salarioMensualOfrecidoCli
                      envio = motivoFinCliente
                 else:
                     cancelado='Conexion'
+            if rechazadopor !='':
+                cancelado=rechazadopor
+            if rechazadopor=='Cliente':
+                envio=motivoFinCliente
+            else:
+                envio=motivoFinCandi
+
             sendmailstatus(emailCandi, idSt, emailSt, statusSt, comentariosSt,envio)
             rechazados.append_row([datetime.datetime.today().strftime('%Y-%m-%d %H:%M'),
                                    ar[0]['value'][0],

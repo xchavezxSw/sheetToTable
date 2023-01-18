@@ -334,6 +334,7 @@ def cambioEstado():
         salarioMensualPretendidoSt=request.form.get('salarioMensualPretendidoSt')
         motivoFinCandi=request.form.get('motivoFinCandi')
         motivoFinCliente=request.form.get('motivoFinCliente')
+        rechazadopor = request.form.get('statusS3St')
 
         if statusSt not in [ '11','12']:
             data=insertEstado(emailCandi,idSt,emailSt,statusSt,comentariosSt)
@@ -345,7 +346,7 @@ def cambioEstado():
         if statusSt == '12':
             data = insertEstado(emailCandi, idSt, emailSt, statusSt,comentariosSt)
             data=insertEstado12(emailCandi,idSt,emailSt,statusSt,salarioMensualOfrecidoClienteSt,salarioMensualPretendidoSt,motivoFinCandi,motivoFinCliente)
-            modificarStatus12(emailCandi,idSt,emailSt,statusSt,salarioMensualOfrecidoClienteSt,salarioMensualPretendidoSt,motivoFinCandi,motivoFinCliente,comentariosSt)
+            modificarStatus12(emailCandi,idSt,emailSt,statusSt,salarioMensualOfrecidoClienteSt,salarioMensualPretendidoSt,motivoFinCandi,motivoFinCliente,comentariosSt,rechazadopor)
 
 
         return make_response(jsonify(None), 200)
