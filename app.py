@@ -335,7 +335,8 @@ def cambioEstado():
         motivoFinCandi=request.form.get('motivoFinCandi')
         motivoFinCliente=request.form.get('motivoFinCliente')
         rechazadopor = request.form.get('statusS3St')
-
+        print(rechazadopor)
+        print(statusSt)
         if statusSt not in [ '11','12']:
             data=insertEstado(emailCandi,idSt,emailSt,statusSt,comentariosSt)
             modificarStatus(emailCandi, idSt, emailSt, statusSt,comentariosSt)
