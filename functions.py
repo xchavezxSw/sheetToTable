@@ -613,6 +613,13 @@ def modificarStatus12(emailCandi,idSt,emailSt,statusSt,salarioMensualOfrecidoCli
     data = sheet4.get_all_values()
     searchValues = []
     envio=''
+    print(rechazadopor)
+    if rechazadopor != '':
+        cancelado = rechazadopor
+    if rechazadopor == 'Cliente':
+        envio = motivoFinCliente
+    else:
+        envio = motivoFinCandi
     ar = [{"rowIndex": i, "value": e} for i, e in enumerate(
         data) if e[2] == emailCandi and e[0] == emailSt and e[3] == idSt]
     if str(statusSt)=='12':
@@ -629,13 +636,7 @@ def modificarStatus12(emailCandi,idSt,emailSt,statusSt,salarioMensualOfrecidoCli
                      envio = motivoFinCliente
                 else:
                     cancelado='Conexion'
-            print(rechazadopor)
-            if rechazadopor !='':
-                cancelado=rechazadopor
-            if rechazadopor=='Cliente':
-                envio=motivoFinCliente
-            else:
-                envio=motivoFinCandi
+
 
             sendmailstatus(emailCandi, idSt, emailSt, statusSt, comentariosSt,envio)
             rechazados.append_row([datetime.datetime.today().strftime('%Y-%m-%d %H:%M'),
