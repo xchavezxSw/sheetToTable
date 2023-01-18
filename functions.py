@@ -613,7 +613,6 @@ def modificarStatus12(emailCandi,idSt,emailSt,statusSt,salarioMensualOfrecidoCli
     data = sheet4.get_all_values()
     searchValues = []
     envio=''
-    print(rechazadopor)
     if rechazadopor != '':
         cancelado = rechazadopor
     if rechazadopor == 'Cliente':
@@ -656,5 +655,4 @@ def modificarStatus12(emailCandi,idSt,emailSt,statusSt,salarioMensualOfrecidoCli
                                    ])
         except:
             None
-            print("falle")
             sendmailstatus(emailCandi, idSt, emailSt, statusSt,comentariosSt,envio)
