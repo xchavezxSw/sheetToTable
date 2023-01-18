@@ -654,4 +654,5 @@ def modificarStatus12(emailCandi,idSt,emailSt,statusSt,salarioMensualOfrecidoCli
                                    ])
         except:
             None
-            sendmailstatus(emailCandi, idSt, emailSt, statusSt,comentariosSt)
+            print("falle")
+            sendmailstatus(emailCandi, idSt, emailSt, statusSt,comentariosSt,envio)
