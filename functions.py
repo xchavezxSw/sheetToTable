@@ -480,19 +480,18 @@ def updatecomment(values):
     curDT = datetime.datetime.now()
     date_time = curDT.strftime("%m/%d/%Y, %H:%M:%S")
     eliminar_guiones(EMailCandidato, IdsaEnviar, Email)
-    """ind = 1 
+    ind = 1
     for i in SolicitudInforme.get_all_values():
         if i[6] == Email and i[8] == EMailCandidato and i[9] == IdsaEnviar:
             indice = ind
             SolicitudInforme.delete_row(ind)
         ind = ind + 1
-   SolicitudInforme.append_row(["", "", "", "", StatusEnBase, date_time, Email,
+    SolicitudInforme.append_row(["", "", "", "", StatusEnBase, date_time, Email,
                                  EsSource, EMailCandidato, IdsaEnviar, TecnoCandi, TpCandi, LKCandi, comment,
                                  CvEspañol, InfoEntrevista, CvIngles, InfoEntrevistaIngles,
                                  RemuneracionPretendidaMensual,
                                  NiveldeIngles, Locacion,
                                  NombreyApellidodelCandidato, MotivoRechazo,comentarioint])
-                                 """
 def modificarReservar(values):
     if '_' in values['idReserva']:
         for i in values['idReserva'].split('_'):
