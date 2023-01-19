@@ -455,7 +455,43 @@ def devolverReserva(email):
            newDict={"datos":"vacio"}
        return json.loads(json.dumps(newDict).encode('utf-8').decode('ascii'))
 
-
+def updatecomment(values):
+    StatusEnBase = values['StatusEnBaseInf']
+    EsSource = values['EsSourceInf']
+    Email = values['EmailInf']
+    EMailCandidato = values['EMailCandidatoInf']
+    NombreyApellidodelCandidato = values['NombreyApellidodelCandidatoInf']
+    IdsaEnviar = values['IdsaEnviarInf']
+    RemuneracionPretendidaMensual = values['RemuneracionPretendidaMensualInf']
+    NiveldeIngles = "".join(values["NiveldeInglesInf"])
+    Locacion = values["LocacionInf"]
+    LKCandi = values['LKCandiInf']
+    tecnologias = "".join(values['TecnoCandiInf'])
+    TecnoCandi = tecnologias
+    tipoPerfil = "".join(values['TpCandiInf'])
+    TpCandi = tipoPerfil
+    comment = values['CommentInf']
+    comentarioint= values['comentarioint']
+    CvEspañol = ""  # values['CvEspanolInf']
+    InfoEntrevista = values['informeEntEsp']
+    CvIngles = ""  # values['CvInglesInf']
+    InfoEntrevistaIngles = values['informeEntIng']
+    MotivoRechazo = values['MotivvoRechazoInf']
+    curDT = datetime.datetime.now()
+    date_time = curDT.strftime("%m/%d/%Y, %H:%M:%S")
+    eliminar_guiones(EMailCandidato, IdsaEnviar, Email)
+    ind = 1
+    for i in SolicitudInforme.get_all_values():
+        if i[6] == Email and i[8] == EMailCandidato and i[9] == IdsaEnviar:
+            indice = ind
+            SolicitudInforme.delete_row(ind)
+        ind = ind + 1
+    SolicitudInforme.append_row([True, "", "", IdsaEnviar, StatusEnBase, date_time, Email,
+                                 EsSource, EMailCandidato, IdsaEnviar, TecnoCandi, TpCandi, LKCandi, comment,
+                                 CvEspañol, InfoEntrevista, CvIngles, InfoEntrevistaIngles,
+                                 RemuneracionPretendidaMensual,
+                                 NiveldeIngles, Locacion,
+                                 NombreyApellidodelCandidato, MotivoRechazo,comentariointerno])
 def modificarReservar(values):
     if '_' in values['idReserva']:
         for i in values['idReserva'].split('_'):

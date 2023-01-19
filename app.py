@@ -178,6 +178,36 @@ def revisar():
     else:
         data=revisarRechaz(value)    
     return make_response(jsonify(data), 200)
+
+@cross_origin()
+@app.route('/comentariointerno', methods=['GET', 'POST'])
+def comentariointerno():
+    value={  }
+    if request.method == 'POST':
+        value = {
+                "comentarioint": request.form.get('comentarioint'),
+                  "StatusEnBaseInf": request.form.get('stEnBaseInf'),
+                "EmailInf": request.form.get('emailInf'),
+                "EMailCandidatoInf": request.form.get('emailCandiInf'),
+                "IdsaEnviarInf": request.form.get('idInf'),
+                "EsSourceInf": request.form.get('esSourceInf'),
+                "NombreyApellidodelCandidatoInf": request.form.get('nombreCandiInf'),
+                "RemuneracionPretendidaMensualInf": request.form.get('remuneracionPretendida'),
+                "NiveldeInglesInf": request.form.get('nivelInglesInf'),
+                "LocacionInf": request.form.get('locacionInf'),
+                "LKCandiInf": request.form.get('lkCandiInf'),
+                "TecnoCandiInf": request.form.get('tecCandiInf'),
+                "TpCandiInf": request.form.get('tPCandiInf'),
+                "CommentInf": request.form.get('comentInf'),
+                "CvEspanolInf": request.form.get('cvEspInf'),
+                "informeEntEsp": request.form.get('infEntEsp'),
+                "CvInglesInf": request.form.get('cvIngInf'),
+                "informeEntIng": request.form.get('infEntIng'),
+                "MotivvoRechazoInf": request.form.get('motivoRechInf'),
+            }
+
+    data=updatecomment(value)
+    return make_response(jsonify(data), 200)
 @cross_origin()
 @app.route('/Getreservas',methods=['GET', 'POST'])
 def reservaemail():
