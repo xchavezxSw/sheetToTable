@@ -472,9 +472,9 @@ def updatecomment(values):
     TpCandi = tipoPerfil
     comment = values['CommentInf']
     comentarioint= values['comentarioint']
-    CvEspañol = ""  # values['CvEspanolInf']
+    CvEspañol =  values['CvEspanolInf']
     InfoEntrevista = values['informeEntEsp']
-    CvIngles = ""  # values['CvInglesInf']
+    CvIngles = values['CvInglesInf']
     InfoEntrevistaIngles = values['informeEntIng']
     MotivoRechazo = values['MotivvoRechazoInf']
     curDT = datetime.datetime.now()
@@ -486,7 +486,7 @@ def updatecomment(values):
             indice = ind
             SolicitudInforme.delete_row(ind)
         ind = ind + 1
-    SolicitudInforme.append_row([True, "", "", IdsaEnviar, StatusEnBase, date_time, Email,
+    SolicitudInforme.append_row(["", "", "", "", StatusEnBase, date_time, Email,
                                  EsSource, EMailCandidato, IdsaEnviar, TecnoCandi, TpCandi, LKCandi, comment,
                                  CvEspañol, InfoEntrevista, CvIngles, InfoEntrevistaIngles,
                                  RemuneracionPretendidaMensual,
