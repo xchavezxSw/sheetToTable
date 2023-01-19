@@ -486,12 +486,13 @@ def updatecomment(values):
             indice = ind
             SolicitudInforme.delete_row(ind)
         ind = ind + 1
-    SolicitudInforme.append_row(["", "", "", "", StatusEnBase, date_time, Email,
+    """SolicitudInforme.append_row(["", "", "", "", StatusEnBase, date_time, Email,
                                  EsSource, EMailCandidato, IdsaEnviar, TecnoCandi, TpCandi, LKCandi, comment,
                                  CvEspañol, InfoEntrevista, CvIngles, InfoEntrevistaIngles,
                                  RemuneracionPretendidaMensual,
                                  NiveldeIngles, Locacion,
                                  NombreyApellidodelCandidato, MotivoRechazo,comentarioint])
+                                 """
 def modificarReservar(values):
     if '_' in values['idReserva']:
         for i in values['idReserva'].split('_'):
