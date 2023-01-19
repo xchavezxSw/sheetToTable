@@ -132,14 +132,18 @@ def reservados(usuario=''):
 def pertenencia(usuario=''):
     db = connectar()
     a = db.cursor()
-    consulta = """select str_to_date(informe ,'%Y-%m-%d' ) >= CURRENT_DATE - INTERVAL 30 DAY informe, 
+    consulta = """select case when idstatus between '2' and '10' 
+                            THEN 1
+                            else
+                            str_to_date(informe ,'%Y-%m-%d' ) >= CURRENT_DATE - INTERVAL 30 DAY 
+                            end informe, 
                         str_to_date(reservado ,'%Y-%m-%d' ) >= CURRENT_DATE - INTERVAL 5 DAY reserva ,
                         EmailAddres 
                 from metricas m where 
                 (str_to_date(informe ,'%Y-%m-%d' ) >= CURRENT_DATE - INTERVAL 30 DAY
                 or 
                 str_to_date(reservado ,'%Y-%m-%d' ) >= CURRENT_DATE - INTERVAL 5 DAY
-                ) """
+                  or idstatus not in ('14','12','2','1') ) """
     if usuario != '':
         consulta = consulta + " and emailcandidato='" + usuario + "'"
     a.execute(consulta)
