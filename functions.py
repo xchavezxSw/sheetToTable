@@ -491,7 +491,7 @@ def updatecomment(values):
                                  CvEspañol, InfoEntrevista, CvIngles, InfoEntrevistaIngles,
                                  RemuneracionPretendidaMensual,
                                  NiveldeIngles, Locacion,
-                                 NombreyApellidodelCandidato, MotivoRechazo,comentariointerno])
+                                 NombreyApellidodelCandidato, MotivoRechazo,comentarioint])
 def modificarReservar(values):
     if '_' in values['idReserva']:
         for i in values['idReserva'].split('_'):

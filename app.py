@@ -206,7 +206,8 @@ def comentariointerno():
                 "MotivvoRechazoInf": request.form.get('motivoRechInf'),
             }
 
-    data=updatecomment(value)
+    updatecomment(value)
+    data="OK"
     return make_response(jsonify(data), 200)
 @cross_origin()
 @app.route('/Getreservas',methods=['GET', 'POST'])
