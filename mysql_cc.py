@@ -72,7 +72,7 @@ def encliente(usuario=''):
             consulta= consulta + """ union ALL 
                                      select lower(r.EmailAddres) ,r.emailcandidato ,r.idreserva ,r.status 
                                      ,null,r.Linkedin ,null,null,null,null,r.ComentariosAdicionales ,r.FECHA ,null,null 
-                                     from reserva r  where r.status not in ('14')  and not exists (select * from cliente c where c.EmailAddres=r.EmailAddres and c.emailcandidato=r.emailcandidato and c.idBusqueda=r.idreserva) """
+                                     from reserva r  where r.status not in ('14')  and not exists (select * from cliente c where lower(c.EmailAddres)=lower(r.EmailAddres) and lower(c.emailcandidato)=lower(r.emailcandidato) and c.idBusqueda=r.idreserva) """
             consulta= consulta + "   and lower(r.EmailAddres)  =lower('"+usuario+"') ) select distinct * from aux"
             a.execute(consulta)
             results = a.fetchall()
