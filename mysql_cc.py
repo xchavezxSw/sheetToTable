@@ -67,13 +67,13 @@ def encliente(usuario=''):
             db = connectar()
             a = db.cursor()
             consulta = " with aux as ( select c.* from cliente c "
-            consulta =consulta+ " where c.EmailAddres ='"+usuario+"'"
+            consulta =consulta+ " where lower(c.EmailAddres )=lower('"+usuario+"')"
             consulta = consulta + " and idstatus not in ('11','12','14')  "
             consulta= consulta + """ union ALL 
-                                     select r.EmailAddres ,r.emailcandidato ,r.idreserva ,r.status 
+                                     select lower(r.EmailAddres) ,r.emailcandidato ,r.idreserva ,r.status 
                                      ,null,r.Linkedin ,null,null,null,null,r.ComentariosAdicionales ,r.FECHA ,null,null 
                                      from reserva r  where r.status not in ('14')  and not exists (select * from cliente c where c.EmailAddres=r.EmailAddres and c.emailcandidato=r.emailcandidato and c.idBusqueda=r.idreserva) """
-            consulta= consulta + "   and r.EmailAddres  ='"+usuario+"' ) select distinct * from aux"
+            consulta= consulta + "   and lower(r.EmailAddres)  =lower('"+usuario+"') ) select distinct * from aux"
             a.execute(consulta)
             results = a.fetchall()
             json_data = []
@@ -170,7 +170,7 @@ def metrica(usuario='',rol=''):
     a = db.cursor()
     consulta = "select * from metricas m  where 1=1  "
     if usuario != '' and rol != 'admin':
-        consulta = consulta + " and EmailAddres='" + usuario + "'"
+        consulta = consulta + " and lower(EmailAddres)=lower('" + usuario + "')"
     a.execute(consulta)
     # row_headers = [x[0] for x in a.description]  # this will extract row headers
     results = a.fetchall()
