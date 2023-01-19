@@ -7,8 +7,8 @@ import threading
 import pandas as pd
 from mysql_cc import *
 
-scope = ["https://spreadsheets.google.com/feeds", 'https://www.googleapis.com/auth/spreadsheets',
-             "https://www.googleapis.com/auth/drive.file", "https://www.googleapis.com/auth/drive"]
+scope = [ 'https://www.googleapis.com/auth/spreadsheets',
+            "https://www.googleapis.com/auth/drive"]
 credentials = ServiceAccountCredentials.from_json_keyfile_name('ultimo.json', scope)
 client = gspread.authorize(credentials)
 reservas = client.open('[AUT]PedidosReservas').worksheet('PedidosReservas')  # Open the spreadsheet
