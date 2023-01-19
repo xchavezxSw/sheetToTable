@@ -97,6 +97,8 @@ def solinforme():
         if '_' in str(ids):
             for i in ids.split("_"):
                 value['idReservaInf']=i
+                print(i)
+                print(value)
                 addInforme(value)
         else:
             addInforme(value)
