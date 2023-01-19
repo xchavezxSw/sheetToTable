@@ -75,6 +75,7 @@ def insertreserva():
 @app.route('/solicitudInforme', methods=['GET', 'POST'])
 def solinforme():
     if request.method == 'POST':
+        ids=request.form.get('idReservaInf')
         value={  "EmailInf":request.form.get('emailInf'),
                 "EMailCandidatoInf":request.form.get('emailCandidatoInf'),
                 "NombreyApellidodelCandidatoInf":request.form.get('naCandiInf'),
@@ -93,7 +94,12 @@ def solinforme():
                 "CvEspañol":request.form.get('cvespInf'),
                 "CvInglesInf": request.form.get('cvingInf'),
                 }
-        addInforme(value)
+        if '_' in str(ids):
+            for i in ids.split("_"):
+                value['idReservaInf']=i
+                addInforme(value)
+        else:
+            addInforme(value)
 
     return 'ok', 200
 
