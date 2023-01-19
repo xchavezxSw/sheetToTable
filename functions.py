@@ -23,7 +23,7 @@ rechazados=client.open('[FueraDeProceso]ProcesoRechazado').worksheet('FueraDePro
 #cambios=client.open('[AUT]PedidosCambios').worksheet('AUTPedidosCambios')
 client = gspread.authorize(credentials)
 sendmails = client.open('sendMails').worksheet('mails')
-
+sendmailsreserva = client.open('sendmailReserva').worksheet('mails')
 def jsonsheet():
     client = gspread.authorize(credentials)
     sheet4 = client.open('[EnProceso]EnCliente').worksheet('EnProcesoEnCliente')  # Open the spreadsheet
@@ -426,7 +426,7 @@ def getInformesArevisar():
                     17] + '">Descargar informe de entrevista en inglés</a>'
                 i[17] = linkINFING
             i[13] = comentario
-            comentario2 = '<input style="color:black" type="text" value="' + i[23] + '">'
+            comentario2 = '<input id="comentintern" style="color:black" type="text" value="' + i[23] + '">'
             i[23]=comentario2
             export.append([i[4], i[5],
                            i[6], i[7], i[8], i[9], i[10],
@@ -547,6 +547,10 @@ def eliminar_guiones(candidato,id,sourcer):
 def sendmailstatus(emailCandi,idSt,emailSt,statusSt,comentarios="",motivofin=""):
     sendmails.add_rows(1)
     sendmails.append_row([datetime.datetime.today().strftime('%Y-%m-%d %H:%M'),emailSt,emailCandi,idSt,status(statusSt),comentarios,motivofin,"","","","","","","","","",0],table_range="A1")
+def sendmailres(emailCandi,idSt,emailSt,statusSt,comentarios="",motivofin=""):
+    sendmailsreserva.add_rows(1)
+    sendmailsreserva.append_row([datetime.datetime.today().strftime('%Y-%m-%d %H:%M'),emailSt,emailCandi,idSt,status(statusSt),comentarios,motivofin,"","","","","","","","","",0],table_range="A1")
+
 def modificarStatus(emailCandi,idSt,emailSt,statusSt,comentariosSt=''):
     client = gspread.authorize(credentials)
     sheet4 = client.open('[EnProceso]EnCliente').worksheet('EnProcesoEnCliente')  # Open the spreadsheet
