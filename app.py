@@ -351,7 +351,7 @@ def getcambiosource():
     if request.method == 'POST':
         emailCandidatoSc=request.form.get('emailCandidatoSc')
         idSc = request.form.get('idSc')
-        emailRelutadorsc = request.form.get('emailRelutadorSc')
+        emailRelutadorsc = request.form.get('emailReclutadorSc')
         sourcesc = request.form.get('sourceSc')
         data=insertsource(emailCandidatoSc, idSc,emailRelutadorsc,sourcesc)
         return make_response(jsonify(data), 200)
