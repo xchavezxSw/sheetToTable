@@ -39,7 +39,7 @@ def getAdmin():
     a.execute(consulta)
     results = a.fetchall()
     for result in results:
-        admin.append([result[0], result[1], result[2], status(str(result[3]))])
+        admin.append(result[0])
     return admin
 admins=getAdmin()
 def miscandidatos(usuario=''):
