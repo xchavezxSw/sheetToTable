@@ -30,6 +30,18 @@ def status(id):
         return  'Informe Cargado'
     if id=="14" :
         return  'Reserva Vencida'
+
+def getAdmin():
+    admin = []
+    db = connectar()
+    a = db.cursor()
+    consulta = "select email from users u where role='admin'"
+    a.execute(consulta)
+    results = a.fetchall()
+    for result in results:
+        admin.append([result[0], result[1], result[2], status(str(result[3]))])
+    return admin
+admins=getAdmin()
 def miscandidatos(usuario=''):
     db=connectar()
     a = db.cursor()
@@ -67,7 +79,10 @@ def encliente(usuario=''):
             db = connectar()
             a = db.cursor()
             consulta = " with aux as ( select c.* from cliente c "
-            consulta =consulta+ " where lower(c.EmailAddres )=lower('"+usuario+"')"
+            if usuario in admins:
+                consulta = consulta + " where 1=1"
+            else:
+                consulta =consulta+ " where lower(c.EmailAddres )=lower('"+usuario+"')"
             consulta = consulta + " and idstatus not in ('11','12','14')  "
             consulta= consulta + """ union ALL 
                                      select lower(r.EmailAddres) ,r.emailcandidato ,r.idreserva ,r.status 
