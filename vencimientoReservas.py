@@ -59,12 +59,10 @@ def update(usuario=''):
             and c.preoferta is null
             and c.tramiteingreso is null
             and c.contratado is null
-            and c.reservado  is NULL 
             and c.informe is NULL 
             and c.rechazado is null
             and TIMESTAMPDIFF(HOUR, fecha, now()) >=96
             and r.status not in ('14')
-
  """
     a.execute(consulta)
     results = a.fetchall()
