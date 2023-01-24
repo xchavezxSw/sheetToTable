@@ -63,7 +63,6 @@ def update(usuario=''):
             and c.rechazado is null
             and TIMESTAMPDIFF(HOUR, fecha, now()) >=96
             and r.status not in ('14')
-            and (r.EmailAddres like '%valen%mar%' or r.EmailAddres like '%vero%bar%')
  """
     a.execute(consulta)
     results = a.fetchall()
