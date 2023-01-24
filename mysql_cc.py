@@ -78,10 +78,10 @@ def encliente(usuario=''):
             db = connectar()
             a = db.cursor()
             consulta = " with aux as ( select c.* from cliente c "
-            if usuario in admins:
+            """if usuario in admins:
                 consulta = consulta + " where 1=1"
-            else:
-                consulta =consulta+ " where lower(c.EmailAddres )=lower('"+usuario+"')"
+            else:"""
+            consulta =consulta+ " where lower(c.EmailAddres )=lower('"+usuario+"')"
             consulta = consulta + " and idstatus not in ('11','12','14')  "
             consulta= consulta + """ union ALL 
                                      select lower(r.EmailAddres) ,r.emailcandidato ,r.idreserva ,r.status 
