@@ -46,7 +46,9 @@ def miscandidatos(usuario=''):
     db=connectar()
     a = db.cursor()
     consulta = "select EmailAddres,emailcandidato,idbusqueda,idstatus from metricas where 1=1"
-    if usuario != '':
+    if usuario in admins:
+        consulta = consulta + " where 1=1"
+    else:
         consulta = consulta + " and lower(trim(EmailAddres))=lower(trim('" + usuario + "'))"
     a.execute(consulta)
     results = a.fetchall()
