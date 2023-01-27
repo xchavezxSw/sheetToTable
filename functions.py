@@ -450,7 +450,7 @@ def devolverReserva(email):
     else:
        try:
            valor= reserva(str(email).lower())#obtenemos los registros del excel
-           newDict ={'Email Candidato':valor[0][2],'Email Address':valor[0][1],'Nombre y Apellido del Candidato':valor[0][3],'Linkedin del Candidato':valor[0][5],'IDs de reserva separdos con "_" sin la palabra "ID"':valor[0][4],'Tecnologías que sabe el candidato':valor[0][6]}
+           newDict ={'Email Candidato':valor[0][2],'Email Address':valor[0][1],'Nombre y Apellido del Candidato':valor[0][3],'Linkedin del Candidato':valor[0][5],'IDs de reserva separdos con "_" sin la palabra "ID"':valor[0][4],'Tecnologías que sabe el candidato':valor[0][6],'Tipo de perfil del Candidato':valor[0][7],'Comentarios adicionales':valor[0][10]}
            if len(newDict) ==0:
                newDict={"datos":"vacio"}
        except:
