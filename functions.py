@@ -449,7 +449,7 @@ def devolverReserva(email):
 
     else:
        try:
-        newDict = reserva(str(email).lower())#obtenemos los registros del excel
+           newDict = reserva(str(email).lower())#obtenemos los registros del excel
        except:
            newDict={"datos":"vacio"}
        return json.loads(json.dumps(newDict).encode('utf-8').decode('ascii'))
