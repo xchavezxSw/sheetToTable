@@ -449,7 +449,10 @@ def devolverReserva(email):
 
     else:
        try:
-           newDict = reserva(str(email).lower())#obtenemos los registros del excel
+           valor= reserva(str(email).lower())#obtenemos los registros del excel
+           newDict ={'Email Candidato':valor[0][2],'Email Address':valor[0][1],'Nombre y Apellido del Candidato':valor[0][3],'Linkedin del Candidato':valor[0][5],'IDs de reserva separdos con "_" sin la palabra "ID"':valor[0][4],'Tecnologías que sabe el candidato':valor[0][6]}
+           if len(newDict) ==0:
+               newDict={"datos":"vacio"}
        except:
            newDict={"datos":"vacio"}
        return json.loads(json.dumps(newDict).encode('utf-8').decode('ascii'))
