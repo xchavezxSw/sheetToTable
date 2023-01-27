@@ -448,9 +448,8 @@ def devolverReserva(email):
             return '502'
 
     else:
-       data=reservado.get_all_records()#obtenemos los registros del excel
        try:
-        newDict = list(filter(lambda elem: elem['Email Candidato'] if str(elem['Email Candidato']).lower()==str(email).lower() else None, data))[0]
+        newDict = reserva(str(email).lower())#obtenemos los registros del excel
        except:
            newDict={"datos":"vacio"}
        return json.loads(json.dumps(newDict).encode('utf-8').decode('ascii'))
