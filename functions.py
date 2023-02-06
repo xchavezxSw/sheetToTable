@@ -629,24 +629,27 @@ def modificarStatus11(emailCandi,idSt,emailSt,statusSt,salarioMensualAcordadoSt,
     ar = [{"rowIndex": i, "value": e} for i, e in enumerate(
         data) if e[2] == emailCandi and e[0] == emailSt and e[3] == idSt]
     if str(statusSt)=='11':
-        sheet4.delete_row(ar[0]['rowIndex']+1)
-        contratadossheet.add_rows(1)
-        contratadossheet.append_row([datetime.datetime.today().strftime('%Y-%m-%d %H:%M'),
-                               ar[0]['value'][0],
-                               ar[0]['value'][2],
-                               ar[0]['value'][3],
-                               'Ingresó (Solo colocar este estado cuando el candidato entró a trabajar)',
-                               comentariosSt,
-                                '',
-                                '',
-                                '',
-                                '',
-                                '',
-                                salarioMensualAcordadoSt,
-                                '',
-                                'CambioAc'
-                               ''
-                               ])
+        try:
+            sheet4.delete_row(ar[0]['rowIndex']+1)
+            contratadossheet.add_rows(1)
+            contratadossheet.append_row([datetime.datetime.today().strftime('%Y-%m-%d %H:%M'),
+                                   ar[0]['value'][0],
+                                   ar[0]['value'][2],
+                                   ar[0]['value'][3],
+                                   'Ingresó (Solo colocar este estado cuando el candidato entró a trabajar)',
+                                   comentariosSt,
+                                    '',
+                                    '',
+                                    '',
+                                    '',
+                                    '',
+                                    salarioMensualAcordadoSt,
+                                    '',
+                                    'CambioAc'
+                                   ''
+                                   ])
+        except:
+            None
         sendmailstatus(emailCandi, idSt, emailSt, statusSt,comentariosSt)
 
 def modificarStatus12(emailCandi,idSt,emailSt,statusSt,salarioMensualOfrecidoClienteSt,salarioMensualPretendidoSt,motivoFinCandi,motivoFinCliente,comentariosSt='',rechazadopor=''):
