@@ -97,12 +97,12 @@ def addReserva(values):
             valor,reclutador=pertenencia(emailCandidato)
             if valor=='OK':
                 insertreserva(nuevo)
-                gmail_send_message(creds,to=email,subject='',tipo='Reserva',candidato=emailCandidato,id=idReserva)
+                gmail_send_message(creds,to=email,subject="Candidato Reservado",tipo='Reserva',candidato=emailCandidato,id=idReserva)
                 #reservas.append_row([date_time, email, emailCandidato, naCandi, lkCandi, tcandi, tperfil, idReserva, comment])
             else:
                 if reclutador==email:
                     insertreserva(nuevo)
-                    gmail_send_message(creds, to=email, subject='', tipo='Reserva', candidato=emailCandidato,
+                    gmail_send_message(creds, to=email, subject='Candidato Reservado', tipo='Reserva', candidato=emailCandidato,
                                        id=idReserva)
                     #reservas.append_row([date_time, email, emailCandidato, naCandi, lkCandi, tcandi, tperfil, idReserva, comment])
                 else:
@@ -124,12 +124,12 @@ def addReserva(values):
         valor,reclutador = pertenencia(emailCandidato)
         if valor == 'OK':
             insertreserva(values)
-            gmail_send_message(creds, to=email, subject='', tipo='Reserva', candidato=emailCandidato, id=idReserva)
+            gmail_send_message(creds, to=email, subject='Candidato Reservado', tipo='Reserva', candidato=emailCandidato, id=idReserva)
             #reservas.append_row([date_time,email,emailCandidato,naCandi,lkCandi,tcandi,tperfil,idReserva,comment])
         else:
             if reclutador == email:
                 insertreserva(values)
-                gmail_send_message(creds, to=email, subject='', tipo='Reserva', candidato=emailCandidato, id=idReserva)
+                gmail_send_message(creds, to=email, subject='Candidato Reservado', tipo='Reserva', candidato=emailCandidato, id=idReserva)
                 #reservas.append_row(                    [date_time, email, emailCandidato, naCandi, lkCandi, tcandi, tperfil, idReserva, comment])
             else:
                 return 410
