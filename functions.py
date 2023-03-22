@@ -5,10 +5,13 @@ from oauth2client.service_account import ServiceAccountCredentials
 import json
 import threading
 import pandas as pd
+
+from SendMail import gmail_send_message, login_mail
 from mysql_cc import *
 
 scope = [ 'https://www.googleapis.com/auth/spreadsheets',
             "https://www.googleapis.com/auth/drive"]
+creds=login_mail()
 credentials = ServiceAccountCredentials.from_json_keyfile_name('ultimo.json', scope)
 client = gspread.authorize(credentials)
 reservas = client.open('[AUT]PedidosReservas').worksheet('PedidosReservas')  # Open the spreadsheet
@@ -94,12 +97,14 @@ def addReserva(values):
             valor,reclutador=pertenencia(emailCandidato)
             if valor=='OK':
                 insertreserva(nuevo)
-                reservas.append_row([date_time, email, emailCandidato, naCandi, lkCandi, tcandi, tperfil, idReserva, comment])
+                gmail_send_message(creds,to=email,subject='',tipo='Reserva',candidato=emailCandidato,id=idReserva)
+                #reservas.append_row([date_time, email, emailCandidato, naCandi, lkCandi, tcandi, tperfil, idReserva, comment])
             else:
                 if reclutador==email:
                     insertreserva(nuevo)
-                    reservas.append_row(
-                        [date_time, email, emailCandidato, naCandi, lkCandi, tcandi, tperfil, idReserva, comment])
+                    gmail_send_message(creds, to=email, subject='', tipo='Reserva', candidato=emailCandidato,
+                                       id=idReserva)
+                    #reservas.append_row([date_time, email, emailCandidato, naCandi, lkCandi, tcandi, tperfil, idReserva, comment])
                 else:
                     return 410
     else:
@@ -119,12 +124,13 @@ def addReserva(values):
         valor,reclutador = pertenencia(emailCandidato)
         if valor == 'OK':
             insertreserva(values)
-            reservas.append_row([date_time,email,emailCandidato,naCandi,lkCandi,tcandi,tperfil,idReserva,comment])
+            gmail_send_message(creds, to=email, subject='', tipo='Reserva', candidato=emailCandidato, id=idReserva)
+            #reservas.append_row([date_time,email,emailCandidato,naCandi,lkCandi,tcandi,tperfil,idReserva,comment])
         else:
             if reclutador == email:
                 insertreserva(values)
-                reservas.append_row(
-                    [date_time, email, emailCandidato, naCandi, lkCandi, tcandi, tperfil, idReserva, comment])
+                gmail_send_message(creds, to=email, subject='', tipo='Reserva', candidato=emailCandidato, id=idReserva)
+                #reservas.append_row(                    [date_time, email, emailCandidato, naCandi, lkCandi, tcandi, tperfil, idReserva, comment])
             else:
                 return 410
 

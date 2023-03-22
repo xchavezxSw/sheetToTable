@@ -14,7 +14,7 @@ import google.auth
 SCOPES = ['https://mail.google.com/']
 
 
-def login():
+def login_mail():
     """Shows basic usage of the Gmail API.
     Lists the user's Gmail labels.
     """
@@ -37,7 +37,7 @@ def login():
             token.write(creds.to_json())
     return creds
 
-def gmail_send_message(creds,to='',subject='',TemplateHtml='Notif1.html'):
+def gmail_send_message(creds,to='',subject='',tipo='',candidato='',id=''):
     """Create and send an email message
     Print the returned  message id
     Returns: Message object, including message id
@@ -50,6 +50,14 @@ def gmail_send_message(creds,to='',subject='',TemplateHtml='Notif1.html'):
     try:
         service = build('gmail', 'v1', credentials=creds)
         message = EmailMessage()
+        TemplateHtml=''
+        if tipo=='Reserva':
+            TemplateHtml='Notif1.html'
+            TituloMail = "Candidato Reservado con éxito";
+            Info1 = "El candidato que usted intento reservar es:   " +candidato
+            Info2 = "Por favor en caso de consultas ó aclaraciones sobre éste candidato responder éste mismo e-mail"
+            Info3 = "IDs:  "+id
+            Info4 = "";
 
         htmlText = []
         with open("FoldersHtml/"+TemplateHtml, encoding='utf8') as f:  # closes file after all the lines have been processed
@@ -62,6 +70,7 @@ def gmail_send_message(creds,to='',subject='',TemplateHtml='Notif1.html'):
         comentarios = ''
         info3 = ''
         info4 = ''
+
         html=final.format(TituloMail,info1,info2,comentarios,info3,info4)
 
         message.set_content(html)
