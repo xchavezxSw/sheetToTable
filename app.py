@@ -95,11 +95,17 @@ def solinforme():
                 "CvInglesInf": request.form.get('cvingInf'),
                 }
         if '_' in str(ids):
-            for i in ids.split("_"):
-                value['IdsaEnviarInf']=i
-                addInforme(value)
+            for id in ids.split("_"):
+                if id != "" and i is not None:
+                    value['IdsaEnviarInf']=id
+                    addInforme(value)
+                else:
+                    return make_response(jsonify({"Error": f"El dato es incorrecto {id}"}), 403)
         else:
-            addInforme(value)
+            if ids != "" and ids is not None:
+                addInforme(value)
+            else:
+                return make_response(jsonify({"Error": f"El dato es incorrecto {id}"}), 403)
 
     return 'ok', 200
 
