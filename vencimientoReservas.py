@@ -69,4 +69,25 @@ def update(usuario=''):
     for result in results:
          update2(result[0],result[1],str(result[2]),'14',result)
     sendmailstatus(results)
+
+def update_onhold():
+    db = connectar()
+    cursor = db.cursor()
+    consulta = """
+            UPDATE cliente c
+            SET idstatus = 12
+            FROM metricas m 
+            WHERE c.idstatus = 9 AND c.idbusqueda = m.idbusqueda AND c.EmailAddres = m.EmailAddres AND c.emailcandidato = m.emailcandidato
+            AND m.onhold IS NOT NULL
+            AND m.onhold != ""
+            AND DATEDIFF(CURDATE(), m.onhold) > 30;
+    """
+    cursor.execute(consulta)
+    cursor.commit()
+    cursor.close()
+
+#LLamada a Update
 update()
+
+#LLmada update_onhold
+update_onhold()
