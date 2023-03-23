@@ -96,7 +96,7 @@ def solinforme():
                 }
         if '_' in str(ids):
             for id in ids.split("_"):
-                if id != "" and i is not None:
+                if id != "" and id is not None:
                     value['IdsaEnviarInf']=id
                     addInforme(value)
                 else:
