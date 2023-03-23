@@ -96,6 +96,3 @@ def gmail_send_message(creds,to='',subject='',tipo='',candidato='',id=''):
         send_message = None
     return send_message
 
-if __name__ == '__main__':
-    creds=login()
-    gmail_send_message(creds,'claudio.x.pc@gmail.com','test')
