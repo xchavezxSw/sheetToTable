@@ -677,16 +677,12 @@ def modificarStatus12(emailCandi,idSt,emailSt,statusSt,salarioMensualOfrecidoCli
             sheet4.delete_row(ar[0]['rowIndex']+1)
             rechazados.add_rows(1)
             envio=""
-            if motivoFinCandi != '' or motivoFinCandi.strip() is None:
-                cancelado='Candidato'
-                envio=motivoFinCandi
+            if rechazadopor == 'Cliente':
+                envio = motivoFinCliente
+                cancelado = 'Cliente'
             else:
-                if motivoFinCliente != '' or motivoFinCliente.strip() is None:
-                     cancelado='Cliente'
-                     envio = motivoFinCliente
-                else:
-                    cancelado='Conexion'
-
+                envio = motivoFinCandi
+                cancelado = 'Conexion'
 
             sendmailstatus(emailCandi, idSt, emailSt, statusSt, comentariosSt,envio)
             rechazados.append_row([datetime.datetime.today().strftime('%Y-%m-%d %H:%M'),
