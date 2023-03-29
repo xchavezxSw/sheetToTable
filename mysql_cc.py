@@ -3,6 +3,10 @@ import datetime
 from bd import conexion,connectar
 import json
 import base64
+
+from functions import send_mail_source
+
+
 def status(id):
     if id=="1":
         return 'Reservado'
@@ -161,6 +165,26 @@ def reserva(usuario=''):
         json_data.append([result[0], result[1], result[2], result[3], result[4], result[5],
                           result[6], result[7], result[8], status(str(result[9])), result[10], str(result[11])])
     return json.loads(json.dumps(json_data).encode('utf-8').decode('ascii'))
+
+def tieneReserva(usuario='',EmailAddres='',idreserva=''):
+    db = connectar()
+    a = db.cursor()
+    consulta = "select idreserva from reserva where 1=1 and status not in (14) "
+    consulta = consulta + " and emailcandidato='" + usuario + "' "
+    consulta = consulta + " and EmailAddres='" + EmailAddres + "' "
+    consulta = consulta + " and idreserva='" + idreserva + "' "
+    a.execute(consulta)
+    # row_headers = [x[0] for x in a.description]  # this will extract row headers
+    results = a.fetchall()
+    reservaval=''
+    # json_data.append(row_headers)
+    for result in results:
+        reservaval=result[0]
+    if reservaval != '':
+        return True
+    else:
+        False
+
 
 
 def pertenencia(usuario=''):
@@ -397,7 +421,7 @@ def insertsource(emailCandi,idSt,emailSt,sourceSt,comentariost=''):
               "where emailcandidato='" + emailCandi + "' " \
               " and idBusqueda='" + idSt + "' " \
               " and EmailAddres='" + emailSt + "'"
-
+    send_mail_source(emailCandi,idSt,sourceSt)
 
     a.execute(sql)
     db.commit()

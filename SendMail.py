@@ -37,7 +37,7 @@ def login_mail():
             token.write(creds.to_json())
     return creds
 
-def gmail_send_message(creds,to='',subject='',tipo='',candidato='',id=''):
+def gmail_send_message(creds,to='',subject='',tipo='',candidato='',id='',sourcer=''):
     """Create and send an email message
     Print the returned  message id
     Returns: Message object, including message id
@@ -64,7 +64,20 @@ def gmail_send_message(creds,to='',subject='',tipo='',candidato='',id=''):
             info2 = "Por favor en caso de consultas ó aclaraciones sobre éste candidato responder éste mismo e-mail"
             info3 = "IDs:  "+id
             info4 = "";
-
+        if tipo=='source':
+            TemplateHtml='Notif1.html'
+            TituloMail = "Tenes asignado un Candidato que fue cargado como sourcer";
+            info1 = "Candidato asignado: " +candidato
+            info2 = "Reclutador como Sourcer: "+sourcer
+            info3 = "Los siguientes IDs fueron cargados: "+id
+            info4 = "Podes ver el panel DataStudio para ver los detalles del Candidato.";
+        if tipo=='sourcedest':
+            TemplateHtml='Notif1.html'
+            TituloMail = "Tu candidato fue asignado a un Reclutador y estarás como Sourcer";
+            info1 = "Candidato asignado: " + candidato
+            info2 = "No podrás cargar nuevos IDs en la Aplicación y en caso de encontrar que el candidato aplique a uno nuevo, deberas notificarlo por mail en este mismo hilo respondiendolo. Podrás ver el avance del candidato en el Pipelina."
+            info3 = ""
+            info4 = "";
         htmlText = []
         with open("FoldersHtml/"+TemplateHtml, encoding='utf8') as f:  # closes file after all the lines have been processed
             for line in f:  # not using readlines(), as this consumes the memory

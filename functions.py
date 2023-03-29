@@ -133,7 +133,11 @@ def addReserva(values):
                 #reservas.append_row(                    [date_time, email, emailCandidato, naCandi, lkCandi, tcandi, tperfil, idReserva, comment])
             else:
                 return 410
-
+def send_mail_source(reclutador,id,sourcer):
+    gmail_send_message(creds, reclutador, 'Tenes asignado un Candidato que fue cargado como sourcer', 'source', id,
+                       sourcer)
+    gmail_send_message(creds, sourcer, 'Tenes asignado un Candidato que fue cargado como sourcer', 'sourcedest', id,
+                       sourcer)
 def addInforme(values):
       if values['TpCandiInf'] is None:
           values['TpCandiInf']=''
@@ -677,12 +681,16 @@ def modificarStatus12(emailCandi,idSt,emailSt,statusSt,salarioMensualOfrecidoCli
             sheet4.delete_row(ar[0]['rowIndex']+1)
             rechazados.add_rows(1)
             envio=""
-            if rechazadopor == 'Cliente':
-                envio = motivoFinCliente
-                cancelado = 'Cliente'
+            if motivoFinCandi != '' or motivoFinCandi.strip() is None:
+                cancelado='Candidato'
+                envio=motivoFinCandi
             else:
-                envio = motivoFinCandi
-                cancelado = 'Conexion'
+                if motivoFinCliente != '' or motivoFinCliente.strip() is None:
+                     cancelado='Cliente'
+                     envio = motivoFinCliente
+                else:
+                    cancelado='Conexion'
+
 
             sendmailstatus(emailCandi, idSt, emailSt, statusSt, comentariosSt,envio)
             rechazados.append_row([datetime.datetime.today().strftime('%Y-%m-%d %H:%M'),
