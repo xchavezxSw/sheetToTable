@@ -134,10 +134,10 @@ def addReserva(values):
             else:
                 return 410
 def send_mail_source(candidato,reclutador,id,sourcer):
-    gmail_send_message(creds, reclutador, 'Tenes asignado un Candidato que fue cargado como sourcer', 'source', id,
-                       sourcer,candidato)
-    gmail_send_message(creds, sourcer, 'Tenes asignado un Candidato que fue cargado como sourcer', 'sourcedest', id,
-                       sourcer,candidato)
+    gmail_send_message(creds, reclutador, 'Tenes asignado un Candidato que fue cargado como sourcer', 'source', candidato,
+                       id,sourcer)
+    gmail_send_message(creds, sourcer, 'Tenes asignado un Candidato que fue cargado como sourcer', 'sourcedest',candidato, id,
+                       sourcer)
 def addInforme(values):
       if values['TpCandiInf'] is None:
           values['TpCandiInf']=''
