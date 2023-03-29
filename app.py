@@ -360,6 +360,7 @@ def getcambiosource():
         emailRelutadorsc = request.form.get('emailReclutadorSc')
         sourcesc = request.form.get('sourceSc')
         data=insertsource(emailCandidatoSc, idSc,emailRelutadorsc,sourcesc)
+        send_mail_source(emailCandidatoSc,emailRelutadorsc, idSc, sourcesc)
         return make_response(jsonify(data), 200)
 
 @cross_origin()

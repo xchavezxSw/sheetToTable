@@ -4,7 +4,6 @@ from bd import conexion,connectar
 import json
 import base64
 
-from functions import send_mail_source
 
 
 def status(id):
@@ -421,7 +420,7 @@ def insertsource(emailCandi,idSt,emailSt,sourceSt,comentariost=''):
               "where emailcandidato='" + emailCandi + "' " \
               " and idBusqueda='" + idSt + "' " \
               " and EmailAddres='" + emailSt + "'"
-    send_mail_source(emailCandi,idSt,sourceSt)
+
 
     a.execute(sql)
     db.commit()
