@@ -70,12 +70,12 @@ def gmail_send_message(creds,to='',subject='',tipo='',candidato='',id='',sourcer
             info1 = "Candidato asignado: " +candidato
             info2 = "Reclutador como Sourcer: "+sourcer
             info3 = "Los siguientes IDs fueron cargados: "+id
-            info4 = "Podes ver el panel DataStudio para ver los detalles del Candidato.";
+            info4 = "Podes ver el Pipeline para ver los detalles del Candidato.";
         if tipo=='sourcedest':
             TemplateHtml='Notif1.html'
             TituloMail = "Tu candidato fue asignado a un Reclutador y estarás como Sourcer";
             info1 = "Candidato asignado: " + candidato
-            info2 = "No podrás cargar nuevos IDs en la Aplicación y en caso de encontrar que el candidato aplique a uno nuevo, deberas notificarlo por mail en este mismo hilo respondiendolo. Podrás ver el avance del candidato en el Pipelina."
+            info2 = "No podrás cargar nuevos IDs en la Aplicación y en caso de encontrar que el candidato aplique a uno nuevo, deberas notificarlo por mail en este mismo hilo respondiendolo. Podrás ver el avance del candidato en el Pipeline."
             info3 = ""
             info4 = "";
         htmlText = []
