@@ -264,6 +264,20 @@ def contratadosFun(usuario=''):
                               ])
         return json.loads(json.dumps(json_data).encode('utf-8').decode('ascii'))
 
+def getContratados(candidato=''):
+        db = connectar()
+        a = db.cursor()
+        consulta = "select * from contratados  where 1=1 "
+        if candidato != '':
+            consulta = consulta + " and emailcandidato='" + candidato + "'"
+        a.execute(consulta)
+        results = a.fetchall()
+        json_data = []
+        for result in results:
+            json_data.append([result[0], result[1], result[2], result[3], str(result[4]), result[5], str(result[6])
+                              ])
+        return json.loads(json.dumps(json_data).encode('utf-8').decode('ascii'))
+
 
 def updateReserva(date_time, email, emailCandidato, naCandi, lkCandi, tcandi, tperfil, idReserva, comment):
     db = connectar()
