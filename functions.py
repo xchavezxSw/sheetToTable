@@ -65,8 +65,12 @@ def addReserva(values):
  data=reservado.get_all_records()#obtenemos los registros del excel
  try:
     email=values['emailCandidato']
+    emailAdress = values['email']
+    idbusqueda=values['idReserva']
+
     newDict = list(filter(lambda elem: elem['Email Candidato'] if str(elem['Email Candidato']).lower().strip()==str(email).lower().strip() else None, data))[0]
-    contratado=getContratados(email)
+    contratado=getContratados(email,emailAdress,idbusqueda)
+
     if len(contratado)>0:
         if contratado != '' or contratado is not None:
             return '403'
