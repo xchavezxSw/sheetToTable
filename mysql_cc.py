@@ -153,7 +153,7 @@ def reservados(usuario=''):
 def reserva(usuario=''):
     db = connectar()
     a = db.cursor()
-    consulta = "select * from reserva where 1=1 and status not in (14) "
+    consulta = "select * from reserva where 1=1 and status not in (14,12) "
     consulta = consulta + " and emailcandidato='" + usuario + "' limit 1"
     a.execute(consulta)
     # row_headers = [x[0] for x in a.description]  # this will extract row headers
