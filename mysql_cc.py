@@ -264,12 +264,17 @@ def contratadosFun(usuario=''):
                               ])
         return json.loads(json.dumps(json_data).encode('utf-8').decode('ascii'))
 
-def getContratados(candidato=''):
+def getContratados(candidato='',emailAdress='',idbusqueda=''):
         db = connectar()
         a = db.cursor()
+
         consulta = "select * from contratados  where 1=1 "
         if candidato != '':
             consulta = consulta + " and emailcandidato='" + candidato + "'"
+        if emailAdress != '':
+            consulta = consulta + " and EmailAddres='" + emailAdress + "'"
+        if idbusqueda != '':
+            consulta = consulta + " and idbusqueda='" + idbusqueda + "'"
         a.execute(consulta)
         results = a.fetchall()
         json_data = []
