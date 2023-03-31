@@ -186,7 +186,6 @@ def addInforme(values):
           if Email in nuevaLista:
                 revisarAprob(values)
           else:
-            insertinforme(IdsaEnviar,Email,EMailCandidato,Cvespañol,InfoEntrevista,CvIngles,InfoEntrevistaIngles)
             cvEspañolUrl = ''
             InfoEntrevistaUrl = ''
             CvInglesurl = ''
@@ -199,17 +198,31 @@ def addInforme(values):
                 CvInglesurl = 'https://conexion.techne.net.ar:80/base64?id=' + IdsaEnviar + '&email=' + Email + '&emailc=' + EMailCandidato + '&campo=cvingInf'
             if InfoEntrevistaIngles is not None:
                 InfoEntrevistaInglesurl = 'https://conexion.techne.net.ar:80/base64?id=' + IdsaEnviar + '&email=' + Email + '&emailc=' + EMailCandidato + '&campo=informeing'
-            SolicitudInforme.append_row([False,"", "","","",date_time,Email,
-            EsSource, EMailCandidato, IdsaEnviar, TecnoCandi, TpCandi, LKCandi, comment,
-            cvEspañolUrl, InfoEntrevistaUrl, CvInglesurl, InfoEntrevistaInglesurl, RemuneracionPretendidaMensual,
-            NiveldeIngles,Locacion[0],
-            NombreyApellidodelCandidato, ""])
-          """SolicitudInforme.append_row([False, "", "", "", "", date_time, Email,
-                                       EsSource, EMailCandidato, IdsaEnviar, TecnoCandi, TpCandi, LKCandi, comment,
-                                       CvEspañol, InfoEntrevista, CvIngles, InfoEntrevistaIngles,
-                                       RemuneracionPretendidaMensual,
-                                       NiveldeIngles, Locacion[0].replace("\n","").replace("\n","").replace("\n",""),
-                                       NombreyApellidodelCandidato, ""])"""
+        
+            insertinforme(
+                idbusqueda=IdsaEnviar,
+                emailAddress=Email,
+                emailCandidato=EMailCandidato,
+                cvEspInf=Cvespañol,
+                InfoEntrevista=InfoEntrevista,
+                CvIngles=CvIngles,
+                InfoEntrevistaIngles=InfoEntrevistaIngles,
+                Comentarios=comment,
+                Perfildelcandidato=TpCandi,
+                Tecnologias=TecnoCandi,
+                Sourcer = EsSource,
+                NombreyApellidodelCandidato = NombreyApellidodelCandidato,
+                RemuneracionPretendidaMensual = RemuneracionPretendidaMensual,
+                NiveldeIngles = NiveldeIngles,
+                Locacion = Locacion,
+                Linkedin = LKCandi,
+                FECHA = date_time,
+                cvEspañolUrl = cvEspañolUrl,
+                InfoEntrevistaUrl = InfoEntrevistaUrl,
+                CvInglesurl = CvInglesurl,
+                InfoEntrevistaInglesurl = InfoEntrevistaInglesurl,
+                )
+        
       else:
         EsSource=values['EsSourceInf']
         Email= values['EmailInf']
@@ -241,7 +254,6 @@ def addInforme(values):
         InfoEntrevistaIngles = values['informeEntIng']
         curDT = datetime.datetime.now()
         date_time = curDT.strftime("%m/%d/%Y, %H:%M:%S")
-        insertinforme(IdsaEnviar,Email,EMailCandidato,Cvespañol,InfoEntrevista,CvIngles,InfoEntrevistaIngles)
         cvEspañolUrl=''
         InfoEntrevistaUrl=''
         CvInglesurl=''
@@ -258,12 +270,31 @@ def addInforme(values):
         if InfoEntrevistaIngles is not None:
             if InfoEntrevistaIngles != '':
                 InfoEntrevistaInglesurl = 'https://conexion.techne.net.ar:80/base64?id=' + IdsaEnviar + '&email=' + Email + '&emailc=' + EMailCandidato + '&campo=informeing'
-        SolicitudInforme.append_row([False,"", "","","",date_time,Email,
-         EsSource, EMailCandidato, IdsaEnviar, TecnoCandi, TpCandi, LKCandi, comment,
-         cvEspañolUrl, InfoEntrevistaUrl, CvInglesurl, InfoEntrevistaInglesurl, RemuneracionPretendidaMensual,
-         NiveldeIngles,Locacion[0],
-         NombreyApellidodelCandidato, ""])
 
+        insertinforme(
+                idbusqueda=IdsaEnviar,
+                emailAddress=Email,
+                emailCandidato=EMailCandidato,
+                cvEspInf=Cvespañol,
+                InfoEntrevista=InfoEntrevista,
+                CvIngles=CvIngles,
+                InfoEntrevistaIngles=InfoEntrevistaIngles,
+                Comentarios=comment,
+                Perfildelcandidato=TpCandi,
+                Tecnologias=TecnoCandi,
+                Sourcer = EsSource,
+                NombreyApellidodelCandidato = NombreyApellidodelCandidato,
+                RemuneracionPretendidaMensual = RemuneracionPretendidaMensual,
+                NiveldeIngles = NiveldeIngles,
+                Locacion = Locacion,
+                Linkedin = LKCandi,
+                FECHA = date_time,
+                cvEspañolUrl = cvEspañolUrl,
+                InfoEntrevistaUrl = InfoEntrevistaUrl,
+                CvInglesurl = CvInglesurl,
+                InfoEntrevistaInglesurl = InfoEntrevistaInglesurl,
+                )
+        
 def revisarAprob(values):
     StatusEnBase= values['StatusEnBaseInf']
     EsSource=values['EsSourceInf']

@@ -326,33 +326,84 @@ motivo,status,ComentariosAdicionales,FECHA    ) VALUES (0, '"+values['email']+"'
         return json.loads(json.dumps(result).encode('utf-8').decode('ascii'))
 
 
-def insertinforme(idbusqueda,emailAddress,emailCandidato,cvEspInf,InfoEntrevista,CvIngles,InfoEntrevistaIngles):
-        db = connectar()
-        a = db.cursor()
-        if cvEspInf is None:
-            cvEspInf=''
-        if InfoEntrevista is None:
-            InfoEntrevista=''
-        if CvIngles is None:
-            CvIngles=''
-        if InfoEntrevistaIngles is None:
-            InfoEntrevistaIngles=''
+def insertinforme(idbusqueda, emailAddress, emailCandidato, cvEspInf, InfoEntrevista,
+                   CvIngles, InfoEntrevistaIngles, Comentarios, Perfildelcandidato,
+                     Tecnologias, Sourcer, NombreyApellidodelCandidato, RemuneracionPretendidaMensual, NiveldeIngles,
+                     Locacion, Linkedin, FECHA, cvEspañolUrl, cvInglesUrl, InfoEntrevistaEspañolUrl, InfoEntrevistaInglesUrl,):
+    db = connectar()
+    a = db.cursor()
 
-        sql = "INSERT INTO conexion.cargaInforme (" \
-              "idbusqueda, emailAddress, emailCandidato,cvespInf,cvingInf,informeesp,informeing)" \
-              " VALUES ('"+idbusqueda+"', " \
-              "'"+emailAddress+"', " \
-              "'" +emailCandidato + "'," \
-              "'" +cvEspInf + "'"+ "," \
-              "'" +CvIngles + "'"+ "," \
-              "'" +InfoEntrevista + "'"+ "," \
-              "'" +InfoEntrevistaIngles + "'"\
-              ") "
+    if cvEspInf is None:
+        cvEspInf = ''
 
-        a.execute(sql)
-        db.commit()
-        result='ok'
-        return json.loads(json.dumps(result).encode('utf-8').decode('ascii'))
+    if InfoEntrevista is None:
+        InfoEntrevista = ''
+
+    if CvIngles is None:
+        CvIngles = ''
+
+    if InfoEntrevistaIngles is None:
+        InfoEntrevistaIngles = ''
+
+    sql = """
+        INSERT INTO conexion.Informe (
+            IdBusqueda,
+            EmailAddres,
+            emailCandidato,
+            CVEspanolCandidato,
+            CVInglesCandidato,
+            InformedeEntrevistaEspanolCandidato,
+            InformedeEntrevistaInglesCandidato,
+            Comentarios,
+            Perfildelcandidato,
+            tecnologiaquemaneja,
+            sourcer,
+            nombreyapellidodelcandidato,
+            RemuneracionpretendidaMENSUAL,
+            NiveldeIngles,
+            LinkedindelCandidato,
+            FECHA,
+            cvEspañolUrl,
+            cvInglesUrl,
+            InfoEntrevistaEspañolUrl,
+            InfoEntrevistaInglesUrl
+        ) VALUES (
+            %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s
+        )
+    """
+
+    a.execute(
+        sql,
+        (
+            idbusqueda,
+            emailAddress,
+            emailCandidato,
+            cvEspInf,
+            CvIngles,
+            InfoEntrevista,
+            InfoEntrevistaIngles,
+            Comentarios,
+            Perfildelcandidato,
+            Tecnologias,
+            Sourcer,
+            NombreyApellidodelCandidato,
+            RemuneracionPretendidaMensual,
+            NiveldeIngles,
+            Locacion,
+            Linkedin,
+            FECHA,
+            cvEspañolUrl,
+            cvInglesUrl,
+            InfoEntrevistaEspañolUrl,
+            InfoEntrevistaInglesUrl
+        )
+    )
+
+    db.commit()
+
+    result = 'ok'
+    return json.loads(json.dumps(result).encode('utf-8').decode('ascii'))
+
 
 
 def base64decomysql(idbusqueda, emailAddress, emailCandidato,campo):
