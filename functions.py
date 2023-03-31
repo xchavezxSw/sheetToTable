@@ -68,7 +68,7 @@ def addReserva(values):
     emailAdress = values['email']
     idbusqueda=values['idReserva']
 
-    newDict = list(filter(lambda elem: elem['Email Candidato'] if str(elem['Email Candidato']).lower().strip()==str(email).lower().strip() else None, data))[0]
+    #newDict = list(filter(lambda elem: elem['Email Candidato'] if str(elem['Email Candidato']).lower().strip()==str(email).lower().strip() else None, data))[0]
     contratado=getContratados(email,emailAdress,idbusqueda)
 
     if len(contratado)>0:
