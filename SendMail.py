@@ -81,11 +81,10 @@ def gmail_send_message(creds,to='',subject='',tipo='',candidato='',id='',sourcer
         if tipo == 'estado':
             TemplateHtml = 'sendmail.html'
             TituloMail = "El candidato cambió de estado con éxito.";
-            Info1 = "El candidato que modificaste es:" + candidato
-            Info2 = "El email Reclutador que ingresaste es:" + reclutador
-            Info3 = "El estado actual ahora es:" + estado
-            Comentarios =comentarios
-            Info4 = "El id actualizado es:" + id
+            info1 = "El candidato que modificaste es:" + candidato
+            info2 = "El email Reclutador que ingresaste es:" + reclutador
+            info3 = "El estado actual ahora es:" + estado
+            info4 = "El id actualizado es:" + id
         htmlText = []
         with open("FoldersHtml/"+TemplateHtml, encoding='utf8') as f:  # closes file after all the lines have been processed
             for line in f:  # not using readlines(), as this consumes the memory
