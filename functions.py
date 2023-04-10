@@ -79,6 +79,10 @@ def addReserva(values):
     if valor != 'OK' and reclutador != values['email']:
         return 410
     modificarReservar(values)
+    emailCandidato = str(values['emailCandidato']).lower()
+    idReserva = values['idReserva']
+    gmail_send_message(creds, to=email, subject="Candidato Reservado", tipo='Reserva', candidato=emailCandidato,
+                       id=idReserva)
  except Exception as e:
     if '_' in values['idReserva']:
         for i in values['idReserva'].split('_'):
