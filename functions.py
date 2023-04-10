@@ -27,7 +27,7 @@ SolicitudInforme=client.open('[EnProceso-Semi]PedidosInformes&InfARevisar').work
 #sendmails = client.open('sendMails').worksheet('mails')
 #sendmailsreserva = client.open('sendmailReserva').worksheet('mails')
 UsersList=getallRecordlist("UsersList")
-contratados=getallRecordlist("DirectosList")
+DirectosList=getallRecordlist("DirectosList")
 contratados=getallRecordlist("contratados")
 client = gspread.authorize(credentials)
 def jsonsheet():
