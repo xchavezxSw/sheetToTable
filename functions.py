@@ -24,12 +24,12 @@ SolicitudInforme=client.open('[EnProceso-Semi]PedidosInformes&InfARevisar').work
 #contratadossheet=client.open('[FueraDeProceso]Contratados').worksheet('FueraDeProcesoContratados')
 #rechazados=client.open('[FueraDeProceso]ProcesoRechazado').worksheet('FueraDeProcesoProcesoRechazado')
 #cambios=client.open('[AUT]PedidosCambios').worksheet('AUTPedidosCambios')
+#sendmails = client.open('sendMails').worksheet('mails')
+#sendmailsreserva = client.open('sendmailReserva').worksheet('mails')
 UsersList=getallRecordlist("UsersList")
 contratados=getallRecordlist("DirectosList")
 contratados=getallRecordlist("contratados")
 client = gspread.authorize(credentials)
-sendmails = client.open('sendMails').worksheet('mails')
-sendmailsreserva = client.open('sendmailReserva').worksheet('mails')
 def jsonsheet():
     client = gspread.authorize(credentials)
     sheet4 = client.open('[EnProceso]EnCliente').worksheet('EnProcesoEnCliente')  # Open the spreadsheet
@@ -597,11 +597,8 @@ def eliminar_guiones(candidato,id,sourcer):
         valores='_'.join(nuevo )
         SolicitudInforme.update('j'+str(eliminar),valores )
 def sendmailstatus(emailCandi,idSt,emailSt,statusSt,comentarios="",motivofin=""):
-    sendmails.add_rows(1)
-    sendmails.append_row([datetime.datetime.today().strftime('%Y-%m-%d %H:%M'),emailSt,emailCandi,idSt,status(statusSt),comentarios,motivofin,"","","","","","","","","",0],table_range="A1")
-def sendmailres(emailCandi,idSt,emailSt,statusSt,comentarios="",motivofin=""):
-    sendmailsreserva.add_rows(1)
-    sendmailsreserva.append_row([datetime.datetime.today().strftime('%Y-%m-%d %H:%M'),emailSt,emailCandi,idSt,status(statusSt),comentarios,motivofin,"","","","","","","","","",0],table_range="A1")
+    gmail_send_message(creds,emailSt,"Cambio con éxito","estado",emailCandi,idSt,'',statusSt,emailSt)
+
 
 def modificarStatus(emailCandi,idSt,emailSt,statusSt,comentariosSt=''):
     client = gspread.authorize(credentials)

@@ -37,7 +37,7 @@ def login_mail():
             token.write(creds.to_json())
     return creds
 
-def gmail_send_message(creds,to='',subject='',tipo='',candidato='',id='',sourcer=''):
+def gmail_send_message(creds,to='',subject='',tipo='',candidato='',id='',sourcer='',estado='',reclutador=''):
     """Create and send an email message
     Print the returned  message id
     Returns: Message object, including message id
@@ -78,6 +78,13 @@ def gmail_send_message(creds,to='',subject='',tipo='',candidato='',id='',sourcer
             info2 = "No podrás cargar nuevos IDs en la Aplicación y en caso de encontrar que el candidato aplique a uno nuevo, deberas notificarlo por mail en este mismo hilo respondiendolo. Podrás ver el avance del candidato en el Pipeline."
             info3 = ""
             info4 = "";
+        if tipo == 'estado':
+            TituloMail = "El candidato cambió de estado con éxito.";
+            Info1 = "El candidato que modificaste es:" + candidato
+            Info2 = "El email Reclutador que ingresaste es:" + reclutador
+            Info3 = "El estado actual ahora es:" + estado
+            Comentarios =comentarios
+            Info4 = "El id actualizado es:" + id
         htmlText = []
         with open("FoldersHtml/"+TemplateHtml, encoding='utf8') as f:  # closes file after all the lines have been processed
             for line in f:  # not using readlines(), as this consumes the memory
