@@ -602,7 +602,7 @@ def eliminar_guiones(candidato,id,sourcer):
         valores='_'.join(nuevo )
         SolicitudInforme.update('j'+str(eliminar),valores )
 def sendmailstatus(emailCandi,idSt,emailSt,statusSt,comentarios="",motivofin=""):
-    gmail_send_message(creds,emailSt,"Cambio con éxito","estado",emailCandi,idSt,'',statusSt,emailSt)
+    gmail_send_message(creds,emailSt,"Cambio con éxito","estado",emailCandi,idSt,comentarios,statusSt,emailSt)
 
 
 def modificarStatus(emailCandi,idSt,emailSt,statusSt,comentariosSt=''):

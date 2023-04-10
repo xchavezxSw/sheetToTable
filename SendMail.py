@@ -11,6 +11,8 @@ import base64
 from email.message import EmailMessage
 import google.auth
 
+from mysql_cc import status
+
 SCOPES = ['https://mail.google.com/']
 
 
@@ -83,7 +85,7 @@ def gmail_send_message(creds,to='',subject='',tipo='',candidato='',id='',sourcer
             TituloMail = "El candidato cambió de estado con éxito.";
             info1 = "El candidato que modificaste es:" + candidato
             info2 = "El email Reclutador que ingresaste es:" + reclutador
-            info3 = "El estado actual ahora es:" + estado
+            info3 = "El estado actual ahora es:" + status(estado)
             info4 = "El id actualizado es:" + id
         htmlText = []
         with open("FoldersHtml/"+TemplateHtml, encoding='utf8') as f:  # closes file after all the lines have been processed
