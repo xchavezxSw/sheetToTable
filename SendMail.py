@@ -79,6 +79,7 @@ def gmail_send_message(creds,to='',subject='',tipo='',candidato='',id='',sourcer
             info3 = ""
             info4 = "";
         if tipo == 'estado':
+            TemplateHtml = 'sendmail.html'
             TituloMail = "El candidato cambió de estado con éxito.";
             Info1 = "El candidato que modificaste es:" + candidato
             Info2 = "El email Reclutador que ingresaste es:" + reclutador
