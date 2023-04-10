@@ -14,10 +14,10 @@ scope = [ 'https://www.googleapis.com/auth/spreadsheets',
 creds=login_mail()
 credentials = ServiceAccountCredentials.from_json_keyfile_name('ultimo.json', scope)
 client = gspread.authorize(credentials)
-reservas = client.open('[AUT]PedidosReservas').worksheet('PedidosReservas')  # Open the spreadsheet
-reservado=client.open('[EnProceso]EnConexionReservado').worksheet('EnProcesoEnConexionReservado')
+#reservas = client.open('[AUT]PedidosReservas').worksheet('PedidosReservas')  # Open the spreadsheet
+#reservado=client.open('[EnProceso]EnConexionReservado').worksheet('EnProcesoEnConexionReservado')
 SolicitudInforme=client.open('[EnProceso-Semi]PedidosInformes&InfARevisar').worksheet('EnProcesoSemiPedidosInformesyInfARevisar')
-busquedasAbiertas=client.open('Maestro').worksheet('Busquedas')
+#busquedasAbiertas=client.open('Maestro').worksheet('Busquedas')
 UsersList=client.open('[Gestion]Accesos').worksheet('UsersList').get_all_values()
 DirectosList=client.open('[Gestion]Accesos').worksheet('DirectosList').get_all_values()
 contratados=client.open('[FueraDeProceso]Contratados').worksheet('FueraDeProcesoContratados').get_all_values()
@@ -62,10 +62,10 @@ def permitidof(email):
     return data
 
 def addReserva(values):
- data=reservado.get_all_records()#obtenemos los registros del excel
+ #data=reservado.get_all_records()#obtenemos los registros del excel
  try:
     email=values['emailCandidato']
-    newDict = list(filter(lambda elem: elem['Email Candidato'] if str(elem['Email Candidato']).lower().strip()==str(email).lower().strip() else None, data))[0]
+    #newDict = list(filter(lambda elem: elem['Email Candidato'] if str(elem['Email Candidato']).lower().strip()==str(email).lower().strip() else None, data))[0]
     contratado=list(filter(
         lambda elem: elem[2] if str(elem[2]).lower().strip() == str(email).lower().strip() else None,
         contratados))
@@ -378,7 +378,7 @@ def revisarRechaz(values):
     return  'Ok'
 
 def jsonReservas():
-    data=reservado.get_all_records()
+    data=reservados()
     nuevo=[]
     for i in data:
         i['url']='<button>edit</button>'
@@ -563,12 +563,13 @@ def modificarReservar(values):
 
 def busquedasPrioritarias():
     #try:
-      data = busquedasAbiertas.get_all_values()
+      """data = busquedasAbiertas.get_all_values()
       variable=[]
       for i in data:
           if i[0]=='ALTA':
             variable.append({'nube':i[0]+"-"+i[3]+"-"+i[4] })
-      return json.loads(json.dumps(variable).encode('utf-8').decode('ascii'))
+      return json.loads(json.dumps(variable).encode('utf-8').decode('ascii'))"""
+      return None
 
 def eliminar_guiones(candidato,id,sourcer):
     datos=SolicitudInforme.get_all_records()
