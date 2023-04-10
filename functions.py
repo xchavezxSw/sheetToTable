@@ -81,7 +81,8 @@ def addReserva(values):
     modificarReservar(values)
     emailCandidato = str(values['emailCandidato']).lower()
     idReserva = values['idReserva']
-    gmail_send_message(creds, to=email, subject="Candidato Reservado", tipo='Reserva', candidato=emailCandidato,
+    to = values['email']
+    gmail_send_message(creds, to=to, subject="Candidato Reservado", tipo='Reserva', candidato=emailCandidato,
                        id=idReserva)
  except Exception as e:
     if '_' in values['idReserva']:
