@@ -14,16 +14,19 @@ scope = [ 'https://www.googleapis.com/auth/spreadsheets',
 creds=login_mail()
 credentials = ServiceAccountCredentials.from_json_keyfile_name('ultimo.json', scope)
 client = gspread.authorize(credentials)
+SolicitudInforme=client.open('[EnProceso-Semi]PedidosInformes&InfARevisar').worksheet('EnProcesoSemiPedidosInformesyInfARevisar')
 #reservas = client.open('[AUT]PedidosReservas').worksheet('PedidosReservas')  # Open the spreadsheet
 #reservado=client.open('[EnProceso]EnConexionReservado').worksheet('EnProcesoEnConexionReservado')
-SolicitudInforme=client.open('[EnProceso-Semi]PedidosInformes&InfARevisar').worksheet('EnProcesoSemiPedidosInformesyInfARevisar')
 #busquedasAbiertas=client.open('Maestro').worksheet('Busquedas')
-UsersList=client.open('[Gestion]Accesos').worksheet('UsersList').get_all_values()
-DirectosList=client.open('[Gestion]Accesos').worksheet('DirectosList').get_all_values()
-contratados=client.open('[FueraDeProceso]Contratados').worksheet('FueraDeProcesoContratados').get_all_values()
-contratadossheet=client.open('[FueraDeProceso]Contratados').worksheet('FueraDeProcesoContratados')
-rechazados=client.open('[FueraDeProceso]ProcesoRechazado').worksheet('FueraDeProcesoProcesoRechazado')
+#UsersList=client.open('[Gestion]Accesos').worksheet('UsersList').get_all_values()
+#DirectosList=client.open('[Gestion]Accesos').worksheet('DirectosList').get_all_values()
+#contratados=client.open('[FueraDeProceso]Contratados').worksheet('FueraDeProcesoContratados').get_all_values()
+#contratadossheet=client.open('[FueraDeProceso]Contratados').worksheet('FueraDeProcesoContratados')
+#rechazados=client.open('[FueraDeProceso]ProcesoRechazado').worksheet('FueraDeProcesoProcesoRechazado')
 #cambios=client.open('[AUT]PedidosCambios').worksheet('AUTPedidosCambios')
+UsersList=getallRecordlist("UsersList")
+contratados=getallRecordlist("DirectosList")
+contratados=getallRecordlist("contratados")
 client = gspread.authorize(credentials)
 sendmails = client.open('sendMails').worksheet('mails')
 sendmailsreserva = client.open('sendmailReserva').worksheet('mails')
@@ -507,8 +510,8 @@ def updatecomment(values):
 def modificarReservar(values):
     if '_' in values['idReserva']:
         for i in values['idReserva'].split('_'):
-            cell = reservado.find(str(values['emailCandidato']).lower(), case_sensitive=True)
-            row = cell.row
+           # cell = reservado.find(str(values['emailCandidato']).lower(), case_sensitive=True)
+            #row = cell.row
             email = values['email']
             emailCandidato = str(values['emailCandidato']).lower()
             naCandi = values['naCandi']
@@ -527,14 +530,14 @@ def modificarReservar(values):
             comment = values['comment']
             curDT = datetime.datetime.now()
             date_time = curDT.strftime("%m/%d/%Y, %H:%M:%S")
-            reservado.delete_row(row)
-            reservado.add_rows(1)
+            #reservado.delete_row(row)
+           # reservado.add_rows(1)
             updateReserva(date_time, email, emailCandidato, naCandi, lkCandi, tcandi, tperfil, idReserva, comment)
-            reservado.append_row([date_time, email, emailCandidato, naCandi, lkCandi, tcandi, tperfil, idReserva, comment,],
-                                 index=row)
+         #   reservado.append_row([date_time, email, emailCandidato, naCandi, lkCandi, tcandi, tperfil, idReserva, comment,],
+          #                       index=row)
     else:
-        cell = reservado.find(str(values['emailCandidato']).lower(), case_sensitive=True)
-        row = cell.row
+        #cell = reservado.find(str(values['emailCandidato']).lower(), case_sensitive=True)
+        #row = cell.row
         email = values['email']
         emailCandidato = str(values['emailCandidato']).lower()
         naCandi = values['naCandi']
@@ -553,12 +556,12 @@ def modificarReservar(values):
         comment = values['comment']
         curDT = datetime.datetime.now()
         date_time = curDT.strftime("%m/%d/%Y, %H:%M:%S")
-        reservado.delete_row(row)
-        reservado.add_rows(1)
+        #reservado.delete_row(row)
+        #reservado.add_rows(1)
         updateReserva(date_time, email, emailCandidato, naCandi, lkCandi, tcandi, tperfil, idReserva, comment)
-        reservado.append_row(
-            [date_time, email, emailCandidato, naCandi, lkCandi, tcandi, tperfil, idReserva, comment, ],
-            index=row)
+        #reservado.append_row(
+         #   [date_time, email, emailCandidato, naCandi, lkCandi, tcandi, tperfil, idReserva, comment, ],
+          #  index=row)
 
 
 def busquedasPrioritarias():
@@ -641,9 +644,10 @@ def modificarStatus11(emailCandi,idSt,emailSt,statusSt,salarioMensualAcordadoSt,
         data) if e[2] == emailCandi and e[0] == emailSt and e[3] == idSt]
     if str(statusSt)=='11':
         try:
-            sheet4.delete_row(ar[0]['rowIndex']+1)
-            contratadossheet.add_rows(1)
-            contratadossheet.append_row([datetime.datetime.today().strftime('%Y-%m-%d %H:%M'),
+            #sheet4.delete_row(ar[0]['rowIndex']+1)
+            #contratadossheet.add_rows(1)
+            insertEstado11(emailCandi,idSt,emailSt,statusSt,salarioMensualAcordadoSt,fechaIngresoSt,comentariosSt)
+            """ contratadossheet.append_row([datetime.datetime.today().strftime('%Y-%m-%d %H:%M'),
                                    ar[0]['value'][0],
                                    ar[0]['value'][2],
                                    ar[0]['value'][3],
@@ -658,7 +662,7 @@ def modificarStatus11(emailCandi,idSt,emailSt,statusSt,salarioMensualAcordadoSt,
                                     '',
                                     'CambioAc'
                                    ''
-                                   ])
+                                   ])"""
         except:
             None
         sendmailstatus(emailCandi, idSt, emailSt, statusSt,comentariosSt)
@@ -680,7 +684,7 @@ def modificarStatus12(emailCandi,idSt,emailSt,statusSt,salarioMensualOfrecidoCli
     if str(statusSt)=='12':
         try:
             sheet4.delete_row(ar[0]['rowIndex']+1)
-            rechazados.add_rows(1)
+            #rechazados.add_rows(1)
             envio=""
             if rechazadopor == 'Cliente':
                 cancelado = 'Cliente'
@@ -692,7 +696,7 @@ def modificarStatus12(emailCandi,idSt,emailSt,statusSt,salarioMensualOfrecidoCli
 
 
             sendmailstatus(emailCandi, idSt, emailSt, statusSt, comentariosSt,envio)
-            rechazados.append_row([datetime.datetime.today().strftime('%Y-%m-%d %H:%M'),
+            """rechazados.append_row([datetime.datetime.today().strftime('%Y-%m-%d %H:%M'),
                                    ar[0]['value'][0],
                                    ar[0]['value'][2],
                                    ar[0]['value'][3],
@@ -706,7 +710,7 @@ def modificarStatus12(emailCandi,idSt,emailSt,statusSt,salarioMensualOfrecidoCli
                                     '',
                                     '',
                                     'CambioAc'
-                                   ])
+                                   ])"""
         except:
             None
             sendmailstatus(emailCandi, idSt, emailSt, statusSt,comentariosSt,envio)

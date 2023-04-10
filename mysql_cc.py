@@ -248,6 +248,13 @@ def metrica(usuario='',rol=''):
                            ])
     return json.loads(json.dumps(json_data).encode('utf-8').decode('ascii'))
 
+def getallRecordlist(table=""):
+        db = connectar()
+        a = db.cursor()
+        consulta = "select * from "+table+"  where 1=1 "
+        a.execute(consulta)
+        results = a.fetchall()
+        return results
 
 
 def contratadosFun(usuario=''):
