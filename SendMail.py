@@ -99,6 +99,7 @@ def gmail_send_message(creds,to='',subject='',tipo='',candidato='',id='',sourcer
         message['To'] = to
         message['From'] = 'conexion@conexion.app'
         message['Subject'] = subject
+        message['cc']="recruiting@conexion-hr.com"
 
         # encoded message
         encoded_message = base64.urlsafe_b64encode(message.as_bytes()) \
