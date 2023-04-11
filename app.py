@@ -348,6 +348,7 @@ def getContratados():
 def getcambiostatus():
     if request.method == 'POST':
         emailCandi=request.form.get('emailCandidatoSt')
+        email = request.form.get('emailSt')
         id = request.form.get('idSt')
         data=devolvercambiostado(emailCandi, id)
         return make_response(jsonify(data), 200)
