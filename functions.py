@@ -82,8 +82,14 @@ def addReserva(values):
     emailCandidato = str(values['emailCandidato']).lower()
     idReserva = values['idReserva']
     to = values['email']
-    gmail_send_message(creds, to=to, subject="Candidato Reservado", tipo='Reserva', candidato=emailCandidato,
-                       id=idReserva)
+    gmail_send_message(
+        creds=creds,
+        to=to,
+        subject="Candidato Reservado",
+        tipo='Reserva',
+        candidato=emailCandidato,
+        id=idReserva
+    )
  except Exception as e:
     if '_' in values['idReserva']:
         for i in values['idReserva'].split('_'):
@@ -105,13 +111,26 @@ def addReserva(values):
             valor,reclutador=pertenencia(emailCandidato)
             if valor=='OK':
                 insertreserva(nuevo)
-                gmail_send_message(creds,to=email,subject="Candidato Reservado",tipo='Reserva',candidato=emailCandidato,id=idReserva)
+                gmail_send_message(
+                    creds=creds,
+                    to=email,
+                    subject="Candidato Reservado",
+                    tipo='Reserva',
+                    candidato=emailCandidato,
+                    id=idReserva
+                    )
                 #reservas.append_row([date_time, email, emailCandidato, naCandi, lkCandi, tcandi, tperfil, idReserva, comment])
             else:
                 if reclutador==email:
                     insertreserva(nuevo)
-                    gmail_send_message(creds, to=email, subject='Candidato Reservado', tipo='Reserva', candidato=emailCandidato,
-                                       id=idReserva)
+                    gmail_send_message(
+                        creds=creds,
+                        to=email,
+                        subject='Candidato Reservado',
+                        tipo='Reserva',
+                        candidato=emailCandidato,
+                        id=idReserva
+                        )
                     #reservas.append_row([date_time, email, emailCandidato, naCandi, lkCandi, tcandi, tperfil, idReserva, comment])
                 else:
                     return 410
@@ -132,20 +151,48 @@ def addReserva(values):
         valor,reclutador = pertenencia(emailCandidato)
         if valor == 'OK':
             insertreserva(values)
-            gmail_send_message(creds, to=email, subject='Candidato Reservado', tipo='Reserva', candidato=emailCandidato, id=idReserva)
+            gmail_send_message(
+                creds=creds,
+                to=email,
+                subject='Candidato Reservado',
+                tipo='Reserva',
+                candidato=emailCandidato,
+                id=idReserva
+            )
             #reservas.append_row([date_time,email,emailCandidato,naCandi,lkCandi,tcandi,tperfil,idReserva,comment])
         else:
             if reclutador == email:
                 insertreserva(values)
-                gmail_send_message(creds, to=email, subject='Candidato Reservado', tipo='Reserva', candidato=emailCandidato, id=idReserva)
+                gmail_send_message(
+                    creds=creds,
+                    to=email,
+                    subject='Candidato Reservado',
+                    tipo='Reserva',
+                    candidato=emailCandidato,
+                    id=idReserva
+                )
                 #reservas.append_row(                    [date_time, email, emailCandidato, naCandi, lkCandi, tcandi, tperfil, idReserva, comment])
             else:
                 return 410
 def send_mail_source(candidato,reclutador,id,sourcer):
-    gmail_send_message(creds,sourcer , 'Tenes asignado un Candidato que fue cargado como Sourcer', 'source', candidato,
-                       id,sourcer)
-    gmail_send_message(creds, reclutador, 'Tu candidato fue asignado a un Reclutador y estarás como Sourcer', 'sourcedest',candidato, id,
-                       sourcer)
+    gmail_send_message(
+        creds=creds,
+        to=sourcer,
+        subject='Tenes asignado un Candidato que fue cargado como Sourcer',
+        tipo='source',
+        candidato=candidato,
+        id=id,
+        sourcer=sourcer
+    )
+    gmail_send_message(
+        creds=creds,
+        to=reclutador,
+        subject='Tu candidato fue asignado a un Reclutador y estarás como Sourcer',
+        tipo='sourcedest',
+        candidato=candidato,
+        id=id,
+        sourcer=sourcer
+    )
 def addInforme(values):
       if values['TpCandiInf'] is None:
           values['TpCandiInf']=''
@@ -601,8 +648,21 @@ def eliminar_guiones(candidato,id,sourcer):
     if len(nuevo)>1:
         valores='_'.join(nuevo )
         SolicitudInforme.update('j'+str(eliminar),valores )
-def sendmailstatus(emailCandi,idSt,emailSt,statusSt,comentarios="",motivofin=""):
-    gmail_send_message(creds,emailSt,"Cambio con éxito","estado",emailCandi,idSt,comentarios,statusSt,emailSt)
+
+def sendmailstatus(emailCandi,idSt,emailSt,statusSt,sourcer,comentarios="",motivofin=""):
+    gmail_send_message(
+        creds=creds,
+        to=emailSt,
+        subject="Cambio con éxito",
+        tipo="estado",
+        candidato=emailCandi,
+        id=idSt,
+        sourcer=sourcer,
+        comentarios=comentarios,
+        estado=statusSt,
+        reclutador=emailSt,
+        motivofin=motivofin
+    )
 
 
 def modificarStatus(emailCandi,idSt,emailSt,statusSt,comentariosSt=''):

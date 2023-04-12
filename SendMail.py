@@ -39,7 +39,7 @@ def login_mail():
             token.write(creds.to_json())
     return creds
 
-def gmail_send_message(creds,to='',subject='',tipo='',candidato='',id='',sourcer='',estado='',reclutador=''):
+def gmail_send_message(creds,to='',subject='',tipo='',candidato='',id='',sourcer='',estado='',reclutador='', comentarios='', motivoFin=''):
     """Create and send an email message
     Print the returned  message id
     Returns: Message object, including message id
@@ -83,10 +83,14 @@ def gmail_send_message(creds,to='',subject='',tipo='',candidato='',id='',sourcer
         if tipo == 'estado':
             TemplateHtml = 'sendmail.html'
             TituloMail = "El candidato cambió de estado con éxito.";
+            estado = status(estado)
             info1 = "El candidato que modificaste es:" + candidato
             info2 = "El email Reclutador que ingresaste es:" + reclutador
-            info3 = "El estado actual ahora es:" + status(estado)
+            info3 = "El estado actual ahora es:" + estado
             info4 = "El id actualizado es:" + id
+            if estado == 'Fuera de proceso':
+                comentarios = "Comentarios: " + comentarios
+                motivo = "El motivo del rechazo es: " + motivoFin
         htmlText = []
         with open("FoldersHtml/"+TemplateHtml, encoding='utf8') as f:  # closes file after all the lines have been processed
             for line in f:  # not using readlines(), as this consumes the memory
@@ -94,7 +98,7 @@ def gmail_send_message(creds,to='',subject='',tipo='',candidato='',id='',sourcer
         final = ' '.join(htmlText)
 
 
-        html=final.format(TituloMail,info1,info2,comentarios,info3,info4)
+        html=final.format(TituloMail,info1,info2,comentarios,motivo,info3,info4)
 
         message.set_content(html)
         message.set_type('text/html')
