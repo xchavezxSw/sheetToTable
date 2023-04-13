@@ -39,7 +39,7 @@ def login_mail():
             token.write(creds.to_json())
     return creds
 
-def gmail_send_message(creds,to='',subject='',tipo='',candidato='',id='',sourcer='',estado='',reclutador='', comentarios='', motivoFin=''):
+def gmail_send_message(creds,to='',subject='',tipo='',candidato='',id='',sourcer='',estado='',reclutador='', comentarios='', motivofin=''):
     """Create and send an email message
     Print the returned  message id
     Returns: Message object, including message id
