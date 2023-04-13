@@ -91,7 +91,7 @@ def gmail_send_message(creds,to='',subject='',tipo='',candidato='',id='',sourcer
             info4 = "El id actualizado es:" + id
             if estado == 'Fuera de proceso':
                 comentarios = "Comentarios: " + comentarios
-                motivo = "El motivo del rechazo es: " + motivoFin
+                motivo = "El motivo del rechazo es: " + motivofin
         htmlText = []
         with open("FoldersHtml/"+TemplateHtml, encoding='utf8') as f:  # closes file after all the lines have been processed
             for line in f:  # not using readlines(), as this consumes the memory
