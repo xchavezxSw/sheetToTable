@@ -51,7 +51,7 @@ def busquedas():
     return json.loads(json.dumps(data).encode('utf-8').decode('ascii'))
 
 def permitidof(email):
-    retorno=list(filter(None,map(lambda x:True if x[0].lower()==str(email).lower() else None,UsersList)))
+    retorno=list(filter(None,map(lambda x:True if str(x[0]).lower()==str(email).lower() else None,UsersList)))
     data=dict()
     if len(retorno)>0:
         if retorno[0]:
@@ -670,6 +670,7 @@ def modificarStatus(emailCandi,idSt,emailSt,statusSt,comentariosSt=''):
     sheet4 = client.open('[EnProceso]EnCliente').worksheet('EnProcesoEnCliente')  # Open the spreadsheet
     data=sheet4.get_all_values()
     searchValues=[]
+    cargarcliente(emailCandi, idSt, emailSt, statusSt)
     ar = [{"rowIndex": i, "value": e} for i, e in enumerate(
         data) if e[2] == emailCandi  and e[0]== emailSt and e[3]==idSt]
     try:
