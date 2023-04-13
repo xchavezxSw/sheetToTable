@@ -59,6 +59,7 @@ def gmail_send_message(creds,to='',subject='',tipo='',candidato='',id='',sourcer
         comentarios = ''
         info3 = ''
         info4 = ''
+        motivo=''
         if tipo=='Reserva':
             TemplateHtml='Notif1.html'
             TituloMail = "Candidato Reservado con éxito";
