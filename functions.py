@@ -661,7 +661,7 @@ def sendmailstatus(emailCandi,idSt,emailSt,statusSt,sourcer,comentarios="",motiv
         comentarios=comentarios,
         estado=statusSt,
         reclutador=emailSt,
-        motivofin=motivofin
+        motivoFin=motivofin
     )
 
 
