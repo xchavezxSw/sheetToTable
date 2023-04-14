@@ -407,6 +407,9 @@ def setcookie():
         password=request.form['password']
     validar,rol=login(user, password)
     if validar >=1:
+        ip_address = request.remote_addr
+        print(f'Tu dirección IP es {ip_address}')
+        print(f'El usuario es {user}')
         resp =make_response(jsonify(json.loads(json.dumps(['logueado',rol,user]).encode('utf-8').decode('ascii'))), 200)
         resp.set_cookie('userID', user)
         resp.set_cookie('rol', rol)
