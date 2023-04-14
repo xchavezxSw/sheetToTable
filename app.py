@@ -8,12 +8,10 @@ from urllib.parse import unquote
 import io as BytesIO
 import base64 as b64
 from codecs import encode
+from agente import *
 
 app = Flask(__name__)
 CORS(app)
-from agente import *
-
-logger = Logger(__name__)
 
 import socket
 myhost = socket.gethostname()
@@ -411,8 +409,8 @@ def setcookie():
     validar,rol=login(user, password)
     if validar >=1:
         ip_address = request.remote_addr
-        print(f'Tu dirección IP es {ip_address}')
-        print(f'El usuario es {user}')
+        logger.info(f'La ip {ip_address} se ha logueado correctamente')
+        logger.info(f'El usuario {user} se ha logueado correctamente')
         resp =make_response(jsonify(json.loads(json.dumps(['logueado',rol,user]).encode('utf-8').decode('ascii'))), 200)
         resp.set_cookie('userID', user)
         resp.set_cookie('rol', rol)
