@@ -8,8 +8,10 @@ from urllib.parse import unquote
 import io as BytesIO
 import base64 as b64
 from codecs import encode
+from agente import *
 app = Flask(__name__)
 CORS(app)
+logger = Logger(__name__)
 import socket
 myhost = socket.gethostname()
 if 'DESKTOP-EKG5FVQ'==myhost:
@@ -50,6 +52,7 @@ def getenrechazados():
         data=enrechazados(usuario)
     return make_response(jsonify(data), 200)
 
+@logger
 @cross_origin()
 @app.route('/insert', methods=['GET', 'POST'])
 def insertreserva():
