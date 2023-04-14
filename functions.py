@@ -11,8 +11,6 @@ from agente import *
 from SendMail import gmail_send_message, login_mail
 from mysql_cc import *
 
-logger = Logger(__name__)
-
 scope = [ 'https://www.googleapis.com/auth/spreadsheets',
             "https://www.googleapis.com/auth/drive"]
 creds=login_mail()

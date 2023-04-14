@@ -3,6 +3,7 @@ import datetime
 from bd import conexion,connectar
 import json
 import base64
+from agente import *
 
 
 
@@ -404,6 +405,8 @@ def devolvercambiostado(emailCandi,id):
             json_data.append([result[0], result[1], result[2], str(result[3]), result[4], result[5],
                               result[6], result[7], result[8], result[9], result[10], str(result[11])])
         return json.loads(json.dumps(json_data).encode('utf-8').decode('ascii'))
+
+@logger
 def login(usuario,contrasena):
     from bd import conexion
     db = connectar()

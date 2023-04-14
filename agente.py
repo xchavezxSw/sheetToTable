@@ -34,3 +34,5 @@ class Logger:
                 self.logger.debug(f"{indent}{'|'}-- Function '{func.__name__}' returned: {result}")
             return result
         return wrapped_func
+
+logger = Logger(__name__)

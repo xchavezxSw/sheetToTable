@@ -52,9 +52,9 @@ def getenrechazados():
         data=enrechazados(usuario)
     return make_response(jsonify(data), 200)
 
-@logger
 @cross_origin()
 @app.route('/insert', methods=['GET', 'POST'])
+@logger
 def insertreserva():
     if request.method == 'POST':
         value={  "email":request.form.get('email'),
@@ -401,6 +401,7 @@ def cambioEstado():
 
 @cross_origin()
 @app.route('/setcookie', methods=['POST', 'GET'])
+@logger
 def setcookie():
     if request.method == 'POST':
         user = request.form['user']
