@@ -8,10 +8,10 @@ from urllib.parse import unquote
 import io as BytesIO
 import base64 as b64
 from codecs import encode
-from agente import *
+
 app = Flask(__name__)
 CORS(app)
-logger = Logger(__name__)
+
 import socket
 myhost = socket.gethostname()
 if 'DESKTOP-EKG5FVQ'==myhost:
@@ -54,7 +54,6 @@ def getenrechazados():
 
 @cross_origin()
 @app.route('/insert', methods=['GET', 'POST'])
-@logger
 def insertreserva():
     if request.method == 'POST':
         value={  "email":request.form.get('email'),
@@ -401,7 +400,6 @@ def cambioEstado():
 
 @cross_origin()
 @app.route('/setcookie', methods=['POST', 'GET'])
-@logger
 def setcookie():
     if request.method == 'POST':
         user = request.form['user']

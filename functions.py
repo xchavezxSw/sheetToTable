@@ -6,8 +6,6 @@ import json
 import threading
 import pandas as pd
 
-from agente import *
-
 from SendMail import gmail_send_message, login_mail
 from mysql_cc import *
 
@@ -66,7 +64,6 @@ def permitidof(email):
         data['permitido']=False
     return data
 
-@logger
 def addReserva(values):
  #data=reservado.get_all_records()#obtenemos los registros del excel
  try:
