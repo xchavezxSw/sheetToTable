@@ -403,6 +403,7 @@ def cambioEstado():
 @cross_origin()
 @app.route('/setcookie', methods=['POST', 'GET'])
 def setcookie():
+    logger.info("Iniciando sesion")
     if request.method == 'POST':
         user = request.form['user']
         password=request.form['password']
