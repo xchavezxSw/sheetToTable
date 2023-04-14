@@ -11,6 +11,9 @@ from codecs import encode
 
 app = Flask(__name__)
 CORS(app)
+from agente import *
+
+logger = Logger(__name__)
 
 import socket
 myhost = socket.gethostname()
@@ -30,6 +33,7 @@ def add_headers(response):
     return response
 
 @cross_origin()
+@logger
 @app.route('/')
 def hello():
     data=jsonsheet()
