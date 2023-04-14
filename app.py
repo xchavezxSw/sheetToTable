@@ -33,7 +33,6 @@ def add_headers(response):
     return response
 
 @cross_origin()
-@logger
 @app.route('/')
 def hello():
     data=jsonsheet()
@@ -303,6 +302,7 @@ def getencliente():
     return make_response(jsonify(data), 200)
 @cross_origin()
 @app.route('/getfproceso')
+@logger
 def getfproceso():
     args = request.args
     usuario=args.get('usuario')
