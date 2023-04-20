@@ -11,7 +11,33 @@ import base64
 from email.message import EmailMessage
 import google.auth
 
-from mysql_cc import status
+def status(id):
+    if id=="1":
+        return 'Reservado'
+    if id=="2":
+        return 'En Cliente'
+    if id=="4" :
+        return  'Entrevista Con Cliente (no técnica)'
+    if id=="5" :
+        return  'Entrevista Técnica'
+    if id=="6" :
+        return  'Ejercicio Técnico'
+    if id=="7" :
+        return  'Trámites Ingreso'
+    if id=="8" :
+        return  'Oferta'
+    if id=="9" :
+        return  'On Hold '
+    if id=="10" :
+        return  'Pre-Offer '
+    if id=="11" :
+        return  'Ingreso'
+    if id=="12" :
+        return  'Fuera de proceso'
+    if id=="13" :
+        return  'Informe Cargado'
+    if id=="14" :
+        return  'Reserva Vencida'
 
 SCOPES = ['https://mail.google.com/']
 
