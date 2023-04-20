@@ -1,9 +1,10 @@
 import datetime
 
+from SendMail import gmail_send_message, login_mail
 from bd import conexion,connectar
 import json
 import base64
-
+creds=login_mail()
 def status(id):
     if id=="1":
         return 'Reservado'
@@ -312,7 +313,28 @@ motivo,status,ComentariosAdicionales,FECHA    ) VALUES (0, '"+values['email']+"'
         return json.loads(json.dumps(result).encode('utf-8').decode('ascii'))
 
 
+def reservaprevia(emailAddress='',emailCandidato='',idbusqueda=''):
+    db = connectar()
+    a = db.cursor()
+    consulta = "select * from reserva  where 1=1 "
+    if emailAddress != '':
+        consulta = consulta + " and EmailAddres='" + emailAddress + "'"
+    if emailCandidato != '':
+        consulta = consulta + " and emailcandidato='" + emailCandidato + "'"
+    if idbusqueda != '':
+        consulta = consulta + " and idreserva='" + idbusqueda + "'"
+    a.execute(consulta)
+    results = a.fetchall()
+    json_data = []
+    retorno=False
+    for result in results:
+        retorno=True
+
+    return retorno
+
+
 def insertinforme(idbusqueda,emailAddress,emailCandidato,cvEspInf,InfoEntrevista,CvIngles,InfoEntrevistaIngles):
+
         db = connectar()
         a = db.cursor()
         if cvEspInf is None:
@@ -338,6 +360,12 @@ def insertinforme(idbusqueda,emailAddress,emailCandidato,cvEspInf,InfoEntrevista
         a.execute(sql)
         db.commit()
         result='ok'
+        vartipo=reservaprevia(emailAddress,emailCandidato,idbusqueda)
+        if vartipo:
+            ReservaPrevia='Informe'
+        else:
+            ReservaPrevia = 'Informes'
+        gmail_send_message(creds=creds,to=emailAddress,subject="Informe cargado con éxito",tipo=ReservaPrevia,candidato=emailCandidato)
         return json.loads(json.dumps(result).encode('utf-8').decode('ascii'))
 
 

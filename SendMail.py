@@ -60,6 +60,20 @@ def gmail_send_message(creds,to='',subject='',tipo='',candidato='',id='',sourcer
         info3 = ''
         info4 = ''
         motivo=''
+        if tipo=='Informe':
+            TemplateHtml='Notif1.html'
+            TituloMail = "Informe cargado con éxito sobre una reserva que ya tenias"
+            info1 = "El candidato que usted tenia reservado es:   "+candidato
+            info2 ="Ya tenias una reserva para este candidato y ahora está cargado el informe para revisar. Sera revisado en las próximas horas."
+            info3 = ""
+            info4 = "";
+        if tipo == 'Informes':
+            TemplateHtml = 'Notif1.html'
+            TituloMail = "Candidato con Informe cargado con éxito (sin reserva previa)"
+            info1 = "El candidato que usted cargó el informe es:   "+candidato
+            info2 = "El candidato no estaba reservado y al subir un informe directamente se ingresó ya que no estaba reservado por otro reclutador ni por usted mismo y se cargó el informe con éxito."
+            info3 = ""
+            info4 = ""
         if tipo=='Reserva':
             TemplateHtml='Notif1.html'
             TituloMail = "Candidato Reservado con éxito";
