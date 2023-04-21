@@ -15,15 +15,9 @@ CORS(app)
 
 import socket
 myhost = socket.gethostname()
-if 'DESKTOP-EKG5FVQ'==myhost:
-    app.run(debug=True     )
-else:
-    from OpenSSL import SSL
-    context = SSL.Context(SSL.TLSv1_2_METHOD)
-    context.use_privatekey_file('/root/ssl/conexion.key')
-    context.use_certificate_file('/root/ssl/conexion.crt')  
-    app.run(debug=True, ssl_context=context        )
-
+app.run(debug=True     )
+reservalogeo=reservalog(__name__)
+informelogeo=informelog(__name__)
 @app.after_request
 def add_headers(response):
     response.headers.add('Access-Control-Allow-Headers', 'Content-Type,Authorization')
@@ -67,6 +61,16 @@ def insertreserva():
                 "comment":request.form.get('comment')
                 }
         devuelvo=addReserva(value)
+        email=request.form.get('email')
+        emailCandidato=request.form.get('emailCandidato')
+        app.logger.info(
+            "path: %s | method: %s | email-reclutador: %s | email: %s | retorno: %s ",
+            request.path,
+            request.method,
+            email,
+            emailCandidato,
+            devuelvo
+        )
     if devuelvo=='403':
         return 'el candidato fue contratado con anterioridad', 403
     else:
@@ -97,6 +101,16 @@ def solinforme():
                 "CvEspañol":request.form.get('cvespInf'),
                 "CvInglesInf": request.form.get('cvingInf'),
                 }
+        email=request.form.get('emailInf')
+        emailCandidato=request.form.get('emailCandidatoInf')
+        app.logger.info(
+            "path: %s | method: %s | email-reclutador: %s | email: %s | retorno: %s ",
+            request.path,
+            request.method,
+            email,
+            emailCandidato,
+            ''
+        )
         if '_' in str(ids):
             for id in ids.split("_"):
                 if id != "" and id is not None:
@@ -187,11 +201,20 @@ def revisar():
                 "informeEntIng": request.form.get('infEntIng'),
                 "MotivvoRechazoInf": request.form.get('motivoRechInf'),
             }
-
+    email=request.form.get('emailInf')
+    emailCandidato=request.form.get('emailCandiInf')
     if request.form.get('status')=='True':
         data=revisarAprob(value)
     else:
-        data=revisarRechaz(value)    
+        data=revisarRechaz(value)
+    app.logger.info(
+        "path: %s | method: %s | email-reclutador: %s | email: %s | retorno: %s ",
+        request.path,
+        request.method,
+        email,
+        emailCandidato,
+        str(data)
+    )
     return make_response(jsonify(data), 200)
 
 @cross_origin()
@@ -232,6 +255,14 @@ def reservaemail():
         emailrec = request.form.get('email')
         data=devolverReserva(email)
         valor,reclutador = pertenencia(email)
+        app.logger.info(
+            "path: %s | method: %s | email-reclutador: %s | email: %s | retorno: %s ",
+            request.path,
+            request.method,
+            emailrec,
+            email,
+            data
+        )
         if valor != 'OK' and reclutador!=emailrec:
             data= '510'
         if data=='502':
@@ -250,6 +281,7 @@ def permitido():
     if request.method == 'POST':
         email = request.form.get('email')
         data = permitidof(email)
+
         if data['permitido']:
             return make_response(jsonify(data), 200)
         else:
