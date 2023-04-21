@@ -191,7 +191,9 @@ def pertenencia(usuario=''):
     consulta = """select case when idstatus between '2' and '10' 
                             THEN 1
                             else
-                            str_to_date(informe ,'%Y-%m-%d' ) >= CURRENT_DATE - INTERVAL 30 DAY 
+                             case when idstatus in ('14','12') THEN 0 else
+                            str_to_date(informe ,'%Y-%m-%d' ) >= CURRENT_DATE - INTERVAL 30 DAY
+                            end 
                             end informe, 
                         str_to_date(reservado ,'%Y-%m-%d' ) >= CURRENT_DATE - INTERVAL 5 DAY reserva ,
                         EmailAddres 
