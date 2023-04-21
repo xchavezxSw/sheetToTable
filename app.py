@@ -16,8 +16,6 @@ CORS(app)
 import socket
 myhost = socket.gethostname()
 app.run(debug=True     )
-reservalogeo=reservalog(__name__)
-informelogeo=informelog(__name__)
 @app.after_request
 def add_headers(response):
     response.headers.add('Access-Control-Allow-Headers', 'Content-Type,Authorization')
