@@ -78,7 +78,14 @@ def addReserva(values):
     valor,reclutador = pertenencia(email)
     if valor != 'OK' and reclutador != values['email']:
         return 410
-    modificarReservar(values)
+
+    existe=reservaprevia(emailAddress=values['email'],emailCandidato=values['emailCandidato'],idbusqueda= values['idReserva'])
+    if existe:
+        modificarReservar(values)
+    else:
+        insertreserva(values)
+
+
     emailCandidato = str(values['emailCandidato']).lower()
     idReserva = values['idReserva']
     to = values['email']
