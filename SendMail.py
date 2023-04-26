@@ -101,11 +101,12 @@ def gmail_send_message(creds,to='',subject='',tipo='',candidato='',id='',sourcer
             Info4 = "comentario"+comentarios
         if tipo == 'aprob':
             TemplateHtml = 'Notif1.html'
-            TituloMail = "Informe rechazado ya que el candidato no aplica a ningun ID de los que presentaste";
+            TituloMail = "Informe aprobado con éxito";
             Info1 =candidato
             Info2 = "Los siguientes IDs fueron rechazados y no se enviara el candidato a los siguientes IDs:" +id
             Info3 = ""
-            Info4 = "comentario"+comentarios
+            Info4 = ""
+
         if tipo=='Informe':
             TemplateHtml='Notif1.html'
             TituloMail = "Informe cargado con éxito sobre una reserva que ya tenias"
