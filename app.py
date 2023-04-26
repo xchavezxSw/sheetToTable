@@ -249,7 +249,7 @@ def comentariointerno():
     candidato=request.form.get('emailCandiInf')
     id= request.form.get('idInf')
     comentario=request.form.get('comentarioint')
-    gmail_send_message(creds=creds,to=to,candidato=candidato,id=id,comentarios=comentario)
+    gmail_send_message(creds=creds,to=to,candidato=candidato,id=id,comentarios=comentario,tipo="comentario")
     data="OK"
     return make_response(jsonify(data), 200)
 @cross_origin()
