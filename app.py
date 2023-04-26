@@ -245,6 +245,11 @@ def comentariointerno():
             }
 
     updatecomment(value)
+    to= request.form.get('emailInf')
+    candidato=request.form.get('emailCandiInf')
+    id= request.form.get('idInf')
+    comentario=request.form.get('comentarioint')
+    gmail_send_message(creds=creds,to=to,candidato=candidato,id=id,comentarios=comentario)
     data="OK"
     return make_response(jsonify(data), 200)
 @cross_origin()

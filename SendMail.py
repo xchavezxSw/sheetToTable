@@ -86,6 +86,13 @@ def gmail_send_message(creds,to='',subject='',tipo='',candidato='',id='',sourcer
         info3 = ''
         info4 = ''
         motivo=''
+        if tipo=='comentario':
+            TemplateHtml='Notif1.html'
+            TituloMail = "Nuevo Comentario"
+            info1 = "tiene un nuevo comentario sobre el candidato:   "+candidato
+            info2 =comentarios
+            info3 = "id de busqueda:"+id
+            info4 = "";
         if tipo=='Informe':
             TemplateHtml='Notif1.html'
             TituloMail = "Informe cargado con éxito sobre una reserva que ya tenias"
