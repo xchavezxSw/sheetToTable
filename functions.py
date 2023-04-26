@@ -398,7 +398,7 @@ def revisarAprob(values):
     NiveldeIngles,Locacion,
     NombreyApellidodelCandidato, MotivoRechazo])
     commentrev = values['comentRev']
-    gmail_send_message(creds=creds, to=Email, candidato=EMailCandidato, id=IdsaEnviar,tipo="aprob", comentarios=commentrev)
+    gmail_send_message(creds=creds, to=Email, subject="Informe aprobado con éxito",candidato=EMailCandidato, id=IdsaEnviar,tipo="aprob", comentarios=commentrev)
 
     return  'ok'
 
