@@ -82,7 +82,6 @@ def gmail_send_message(creds,to='',subject='',tipo='',candidato='',id='',sourcer
         TituloMail = ''
         info1 = ''
         info2 = ''
-        comentarios = ''
         info3 = ''
         info4 = ''
         motivo=''
