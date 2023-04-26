@@ -103,7 +103,7 @@ def gmail_send_message(creds,to='',subject='',tipo='',candidato='',id='',sourcer
             TemplateHtml = 'Notif1.html'
             TituloMail = "Informe aprobado con éxito";
             info1 =candidato
-            info2 = "Los siguientes IDs fueron rechazados y no se enviara el candidato a los siguientes IDs:" +id
+            info2 = "Los siguientes IDs fueron aprobados:" +id
             info3 = ""
             info4 = ""
 
