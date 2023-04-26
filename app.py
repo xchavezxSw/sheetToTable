@@ -195,6 +195,7 @@ def revisar():
                 "TecnoCandiInf": request.form.get('tecCandiInf'),
                 "TpCandiInf": request.form.get('tPCandiInf'),
                 "CommentInf": request.form.get('comentInf'),
+                "comentRev": request.form.get('comentRev'),
                 "CvEspanolInf": request.form.get('cvEspInf'),
                 "informeEntEsp": request.form.get('infEntEsp'),
                 "CvInglesInf": request.form.get('cvIngInf'),

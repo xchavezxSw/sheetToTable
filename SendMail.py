@@ -91,7 +91,21 @@ def gmail_send_message(creds,to='',subject='',tipo='',candidato='',id='',sourcer
             info1 = "tiene un nuevo comentario sobre el candidato:   "+candidato
             info2 =""
             info3 = "id de busqueda:"+id
-            info4 = "";
+            info4 = ""
+        if tipo == 'rechazo':
+            TemplateHtml = 'Notif1.html'
+            TituloMail = "Informe rechazado ya que el candidato no aplica a ningun ID de los que presentaste";
+            Info1 =candidato
+            Info2 = "Los siguientes IDs fueron rechazados y no se enviara el candidato a los siguientes IDs:" +id
+            Info3 = ""
+            Info4 = "comentario"+comentarios
+        if tipo == 'aprob':
+            TemplateHtml = 'Notif1.html'
+            TituloMail = "Informe rechazado ya que el candidato no aplica a ningun ID de los que presentaste";
+            Info1 =candidato
+            Info2 = "Los siguientes IDs fueron rechazados y no se enviara el candidato a los siguientes IDs:" +id
+            Info3 = ""
+            Info4 = "comentario"+comentarios
         if tipo=='Informe':
             TemplateHtml='Notif1.html'
             TituloMail = "Informe cargado con éxito sobre una reserva que ya tenias"

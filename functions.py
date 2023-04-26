@@ -397,7 +397,8 @@ def revisarAprob(values):
     cvEspañolUrl, InfoEntrevistaUrl, CvInglesurl, InfoEntrevistaInglesurl, RemuneracionPretendidaMensual,
     NiveldeIngles,Locacion,
     NombreyApellidodelCandidato, MotivoRechazo])
-
+    commentrev = values['comentRev']
+    gmail_send_message(creds=creds, to=Email, candidato=EMailCandidato, id=IdsaEnviar,tipo="aprob", comentarios=commentrev)
 
     return  'ok'
 
@@ -437,6 +438,8 @@ def revisarRechaz(values):
     CvEspañol, InfoEntrevista, CvIngles, InfoEntrevistaIngles, RemuneracionPretendidaMensual,
     NiveldeIngles,Locacion,
     NombreyApellidodelCandidato, MotivoRechazo])
+    commentrev=values['comentRev']
+    gmail_send_message(creds=creds, to=Email,candidato=EMailCandidato,id=IdsaEnviar,comentarios=commentrev,tipo="rechazo")
     return  'Ok'
 
 def jsonReservas():
