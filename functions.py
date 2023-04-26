@@ -439,7 +439,7 @@ def revisarRechaz(values):
     NiveldeIngles,Locacion,
     NombreyApellidodelCandidato, MotivoRechazo])
     commentrev=values['comentRev']
-    gmail_send_message(creds=creds, to=Email,candidato=EMailCandidato,id=IdsaEnviar,comentarios=commentrev,tipo="rechazo")
+    gmail_send_message(creds=creds, to=Email,subject="Informe Rechazado",candidato=EMailCandidato,id=IdsaEnviar,comentarios=commentrev,tipo="rechazo")
     return  'Ok'
 
 def jsonReservas():
