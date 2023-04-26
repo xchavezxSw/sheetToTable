@@ -89,7 +89,7 @@ def gmail_send_message(creds,to='',subject='',tipo='',candidato='',id='',sourcer
             TemplateHtml='Notif1.html'
             TituloMail = "Nuevo Comentario"
             info1 = "tiene un nuevo comentario sobre el candidato:   "+candidato
-            info2 =comentarios
+            info2 =""
             info3 = "id de busqueda:"+id
             info4 = "";
         if tipo=='Informe':
