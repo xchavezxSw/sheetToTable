@@ -420,12 +420,13 @@ def devolvercambiostado(emailCandi,id,emailst=''):
         db = connectar()
         a = db.cursor()
         where=' 1=1 '
-        if emailCandi is None or emailCandi != '':
+        if emailCandi is not None or emailCandi != '':
             where=where+" and emailcandidato='"+emailCandi+"'"
-        if id is None or id != '':
+        if id is not None or id != '':
            where=where+" and idBusqueda = '"+id+"'"
-        if emailst is None or emailst != '':
-            where = where + " and EmailAddres = '" + emailst + "'"
+        if emailst is not None:
+            if  emailst != '':
+                where = where + " and EmailAddres = '" + emailst + "'"
         consulta = "select * from cliente where "+where +";"
         a.execute(consulta)
         results = a.fetchall()
