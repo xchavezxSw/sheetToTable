@@ -392,7 +392,7 @@ def getcambiostatus():
         emailCandi=request.form.get('emailCandidatoSt')
         email = request.form.get('emailSt')
         id = request.form.get('idSt')
-        data=devolvercambiostado(emailCandi, id)
+        data=devolvercambiostado(emailCandi, id,email)
         return make_response(jsonify(data), 200)
 @cross_origin()
 @app.route('/getcambiosource',methods=['GET', 'POST'])

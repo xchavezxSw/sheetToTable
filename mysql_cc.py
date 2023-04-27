@@ -416,7 +416,7 @@ def insertCliente(values):
     result = 'ok'
     return json.loads(json.dumps(result).encode('utf-8').decode('ascii'))
 
-def devolvercambiostado(emailCandi,id):
+def devolvercambiostado(emailCandi,id,emailst=''):
         db = connectar()
         a = db.cursor()
         where=' 1=1 '
@@ -424,6 +424,8 @@ def devolvercambiostado(emailCandi,id):
             where=where+" and emailcandidato='"+emailCandi+"'"
         if id is None or id != '':
            where=where+" and idBusqueda = '"+id+"'"
+        if emailst is None or emailst != '':
+            where = where + " and EmailAddres = '" + emailst + "'"
         consulta = "select * from cliente where "+where +";"
         a.execute(consulta)
         results = a.fetchall()
