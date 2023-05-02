@@ -704,10 +704,10 @@ def modificarStatus(emailCandi,idSt,emailSt,statusSt,comentariosSt=''):
         sheet4.delete_row(ar[0]['rowIndex']+1)
         sheet4.append_row(ar[0]['value'])
 
-        sendmailstatus(emailCandi,idSt,emailSt,statusSt,comentariosSt)
+        sendmailstatus(emailCandi=emailCandi, idSt=idSt, emailSt=emailSt, statusSt=statusSt, comentarios=comentariosSt)
     except:
         cargarcliente(emailCandi,idSt,emailSt,statusSt)
-        sendmailstatus(emailCandi, idSt, emailSt, statusSt,comentariosSt)
+        sendmailstatus(emailCandi=emailCandi, idSt=idSt, emailSt=emailSt, statusSt=statusSt, comentarios=comentariosSt)
 
 def modificarStatus11(emailCandi,idSt,emailSt,statusSt,salarioMensualAcordadoSt,fechaIngresoSt,comentariosSt):
     client = gspread.authorize(credentials)
@@ -739,7 +739,7 @@ def modificarStatus11(emailCandi,idSt,emailSt,statusSt,salarioMensualAcordadoSt,
                                    ])"""
         except:
             None
-        sendmailstatus(emailCandi, idSt, emailSt, statusSt,comentariosSt)
+        sendmailstatus(emailCandi=emailCandi, idSt=idSt, emailSt=emailSt, statusSt=statusSt, comentarios=comentariosSt)
 
 def modificarStatus12(emailCandi,idSt,emailSt,statusSt,salarioMensualOfrecidoClienteSt,salarioMensualPretendidoSt,motivoFinCandi,motivoFinCliente,comentariosSt='',rechazadopor=''):
     client = gspread.authorize(credentials)
@@ -768,8 +768,7 @@ def modificarStatus12(emailCandi,idSt,emailSt,statusSt,salarioMensualOfrecidoCli
                 envio = motivoFinCandi
             cancelado=rechazadopor
 
-
-            sendmailstatus(emailCandi, idSt, emailSt, statusSt, comentariosSt,envio)
+            sendmailstatus(emailCandi=emailCandi, idSt=idSt, emailSt=emailSt, statusSt=statusSt, comentarios=comentariosSt,motivofin=envio)
             """rechazados.append_row([datetime.datetime.today().strftime('%Y-%m-%d %H:%M'),
                                    ar[0]['value'][0],
                                    ar[0]['value'][2],
@@ -787,4 +786,6 @@ def modificarStatus12(emailCandi,idSt,emailSt,statusSt,salarioMensualOfrecidoCli
                                    ])"""
         except:
             None
-            sendmailstatus(emailCandi, idSt, emailSt, statusSt,comentariosSt,envio)
+            sendmailstatus(emailCandi=emailCandi, idSt=idSt, emailSt=emailSt, statusSt=statusSt,
+                           comentarios=comentariosSt, motivofin=envio)
+
