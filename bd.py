@@ -12,7 +12,7 @@ if 'DESKTOP-A3850LN'==myhost:
 else:
     conexion= connector.connect(
     host="127.0.0.1",
-    user="root",
+    user="conexion",
     password="Oracle50",
     database="conexion"
     )
@@ -29,7 +29,7 @@ def connectar():
     else:
         conexion= connector.connect(
         host="127.0.0.1",
-        user="root",
+        user="conexion",
         password="Oracle50",
         database="conexion"
         )
