@@ -1507,3 +1507,973 @@ ssl.SSLEOFError: EOF occurred in violation of protocol (_ssl.c:2396)
 205.210.31.205 - - [05/May/2023 02:55:23] "GET / HTTP/1.1" 200 -
 54.90.195.104 - - [05/May/2023 05:48:09] "GET / HTTP/1.1" 200 -
 54.90.195.104 - - [05/May/2023 05:49:32] SSL error occurred: [SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] sslv3 alert handshake failure (_ssl.c:2548)
+ * Ignoring a call to 'app.run()' that would block the current 'flask' CLI command.
+   Only call 'app.run()' in an 'if __name__ == "__main__"' guard.
+ * Debug mode: off
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on https://127.0.0.1:80
+ * Running on https://200.58.106.162:80
+Press CTRL+C to quit
+190.110.177.174 - - [05/May/2023 11:15:17] "GET /getInformesArevisar?_=1683296117618 HTTP/1.1" 200 -
+190.110.177.174 - - [05/May/2023 11:15:19] "GET /getInformesArevisar?_=1683296118957 HTTP/1.1" 200 -
+190.110.177.174 - - [05/May/2023 11:15:19] "GET /getInformesArevisar?_=1683296119741 HTTP/1.1" 200 -
+190.110.177.174 - - [05/May/2023 11:15:20] "GET /getInformesArevisar?_=1683296120444 HTTP/1.1" 200 -
+ * Ignoring a call to 'app.run()' that would block the current 'flask' CLI command.
+   Only call 'app.run()' in an 'if __name__ == "__main__"' guard.
+ * Debug mode: off
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on https://127.0.0.1:80
+ * Running on https://200.58.106.162:80
+Press CTRL+C to quit
+186.136.36.184 - - [05/May/2023 11:16:00] "GET /getcookie HTTP/1.1" 200 -
+190.110.177.174 - - [05/May/2023 11:16:05] "GET /getInformesArevisar?_=1683296164750 HTTP/1.1" 200 -
+190.110.177.174 - - [05/May/2023 11:16:05] "GET /getInformesArevisar?_=1683296165541 HTTP/1.1" 200 -
+190.110.177.174 - - [05/May/2023 11:16:06] "GET /getInformesArevisar?_=1683296166282 HTTP/1.1" 200 -
+190.110.177.174 - - [05/May/2023 11:16:07] "GET /getInformesArevisar?_=1683296166977 HTTP/1.1" 200 -
+190.110.177.174 - - [05/May/2023 11:16:07] "GET /getInformesArevisar?_=1683296167670 HTTP/1.1" 200 -
+190.110.177.174 - - [05/May/2023 11:16:08] "GET /getInformesArevisar?_=1683296168567 HTTP/1.1" 200 -
+[2023-05-05 11:16:13,153] INFO in app: path: /Getreservas | method: POST | email-reclutador: alancaminetsky@gmail.com | email:  | retorno: {'datos': 'vacio'} 
+186.136.36.184 - - [05/May/2023 11:16:13] "POST /Getreservas HTTP/1.1" 502 -
+ * Ignoring a call to 'app.run()' that would block the current 'flask' CLI command.
+   Only call 'app.run()' in an 'if __name__ == "__main__"' guard.
+ * Debug mode: off
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on https://127.0.0.1:80
+ * Running on https://200.58.106.162:80
+Press CTRL+C to quit
+[2023-05-05 11:17:09,690] INFO in app: path: /Getreservas | method: POST | email-reclutador: alancaminetsky@gmail.com | email: ordonezfederico@gmail.com | retorno: {'datos': 'vacio'} 
+186.136.36.184 - - [05/May/2023 11:17:09] "POST /Getreservas HTTP/1.1" 502 -
+190.244.233.174 - - [05/May/2023 11:18:02] "GET /getcookie HTTP/1.1" 200 -
+ * Ignoring a call to 'app.run()' that would block the current 'flask' CLI command.
+   Only call 'app.run()' in an 'if __name__ == "__main__"' guard.
+ * Debug mode: off
+Address already in use
+Port 80 is in use by another program. Either identify and stop that program, or start the server with a different port.
+190.110.177.174 - - [05/May/2023 11:18:12] "GET /getInformesArevisar?_=1683296292214 HTTP/1.1" 200 -
+190.110.177.174 - - [05/May/2023 11:18:13] "GET /getInformesArevisar?_=1683296293303 HTTP/1.1" 200 -
+190.110.177.174 - - [05/May/2023 11:18:14] "GET /getInformesArevisar?_=1683296294285 HTTP/1.1" 200 -
+190.110.177.174 - - [05/May/2023 11:18:15] "GET /getInformesArevisar?_=1683296295091 HTTP/1.1" 200 -
+190.110.177.174 - - [05/May/2023 11:18:16] "GET /getInformesArevisar?_=1683296296008 HTTP/1.1" 200 -
+190.110.177.174 - - [05/May/2023 11:18:17] "GET /getInformesArevisar?_=1683296297642 HTTP/1.1" 200 -
+190.110.177.174 - - [05/May/2023 11:18:18] "GET /getInformesArevisar?_=1683296298530 HTTP/1.1" 200 -
+190.110.177.174 - - [05/May/2023 11:18:19] "GET /getInformesArevisar?_=1683296299250 HTTP/1.1" 200 -
+190.110.177.174 - - [05/May/2023 11:18:20] "GET /getInformesArevisar?_=1683296300102 HTTP/1.1" 200 -
+190.110.177.174 - - [05/May/2023 11:18:21] "GET /getInformesArevisar?_=1683296300804 HTTP/1.1" 200 -
+190.110.177.174 - - [05/May/2023 11:18:21] "GET /getInformesArevisar?_=1683296301627 HTTP/1.1" 200 -
+190.110.177.174 - - [05/May/2023 11:18:23] "GET /getInformesArevisar?_=1683296302652 HTTP/1.1" 200 -
+190.110.177.174 - - [05/May/2023 11:18:23] "GET /getInformesArevisar?_=1683296303437 HTTP/1.1" 200 -
+[2023-05-05 11:18:23,834] INFO in app: path: /Getreservas | method: POST | email-reclutador: clauines.66@gmail.com | email: asborello@gmail.com | retorno: {'Email Candidato': 'asborello@gmail.com', 'Email Address': 'clauines.66@gmail.com', 'Nombre y Apellido del Candidato': 'Silvia Borello', 'Linkedin del Candidato': 'https://www.linkedin.com/in/silvia-borello-3b0b791a/', 'IDs de reserva separdos con "_" sin la palabra "ID"': 2819, 'Tecnologías que sabe el candidato': 'Funcional', 'Tipo de perfil del Candidato': 'Semi Senior', 'Comentarios adicionales': ''} 
+190.244.233.174 - - [05/May/2023 11:18:23] "POST /Getreservas HTTP/1.1" 200 -
+190.110.177.174 - - [05/May/2023 11:18:25] "GET /getInformesArevisar?_=1683296305096 HTTP/1.1" 200 -
+190.110.177.174 - - [05/May/2023 11:18:26] "GET /getInformesArevisar?_=1683296305760 HTTP/1.1" 200 -
+190.110.177.174 - - [05/May/2023 11:18:29] "GET /getCliente?usuario=maria.flores@conexion-hr.com&_=1683296309173 HTTP/1.1" 200 -
+190.110.177.174 - - [05/May/2023 11:18:41] "GET /getCliente?usuario=maria.flores@conexion-hr.com&_=1683296321461 HTTP/1.1" 200 -
+190.110.177.174 - - [05/May/2023 11:18:47] "GET /getInformesArevisar?_=1683296327238 HTTP/1.1" 200 -
+190.110.177.174 - - [05/May/2023 11:18:48] "GET /getInformesArevisar?_=1683296328553 HTTP/1.1" 200 -
+190.110.177.174 - - [05/May/2023 11:18:49] "GET /getInformesArevisar?_=1683296329171 HTTP/1.1" 200 -
+190.110.177.174 - - [05/May/2023 11:18:49] "GET /getInformesArevisar?_=1683296329721 HTTP/1.1" 200 -
+190.110.177.174 - - [05/May/2023 11:18:50] "GET /getInformesArevisar?_=1683296330383 HTTP/1.1" 200 -
+190.110.177.174 - - [05/May/2023 11:18:51] "GET /getInformesArevisar?_=1683296331075 HTTP/1.1" 200 -
+190.110.177.174 - - [05/May/2023 11:18:51] "GET /getInformesArevisar?_=1683296331780 HTTP/1.1" 200 -
+190.110.177.174 - - [05/May/2023 11:18:52] "GET /getInformesArevisar?_=1683296332275 HTTP/1.1" 200 -
+190.110.177.174 - - [05/May/2023 11:18:56] "GET /getInformesArevisar?_=1683296336692 HTTP/1.1" 200 -
+[2023-05-05 11:19:11,235] INFO in app: path: /solicitudInforme | method: POST | email-reclutador: clauines.66@gmail.com | email: asborello@gmail.com | retorno:  
+190.244.233.174 - - [05/May/2023 11:19:12] "POST /solicitudInforme HTTP/1.1" 200 -
+190.110.177.174 - - [05/May/2023 11:20:15] "GET /getInformesArevisar?_=1683296415646 HTTP/1.1" 200 -
+[2023-05-05 11:20:19,508] ERROR in app: Exception on /base64 [GET]
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/base64.py", line 534, in _input_type_check
+    m = memoryview(s)
+TypeError: memoryview: a bytes-like object is required, not 'str'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.10/dist-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/root/microservices/sheetToTable/app.py", line 145, in base64
+    content =b64.decodebytes(data)
+  File "/usr/lib/python3.10/base64.py", line 561, in decodebytes
+    _input_type_check(s)
+  File "/usr/lib/python3.10/base64.py", line 537, in _input_type_check
+    raise TypeError(msg) from err
+TypeError: expected bytes-like object, not str
+190.110.177.174 - - [05/May/2023 11:20:19] "GET /base64?id=2819&email=clauines.66@gmail.com&emailc=asborello@gmail.com&campo=cvespinf HTTP/1.1" 500 -
+ * Ignoring a call to 'app.run()' that would block the current 'flask' CLI command.
+   Only call 'app.run()' in an 'if __name__ == "__main__"' guard.
+ * Debug mode: off
+Address already in use
+Port 80 is in use by another program. Either identify and stop that program, or start the server with a different port.
+190.110.177.174 - - [05/May/2023 11:21:15] "GET /getInformesArevisar?_=1683296474746 HTTP/1.1" 200 -
+[2023-05-05 11:21:18,101] ERROR in app: Exception on /base64 [GET]
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/base64.py", line 534, in _input_type_check
+    m = memoryview(s)
+TypeError: memoryview: a bytes-like object is required, not 'str'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.10/dist-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/root/microservices/sheetToTable/app.py", line 145, in base64
+    content =b64.decodebytes(data)
+  File "/usr/lib/python3.10/base64.py", line 561, in decodebytes
+    _input_type_check(s)
+  File "/usr/lib/python3.10/base64.py", line 537, in _input_type_check
+    raise TypeError(msg) from err
+TypeError: expected bytes-like object, not str
+190.110.177.174 - - [05/May/2023 11:21:18] "GET /base64?id=2819&email=clauines.66@gmail.com&emailc=asborello@gmail.com&campo=cvespinf HTTP/1.1" 500 -
+[2023-05-05 11:21:30,037] ERROR in app: Exception on /base64 [GET]
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/base64.py", line 534, in _input_type_check
+    m = memoryview(s)
+TypeError: memoryview: a bytes-like object is required, not 'str'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.10/dist-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/root/microservices/sheetToTable/app.py", line 145, in base64
+    content =b64.decodebytes(data)
+  File "/usr/lib/python3.10/base64.py", line 561, in decodebytes
+    _input_type_check(s)
+  File "/usr/lib/python3.10/base64.py", line 537, in _input_type_check
+    raise TypeError(msg) from err
+TypeError: expected bytes-like object, not str
+190.110.177.174 - - [05/May/2023 11:21:30] "GET /base64?id=2819&email=clauines.66@gmail.com&emailc=asborello@gmail.com&campo=cvespinf HTTP/1.1" 500 -
+190.244.233.174 - - [05/May/2023 11:23:03] "GET /getCliente?usuario=clauines.66@gmail.com&_=1683296582840 HTTP/1.1" 200 -
+[2023-05-05 11:24:48,776] ERROR in app: Exception on /base64 [GET]
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/base64.py", line 534, in _input_type_check
+    m = memoryview(s)
+TypeError: memoryview: a bytes-like object is required, not 'str'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.10/dist-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/root/microservices/sheetToTable/app.py", line 145, in base64
+    content =b64.decodebytes(data)
+  File "/usr/lib/python3.10/base64.py", line 561, in decodebytes
+    _input_type_check(s)
+  File "/usr/lib/python3.10/base64.py", line 537, in _input_type_check
+    raise TypeError(msg) from err
+TypeError: expected bytes-like object, not str
+190.110.177.174 - - [05/May/2023 11:24:48] "GET /base64?id=2819&email=clauines.66@gmail.com&emailc=asborello@gmail.com&campo=informeesp HTTP/1.1" 500 -
+[2023-05-05 11:25:06,084] ERROR in app: Exception on /base64 [GET]
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/base64.py", line 534, in _input_type_check
+    m = memoryview(s)
+TypeError: memoryview: a bytes-like object is required, not 'str'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.10/dist-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/root/microservices/sheetToTable/app.py", line 145, in base64
+    content =b64.decodebytes(data)
+  File "/usr/lib/python3.10/base64.py", line 561, in decodebytes
+    _input_type_check(s)
+  File "/usr/lib/python3.10/base64.py", line 537, in _input_type_check
+    raise TypeError(msg) from err
+TypeError: expected bytes-like object, not str
+190.110.177.174 - - [05/May/2023 11:25:06] "GET /base64?id=2819&email=clauines.66@gmail.com&emailc=asborello@gmail.com&campo=cvespinf HTTP/1.1" 500 -
+[2023-05-05 11:25:06,459] ERROR in app: Exception on /base64 [GET]
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/base64.py", line 534, in _input_type_check
+    m = memoryview(s)
+TypeError: memoryview: a bytes-like object is required, not 'str'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.10/dist-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/root/microservices/sheetToTable/app.py", line 145, in base64
+    content =b64.decodebytes(data)
+  File "/usr/lib/python3.10/base64.py", line 561, in decodebytes
+    _input_type_check(s)
+  File "/usr/lib/python3.10/base64.py", line 537, in _input_type_check
+    raise TypeError(msg) from err
+TypeError: expected bytes-like object, not str
+190.110.177.174 - - [05/May/2023 11:25:06] "GET /base64?id=2819&email=clauines.66@gmail.com&emailc=asborello@gmail.com&campo=informeesp HTTP/1.1" 500 -
+201.212.38.203 - - [05/May/2023 11:27:08] "GET /getcookie HTTP/1.1" 200 -
+201.212.38.203 - - [05/May/2023 11:27:09] "GET /getCliente?usuario=lautaroamorosonehuen@gmail.com&_=1683296828600 HTTP/1.1" 200 -
+ * Ignoring a call to 'app.run()' that would block the current 'flask' CLI command.
+   Only call 'app.run()' in an 'if __name__ == "__main__"' guard.
+ * Debug mode: off
+Address already in use
+Port 80 is in use by another program. Either identify and stop that program, or start the server with a different port.
+190.110.177.174 - - [05/May/2023 11:31:53] "GET /getInformesArevisar?_=1683297112890 HTTP/1.1" 200 -
+190.110.177.174 - - [05/May/2023 11:31:54] "GET /getInformesArevisar?_=1683297114209 HTTP/1.1" 200 -
+[2023-05-05 11:31:58,735] ERROR in app: Exception on /base64 [GET]
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/base64.py", line 534, in _input_type_check
+    m = memoryview(s)
+TypeError: memoryview: a bytes-like object is required, not 'str'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.10/dist-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/root/microservices/sheetToTable/app.py", line 145, in base64
+    content =b64.decodebytes(data)
+  File "/usr/lib/python3.10/base64.py", line 561, in decodebytes
+    _input_type_check(s)
+  File "/usr/lib/python3.10/base64.py", line 537, in _input_type_check
+    raise TypeError(msg) from err
+TypeError: expected bytes-like object, not str
+190.110.177.174 - - [05/May/2023 11:31:58] "GET /base64?id=2819&email=clauines.66@gmail.com&emailc=asborello@gmail.com&campo=cvespinf HTTP/1.1" 500 -
+190.110.177.174 - - [05/May/2023 11:32:14] "GET /getInformesArevisar?_=1683297134045 HTTP/1.1" 200 -
+[2023-05-05 11:32:16,954] ERROR in app: Exception on /base64 [GET]
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/base64.py", line 534, in _input_type_check
+    m = memoryview(s)
+TypeError: memoryview: a bytes-like object is required, not 'str'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.10/dist-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/root/microservices/sheetToTable/app.py", line 145, in base64
+    content =b64.decodebytes(data)
+  File "/usr/lib/python3.10/base64.py", line 561, in decodebytes
+    _input_type_check(s)
+  File "/usr/lib/python3.10/base64.py", line 537, in _input_type_check
+    raise TypeError(msg) from err
+TypeError: expected bytes-like object, not str
+190.110.177.174 - - [05/May/2023 11:32:16] "GET /base64?id=2819&email=clauines.66@gmail.com&emailc=asborello@gmail.com&campo=cvespinf HTTP/1.1" 500 -
+190.110.177.174 - - [05/May/2023 11:32:25] "GET /getInformesArevisar?_=1683297145673 HTTP/1.1" 200 -
+190.110.177.174 - - [05/May/2023 11:32:26] "GET /getInformesArevisar?_=1683297146432 HTTP/1.1" 200 -
+[2023-05-05 11:32:32,149] ERROR in app: Exception on /base64 [GET]
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/base64.py", line 534, in _input_type_check
+    m = memoryview(s)
+TypeError: memoryview: a bytes-like object is required, not 'str'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.10/dist-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/root/microservices/sheetToTable/app.py", line 145, in base64
+    content =b64.decodebytes(data)
+  File "/usr/lib/python3.10/base64.py", line 561, in decodebytes
+    _input_type_check(s)
+  File "/usr/lib/python3.10/base64.py", line 537, in _input_type_check
+    raise TypeError(msg) from err
+TypeError: expected bytes-like object, not str
+190.110.177.174 - - [05/May/2023 11:32:32] "GET /base64?id=2819&email=clauines.66@gmail.com&emailc=asborello@gmail.com&campo=cvespinf HTTP/1.1" 500 -
+190.110.177.174 - - [05/May/2023 11:33:06] "GET /getInformesArevisar?_=1683297185725 HTTP/1.1" 200 -
+[2023-05-05 11:33:08,926] ERROR in app: Exception on /base64 [GET]
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/base64.py", line 534, in _input_type_check
+    m = memoryview(s)
+TypeError: memoryview: a bytes-like object is required, not 'str'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.10/dist-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/root/microservices/sheetToTable/app.py", line 145, in base64
+    content =b64.decodebytes(data)
+  File "/usr/lib/python3.10/base64.py", line 561, in decodebytes
+    _input_type_check(s)
+  File "/usr/lib/python3.10/base64.py", line 537, in _input_type_check
+    raise TypeError(msg) from err
+TypeError: expected bytes-like object, not str
+190.110.177.174 - - [05/May/2023 11:33:08] "GET /base64?id=2819&email=clauines.66@gmail.com&emailc=asborello@gmail.com&campo=cvespinf HTTP/1.1" 500 -
+[2023-05-05 11:33:10,723] ERROR in app: Exception on /base64 [GET]
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/base64.py", line 534, in _input_type_check
+    m = memoryview(s)
+TypeError: memoryview: a bytes-like object is required, not 'str'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.10/dist-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/root/microservices/sheetToTable/app.py", line 145, in base64
+    content =b64.decodebytes(data)
+  File "/usr/lib/python3.10/base64.py", line 561, in decodebytes
+    _input_type_check(s)
+  File "/usr/lib/python3.10/base64.py", line 537, in _input_type_check
+    raise TypeError(msg) from err
+TypeError: expected bytes-like object, not str
+190.110.177.174 - - [05/May/2023 11:33:10] "GET /base64?id=2819&email=clauines.66@gmail.com&emailc=asborello@gmail.com&campo=cvespinf HTTP/1.1" 500 -
+[2023-05-05 11:33:11,226] ERROR in app: Exception on /base64 [GET]
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/base64.py", line 534, in _input_type_check
+    m = memoryview(s)
+TypeError: memoryview: a bytes-like object is required, not 'str'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.10/dist-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/root/microservices/sheetToTable/app.py", line 145, in base64
+    content =b64.decodebytes(data)
+  File "/usr/lib/python3.10/base64.py", line 561, in decodebytes
+    _input_type_check(s)
+  File "/usr/lib/python3.10/base64.py", line 537, in _input_type_check
+    raise TypeError(msg) from err
+TypeError: expected bytes-like object, not str
+190.110.177.174 - - [05/May/2023 11:33:11] "GET /base64?id=2819&email=clauines.66@gmail.com&emailc=asborello@gmail.com&campo=cvespinf HTTP/1.1" 500 -
+ * Ignoring a call to 'app.run()' that would block the current 'flask' CLI command.
+   Only call 'app.run()' in an 'if __name__ == "__main__"' guard.
+ * Debug mode: off
+Address already in use
+Port 80 is in use by another program. Either identify and stop that program, or start the server with a different port.
+190.110.177.174 - - [05/May/2023 11:35:39] "GET /getInformesArevisar?_=1683297338940 HTTP/1.1" 200 -
+190.110.177.174 - - [05/May/2023 11:35:40] "GET /getInformesArevisar?_=1683297339855 HTTP/1.1" 200 -
+190.110.177.174 - - [05/May/2023 11:35:41] "GET /getInformesArevisar?_=1683297340988 HTTP/1.1" 200 -
+[2023-05-05 11:35:44,785] ERROR in app: Exception on /base64 [GET]
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/base64.py", line 534, in _input_type_check
+    m = memoryview(s)
+TypeError: memoryview: a bytes-like object is required, not 'str'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.10/dist-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/root/microservices/sheetToTable/app.py", line 145, in base64
+    content =b64.decodebytes(data)
+  File "/usr/lib/python3.10/base64.py", line 561, in decodebytes
+    _input_type_check(s)
+  File "/usr/lib/python3.10/base64.py", line 537, in _input_type_check
+    raise TypeError(msg) from err
+TypeError: expected bytes-like object, not str
+190.110.177.174 - - [05/May/2023 11:35:44] "GET /base64?id=2819&email=clauines.66@gmail.com&emailc=asborello@gmail.com&campo=cvespinf HTTP/1.1" 500 -
+190.110.177.174 - - [05/May/2023 11:35:55] "GET /getInformesArevisar?_=1683297355201 HTTP/1.1" 200 -
+[2023-05-05 11:36:03,164] ERROR in app: Exception on /base64 [GET]
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/base64.py", line 534, in _input_type_check
+    m = memoryview(s)
+TypeError: memoryview: a bytes-like object is required, not 'str'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.10/dist-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/root/microservices/sheetToTable/app.py", line 145, in base64
+    content =b64.decodebytes(data)
+  File "/usr/lib/python3.10/base64.py", line 561, in decodebytes
+    _input_type_check(s)
+  File "/usr/lib/python3.10/base64.py", line 537, in _input_type_check
+    raise TypeError(msg) from err
+TypeError: expected bytes-like object, not str
+190.110.177.174 - - [05/May/2023 11:36:03] "GET /base64?id=2819&email=clauines.66@gmail.com&emailc=asborello@gmail.com&campo=cvespinf HTTP/1.1" 500 -
+190.110.177.174 - - [05/May/2023 11:36:30] "GET /getInformesArevisar?_=1683297389712 HTTP/1.1" 200 -
+[2023-05-05 11:36:36,872] ERROR in app: Exception on /base64 [GET]
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/base64.py", line 534, in _input_type_check
+    m = memoryview(s)
+TypeError: memoryview: a bytes-like object is required, not 'str'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.10/dist-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/root/microservices/sheetToTable/app.py", line 145, in base64
+    content =b64.decodebytes(data)
+  File "/usr/lib/python3.10/base64.py", line 561, in decodebytes
+    _input_type_check(s)
+  File "/usr/lib/python3.10/base64.py", line 537, in _input_type_check
+    raise TypeError(msg) from err
+TypeError: expected bytes-like object, not str
+190.110.177.174 - - [05/May/2023 11:36:36] "GET /base64?id=2819&email=clauines.66@gmail.com&emailc=asborello@gmail.com&campo=cvespinf HTTP/1.1" 500 -
+190.110.177.174 - - [05/May/2023 11:36:36] "GET /favicon.ico HTTP/1.1" 404 -
+190.110.177.174 - - [05/May/2023 11:37:09] "GET /getcookie HTTP/1.1" 200 -
+190.110.177.174 - - [05/May/2023 11:37:17] "GET /getInformesArevisar?_=1683297436815 HTTP/1.1" 200 -
+[2023-05-05 11:37:20,456] ERROR in app: Exception on /base64 [GET]
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/base64.py", line 534, in _input_type_check
+    m = memoryview(s)
+TypeError: memoryview: a bytes-like object is required, not 'str'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.10/dist-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/root/microservices/sheetToTable/app.py", line 145, in base64
+    content =b64.decodebytes(data)
+  File "/usr/lib/python3.10/base64.py", line 561, in decodebytes
+    _input_type_check(s)
+  File "/usr/lib/python3.10/base64.py", line 537, in _input_type_check
+    raise TypeError(msg) from err
+TypeError: expected bytes-like object, not str
+190.110.177.174 - - [05/May/2023 11:37:20] "GET /base64?id=2819&email=clauines.66@gmail.com&emailc=asborello@gmail.com&campo=cvespinf HTTP/1.1" 500 -
+190.110.177.174 - - [05/May/2023 11:37:41] "GET /getInformesArevisar?_=1683297460872 HTTP/1.1" 200 -
+190.110.177.174 - - [05/May/2023 11:37:43] "GET /getInformesArevisar?_=1683297463315 HTTP/1.1" 200 -
+190.110.177.174 - - [05/May/2023 11:37:45] "GET /getInformesArevisar?_=1683297465158 HTTP/1.1" 200 -
+[2023-05-05 11:38:52,413] INFO in app: path: /Getreservas | method: POST | email-reclutador: clauines.66@gmail.com | email: nik.koval.89@gmail.com | retorno: {'Email Candidato': 'nik.koval.89@gmail.com', 'Email Address': 'clauines.66@gmail.com', 'Nombre y Apellido del Candidato': 'Nikita Kovalenko', 'Linkedin del Candidato': 'https://www.linkedin.com/in/nik-kovalabigotado', 'IDs de reserva separdos con "_" sin la palabra "ID"': 2790, 'Tecnologías que sabe el candidato': 'Android', 'Tipo de perfil del Candidato': 'Semi Senior', 'Comentarios adicionales': ''} 
+190.244.233.174 - - [05/May/2023 11:38:52] "POST /Getreservas HTTP/1.1" 200 -
+190.110.177.174 - - [05/May/2023 11:39:19] "GET /getInformesArevisar?_=1683297559114 HTTP/1.1" 200 -
+190.110.177.174 - - [05/May/2023 11:39:20] "GET /getInformesArevisar?_=1683297560647 HTTP/1.1" 200 -
+190.110.177.174 - - [05/May/2023 11:39:21] "GET /getInformesArevisar?_=1683297561725 HTTP/1.1" 200 -
+[2023-05-05 11:39:24,395] ERROR in app: Exception on /base64 [GET]
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/base64.py", line 534, in _input_type_check
+    m = memoryview(s)
+TypeError: memoryview: a bytes-like object is required, not 'str'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.10/dist-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/root/microservices/sheetToTable/app.py", line 145, in base64
+    content =b64.decodebytes(data)
+  File "/usr/lib/python3.10/base64.py", line 561, in decodebytes
+    _input_type_check(s)
+  File "/usr/lib/python3.10/base64.py", line 537, in _input_type_check
+    raise TypeError(msg) from err
+TypeError: expected bytes-like object, not str
+190.110.177.174 - - [05/May/2023 11:39:24] "GET /base64?id=2819&email=clauines.66@gmail.com&emailc=asborello@gmail.com&campo=cvespinf HTTP/1.1" 500 -
+[2023-05-05 11:39:56,160] INFO in app: path: /solicitudInforme | method: POST | email-reclutador: clauines.66@gmail.com | email: nik.koval.89@gmail.com | retorno:  
+190.244.233.174 - - [05/May/2023 11:39:57] "POST /solicitudInforme HTTP/1.1" 200 -
+190.110.177.174 - - [05/May/2023 11:40:42] "GET /getcookie HTTP/1.1" 200 -
+190.110.177.174 - - [05/May/2023 11:40:44] "GET /getCliente?usuario=maria.flores@conexion-hr.com&_=1683297644128 HTTP/1.1" 200 -
+190.110.177.174 - - [05/May/2023 11:40:50] "GET /getInformesArevisar?_=1683297650289 HTTP/1.1" 200 -
+[2023-05-05 11:41:01,382] ERROR in app: Exception on /base64 [GET]
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/base64.py", line 534, in _input_type_check
+    m = memoryview(s)
+TypeError: memoryview: a bytes-like object is required, not 'str'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.10/dist-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/root/microservices/sheetToTable/app.py", line 145, in base64
+    content =b64.decodebytes(data)
+  File "/usr/lib/python3.10/base64.py", line 561, in decodebytes
+    _input_type_check(s)
+  File "/usr/lib/python3.10/base64.py", line 537, in _input_type_check
+    raise TypeError(msg) from err
+TypeError: expected bytes-like object, not str
+190.110.177.174 - - [05/May/2023 11:41:01] "GET /base64?id=2819&email=clauines.66@gmail.com&emailc=asborello@gmail.com&campo=cvespinf HTTP/1.1" 500 -
+201.212.38.203 - - [05/May/2023 11:44:34] "GET /getcookie HTTP/1.1" 200 -
+201.212.38.203 - - [05/May/2023 11:44:36] "GET /getCliente?usuario=lautaroamorosonehuen@gmail.com&_=1683297875376 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 11:49:54] "GET /getcookie HTTP/1.1" 200 -
+181.25.64.104 - - [05/May/2023 11:49:54] "GET /getcookie HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 11:49:57] "GET /getInformesArevisar?_=1683298197206 HTTP/1.1" 200 -
+[2023-05-05 11:49:58,558] INFO in app: path: /Getreservas | method: POST | email-reclutador: valentina.marco@conexion-hr.com | email: lucas.carrara88@gmail.com | retorno: {'datos': 'vacio'} 
+181.25.64.104 - - [05/May/2023 11:49:58] "POST /Getreservas HTTP/1.1" 200 -
+[2023-05-05 11:50:06,881] INFO in app: path: /insert | method: POST | email-reclutador: valentina.marco@conexion-hr.com | email: lucas.carrara88@gmail.com | retorno: None 
+181.25.64.104 - - [05/May/2023 11:50:06] "POST /insert HTTP/1.1" 200 -
+[2023-05-05 11:50:08,634] ERROR in app: Exception on /base64 [GET]
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/base64.py", line 534, in _input_type_check
+    m = memoryview(s)
+TypeError: memoryview: a bytes-like object is required, not 'str'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.10/dist-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/root/microservices/sheetToTable/app.py", line 145, in base64
+    content =b64.decodebytes(data)
+  File "/usr/lib/python3.10/base64.py", line 561, in decodebytes
+    _input_type_check(s)
+  File "/usr/lib/python3.10/base64.py", line 537, in _input_type_check
+    raise TypeError(msg) from err
+TypeError: expected bytes-like object, not str
+190.110.177.174 - - [05/May/2023 11:50:08] "GET /base64?id=2819&email=clauines.66@gmail.com&emailc=asborello@gmail.com&campo=cvespinf HTTP/1.1" 500 -
+186.136.36.184 - - [05/May/2023 11:51:35] "GET /getcookie HTTP/1.1" 200 -
+[2023-05-05 11:51:57,474] INFO in app: path: /Getreservas | method: POST | email-reclutador: alancaminetsky@gmail.com | email: sala.mariaagustina@gmail.com | retorno: {'Email Candidato': 'sala.mariaagustina@gmail.com', 'Email Address': 'alancaminetsky@gmail.com', 'Nombre y Apellido del Candidato': 'Maria Agustina Sala', 'Linkedin del Candidato': 'https://www.linkedin.com/in/mariaagustinasala/overlay/contact-info/', 'IDs de reserva separdos con "_" sin la palabra "ID"': 2693, 'Tecnologías que sabe el candidato': 'Funcional', 'Tipo de perfil del Candidato': 'Senior', 'Comentarios adicionales': ''} 
+186.136.36.184 - - [05/May/2023 11:51:57] "POST /Getreservas HTTP/1.1" 200 -
+[2023-05-05 11:51:57,498] INFO in app: path: /Getreservas | method: POST | email-reclutador: alancaminetsky@gmail.com | email: sala.mariaagustina@gmail.com | retorno: {'Email Candidato': 'sala.mariaagustina@gmail.com', 'Email Address': 'alancaminetsky@gmail.com', 'Nombre y Apellido del Candidato': 'Maria Agustina Sala', 'Linkedin del Candidato': 'https://www.linkedin.com/in/mariaagustinasala/overlay/contact-info/', 'IDs de reserva separdos con "_" sin la palabra "ID"': 2693, 'Tecnologías que sabe el candidato': 'Funcional', 'Tipo de perfil del Candidato': 'Senior', 'Comentarios adicionales': ''} 
+186.136.36.184 - - [05/May/2023 11:51:57] "POST /Getreservas HTTP/1.1" 200 -
+[2023-05-05 11:52:46,689] INFO in app: path: /solicitudInforme | method: POST | email-reclutador: alancaminetsky@gmail.com | email: sala.mariaagustina@gmail.com | retorno:  
+186.136.36.184 - - [05/May/2023 11:52:47] "POST /solicitudInforme HTTP/1.1" 200 -
+181.171.225.65 - - [05/May/2023 12:12:27] "GET /getcookie HTTP/1.1" 200 -
+[2023-05-05 12:12:44,669] INFO in app: path: /Getreservas | method: POST | email-reclutador: veronicalmonteagudo@gmail.com | email:  | retorno: {'datos': 'vacio'} 
+181.171.225.65 - - [05/May/2023 12:12:44] "POST /Getreservas HTTP/1.1" 502 -
+[2023-05-05 12:13:15,185] INFO in app: path: /Getreservas | method: POST | email-reclutador: veronicalmonteagudo@gmail.com | email: cisavac@gmail.com | retorno: {'datos': 'vacio'} 
+181.171.225.65 - - [05/May/2023 12:13:15] "POST /Getreservas HTTP/1.1" 200 -
+181.25.64.104 - - [05/May/2023 12:17:49] "GET /getcookie HTTP/1.1" 200 -
+181.25.64.104 - - [05/May/2023 12:17:53] "POST /getCambioEstado HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 12:18:04] "GET /getcookie HTTP/1.1" 200 -
+181.25.64.104 - - [05/May/2023 12:18:04] "POST /cambioEstado HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 12:18:06] "GET /getInformesArevisar?_=1683299886760 HTTP/1.1" 200 -
+[2023-05-05 12:18:20,924] INFO in app: path: /revisarAprobado | method: POST | email-reclutador: clauines.66@gmail.com | email: nik.koval.89@gmail.com | retorno: ok 
+200.123.140.127 - - [05/May/2023 12:18:20] "POST /revisarAprobado HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 12:18:21] "GET /getInformesArevisar?_=1683299886761 HTTP/1.1" 200 -
+[2023-05-05 12:18:29,820] ERROR in app: Exception on /base64 [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.10/dist-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/root/microservices/sheetToTable/app.py", line 144, in base64
+    data,contenttype=base64decode(id,email,emailc,campo)
+  File "/root/microservices/sheetToTable/functions.py", line 44, in base64decode
+    nuevo,content=base64decomysql(id,email,emailc,campo)
+  File "/root/microservices/sheetToTable/mysql_cc.py", line 382, in base64decomysql
+    results = a.fetchall()
+  File "/usr/lib/python3/dist-packages/mysql/connector/cursor.py", line 896, in fetchall
+    (rows, eof) = self._connection.get_rows()
+  File "/usr/lib/python3/dist-packages/mysql/connector/connection.py", line 509, in get_rows
+    rows = [row_to_python(row, self._columns_desc) for row in rows]
+  File "/usr/lib/python3/dist-packages/mysql/connector/connection.py", line 509, in <listcomp>
+    rows = [row_to_python(row, self._columns_desc) for row in rows]
+  File "/usr/lib/python3/dist-packages/mysql/connector/conversion.py", line 407, in row_to_python
+    result[i] = self._cache_field_types[field_type](row[i], field)
+  File "/usr/lib/python3/dist-packages/mysql/connector/conversion.py", line 574, in _JSON_to_python
+    if value[0] == 34 and value[-1] == 34:
+IndexError: bytearray index out of range
+200.123.140.127 - - [05/May/2023 12:18:29] "GET /base64?id=2790&email=clauines.66@gmail.com&emailc=nik.koval.89@gmail.com&campo=cvingInf HTTP/1.1" 500 -
+200.123.140.127 - - [05/May/2023 12:18:29] "GET /favicon.ico HTTP/1.1" 404 -
+[2023-05-05 12:18:35,741] ERROR in app: Exception on /base64 [GET]
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/base64.py", line 534, in _input_type_check
+    m = memoryview(s)
+TypeError: memoryview: a bytes-like object is required, not 'str'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.10/dist-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/root/microservices/sheetToTable/app.py", line 145, in base64
+    content =b64.decodebytes(data)
+  File "/usr/lib/python3.10/base64.py", line 561, in decodebytes
+    _input_type_check(s)
+  File "/usr/lib/python3.10/base64.py", line 537, in _input_type_check
+    raise TypeError(msg) from err
+TypeError: expected bytes-like object, not str
+200.123.140.127 - - [05/May/2023 12:18:35] "GET /base64?id=2790&email=clauines.66@gmail.com&emailc=nik.koval.89@gmail.com&campo=informeesp HTTP/1.1" 500 -
+[2023-05-05 12:18:36,337] ERROR in app: Exception on /base64 [GET]
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/base64.py", line 534, in _input_type_check
+    m = memoryview(s)
+TypeError: memoryview: a bytes-like object is required, not 'str'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.10/dist-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/root/microservices/sheetToTable/app.py", line 145, in base64
+    content =b64.decodebytes(data)
+  File "/usr/lib/python3.10/base64.py", line 561, in decodebytes
+    _input_type_check(s)
+  File "/usr/lib/python3.10/base64.py", line 537, in _input_type_check
+    raise TypeError(msg) from err
+TypeError: expected bytes-like object, not str
+200.123.140.127 - - [05/May/2023 12:18:36] "GET /base64?id=2835&email=alancaminetsky@gmail.com&emailc=sala.mariaagustina@gmail.com&campo=informeesp HTTP/1.1" 500 -
+[2023-05-05 12:18:41,681] ERROR in app: Exception on /base64 [GET]
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/base64.py", line 534, in _input_type_check
+    m = memoryview(s)
+TypeError: memoryview: a bytes-like object is required, not 'str'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.10/dist-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/root/microservices/sheetToTable/app.py", line 145, in base64
+    content =b64.decodebytes(data)
+  File "/usr/lib/python3.10/base64.py", line 561, in decodebytes
+    _input_type_check(s)
+  File "/usr/lib/python3.10/base64.py", line 537, in _input_type_check
+    raise TypeError(msg) from err
+TypeError: expected bytes-like object, not str
+200.123.140.127 - - [05/May/2023 12:18:41] "GET /base64?id=2819&email=clauines.66@gmail.com&emailc=asborello@gmail.com&campo=cvespinf HTTP/1.1" 500 -
+200.123.140.127 - - [05/May/2023 12:18:51] "GET /getInformesArevisar?_=1683299886762 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 12:19:21] "GET /getInformesArevisar?_=1683299886763 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 12:19:51] "GET /getInformesArevisar?_=1683299886764 HTTP/1.1" 200 -
+[2023-05-05 12:20:18,649] INFO in app: path: /insert | method: POST | email-reclutador: veronicalmonteagudo@gmail.com | email: cisavac@gmail.com | retorno: None 
+181.171.225.65 - - [05/May/2023 12:20:18] "POST /insert HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 12:20:21] "GET /getInformesArevisar?_=1683299886765 HTTP/1.1" 200 -
+181.81.71.49 - - [05/May/2023 12:20:36] "GET /getcookie HTTP/1.1" 200 -
+[2023-05-05 12:20:39,424] INFO in app: path: /Getreservas | method: POST | email-reclutador: veronicalmonteagudo@gmail.com | email: cisavac@gmail.com | retorno: {'Email Candidato': 'cisavac@gmail.com', 'Email Address': 'veronicalmonteagudo@gmail.com', 'Nombre y Apellido del Candidato': 'Carlos Isava', 'Linkedin del Candidato': 'linkedin.com/in/carlos-isava-553b43212', 'IDs de reserva separdos con "_" sin la palabra "ID"': 2828, 'Tecnologías que sabe el candidato': 'Otros', 'Tipo de perfil del Candidato': 'Senior', 'Comentarios adicionales': 'Solo Relevamiento.'} 
+181.171.225.65 - - [05/May/2023 12:20:39] "POST /Getreservas HTTP/1.1" 200 -
+[2023-05-05 12:20:39,432] INFO in app: path: /Getreservas | method: POST | email-reclutador: veronicalmonteagudo@gmail.com | email: cisavac@gmail.com | retorno: {'Email Candidato': 'cisavac@gmail.com', 'Email Address': 'veronicalmonteagudo@gmail.com', 'Nombre y Apellido del Candidato': 'Carlos Isava', 'Linkedin del Candidato': 'linkedin.com/in/carlos-isava-553b43212', 'IDs de reserva separdos con "_" sin la palabra "ID"': 2828, 'Tecnologías que sabe el candidato': 'Otros', 'Tipo de perfil del Candidato': 'Senior', 'Comentarios adicionales': 'Solo Relevamiento.'} 
+181.171.225.65 - - [05/May/2023 12:20:39] "POST /Getreservas HTTP/1.1" 200 -
+[2023-05-05 12:20:41,675] INFO in app: path: /Getreservas | method: POST | email-reclutador: fernanda.ogni@conexion-hr.com | email: ottoabarriosp@gmail.com | retorno: {'datos': 'vacio'} 
+181.81.71.49 - - [05/May/2023 12:20:41] "POST /Getreservas HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 12:20:51] "GET /getInformesArevisar?_=1683299886766 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 12:21:21] "GET /getInformesArevisar?_=1683299886767 HTTP/1.1" 200 -
+[2023-05-05 12:21:51,218] INFO in app: path: /insert | method: POST | email-reclutador: fernanda.ogni@conexion-hr.com | email: ottoabarriosp@gmail.com | retorno: None 
+181.81.71.49 - - [05/May/2023 12:21:51] "POST /insert HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 12:21:51] "GET /getInformesArevisar?_=1683299886768 HTTP/1.1" 200 -
+[2023-05-05 12:21:56,050] INFO in app: path: /solicitudInforme | method: POST | email-reclutador: veronicalmonteagudo@gmail.com | email: cisavac@gmail.com | retorno:  
+181.171.225.65 - - [05/May/2023 12:21:57] "POST /solicitudInforme HTTP/1.1" 200 -
+181.171.225.65 - - [05/May/2023 12:22:03] "GET /getCliente?usuario=veronicalmonteagudo@gmail.com&_=1683300120864 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 12:22:21] "GET /getInformesArevisar?_=1683299886769 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 12:22:51] "GET /getInformesArevisar?_=1683299886770 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 12:23:22] "GET /getInformesArevisar?_=1683299886771 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 12:23:52] "GET /getInformesArevisar?_=1683299886772 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 12:24:53] "GET /getInformesArevisar?_=1683299886773 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 12:25:54] "GET /getInformesArevisar?_=1683299886774 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 12:26:55] "GET /getInformesArevisar?_=1683299886775 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 12:27:56] "GET /getInformesArevisar?_=1683299886776 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 12:28:57] "GET /getInformesArevisar?_=1683299886777 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 12:29:58] "GET /getInformesArevisar?_=1683299886778 HTTP/1.1" 200 -
+190.110.177.174 - - [05/May/2023 12:30:56] "GET /getInformesArevisar?_=1683300655753 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 12:30:59] "GET /getInformesArevisar?_=1683299886779 HTTP/1.1" 200 -
+[2023-05-05 12:31:00,998] ERROR in app: Exception on /base64 [GET]
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/base64.py", line 534, in _input_type_check
+    m = memoryview(s)
+TypeError: memoryview: a bytes-like object is required, not 'str'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.10/dist-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/root/microservices/sheetToTable/app.py", line 145, in base64
+    content =b64.decodebytes(data)
+  File "/usr/lib/python3.10/base64.py", line 561, in decodebytes
+    _input_type_check(s)
+  File "/usr/lib/python3.10/base64.py", line 537, in _input_type_check
+    raise TypeError(msg) from err
+TypeError: expected bytes-like object, not str
+190.110.177.174 - - [05/May/2023 12:31:00] "GET /base64?id=2835&email=alancaminetsky@gmail.com&emailc=sala.mariaagustina@gmail.com&campo=cvespinf HTTP/1.1" 500 -
+200.123.140.127 - - [05/May/2023 12:32:00] "GET /getInformesArevisar?_=1683299886780 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 12:33:01] "GET /getInformesArevisar?_=1683299886781 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 12:34:02] "GET /getInformesArevisar?_=1683299886782 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 12:35:03] "GET /getInformesArevisar?_=1683299886783 HTTP/1.1" 200 -
+186.107.220.101 - - [05/May/2023 12:35:06] "GET /getcookie HTTP/1.1" 200 -
+[2023-05-05 12:35:26,655] INFO in app: path: /Getreservas | method: POST | email-reclutador: pamela.checolis@conexion-hr.com | email: ferkeim7@gmail.com | retorno: {'datos': 'vacio'} 
+186.107.220.101 - - [05/May/2023 12:35:26] "POST /Getreservas HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 12:36:04] "GET /getInformesArevisar?_=1683299886784 HTTP/1.1" 200 -
+[2023-05-05 12:36:51,124] INFO in app: path: /solicitudInforme | method: POST | email-reclutador: pamela.checolis@conexion-hr.com | email: ferkeim7@gmail.com | retorno:  
+186.107.220.101 - - [05/May/2023 12:36:52] "POST /solicitudInforme HTTP/1.1" 200 -
+186.107.220.101 - - [05/May/2023 12:37:01] "GET /getCliente?usuario=pamela.checolis@conexion-hr.com&_=1683301021065 HTTP/1.1" 200 -
+[2023-05-05 12:37:04,038] ERROR in app: Exception on /base64 [GET]
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/base64.py", line 534, in _input_type_check
+    m = memoryview(s)
+TypeError: memoryview: a bytes-like object is required, not 'str'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.10/dist-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/root/microservices/sheetToTable/app.py", line 145, in base64
+    content =b64.decodebytes(data)
+  File "/usr/lib/python3.10/base64.py", line 561, in decodebytes
+    _input_type_check(s)
+  File "/usr/lib/python3.10/base64.py", line 537, in _input_type_check
+    raise TypeError(msg) from err
+TypeError: expected bytes-like object, not str
+190.110.177.174 - - [05/May/2023 12:37:04] "GET /base64?id=2835&email=alancaminetsky@gmail.com&emailc=sala.mariaagustina@gmail.com&campo=cvespinf HTTP/1.1" 500 -
+200.123.140.127 - - [05/May/2023 12:37:05] "GET /getInformesArevisar?_=1683299886785 HTTP/1.1" 200 -
+191.85.21.208 - - [05/May/2023 12:38:26] "GET /getcookie HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 12:38:26] "GET /getInformesArevisar?_=1683299886786 HTTP/1.1" 200 -
+191.85.21.208 - - [05/May/2023 12:38:26] "GET /getInformesArevisar?_=1683301098347 HTTP/1.1" 200 -
+ * Ignoring a call to 'app.run()' that would block the current 'flask' CLI command.
+   Only call 'app.run()' in an 'if __name__ == "__main__"' guard.
+ * Debug mode: off
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on https://127.0.0.1:80
+ * Running on https://200.58.106.162:80
+Press CTRL+C to quit
+191.85.21.208 - - [05/May/2023 12:38:30] "GET /getInformesArevisar?_=1683301110209 HTTP/1.1" 200 -
+[2023-05-05 12:38:35,703] ERROR in app: Exception on /base64 [GET]
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/base64.py", line 534, in _input_type_check
+    m = memoryview(s)
+TypeError: memoryview: a bytes-like object is required, not 'str'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.10/dist-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/root/microservices/sheetToTable/app.py", line 145, in base64
+    content =b64.decodebytes(data)
+  File "/usr/lib/python3.10/base64.py", line 561, in decodebytes
+    _input_type_check(s)
+  File "/usr/lib/python3.10/base64.py", line 537, in _input_type_check
+    raise TypeError(msg) from err
+TypeError: expected bytes-like object, not str
+191.85.21.208 - - [05/May/2023 12:38:35] "GET /base64?id=2819&email=clauines.66@gmail.com&emailc=asborello@gmail.com&campo=informeesp HTTP/1.1" 500 -
+191.85.21.208 - - [05/May/2023 12:38:35] "GET /favicon.ico HTTP/1.1" 404 -
+[2023-05-05 12:38:45,287] ERROR in app: Exception on /base64 [GET]
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/base64.py", line 534, in _input_type_check
+    m = memoryview(s)
+TypeError: memoryview: a bytes-like object is required, not 'str'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.10/dist-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/root/microservices/sheetToTable/app.py", line 145, in base64
+    content =b64.decodebytes(data)
+  File "/usr/lib/python3.10/base64.py", line 561, in decodebytes
+    _input_type_check(s)
+  File "/usr/lib/python3.10/base64.py", line 537, in _input_type_check
+    raise TypeError(msg) from err
+TypeError: expected bytes-like object, not str
+191.85.21.208 - - [05/May/2023 12:38:45] "GET /base64?id=2819&email=clauines.66@gmail.com&emailc=asborello@gmail.com&campo=informeesp HTTP/1.1" 500 -
+200.123.140.127 - - [05/May/2023 12:39:07] "GET /getInformesArevisar?_=1683299886787 HTTP/1.1" 200 -
+186.107.220.101 - - [05/May/2023 12:39:50] "GET /getcookie HTTP/1.1" 200 -
+186.107.220.101 - - [05/May/2023 12:39:52] "GET /getcookie HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 12:40:08] "GET /getInformesArevisar?_=1683299886788 HTTP/1.1" 200 -
+ * Ignoring a call to 'app.run()' that would block the current 'flask' CLI command.
+   Only call 'app.run()' in an 'if __name__ == "__main__"' guard.
+ * Debug mode: off
+Address already in use
+Port 80 is in use by another program. Either identify and stop that program, or start the server with a different port.
+200.123.140.127 - - [05/May/2023 12:41:09] "GET /getInformesArevisar?_=1683299886789 HTTP/1.1" 200 -
+186.107.220.101 - - [05/May/2023 12:41:52] "POST /getcambiosource HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 12:42:10] "GET /getInformesArevisar?_=1683299886790 HTTP/1.1" 200 -
+186.107.220.101 - - [05/May/2023 12:42:23] "GET /getCliente?usuario=pamela.checolis@conexion-hr.com&_=1683301343255 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 12:43:11] "GET /getInformesArevisar?_=1683299886791 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 12:44:12] "GET /getInformesArevisar?_=1683299886792 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 12:45:13] "GET /getInformesArevisar?_=1683299886793 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 12:46:14] "GET /getInformesArevisar?_=1683299886794 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 12:47:15] "GET /getInformesArevisar?_=1683299886795 HTTP/1.1" 200 -
+ * Ignoring a call to 'app.run()' that would block the current 'flask' CLI command.
+   Only call 'app.run()' in an 'if __name__ == "__main__"' guard.
+ * Debug mode: off
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on https://127.0.0.1:80
+ * Running on https://200.58.106.162:80
+Press CTRL+C to quit
+191.85.21.208 - - [05/May/2023 12:47:40] "GET /base64?id=2819&email=clauines.66@gmail.com&emailc=asborello@gmail.com&campo=informeesp HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 12:48:16] "GET /getInformesArevisar?_=1683299886796 HTTP/1.1" 200 -

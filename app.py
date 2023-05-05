@@ -142,7 +142,7 @@ def base64():
         emailc = args.get('emailc')
         campo = args.get('campo')
     data,contenttype=base64decode(id,email,emailc,campo)
-    content =b64.decodebytes(data)
+    content =b64.decodebytes(data.encode('utf-8'))
     response=make_response(content)
 
     response.headers['Content-Type'] = contenttype
