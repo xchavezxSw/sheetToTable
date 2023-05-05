@@ -385,6 +385,7 @@ def base64decomysql(idbusqueda, emailAddress, emailCandidato,campo):
         file=result[0]
         content=result[1]
     return file,content
+
 def insertCliente(values):
     db = connectar()
     a = db.cursor()
