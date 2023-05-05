@@ -252,13 +252,13 @@ def addInforme(values):
             CvInglesurl = ''
             InfoEntrevistaInglesurl = ''
             if Cvespañol is not None:
-                cvEspañolUrl = 'https://conexion-hr.com.ar:80//base64?id=' + IdsaEnviar + '&email=' + Email + '&emailc=' + EMailCandidato + '&campo=cvespinf'
+                cvEspañolUrl = 'https://conexion-hr.com.ar:80/base64?id=' + IdsaEnviar + '&email=' + Email + '&emailc=' + EMailCandidato + '&campo=cvespinf'
             if InfoEntrevista is not None:
-                InfoEntrevistaUrl = 'https://conexion-hr.com.ar:80//base64?id=' + IdsaEnviar + '&email=' + Email + '&emailc=' + EMailCandidato + '&campo=informeesp'
+                InfoEntrevistaUrl = 'https://conexion-hr.com.ar:80/base64?id=' + IdsaEnviar + '&email=' + Email + '&emailc=' + EMailCandidato + '&campo=informeesp'
             if CvIngles is not None:
-                CvInglesurl = 'https://conexion-hr.com.ar:80//base64?id=' + IdsaEnviar + '&email=' + Email + '&emailc=' + EMailCandidato + '&campo=cvingInf'
+                CvInglesurl = 'https://conexion-hr.com.ar:80/base64?id=' + IdsaEnviar + '&email=' + Email + '&emailc=' + EMailCandidato + '&campo=cvingInf'
             if InfoEntrevistaIngles is not None:
-                InfoEntrevistaInglesurl = 'https://conexion-hr.com.ar:80//base64?id=' + IdsaEnviar + '&email=' + Email + '&emailc=' + EMailCandidato + '&campo=informeing'
+                InfoEntrevistaInglesurl = 'https://conexion-hr.com.ar:80/base64?id=' + IdsaEnviar + '&email=' + Email + '&emailc=' + EMailCandidato + '&campo=informeing'
             insertCliente(values)
             SolicitudInforme.append_row([False,"", "","","",date_time,Email,
             EsSource, EMailCandidato, IdsaEnviar, TecnoCandi, TpCandi, LKCandi, comment,
@@ -309,16 +309,16 @@ def addInforme(values):
         InfoEntrevistaInglesurl=''
         if Cvespañol is not None:
             if Cvespañol != '':
-                cvEspañolUrl = 'https://conexion-hr.com.ar:80//base64?id=' + IdsaEnviar + '&email=' + Email + '&emailc=' + EMailCandidato + '&campo=cvespinf'
+                cvEspañolUrl = 'https://conexion-hr.com.ar:80/base64?id=' + IdsaEnviar + '&email=' + Email + '&emailc=' + EMailCandidato + '&campo=cvespinf'
         if InfoEntrevista is not None:
             if InfoEntrevista != '':
-                InfoEntrevistaUrl = 'https://conexion-hr.com.ar:80//base64?id=' + IdsaEnviar + '&email=' + Email + '&emailc=' + EMailCandidato + '&campo=informeesp'
+                InfoEntrevistaUrl = 'https://conexion-hr.com.ar:80/base64?id=' + IdsaEnviar + '&email=' + Email + '&emailc=' + EMailCandidato + '&campo=informeesp'
         if CvIngles is not None:
             if CvIngles != '':
-                CvInglesurl = 'https://conexion-hr.com.ar:80//base64?id=' + IdsaEnviar + '&email=' + Email + '&emailc=' + EMailCandidato + '&campo=cvingInf'
+                CvInglesurl = 'https://conexion-hr.com.ar:80/base64?id=' + IdsaEnviar + '&email=' + Email + '&emailc=' + EMailCandidato + '&campo=cvingInf'
         if InfoEntrevistaIngles is not None:
             if InfoEntrevistaIngles != '':
-                InfoEntrevistaInglesurl = 'https://conexion-hr.com.ar:80//base64?id=' + IdsaEnviar + '&email=' + Email + '&emailc=' + EMailCandidato + '&campo=informeing'
+                InfoEntrevistaInglesurl = 'https://conexion-hr.com.ar:80/base64?id=' + IdsaEnviar + '&email=' + Email + '&emailc=' + EMailCandidato + '&campo=informeing'
         SolicitudInforme.append_row([False,"", "","","",date_time,Email,
          EsSource, EMailCandidato, IdsaEnviar, TecnoCandi, TpCandi, LKCandi, comment,
          cvEspañolUrl, InfoEntrevistaUrl, CvInglesurl, InfoEntrevistaInglesurl, RemuneracionPretendidaMensual,
@@ -383,16 +383,16 @@ def revisarAprob(values):
     InfoEntrevistaInglesurl = ''
     if CvEspañol is not None:
         if CvEspañol !='':
-            cvEspañolUrl = 'https://conexion-hr.com.ar:80//base64?id=' + IdsaEnviar + '&email=' + Email + '&emailc=' + EMailCandidato + '&campo=cvespinf'
+            cvEspañolUrl = 'https://conexion-hr.com.ar:80/base64?id=' + IdsaEnviar + '&email=' + Email + '&emailc=' + EMailCandidato + '&campo=cvespinf'
     if InfoEntrevista is not None:
         if InfoEntrevista != '':
-            InfoEntrevistaUrl = 'https://conexion-hr.com.ar:80//base64?id=' + IdsaEnviar + '&email=' + Email + '&emailc=' + EMailCandidato + '&campo=informeesp'
+            InfoEntrevistaUrl = 'https://conexion-hr.com.ar:80/base64?id=' + IdsaEnviar + '&email=' + Email + '&emailc=' + EMailCandidato + '&campo=informeesp'
     if CvIngles is not None:
         if CvIngles != '':
-            CvInglesurl = 'https://conexion-hr.com.ar:80//base64?id=' + IdsaEnviar + '&email=' + Email + '&emailc=' + EMailCandidato + '&campo=cvingInf'
+            CvInglesurl = 'https://conexion-hr.com.ar:80/base64?id=' + IdsaEnviar + '&email=' + Email + '&emailc=' + EMailCandidato + '&campo=cvingInf'
     if InfoEntrevistaIngles is not None:
         if InfoEntrevistaIngles != '':
-            InfoEntrevistaInglesurl = 'https://conexion-hr.com.ar:80//base64?id=' + IdsaEnviar + '&email=' + Email + '&emailc=' + EMailCandidato + '&campo=informeing'
+            InfoEntrevistaInglesurl = 'https://conexion-hr.com.ar:80/base64?id=' + IdsaEnviar + '&email=' + Email + '&emailc=' + EMailCandidato + '&campo=informeing'
     SolicitudInforme.append_row([True,"", IdsaEnviar,"",StatusEnBase,date_time,Email,
     EsSource, EMailCandidato, IdsaEnviar, TecnoCandi, TpCandi, LKCandi, comment,
     cvEspañolUrl, InfoEntrevistaUrl, CvInglesurl, InfoEntrevistaInglesurl, RemuneracionPretendidaMensual,

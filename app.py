@@ -143,7 +143,7 @@ def base64():
         campo = args.get('campo')
     data,contenttype=base64decode(id,email,emailc,campo)
     content =b64.decodebytes(data)
-    response=make_response( content)
+    response = make_response(content.encode('utf-8'))
 
     response.headers['Content-Type'] = contenttype
     if 'vnd.openxmlformats-officedocument.wordprocessingml.document' in contenttype:
