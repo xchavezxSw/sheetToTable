@@ -2477,3 +2477,970 @@ WARNING: This is a development server. Do not use it in a production deployment.
 Press CTRL+C to quit
 191.85.21.208 - - [05/May/2023 12:47:40] "GET /base64?id=2819&email=clauines.66@gmail.com&emailc=asborello@gmail.com&campo=informeesp HTTP/1.1" 200 -
 200.123.140.127 - - [05/May/2023 12:48:16] "GET /getInformesArevisar?_=1683299886796 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 12:49:17] "GET /getInformesArevisar?_=1683299886797 HTTP/1.1" 200 -
+190.110.177.174 - - [05/May/2023 12:49:55] "GET /getInformesArevisar?_=1683301795192 HTTP/1.1" 200 -
+190.110.177.174 - - [05/May/2023 12:50:08] "GET /base64?id=2835&email=alancaminetsky@gmail.com&emailc=sala.mariaagustina@gmail.com&campo=cvespinf HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 12:50:18] "GET /getInformesArevisar?_=1683299886798 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 12:51:18] "GET /getInformesArevisar?_=1683299886799 HTTP/1.1" 200 -
+190.110.177.174 - - [05/May/2023 12:51:33] "GET /base64?id=2835&email=alancaminetsky@gmail.com&emailc=sala.mariaagustina@gmail.com&campo=cvespinf HTTP/1.1" 200 -
+190.110.177.174 - - [05/May/2023 12:51:45] "GET /getInformesArevisar?_=1683301904769 HTTP/1.1" 200 -
+190.110.177.174 - - [05/May/2023 12:51:49] "GET /getInformesArevisar?_=1683301908835 HTTP/1.1" 200 -
+190.110.177.174 - - [05/May/2023 12:51:59] "GET /base64?id=2835&email=alancaminetsky@gmail.com&emailc=sala.mariaagustina@gmail.com&campo=informeesp HTTP/1.1" 200 -
+190.110.177.174 - - [05/May/2023 12:52:02] "GET /base64?id=2835&email=alancaminetsky@gmail.com&emailc=sala.mariaagustina@gmail.com&campo=cvespinf HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 12:52:18] "GET /getInformesArevisar?_=1683299886800 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 12:53:18] "GET /getInformesArevisar?_=1683299886801 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 12:54:18] "GET /getInformesArevisar?_=1683299886802 HTTP/1.1" 200 -
+185.233.19.108 - - [05/May/2023 12:54:57] "GET / HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 12:55:18] "GET /getInformesArevisar?_=1683299886803 HTTP/1.1" 200 -
+118.193.45.5 - - [05/May/2023 12:55:47] "GET / HTTP/1.1" 200 -
+118.193.45.5 - - [05/May/2023 12:55:52] "GET /favicon.ico HTTP/1.1" 404 -
+200.123.140.127 - - [05/May/2023 12:56:18] "GET /getInformesArevisar?_=1683299886804 HTTP/1.1" 200 -
+201.212.38.203 - - [05/May/2023 12:57:05] "GET /getcookie HTTP/1.1" 200 -
+201.212.38.203 - - [05/May/2023 12:57:07] "GET /getCliente?usuario=lautaroamorosonehuen@gmail.com&_=1683302226409 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 12:57:18] "GET /getInformesArevisar?_=1683299886805 HTTP/1.1" 200 -
+190.191.2.241 - - [05/May/2023 12:57:30] "GET /getmetricas?usuario=nadia.moran@conexion-hr.com&rol=admin&_=1683302250014 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 12:58:18] "GET /getInformesArevisar?_=1683299886806 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 12:59:18] "GET /getInformesArevisar?_=1683299886807 HTTP/1.1" 200 -
+200.126.140.241 - - [05/May/2023 12:59:23] "GET /getcookie HTTP/1.1" 200 -
+[2023-05-05 13:00:11,264] INFO in app: path: /Getreservas | method: POST | email-reclutador: nico.mmacchia@gmail.com | email:  | retorno: {'datos': 'vacio'} 
+200.126.140.241 - - [05/May/2023 13:00:11] "POST /Getreservas HTTP/1.1" 502 -
+200.123.140.127 - - [05/May/2023 13:00:18] "GET /getInformesArevisar?_=1683299886808 HTTP/1.1" 200 -
+106.75.133.48 - - [05/May/2023 13:00:21] "GET / HTTP/1.1" 200 -
+[2023-05-05 13:00:29,968] INFO in app: path: /Getreservas | method: POST | email-reclutador: nico.mmacchia@gmail.com | email: tomijais@gmail.com | retorno: {'datos': 'vacio'} 
+200.126.140.241 - - [05/May/2023 13:00:29] "POST /Getreservas HTTP/1.1" 200 -
+Error on request:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/werkzeug/serving.py", line 364, in run_wsgi
+    execute(self.server.app)
+  File "/usr/local/lib/python3.10/dist-packages/werkzeug/serving.py", line 328, in execute
+    write(data)
+  File "/usr/local/lib/python3.10/dist-packages/werkzeug/serving.py", line 303, in write
+    self.wfile.write(data)
+  File "/usr/lib/python3.10/socketserver.py", line 826, in write
+    self._sock.sendall(b)
+  File "/usr/lib/python3.10/ssl.py", line 1237, in sendall
+    v = self.send(byte_view[count:])
+  File "/usr/lib/python3.10/ssl.py", line 1206, in send
+    return self._sslobj.write(data)
+ssl.SSLEOFError: EOF occurred in violation of protocol (_ssl.c:2396)
+106.75.133.48 - - [05/May/2023 13:00:35] "GET / HTTP/1.1" 200 -
+Error on request:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/werkzeug/serving.py", line 364, in run_wsgi
+    execute(self.server.app)
+  File "/usr/local/lib/python3.10/dist-packages/werkzeug/serving.py", line 328, in execute
+    write(data)
+  File "/usr/local/lib/python3.10/dist-packages/werkzeug/serving.py", line 303, in write
+    self.wfile.write(data)
+  File "/usr/lib/python3.10/socketserver.py", line 826, in write
+    self._sock.sendall(b)
+  File "/usr/lib/python3.10/ssl.py", line 1237, in sendall
+    v = self.send(byte_view[count:])
+  File "/usr/lib/python3.10/ssl.py", line 1206, in send
+    return self._sslobj.write(data)
+ssl.SSLEOFError: EOF occurred in violation of protocol (_ssl.c:2396)
+200.123.140.127 - - [05/May/2023 13:01:18] "GET /getInformesArevisar?_=1683299886809 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 13:02:18] "GET /getInformesArevisar?_=1683299886810 HTTP/1.1" 200 -
+[2023-05-05 13:02:40,103] INFO in app: path: /insert | method: POST | email-reclutador: nico.mmacchia@gmail.com | email: tomijais@gmail.com | retorno: None 
+200.126.140.241 - - [05/May/2023 13:02:40] "POST /insert HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 13:03:18] "GET /getInformesArevisar?_=1683299886811 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 13:03:32] "GET /getInformesArevisar?_=1683299886812 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 13:03:35] "GET /getcookie HTTP/1.1" 200 -
+190.192.198.218 - - [05/May/2023 13:04:05] "GET /getcookie HTTP/1.1" 200 -
+190.192.198.218 - - [05/May/2023 13:04:22] "POST /getCambioEstado HTTP/1.1" 200 -
+190.192.198.218 - - [05/May/2023 13:04:31] "POST /cambioEstado HTTP/1.1" 200 -
+181.25.64.104 - - [05/May/2023 13:05:33] "GET /getcookie HTTP/1.1" 200 -
+[2023-05-05 13:05:39,261] INFO in app: path: /Getreservas | method: POST | email-reclutador: valentina.marco@conexion-hr.com | email: victor_gabriel_94@hotmail.com | retorno: {'Email Candidato': 'victor_gabriel_94@hotmail.com', 'Email Address': 'valentina.marco@conexion-hr.com', 'Nombre y Apellido del Candidato': 'Victor Guzman', 'Linkedin del Candidato': '', 'IDs de reserva separdos con "_" sin la palabra "ID"': 2811, 'Tecnologías que sabe el candidato': '', 'Tipo de perfil del Candidato': '', 'Comentarios adicionales': ''} 
+181.25.64.104 - - [05/May/2023 13:05:39] "POST /Getreservas HTTP/1.1" 200 -
+[2023-05-05 13:05:51,848] INFO in app: path: /solicitudInforme | method: POST | email-reclutador: valentina.marco@conexion-hr.com | email: victor_gabriel_94@hotmail.com | retorno:  
+181.25.64.104 - - [05/May/2023 13:05:53] "POST /solicitudInforme HTTP/1.1" 200 -
+181.25.64.104 - - [05/May/2023 13:09:00] "GET /getcookie HTTP/1.1" 200 -
+181.25.64.104 - - [05/May/2023 13:09:07] "POST /getCambioEstado HTTP/1.1" 200 -
+181.25.64.104 - - [05/May/2023 13:09:19] "POST /cambioEstado HTTP/1.1" 200 -
+181.25.64.104 - - [05/May/2023 13:14:52] "GET /getcookie HTTP/1.1" 200 -
+[2023-05-05 13:14:56,139] INFO in app: path: /Getreservas | method: POST | email-reclutador: valentina.marco@conexion-hr.com | email: diegodlg.95@gmail.com | retorno: {'datos': 'vacio'} 
+181.25.64.104 - - [05/May/2023 13:14:56] "POST /Getreservas HTTP/1.1" 200 -
+[2023-05-05 13:15:09,036] INFO in app: path: /insert | method: POST | email-reclutador: valentina.marco@conexion-hr.com | email: diegodlg.95@gmail.com | retorno: None 
+181.25.64.104 - - [05/May/2023 13:15:09] "POST /insert HTTP/1.1" 200 -
+181.229.68.244 - - [05/May/2023 13:15:58] "GET /getcookie HTTP/1.1" 200 -
+181.229.68.244 - - [05/May/2023 13:16:06] "POST /getCambioEstado HTTP/1.1" 200 -
+181.229.68.244 - - [05/May/2023 13:16:25] "POST /cambioEstado HTTP/1.1" 200 -
+181.25.64.104 - - [05/May/2023 13:18:47] "POST /getPermitido HTTP/1.1" 200 -
+[2023-05-05 13:18:48,268] INFO in app: path: /Getreservas | method: POST | email-reclutador: valentina.marco@conexion-hr.com | email: nbalmaa@gmail.com | retorno: {'datos': 'vacio'} 
+181.25.64.104 - - [05/May/2023 13:18:48] "POST /Getreservas HTTP/1.1" 200 -
+[2023-05-05 13:18:56,391] INFO in app: path: /insert | method: POST | email-reclutador: valentina.marco@conexion-hr.com | email: nbalmaa@gmail.com | retorno: None 
+181.25.64.104 - - [05/May/2023 13:18:56] "POST /insert HTTP/1.1" 200 -
+181.229.68.244 - - [05/May/2023 13:19:23] "POST /getCambioEstado HTTP/1.1" 200 -
+181.229.68.244 - - [05/May/2023 13:19:41] "POST /cambioEstado HTTP/1.1" 200 -
+181.229.68.244 - - [05/May/2023 13:20:16] "POST /getCambioEstado HTTP/1.1" 200 -
+181.229.68.244 - - [05/May/2023 13:20:25] "POST /cambioEstado HTTP/1.1" 200 -
+181.31.194.233 - - [05/May/2023 13:27:29] "GET /getcookie HTTP/1.1" 200 -
+181.31.194.233 - - [05/May/2023 13:27:40] "GET /getCliente?usuario=daiana.garcia@conexion-hr.com&_=1683304052048 HTTP/1.1" 200 -
+181.25.64.104 - - [05/May/2023 13:28:10] "GET /getcookie HTTP/1.1" 200 -
+[2023-05-05 13:28:13,365] INFO in app: path: /Getreservas | method: POST | email-reclutador: valentina.marco@conexion-hr.com | email: carlos.delacruz228@gmail.com | retorno: {'Email Candidato': 'carlos.delacruz228@gmail.com', 'Email Address': 'valentina.marco@conexion-hr.com', 'Nombre y Apellido del Candidato': 'Carlos De La Cruz Meregildo', 'Linkedin del Candidato': '', 'IDs de reserva separdos con "_" sin la palabra "ID"': 2124, 'Tecnologías que sabe el candidato': '', 'Tipo de perfil del Candidato': '', 'Comentarios adicionales': ''} 
+181.25.64.104 - - [05/May/2023 13:28:13] "POST /Getreservas HTTP/1.1" 200 -
+[2023-05-05 13:28:23,704] INFO in app: path: /solicitudInforme | method: POST | email-reclutador: valentina.marco@conexion-hr.com | email: carlos.delacruz228@gmail.com | retorno:  
+181.25.64.104 - - [05/May/2023 13:28:25] "POST /solicitudInforme HTTP/1.1" 200 -
+190.192.198.218 - - [05/May/2023 14:03:40] "GET /getcookie HTTP/1.1" 200 -
+[2023-05-05 14:03:45,405] INFO in app: path: /Getreservas | method: POST | email-reclutador: victoria.ciano@conexion-hr.com | email: gingervv@hotmail.com | retorno: {'datos': 'vacio'} 
+190.192.198.218 - - [05/May/2023 14:03:45] "POST /Getreservas HTTP/1.1" 200 -
+[2023-05-05 14:04:01,812] INFO in app: path: /insert | method: POST | email-reclutador: victoria.ciano@conexion-hr.com | email: gingervv@hotmail.com | retorno: None 
+190.192.198.218 - - [05/May/2023 14:04:01] "POST /insert HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 14:06:32] "GET /getInformesArevisar?_=1683306392260 HTTP/1.1" 200 -
+190.192.198.218 - - [05/May/2023 14:07:59] "POST /getPermitido HTTP/1.1" 200 -
+[2023-05-05 14:08:01,849] INFO in app: path: /Getreservas | method: POST | email-reclutador: victoria.ciano@conexion-hr.com | email: davidhguerrero@hotmail.com | retorno: {'datos': 'vacio'} 
+190.192.198.218 - - [05/May/2023 14:08:01] "POST /Getreservas HTTP/1.1" 200 -
+[2023-05-05 14:08:16,836] INFO in app: path: /insert | method: POST | email-reclutador: victoria.ciano@conexion-hr.com | email: davidhguerrero@hotmail.com | retorno: None 
+190.192.198.218 - - [05/May/2023 14:08:16] "POST /insert HTTP/1.1" 200 -
+190.192.198.218 - - [05/May/2023 14:14:18] "POST /getCambioEstado HTTP/1.1" 200 -
+190.192.198.218 - - [05/May/2023 14:14:47] "POST /cambioEstado HTTP/1.1" 200 -
+200.123.141.236 - - [05/May/2023 14:20:15] "GET /getcookie HTTP/1.1" 200 -
+200.123.141.236 - - [05/May/2023 14:20:17] "GET /getcookie HTTP/1.1" 200 -
+[2023-05-05 14:20:23,859] INFO in app: path: /Getreservas | method: POST | email-reclutador: camila.palmeiro@conexion-hr.com | email: tamayo.eduardo@hotmail.com | retorno: {'datos': 'vacio'} 
+200.123.141.236 - - [05/May/2023 14:20:23] "POST /Getreservas HTTP/1.1" 200 -
+[2023-05-05 14:20:35,160] INFO in app: path: /insert | method: POST | email-reclutador: camila.palmeiro@conexion-hr.com | email: tamayo.eduardo@hotmail.com | retorno: None 
+200.123.141.236 - - [05/May/2023 14:20:35] "POST /insert HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 14:40:46] "GET /base64?id=2819&email=clauines.66@gmail.com&emailc=asborello@gmail.com&campo=informeesp HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 14:40:57] "GET /base64?id=2819&email=clauines.66@gmail.com&emailc=asborello@gmail.com&campo=cvespinf HTTP/1.1" 200 -
+200.117.121.179 - - [05/May/2023 14:41:42] "GET /getcookie HTTP/1.1" 200 -
+200.117.121.179 - - [05/May/2023 14:41:46] "GET /getCliente?usuario=mfstalentohumano@gmail.com&_=1683308544629 HTTP/1.1" 200 -
+[2023-05-05 14:48:10,854] INFO in app: path: /revisarAprobado | method: POST | email-reclutador: clauines.66@gmail.com | email: asborello@gmail.com | retorno: ok 
+200.123.140.127 - - [05/May/2023 14:48:10] "POST /revisarAprobado HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 14:48:11] "GET /getInformesArevisar?_=1683306392261 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 14:48:41] "GET /getInformesArevisar?_=1683306392262 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 14:49:09] "GET /base64?id=2835&email=alancaminetsky@gmail.com&emailc=sala.mariaagustina@gmail.com&campo=informeesp HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 14:49:11] "GET /getInformesArevisar?_=1683306392263 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 14:49:13] "GET /base64?id=2835&email=alancaminetsky@gmail.com&emailc=sala.mariaagustina@gmail.com&campo=cvespinf HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 14:49:41] "GET /getInformesArevisar?_=1683306392264 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 14:50:11] "GET /getInformesArevisar?_=1683306392265 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 14:50:41] "GET /getInformesArevisar?_=1683306392266 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 14:51:11] "GET /getInformesArevisar?_=1683306392267 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 14:52:12] "GET /getInformesArevisar?_=1683306392268 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 14:52:46] "GET /getInformesArevisar?_=1683306392269 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 14:53:11] "GET /getInformesArevisar?_=1683306392270 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 14:53:41] "GET /getInformesArevisar?_=1683306392271 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 14:54:18] "GET /getInformesArevisar?_=1683306392272 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 14:55:18] "GET /getInformesArevisar?_=1683306392273 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 14:56:18] "GET /getInformesArevisar?_=1683306392274 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 14:57:18] "GET /getInformesArevisar?_=1683306392275 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 14:58:18] "GET /getInformesArevisar?_=1683306392276 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 14:59:18] "GET /getInformesArevisar?_=1683306392277 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 15:00:18] "GET /getInformesArevisar?_=1683306392278 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 15:01:18] "GET /getInformesArevisar?_=1683306392279 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 15:02:18] "GET /getInformesArevisar?_=1683306392280 HTTP/1.1" 200 -
+181.31.194.233 - - [05/May/2023 15:02:36] "GET /getcookie HTTP/1.1" 200 -
+[2023-05-05 15:02:53,106] INFO in app: path: /Getreservas | method: POST | email-reclutador: daiana.garcia@conexion-hr.com | email: walter-fernandez2010@live.com.ar | retorno: {'datos': 'vacio'} 
+181.31.194.233 - - [05/May/2023 15:02:53] "POST /Getreservas HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 15:03:18] "GET /getInformesArevisar?_=1683306392281 HTTP/1.1" 200 -
+[2023-05-05 15:03:38,726] INFO in app: path: /insert | method: POST | email-reclutador: daiana.garcia@conexion-hr.com | email: walter-fernandez2010@live.com.ar | retorno: None 
+181.31.194.233 - - [05/May/2023 15:03:38] "POST /insert HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 15:04:18] "GET /getInformesArevisar?_=1683306392282 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 15:04:44] "GET /getInformesArevisar?_=1683306392283 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 15:05:11] "GET /getInformesArevisar?_=1683306392284 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 15:05:41] "GET /getInformesArevisar?_=1683306392285 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 15:06:18] "GET /getInformesArevisar?_=1683306392286 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 15:07:18] "GET /getInformesArevisar?_=1683306392287 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 15:08:18] "GET /getInformesArevisar?_=1683306392288 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 15:09:18] "GET /getInformesArevisar?_=1683306392289 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 15:10:18] "GET /getInformesArevisar?_=1683306392290 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 15:11:18] "GET /getInformesArevisar?_=1683306392291 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 15:12:18] "GET /getInformesArevisar?_=1683306392292 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 15:13:18] "GET /getInformesArevisar?_=1683306392293 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 15:14:18] "GET /getInformesArevisar?_=1683306392294 HTTP/1.1" 200 -
+190.191.184.180 - - [05/May/2023 15:15:02] "GET /getcookie HTTP/1.1" 200 -
+190.191.184.180 - - [05/May/2023 15:15:07] "GET /getCliente?usuario=smarcodelpont@gmail.com&_=1683310506654 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 15:15:18] "GET /getInformesArevisar?_=1683306392295 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 15:16:18] "GET /getInformesArevisar?_=1683306392296 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 15:17:18] "GET /getInformesArevisar?_=1683306392297 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 15:18:18] "GET /getInformesArevisar?_=1683306392298 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 15:19:18] "GET /getInformesArevisar?_=1683306392299 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 15:20:18] "GET /getInformesArevisar?_=1683306392300 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 15:21:18] "GET /getInformesArevisar?_=1683306392301 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 15:22:18] "GET /getInformesArevisar?_=1683306392302 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 15:23:18] "GET /getInformesArevisar?_=1683306392303 HTTP/1.1" 200 -
+181.45.117.66 - - [05/May/2023 15:23:58] "GET /getcookie HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 15:24:18] "GET /getInformesArevisar?_=1683306392304 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 15:25:18] "GET /getInformesArevisar?_=1683306392305 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 15:26:18] "GET /getInformesArevisar?_=1683306392306 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 15:27:18] "GET /getInformesArevisar?_=1683306392307 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 15:28:18] "GET /getInformesArevisar?_=1683306392308 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 15:29:18] "GET /getInformesArevisar?_=1683306392309 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 15:30:18] "GET /getInformesArevisar?_=1683306392310 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 15:31:18] "GET /getInformesArevisar?_=1683306392311 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 15:32:18] "GET /getInformesArevisar?_=1683306392312 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 15:33:18] "GET /getInformesArevisar?_=1683306392313 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 15:34:18] "GET /getInformesArevisar?_=1683306392314 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 15:35:18] "GET /getInformesArevisar?_=1683306392315 HTTP/1.1" 200 -
+181.45.117.66 - - [05/May/2023 15:35:55] "GET /getcookie HTTP/1.1" 200 -
+181.45.117.66 - - [05/May/2023 15:36:06] "GET /getmetricas?usuario=melina.flores@conexion-hr.com&rol=admin&_=1683311766693 HTTP/1.1" 200 -
+131.161.234.37 - - [05/May/2023 15:36:10] "GET /getmetricas?usuario=&rol=&_=1683311765631 HTTP/1.1" 200 -
+181.45.117.66 - - [05/May/2023 15:36:11] "GET /getcookie HTTP/1.1" 200 -
+181.45.117.66 - - [05/May/2023 15:36:12] "GET /getCliente?usuario=melina.flores@conexion-hr.com&_=1683311772932 HTTP/1.1" 200 -
+181.45.117.66 - - [05/May/2023 15:36:13] "GET /getcookie HTTP/1.1" 200 -
+181.45.117.66 - - [05/May/2023 15:36:14] "GET /getcookie HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 15:36:18] "GET /getInformesArevisar?_=1683306392316 HTTP/1.1" 200 -
+181.45.117.66 - - [05/May/2023 15:36:18] "POST /getCambioEstado HTTP/1.1" 200 -
+181.45.117.66 - - [05/May/2023 15:36:41] "POST /cambioEstado HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 15:37:18] "GET /getInformesArevisar?_=1683306392317 HTTP/1.1" 200 -
+181.231.126.197 - - [05/May/2023 15:37:53] "GET /getcookie HTTP/1.1" 200 -
+181.231.126.197 - - [05/May/2023 15:37:57] "GET /getCliente?usuario=chirizolaf@gmail.com&_=1683311877430 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 15:38:18] "GET /getInformesArevisar?_=1683306392318 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 15:39:18] "GET /getInformesArevisar?_=1683306392319 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 15:40:18] "GET /getInformesArevisar?_=1683306392320 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 15:41:18] "GET /getInformesArevisar?_=1683306392321 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 15:42:18] "GET /getInformesArevisar?_=1683306392322 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 15:43:18] "GET /getInformesArevisar?_=1683306392323 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 15:44:18] "GET /getInformesArevisar?_=1683306392324 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 15:45:18] "GET /getInformesArevisar?_=1683306392325 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 15:46:18] "GET /getInformesArevisar?_=1683306392326 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 15:47:18] "GET /getInformesArevisar?_=1683306392327 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 15:48:18] "GET /getInformesArevisar?_=1683306392328 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 15:49:18] "GET /getInformesArevisar?_=1683306392329 HTTP/1.1" 200 -
+87.236.176.115 - - [05/May/2023 15:49:50] "GET / HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 15:50:18] "GET /getInformesArevisar?_=1683306392330 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 15:51:18] "GET /getInformesArevisar?_=1683306392331 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 15:52:18] "GET /getInformesArevisar?_=1683306392332 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 15:53:18] "GET /getInformesArevisar?_=1683306392333 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 15:54:18] "GET /getInformesArevisar?_=1683306392334 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 15:55:18] "GET /getInformesArevisar?_=1683306392335 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 15:56:18] "GET /getInformesArevisar?_=1683306392336 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 15:57:18] "GET /getInformesArevisar?_=1683306392337 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 15:58:18] "GET /getInformesArevisar?_=1683306392338 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 15:59:18] "GET /getInformesArevisar?_=1683306392339 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 16:00:18] "GET /getInformesArevisar?_=1683306392340 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 16:01:18] "GET /getInformesArevisar?_=1683306392341 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 16:02:18] "GET /getInformesArevisar?_=1683306392342 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 16:03:18] "GET /getInformesArevisar?_=1683306392343 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 16:04:18] "GET /getInformesArevisar?_=1683306392344 HTTP/1.1" 200 -
+200.117.121.179 - - [05/May/2023 16:04:29] "GET /getcookie HTTP/1.1" 200 -
+[2023-05-05 16:04:43,435] INFO in app: path: /Getreservas | method: POST | email-reclutador: mfstalentohumano@gmail.com | email: abinaya5794@gmail.com | retorno: {'datos': 'vacio'} 
+200.117.121.179 - - [05/May/2023 16:04:43] "POST /Getreservas HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 16:05:18] "GET /getInformesArevisar?_=1683306392345 HTTP/1.1" 200 -
+[2023-05-05 16:05:36,907] INFO in app: path: /insert | method: POST | email-reclutador: mfstalentohumano@gmail.com | email: abinaya5794@gmail.com | retorno: None 
+200.117.121.179 - - [05/May/2023 16:05:36] "POST /insert HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 16:05:41] "GET /getInformesArevisar?_=1683306392346 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 16:06:11] "GET /getInformesArevisar?_=1683306392347 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 16:06:41] "GET /getInformesArevisar?_=1683306392348 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 16:07:11] "GET /getInformesArevisar?_=1683306392349 HTTP/1.1" 200 -
+200.117.121.179 - - [05/May/2023 16:07:17] "GET /getcookie HTTP/1.1" 200 -
+200.117.121.179 - - [05/May/2023 16:07:22] "GET /getCliente?usuario=mfstalentohumano@gmail.com&_=1683313680008 HTTP/1.1" 200 -
+200.117.121.179 - - [05/May/2023 16:07:50] "GET /getcookie HTTP/1.1" 200 -
+[2023-05-05 16:08:02,638] INFO in app: path: /Getreservas | method: POST | email-reclutador: mfstalentohumano@gmail.com | email: abinaya5794@gmail.com | retorno: {'Email Candidato': 'abinaya5794@gmail.com', 'Email Address': 'mfstalentohumano@gmail.com', 'Nombre y Apellido del Candidato': 'Abinaya Gopalan ', 'Linkedin del Candidato': 'https://www.linkedin.com/in/abinaya-gopalan-pmp%C2%AE-732656100/', 'IDs de reserva separdos con "_" sin la palabra "ID"': 2713, 'Tecnologías que sabe el candidato': 'Devops,Otros', 'Tipo de perfil del Candidato': 'Senior', 'Comentarios adicionales': ''} 
+200.117.121.179 - - [05/May/2023 16:08:02] "POST /Getreservas HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 16:08:12] "GET /getInformesArevisar?_=1683306392350 HTTP/1.1" 200 -
+[2023-05-05 16:09:13,137] INFO in app: path: /solicitudInforme | method: POST | email-reclutador: mfstalentohumano@gmail.com | email: abinaya5794@gmail.com | retorno:  
+200.123.140.127 - - [05/May/2023 16:09:13] "GET /getInformesArevisar?_=1683306392351 HTTP/1.1" 200 -
+200.117.121.179 - - [05/May/2023 16:09:14] "POST /solicitudInforme HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 16:10:14] "GET /getInformesArevisar?_=1683306392352 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 16:11:15] "GET /getInformesArevisar?_=1683306392353 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 16:12:16] "GET /getInformesArevisar?_=1683306392354 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 16:13:17] "GET /getInformesArevisar?_=1683306392355 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 16:14:18] "GET /getInformesArevisar?_=1683306392356 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 16:15:18] "GET /getInformesArevisar?_=1683306392357 HTTP/1.1" 200 -
+181.25.65.15 - - [05/May/2023 16:15:35] "GET /getcookie HTTP/1.1" 200 -
+181.25.65.15 - - [05/May/2023 16:15:39] "POST /getCambioEstado HTTP/1.1" 200 -
+181.25.65.15 - - [05/May/2023 16:15:48] "POST /cambioEstado HTTP/1.1" 200 -
+190.191.184.180 - - [05/May/2023 16:16:02] "GET /getCliente?usuario=smarcodelpont@gmail.com&_=1683314162164 HTTP/1.1" 200 -
+190.191.184.180 - - [05/May/2023 16:16:08] "GET /getcookie HTTP/1.1" 200 -
+[2023-05-05 16:16:12,408] INFO in app: path: /Getreservas | method: POST | email-reclutador: smarcodelpont@gmail.com | email: santiagoalbornoz016@gmail.com | retorno: {'datos': 'vacio'} 
+190.191.184.180 - - [05/May/2023 16:16:12] "POST /Getreservas HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 16:16:18] "GET /getInformesArevisar?_=1683306392358 HTTP/1.1" 200 -
+[2023-05-05 16:16:23,439] INFO in app: path: /insert | method: POST | email-reclutador: smarcodelpont@gmail.com | email: santiagoalbornoz016@gmail.com | retorno: None 
+190.191.184.180 - - [05/May/2023 16:16:23] "POST /insert HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 16:17:18] "GET /getInformesArevisar?_=1683306392359 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 16:18:18] "GET /getInformesArevisar?_=1683306392360 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 16:19:18] "GET /getInformesArevisar?_=1683306392361 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 16:20:18] "GET /getInformesArevisar?_=1683306392362 HTTP/1.1" 200 -
+[2023-05-05 16:20:39,344] INFO in app: path: /Getreservas | method: POST | email-reclutador: victoria.ciano@conexion-hr.com | email: santiagomejorada@gmail.com | retorno: {'datos': 'vacio'} 
+190.192.198.218 - - [05/May/2023 16:20:39] "POST /Getreservas HTTP/1.1" 200 -
+[2023-05-05 16:20:47,983] INFO in app: path: /insert | method: POST | email-reclutador: victoria.ciano@conexion-hr.com | email: santiagomejorada@gmail.com | retorno: None 
+190.192.198.218 - - [05/May/2023 16:20:47] "POST /insert HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 16:21:18] "GET /getInformesArevisar?_=1683306392363 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 16:22:18] "GET /getInformesArevisar?_=1683306392364 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 16:23:18] "GET /getInformesArevisar?_=1683306392365 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 16:24:18] "GET /getInformesArevisar?_=1683306392366 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 16:25:18] "GET /getInformesArevisar?_=1683306392367 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 16:26:18] "GET /getInformesArevisar?_=1683306392368 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 16:27:18] "GET /getInformesArevisar?_=1683306392369 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 16:28:18] "GET /getInformesArevisar?_=1683306392370 HTTP/1.1" 200 -
+190.192.198.218 - - [05/May/2023 16:29:13] "POST /getPermitido HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 16:29:18] "GET /getInformesArevisar?_=1683306392371 HTTP/1.1" 200 -
+[2023-05-05 16:29:24,846] INFO in app: path: /Getreservas | method: POST | email-reclutador: victoria.ciano@conexion-hr.com | email: emimagnani90@gmail.com | retorno: {'Email Candidato': 'emimagnani90@gmail.com', 'Email Address': 'victoria.ciano@conexion-hr.com', 'Nombre y Apellido del Candidato': 'Emiliano Magnani', 'Linkedin del Candidato': '', 'IDs de reserva separdos con "_" sin la palabra "ID"': 2833, 'Tecnologías que sabe el candidato': '', 'Tipo de perfil del Candidato': '', 'Comentarios adicionales': ''} 
+190.192.198.218 - - [05/May/2023 16:29:24] "POST /Getreservas HTTP/1.1" 200 -
+[2023-05-05 16:29:27,856] INFO in app: path: /insert | method: POST | email-reclutador: victoria.ciano@conexion-hr.com | email: emimagnani90@gmail.com | retorno: None 
+190.192.198.218 - - [05/May/2023 16:29:27] "POST /insert HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 16:30:18] "GET /getInformesArevisar?_=1683306392372 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 16:31:18] "GET /getInformesArevisar?_=1683306392373 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 16:32:18] "GET /getInformesArevisar?_=1683306392374 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 16:33:18] "GET /getInformesArevisar?_=1683306392375 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 16:34:18] "GET /getInformesArevisar?_=1683306392376 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 16:35:09] "GET /getInformesArevisar?_=1683306392377 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 16:35:11] "GET /getInformesArevisar?_=1683306392378 HTTP/1.1" 200 -
+[2023-05-05 16:35:19,716] INFO in app: path: /revisarAprobado | method: POST | email-reclutador: alancaminetsky@gmail.com | email: sala.mariaagustina@gmail.com | retorno: ok 
+200.123.140.127 - - [05/May/2023 16:35:19] "POST /revisarAprobado HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 16:35:20] "GET /getInformesArevisar?_=1683306392379 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 16:35:41] "GET /getInformesArevisar?_=1683306392380 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 16:35:50] "GET /getInformesArevisar?_=1683306392381 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 16:36:11] "GET /getInformesArevisar?_=1683306392382 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 16:36:20] "GET /getInformesArevisar?_=1683306392383 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 16:36:43] "GET /getInformesArevisar?_=1683306392384 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 16:36:50] "GET /getInformesArevisar?_=1683306392385 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 16:37:11] "GET /getInformesArevisar?_=1683306392386 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 16:37:20] "GET /getInformesArevisar?_=1683306392387 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 16:37:41] "GET /getInformesArevisar?_=1683306392388 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 16:38:18] "GET /getInformesArevisar?_=1683306392390 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 16:39:18] "GET /getInformesArevisar?_=1683306392391 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 16:39:18] "GET /getInformesArevisar?_=1683306392392 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 16:40:18] "GET /getInformesArevisar?_=1683306392394 HTTP/1.1" 200 -
+[2023-05-05 16:41:10,117] INFO in app: path: /Getreservas | method: POST | email-reclutador: victoria.ciano@conexion-hr.com | email: santiagomejorada@gmail.com | retorno: {'Email Candidato': 'santiagomejorada@gmail.com', 'Email Address': 'victoria.ciano@conexion-hr.com', 'Nombre y Apellido del Candidato': 'Santiago Mejorada', 'Linkedin del Candidato': '', 'IDs de reserva separdos con "_" sin la palabra "ID"': 2124, 'Tecnologías que sabe el candidato': '', 'Tipo de perfil del Candidato': '', 'Comentarios adicionales': ''} 
+190.192.198.218 - - [05/May/2023 16:41:10] "POST /Getreservas HTTP/1.1" 200 -
+[2023-05-05 16:41:10,218] INFO in app: path: /Getreservas | method: POST | email-reclutador: victoria.ciano@conexion-hr.com | email: santiagomejorada@gmail.com | retorno: {'Email Candidato': 'santiagomejorada@gmail.com', 'Email Address': 'victoria.ciano@conexion-hr.com', 'Nombre y Apellido del Candidato': 'Santiago Mejorada', 'Linkedin del Candidato': '', 'IDs de reserva separdos con "_" sin la palabra "ID"': 2124, 'Tecnologías que sabe el candidato': '', 'Tipo de perfil del Candidato': '', 'Comentarios adicionales': ''} 
+190.192.198.218 - - [05/May/2023 16:41:10] "POST /Getreservas HTTP/1.1" 200 -
+[2023-05-05 16:41:13,394] INFO in app: path: /solicitudInforme | method: POST | email-reclutador: victoria.ciano@conexion-hr.com | email: santiagomejorada@gmail.com | retorno:  
+190.192.198.218 - - [05/May/2023 16:41:14] "POST /solicitudInforme HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 16:41:18] "GET /getInformesArevisar?_=1683306392396 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 16:41:18] "GET /getInformesArevisar?_=1683306392395 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 16:42:18] "GET /getInformesArevisar?_=1683306392398 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 16:43:18] "GET /getInformesArevisar?_=1683306392400 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 16:43:18] "GET /getInformesArevisar?_=1683306392399 HTTP/1.1" 200 -
+190.110.177.174 - - [05/May/2023 16:44:13] "GET /getInformesArevisar?_=1683315853062 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 16:44:18] "GET /getInformesArevisar?_=1683306392402 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 16:45:18] "GET /getInformesArevisar?_=1683306392404 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 16:45:18] "GET /getInformesArevisar?_=1683306392403 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 16:46:18] "GET /getInformesArevisar?_=1683306392406 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 16:46:58] "GET /getInformesArevisar?_=1683306392408 HTTP/1.1" 200 -
+[2023-05-05 16:47:03,465] INFO in app: path: /revisarAprobado | method: POST | email-reclutador: veronicalmonteagudo@gmail.com | email: cisavac@gmail.com | retorno: ok 
+200.123.140.127 - - [05/May/2023 16:47:03] "POST /revisarAprobado HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 16:47:03] "GET /getInformesArevisar?_=1683306392409 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 16:47:11] "GET /getInformesArevisar?_=1683306392410 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 16:47:20] "GET /getInformesArevisar?_=1683306392411 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 16:47:34] "GET /getInformesArevisar?_=1683306392412 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 16:47:41] "GET /getInformesArevisar?_=1683306392413 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 16:47:50] "GET /getInformesArevisar?_=1683306392414 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 16:48:03] "GET /getInformesArevisar?_=1683306392415 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 16:48:11] "GET /getInformesArevisar?_=1683306392416 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 16:48:20] "GET /getInformesArevisar?_=1683306392417 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 16:48:34] "GET /getInformesArevisar?_=1683306392418 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 16:48:41] "GET /getInformesArevisar?_=1683306392419 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 16:48:50] "GET /getInformesArevisar?_=1683306392420 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 16:49:04] "GET /getInformesArevisar?_=1683306392421 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 16:49:11] "GET /getInformesArevisar?_=1683306392422 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 16:50:12] "GET /getInformesArevisar?_=1683306392425 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 16:50:20] "GET /getInformesArevisar?_=1683306392426 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 16:50:34] "GET /getInformesArevisar?_=1683306392427 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 16:50:41] "GET /getInformesArevisar?_=1683306392428 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 16:50:50] "GET /getInformesArevisar?_=1683306392429 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 16:51:04] "GET /getInformesArevisar?_=1683306392430 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 16:51:11] "GET /getInformesArevisar?_=1683306392431 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 16:52:12] "GET /getInformesArevisar?_=1683306392434 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 16:53:13] "GET /getInformesArevisar?_=1683306392437 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 16:54:14] "GET /getInformesArevisar?_=1683306392440 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 16:55:15] "GET /getInformesArevisar?_=1683306392443 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 16:56:16] "GET /getInformesArevisar?_=1683306392446 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 16:57:17] "GET /getInformesArevisar?_=1683306392449 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 16:58:18] "GET /getInformesArevisar?_=1683306392452 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 16:59:18] "GET /getInformesArevisar?_=1683306392454 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 16:59:18] "GET /getInformesArevisar?_=1683306392453 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 16:59:18] "GET /getInformesArevisar?_=1683306392455 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:00:18] "GET /getInformesArevisar?_=1683306392458 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:01:18] "GET /getInformesArevisar?_=1683306392460 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:01:18] "GET /getInformesArevisar?_=1683306392459 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:01:18] "GET /getInformesArevisar?_=1683306392461 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:02:18] "GET /getInformesArevisar?_=1683306392464 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:03:09] "GET /getInformesArevisar?_=1683306392466 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:03:09] "GET /getInformesArevisar?_=1683306392467 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:03:09] "GET /getInformesArevisar?_=1683306392465 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:03:11] "GET /getInformesArevisar?_=1683306392468 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:03:20] "GET /getInformesArevisar?_=1683306392469 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:03:34] "GET /getInformesArevisar?_=1683306392470 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:03:41] "GET /getInformesArevisar?_=1683306392471 HTTP/1.1" 200 -
+186.136.36.184 - - [05/May/2023 17:03:42] "GET /getcookie HTTP/1.1" 200 -
+186.136.36.184 - - [05/May/2023 17:03:44] "GET /getCliente?usuario=alancaminetsky@gmail.com&_=1683317024669 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:03:50] "GET /getInformesArevisar?_=1683306392472 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:04:04] "GET /getInformesArevisar?_=1683306392473 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:04:18] "GET /getInformesArevisar?_=1683306392474 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:05:18] "GET /getInformesArevisar?_=1683306392477 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:06:18] "GET /getInformesArevisar?_=1683306392478 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:06:18] "GET /getInformesArevisar?_=1683306392480 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:06:18] "GET /getInformesArevisar?_=1683306392479 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:07:18] "GET /getInformesArevisar?_=1683306392483 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:08:18] "GET /getInformesArevisar?_=1683306392486 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:08:18] "GET /getInformesArevisar?_=1683306392484 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:08:18] "GET /getInformesArevisar?_=1683306392485 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:09:18] "GET /getInformesArevisar?_=1683306392489 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:10:18] "GET /getInformesArevisar?_=1683306392491 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:10:18] "GET /getInformesArevisar?_=1683306392492 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:10:18] "GET /getInformesArevisar?_=1683306392490 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:11:18] "GET /getInformesArevisar?_=1683306392495 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:12:18] "GET /getInformesArevisar?_=1683306392497 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:12:18] "GET /getInformesArevisar?_=1683306392498 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:12:18] "GET /getInformesArevisar?_=1683306392496 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:13:18] "GET /getInformesArevisar?_=1683306392501 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:14:18] "GET /getInformesArevisar?_=1683306392502 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:14:18] "GET /getInformesArevisar?_=1683306392504 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:14:18] "GET /getInformesArevisar?_=1683306392503 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:15:18] "GET /getInformesArevisar?_=1683306392507 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:16:18] "GET /getInformesArevisar?_=1683306392509 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:16:18] "GET /getInformesArevisar?_=1683306392508 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:16:18] "GET /getInformesArevisar?_=1683306392510 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:17:18] "GET /getInformesArevisar?_=1683306392513 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:18:18] "GET /getInformesArevisar?_=1683306392516 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:18:18] "GET /getInformesArevisar?_=1683306392514 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:18:18] "GET /getInformesArevisar?_=1683306392515 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:19:18] "GET /getInformesArevisar?_=1683306392519 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:20:18] "GET /getInformesArevisar?_=1683306392520 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:20:18] "GET /getInformesArevisar?_=1683306392522 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:20:18] "GET /getInformesArevisar?_=1683306392521 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:21:18] "GET /getInformesArevisar?_=1683306392525 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:22:18] "GET /getInformesArevisar?_=1683306392526 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:22:18] "GET /getInformesArevisar?_=1683306392527 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:22:18] "GET /getInformesArevisar?_=1683306392528 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:23:18] "GET /getInformesArevisar?_=1683306392531 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:24:18] "GET /getInformesArevisar?_=1683306392532 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:24:18] "GET /getInformesArevisar?_=1683306392533 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:24:18] "GET /getInformesArevisar?_=1683306392534 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:25:18] "GET /getInformesArevisar?_=1683306392537 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:26:18] "GET /getInformesArevisar?_=1683306392538 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:26:18] "GET /getInformesArevisar?_=1683306392539 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:26:18] "GET /getInformesArevisar?_=1683306392540 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:27:18] "GET /getInformesArevisar?_=1683306392543 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:28:17] "GET /getInformesArevisar?_=1683306392544 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:28:18] "GET /getInformesArevisar?_=1683306392545 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:28:18] "GET /getInformesArevisar?_=1683306392546 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:29:17] "GET /getInformesArevisar?_=1683306392549 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:30:18] "GET /getInformesArevisar?_=1683306392550 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:30:18] "GET /getInformesArevisar?_=1683306392551 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:30:18] "GET /getInformesArevisar?_=1683306392552 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:31:17] "GET /getInformesArevisar?_=1683306392555 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:32:17] "GET /getInformesArevisar?_=1683306392557 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:32:17] "GET /getInformesArevisar?_=1683306392556 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:32:18] "GET /getInformesArevisar?_=1683306392558 HTTP/1.1" 200 -
+181.25.65.15 - - [05/May/2023 17:32:52] "GET /getcookie HTTP/1.1" 200 -
+181.25.65.15 - - [05/May/2023 17:32:57] "POST /getCambioEstado HTTP/1.1" 200 -
+181.25.65.15 - - [05/May/2023 17:33:09] "POST /cambioEstado HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:33:18] "GET /getInformesArevisar?_=1683306392561 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:34:17] "GET /getInformesArevisar?_=1683306392563 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:34:17] "GET /getInformesArevisar?_=1683306392564 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:34:17] "GET /getInformesArevisar?_=1683306392562 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:35:18] "GET /getInformesArevisar?_=1683306392567 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:36:17] "GET /getInformesArevisar?_=1683306392569 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:36:17] "GET /getInformesArevisar?_=1683306392570 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:36:17] "GET /getInformesArevisar?_=1683306392568 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:37:17] "GET /getInformesArevisar?_=1683306392573 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:38:17] "GET /getInformesArevisar?_=1683306392575 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:38:17] "GET /getInformesArevisar?_=1683306392574 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:38:17] "GET /getInformesArevisar?_=1683306392576 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:39:17] "GET /getInformesArevisar?_=1683306392579 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:40:18] "GET /getInformesArevisar?_=1683306392580 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:40:18] "GET /getInformesArevisar?_=1683306392582 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:40:18] "GET /getInformesArevisar?_=1683306392581 HTTP/1.1" 200 -
+45.173.6.6 - - [05/May/2023 17:40:42] "GET /getcookie HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:41:18] "GET /getInformesArevisar?_=1683306392585 HTTP/1.1" 200 -
+45.173.6.6 - - [05/May/2023 17:41:42] "GET /getCliente?usuario=laura.nava@conexion-hr.com&_=1683319299675 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:42:17] "GET /getInformesArevisar?_=1683306392587 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:42:17] "GET /getInformesArevisar?_=1683306392586 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:42:18] "GET /getInformesArevisar?_=1683306392588 HTTP/1.1" 200 -
+45.173.6.6 - - [05/May/2023 17:42:27] "GET /getcookie HTTP/1.1" 200 -
+[2023-05-05 17:42:32,508] INFO in app: path: /Getreservas | method: POST | email-reclutador: laura.nava@conexion-hr.com | email: alejacorroj16@gmail.com | retorno: {'datos': 'vacio'} 
+45.173.6.6 - - [05/May/2023 17:42:32] "POST /Getreservas HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:43:18] "GET /getInformesArevisar?_=1683306392591 HTTP/1.1" 200 -
+[2023-05-05 17:43:42,087] INFO in app: path: /solicitudInforme | method: POST | email-reclutador: laura.nava@conexion-hr.com | email: alejacorroj16@gmail.com | retorno:  
+45.173.6.6 - - [05/May/2023 17:43:43] "POST /solicitudInforme HTTP/1.1" 200 -
+45.173.6.6 - - [05/May/2023 17:44:03] "GET /getCliente?usuario=laura.nava@conexion-hr.com&_=1683319440511 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:44:18] "GET /getInformesArevisar?_=1683306392594 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:44:18] "GET /getInformesArevisar?_=1683306392592 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:44:18] "GET /getInformesArevisar?_=1683306392593 HTTP/1.1" 200 -
+45.173.6.6 - - [05/May/2023 17:44:25] "GET /getcookie HTTP/1.1" 200 -
+[2023-05-05 17:44:48,157] INFO in app: path: /Getreservas | method: POST | email-reclutador: laura.nava@conexion-hr.com | email: dalila.gcarranza@gmail.com | retorno: {'Email Candidato': 'dalila.gcarranza@gmail.com', 'Email Address': 'laura.nava@conexion-hr.com', 'Nombre y Apellido del Candidato': 'Dalila Gonzalez ', 'Linkedin del Candidato': '', 'IDs de reserva separdos con "_" sin la palabra "ID"': 2831, 'Tecnologías que sabe el candidato': 'Data', 'Tipo de perfil del Candidato': 'Senior', 'Comentarios adicionales': ''} 
+45.173.6.6 - - [05/May/2023 17:44:48] "POST /Getreservas HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:45:18] "GET /getInformesArevisar?_=1683306392597 HTTP/1.1" 200 -
+[2023-05-05 17:45:57,928] INFO in app: path: /solicitudInforme | method: POST | email-reclutador: laura.nava@conexion-hr.com | email: dalila.gcarranza@gmail.com | retorno:  
+45.173.6.6 - - [05/May/2023 17:45:58] "POST /solicitudInforme HTTP/1.1" 200 -
+45.173.6.6 - - [05/May/2023 17:46:11] "GET /getCliente?usuario=laura.nava@conexion-hr.com&_=1683319568095 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:46:18] "GET /getInformesArevisar?_=1683306392598 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:46:18] "GET /getInformesArevisar?_=1683306392599 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:46:18] "GET /getInformesArevisar?_=1683306392600 HTTP/1.1" 200 -
+45.173.6.6 - - [05/May/2023 17:46:42] "GET /getcookie HTTP/1.1" 200 -
+45.173.6.6 - - [05/May/2023 17:46:51] "GET /getcookie HTTP/1.1" 200 -
+45.173.6.6 - - [05/May/2023 17:47:02] "POST /getCambioEstado HTTP/1.1" 200 -
+45.173.6.6 - - [05/May/2023 17:47:11] "GET /getCliente?usuario=laura.nava@conexion-hr.com&_=1683319628286 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:47:18] "GET /getInformesArevisar?_=1683306392603 HTTP/1.1" 200 -
+45.173.6.6 - - [05/May/2023 17:47:18] "GET /getcookie HTTP/1.1" 200 -
+45.173.6.6 - - [05/May/2023 17:47:28] "POST /getCambioEstado HTTP/1.1" 200 -
+45.173.6.6 - - [05/May/2023 17:47:51] "POST /cambioEstado HTTP/1.1" 200 -
+45.173.6.6 - - [05/May/2023 17:48:10] "GET /getCliente?usuario=laura.nava@conexion-hr.com&_=1683319686845 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:48:18] "GET /getInformesArevisar?_=1683306392604 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:48:18] "GET /getInformesArevisar?_=1683306392606 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:48:18] "GET /getInformesArevisar?_=1683306392605 HTTP/1.1" 200 -
+45.173.6.6 - - [05/May/2023 17:48:36] "GET /getcookie HTTP/1.1" 200 -
+[2023-05-05 17:48:42,879] INFO in app: path: /Getreservas | method: POST | email-reclutador: laura.nava@conexion-hr.com | email: bigilisandro@gmail.com | retorno: {'Email Candidato': 'bigilisandro@gmail.com', 'Email Address': 'laura.nava@conexion-hr.com', 'Nombre y Apellido del Candidato': 'Lisandro Bigi', 'Linkedin del Candidato': '', 'IDs de reserva separdos con "_" sin la palabra "ID"': 2814, 'Tecnologías que sabe el candidato': 'JavaScript', 'Tipo de perfil del Candidato': 'Senior', 'Comentarios adicionales': ''} 
+45.173.6.6 - - [05/May/2023 17:48:42] "POST /Getreservas HTTP/1.1" 200 -
+186.136.51.38 - - [05/May/2023 17:49:06] "GET /getcookie HTTP/1.1" 200 -
+186.136.51.38 - - [05/May/2023 17:49:14] "GET /getcookie HTTP/1.1" 200 -
+186.136.51.38 - - [05/May/2023 17:49:17] "GET /getCliente?usuario=hartkopf.recruiting@gmail.com&_=1683319757038 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:49:18] "GET /getInformesArevisar?_=1683306392609 HTTP/1.1" 200 -
+[2023-05-05 17:49:55,399] INFO in app: path: /solicitudInforme | method: POST | email-reclutador: laura.nava@conexion-hr.com | email: bigilisandro@gmail.com | retorno:  
+45.173.6.6 - - [05/May/2023 17:49:56] "POST /solicitudInforme HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:50:18] "GET /getInformesArevisar?_=1683306392612 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:50:18] "GET /getInformesArevisar?_=1683306392611 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:50:18] "GET /getInformesArevisar?_=1683306392610 HTTP/1.1" 200 -
+45.173.6.6 - - [05/May/2023 17:50:23] "GET /getCliente?usuario=laura.nava@conexion-hr.com&_=1683319820053 HTTP/1.1" 200 -
+45.173.6.6 - - [05/May/2023 17:51:05] "GET /getcookie HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:51:18] "GET /getInformesArevisar?_=1683306392615 HTTP/1.1" 200 -
+[2023-05-05 17:51:21,087] INFO in app: path: /Getreservas | method: POST | email-reclutador: laura.nava@conexion-hr.com | email: germanosaurio@hotmail.com | retorno: {'datos': 'vacio'} 
+45.173.6.6 - - [05/May/2023 17:51:21] "POST /Getreservas HTTP/1.1" 200 -
+[2023-05-05 17:51:50,575] INFO in app: path: /insert | method: POST | email-reclutador: laura.nava@conexion-hr.com | email: germanosaurio@hotmail.com | retorno: None 
+45.173.6.6 - - [05/May/2023 17:51:50] "POST /insert HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:52:18] "GET /getInformesArevisar?_=1683306392616 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:52:18] "GET /getInformesArevisar?_=1683306392617 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:52:18] "GET /getInformesArevisar?_=1683306392618 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:53:18] "GET /getInformesArevisar?_=1683306392621 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:54:18] "GET /getInformesArevisar?_=1683306392623 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:54:18] "GET /getInformesArevisar?_=1683306392622 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:54:18] "GET /getInformesArevisar?_=1683306392624 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:55:18] "GET /getInformesArevisar?_=1683306392627 HTTP/1.1" 200 -
+181.45.117.66 - - [05/May/2023 17:55:49] "POST /getCambioEstado HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:56:18] "GET /getInformesArevisar?_=1683306392628 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:56:18] "GET /getInformesArevisar?_=1683306392630 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:56:18] "GET /getInformesArevisar?_=1683306392629 HTTP/1.1" 200 -
+181.45.117.66 - - [05/May/2023 17:56:28] "POST /cambioEstado HTTP/1.1" 200 -
+181.45.117.66 - - [05/May/2023 17:56:53] "POST /getCambioEstado HTTP/1.1" 200 -
+181.45.117.66 - - [05/May/2023 17:57:05] "POST /cambioEstado HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:57:18] "GET /getInformesArevisar?_=1683306392633 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:58:18] "GET /getInformesArevisar?_=1683306392634 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:58:18] "GET /getInformesArevisar?_=1683306392635 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:58:18] "GET /getInformesArevisar?_=1683306392636 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 17:59:18] "GET /getInformesArevisar?_=1683306392639 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:00:18] "GET /getInformesArevisar?_=1683306392640 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:00:18] "GET /getInformesArevisar?_=1683306392642 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:00:18] "GET /getInformesArevisar?_=1683306392641 HTTP/1.1" 200 -
+45.173.6.6 - - [05/May/2023 18:00:51] "GET /getcookie HTTP/1.1" 200 -
+[2023-05-05 18:00:57,954] INFO in app: path: /Getreservas | method: POST | email-reclutador: laura.nava@conexion-hr.com | email: leandrobisceglie@gmail.com | retorno: {'datos': 'vacio'} 
+45.173.6.6 - - [05/May/2023 18:00:57] "POST /Getreservas HTTP/1.1" 502 -
+45.173.6.6 - - [05/May/2023 18:01:02] "GET /getcookie HTTP/1.1" 200 -
+[2023-05-05 18:01:07,935] INFO in app: path: /Getreservas | method: POST | email-reclutador: laura.nava@conexion-hr.com | email: leandrobisceglie@gmail.com | retorno: {'datos': 'vacio'} 
+45.173.6.6 - - [05/May/2023 18:01:07] "POST /Getreservas HTTP/1.1" 502 -
+45.173.6.6 - - [05/May/2023 18:01:11] "GET /getCliente?usuario=laura.nava@conexion-hr.com&_=1683320467662 HTTP/1.1" 200 -
+45.173.6.6 - - [05/May/2023 18:01:12] "GET /getcookie HTTP/1.1" 200 -
+45.173.6.6 - - [05/May/2023 18:01:13] "GET /getmetricas?usuario=laura.nava@conexion-hr.com&rol=admin&_=1683320470325 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:01:18] "GET /getInformesArevisar?_=1683306392645 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:02:18] "GET /getInformesArevisar?_=1683306392648 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:02:18] "GET /getInformesArevisar?_=1683306392646 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:02:18] "GET /getInformesArevisar?_=1683306392647 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:02:20] "GET /getInformesArevisar?_=1683306392649 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:02:33] "GET /getInformesArevisar?_=1683306392650 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:02:35] "POST /comentariointerno HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:02:35] "GET /getInformesArevisar?_=1683306392651 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:02:41] "GET /getInformesArevisar?_=1683306392652 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:02:50] "GET /getInformesArevisar?_=1683306392653 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:03:03] "GET /getInformesArevisar?_=1683306392654 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:03:05] "GET /getInformesArevisar?_=1683306392655 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:03:11] "GET /getInformesArevisar?_=1683306392656 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:03:20] "GET /getInformesArevisar?_=1683306392657 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:03:33] "GET /getInformesArevisar?_=1683306392658 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:03:35] "GET /getInformesArevisar?_=1683306392659 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:03:41] "GET /getInformesArevisar?_=1683306392660 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:03:50] "GET /getInformesArevisar?_=1683306392661 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:04:03] "GET /getInformesArevisar?_=1683306392662 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:04:05] "GET /getInformesArevisar?_=1683306392663 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:04:11] "GET /getInformesArevisar?_=1683306392664 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:04:20] "GET /getInformesArevisar?_=1683306392665 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:04:33] "GET /getInformesArevisar?_=1683306392666 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:04:35] "GET /getInformesArevisar?_=1683306392667 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:04:41] "GET /getInformesArevisar?_=1683306392668 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:04:50] "GET /getInformesArevisar?_=1683306392669 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:05:04] "GET /getInformesArevisar?_=1683306392670 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:05:06] "GET /getInformesArevisar?_=1683306392671 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:05:11] "GET /getInformesArevisar?_=1683306392672 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:05:20] "GET /getInformesArevisar?_=1683306392673 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:05:34] "GET /getInformesArevisar?_=1683306392674 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:05:36] "GET /getInformesArevisar?_=1683306392675 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:05:41] "GET /getInformesArevisar?_=1683306392676 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:06:18] "GET /getInformesArevisar?_=1683306392680 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:07:18] "GET /getInformesArevisar?_=1683306392682 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:07:18] "GET /getInformesArevisar?_=1683306392683 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:07:18] "GET /getInformesArevisar?_=1683306392681 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:07:18] "GET /getInformesArevisar?_=1683306392684 HTTP/1.1" 200 -
+45.173.6.6 - - [05/May/2023 18:07:26] "GET /getcookie HTTP/1.1" 200 -
+45.173.6.6 - - [05/May/2023 18:07:31] "GET /getCliente?usuario=laura.nava@conexion-hr.com&_=1683320847830 HTTP/1.1" 200 -
+45.173.6.6 - - [05/May/2023 18:07:36] "GET /getcookie HTTP/1.1" 200 -
+[2023-05-05 18:08:07,723] INFO in app: path: /Getreservas | method: POST | email-reclutador: laura.nava@conexion-hr.com | email: alejandro.caldi@gmail.com | retorno: {'datos': 'vacio'} 
+45.173.6.6 - - [05/May/2023 18:08:07] "POST /Getreservas HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:08:15] "GET /getInformesArevisar?_=1683306392688 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:08:20] "GET /getInformesArevisar?_=1683306392689 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:08:34] "GET /getInformesArevisar?_=1683306392690 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:08:36] "GET /getInformesArevisar?_=1683306392691 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:08:41] "GET /getInformesArevisar?_=1683306392692 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:08:50] "GET /getInformesArevisar?_=1683306392693 HTTP/1.1" 200 -
+[2023-05-05 18:08:53,511] INFO in app: path: /insert | method: POST | email-reclutador: laura.nava@conexion-hr.com | email: alejandro.caldi@gmail.com | retorno: None 
+45.173.6.6 - - [05/May/2023 18:08:53] "POST /insert HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:09:04] "GET /getInformesArevisar?_=1683306392694 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:09:06] "GET /getInformesArevisar?_=1683306392695 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:09:11] "GET /getInformesArevisar?_=1683306392696 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:10:12] "GET /getInformesArevisar?_=1683306392700 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:11:13] "GET /getInformesArevisar?_=1683306392704 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:12:14] "GET /getInformesArevisar?_=1683306392708 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:13:15] "GET /getInformesArevisar?_=1683306392712 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:14:16] "GET /getInformesArevisar?_=1683306392716 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:15:17] "GET /getInformesArevisar?_=1683306392720 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:15:51] "GET /getInformesArevisar?_=1683306392723 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:15:51] "GET /getInformesArevisar?_=1683306392724 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:15:51] "GET /getInformesArevisar?_=1683306392722 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:15:51] "GET /getInformesArevisar?_=1683306392721 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:16:04] "GET /getInformesArevisar?_=1683306392725 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:16:06] "GET /getInformesArevisar?_=1683306392726 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:16:11] "GET /getInformesArevisar?_=1683306392727 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:16:20] "GET /getInformesArevisar?_=1683306392728 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:16:34] "GET /getInformesArevisar?_=1683306392729 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:16:36] "GET /getInformesArevisar?_=1683306392730 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:16:41] "GET /getInformesArevisar?_=1683306392731 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:16:50] "GET /getInformesArevisar?_=1683306392732 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:17:18] "GET /getInformesArevisar?_=1683306392735 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:17:49] "GET /getInformesArevisar?_=1683306392739 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:18:04] "GET /getInformesArevisar?_=1683306392740 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:18:06] "GET /getInformesArevisar?_=1683306392741 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:18:11] "GET /getInformesArevisar?_=1683306392742 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:18:20] "GET /getInformesArevisar?_=1683306392743 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:18:34] "GET /getInformesArevisar?_=1683306392744 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:18:36] "GET /getInformesArevisar?_=1683306392745 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:18:41] "GET /getInformesArevisar?_=1683306392746 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:18:50] "GET /getInformesArevisar?_=1683306392747 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:19:18] "GET /getInformesArevisar?_=1683306392750 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:19:57] "GET /getInformesArevisar?_=1683306392751 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:19:57] "GET /getInformesArevisar?_=1683306392752 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:19:57] "GET /getInformesArevisar?_=1683306392754 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:20:04] "GET /getInformesArevisar?_=1683306392755 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:20:06] "GET /getInformesArevisar?_=1683306392756 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:20:11] "GET /getInformesArevisar?_=1683306392757 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:20:20] "GET /getInformesArevisar?_=1683306392758 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:20:34] "GET /getInformesArevisar?_=1683306392759 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:20:36] "GET /getInformesArevisar?_=1683306392760 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:20:41] "GET /getInformesArevisar?_=1683306392761 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:20:50] "GET /getInformesArevisar?_=1683306392762 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:21:18] "GET /getInformesArevisar?_=1683306392765 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:21:45] "GET /getInformesArevisar?_=1683306392769 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:21:45] "GET /getInformesArevisar?_=1683306392766 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:21:45] "GET /getInformesArevisar?_=1683306392767 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:21:50] "GET /getInformesArevisar?_=1683306392770 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:22:04] "GET /getInformesArevisar?_=1683306392771 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:22:06] "GET /getInformesArevisar?_=1683306392772 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:22:11] "GET /getInformesArevisar?_=1683306392773 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:22:20] "GET /getInformesArevisar?_=1683306392774 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:22:34] "GET /getInformesArevisar?_=1683306392775 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:22:36] "GET /getInformesArevisar?_=1683306392776 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:22:41] "GET /getInformesArevisar?_=1683306392777 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:23:18] "GET /getInformesArevisar?_=1683306392781 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:24:18] "GET /getInformesArevisar?_=1683306392783 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:24:18] "GET /getInformesArevisar?_=1683306392784 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:24:18] "GET /getInformesArevisar?_=1683306392782 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:24:18] "GET /getInformesArevisar?_=1683306392785 HTTP/1.1" 200 -
+45.173.6.6 - - [05/May/2023 18:24:28] "GET /getCliente?usuario=laura.nava@conexion-hr.com&_=1683321864451 HTTP/1.1" 200 -
+45.173.6.6 - - [05/May/2023 18:24:42] "GET /getCliente?usuario=laura.nava@conexion-hr.com&_=1683321879641 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:25:18] "GET /getInformesArevisar?_=1683306392789 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:26:18] "GET /getInformesArevisar?_=1683306392792 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:26:18] "GET /getInformesArevisar?_=1683306392790 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:26:18] "GET /getInformesArevisar?_=1683306392793 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:26:18] "GET /getInformesArevisar?_=1683306392791 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:27:18] "GET /getInformesArevisar?_=1683306392797 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:28:18] "GET /getInformesArevisar?_=1683306392801 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:28:18] "GET /getInformesArevisar?_=1683306392798 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:28:18] "GET /getInformesArevisar?_=1683306392800 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:28:18] "GET /getInformesArevisar?_=1683306392799 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:29:18] "GET /getInformesArevisar?_=1683306392805 HTTP/1.1" 200 -
+181.25.65.15 - - [05/May/2023 18:29:20] "GET /getcookie HTTP/1.1" 200 -
+[2023-05-05 18:29:23,074] INFO in app: path: /Getreservas | method: POST | email-reclutador: valentina.marco@conexion-hr.com | email: nicovallespi@gmail.com | retorno: {'Email Candidato': 'nicovallespi@gmail.com', 'Email Address': 'valentina.marco@conexion-hr.com', 'Nombre y Apellido del Candidato': 'Nicolas Vallespi  ', 'Linkedin del Candidato': '', 'IDs de reserva separdos con "_" sin la palabra "ID"': 2666, 'Tecnologías que sabe el candidato': '', 'Tipo de perfil del Candidato': '', 'Comentarios adicionales': ''} 
+181.25.65.15 - - [05/May/2023 18:29:23] "POST /Getreservas HTTP/1.1" 200 -
+[2023-05-05 18:29:32,795] INFO in app: path: /solicitudInforme | method: POST | email-reclutador: valentina.marco@conexion-hr.com | email: nicovallespi@gmail.com | retorno:  
+181.25.65.15 - - [05/May/2023 18:29:33] "POST /solicitudInforme HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:30:18] "GET /getInformesArevisar?_=1683306392809 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:30:18] "GET /getInformesArevisar?_=1683306392806 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:30:18] "GET /getInformesArevisar?_=1683306392807 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:30:18] "GET /getInformesArevisar?_=1683306392808 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:31:18] "GET /getInformesArevisar?_=1683306392813 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:32:18] "GET /getInformesArevisar?_=1683306392815 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:32:18] "GET /getInformesArevisar?_=1683306392817 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:32:18] "GET /getInformesArevisar?_=1683306392814 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:32:18] "GET /getInformesArevisar?_=1683306392816 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:33:18] "GET /getInformesArevisar?_=1683306392821 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:34:18] "GET /getInformesArevisar?_=1683306392824 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:34:18] "GET /getInformesArevisar?_=1683306392822 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:34:18] "GET /getInformesArevisar?_=1683306392823 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:34:18] "GET /getInformesArevisar?_=1683306392825 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:35:18] "GET /getInformesArevisar?_=1683306392829 HTTP/1.1" 200 -
+181.25.65.15 - - [05/May/2023 18:35:19] "GET /getcookie HTTP/1.1" 200 -
+181.25.65.15 - - [05/May/2023 18:35:23] "POST /getCambioEstado HTTP/1.1" 200 -
+181.25.65.15 - - [05/May/2023 18:35:35] "POST /cambioEstado HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:36:18] "GET /getInformesArevisar?_=1683306392831 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:36:18] "GET /getInformesArevisar?_=1683306392830 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:36:18] "GET /getInformesArevisar?_=1683306392833 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:36:18] "GET /getInformesArevisar?_=1683306392832 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:37:18] "GET /getInformesArevisar?_=1683306392837 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:38:18] "GET /getInformesArevisar?_=1683306392839 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:38:18] "GET /getInformesArevisar?_=1683306392838 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:38:18] "GET /getInformesArevisar?_=1683306392840 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:38:18] "GET /getInformesArevisar?_=1683306392841 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:39:18] "GET /getInformesArevisar?_=1683306392845 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:40:18] "GET /getInformesArevisar?_=1683306392848 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:40:18] "GET /getInformesArevisar?_=1683306392849 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:40:18] "GET /getInformesArevisar?_=1683306392847 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:40:18] "GET /getInformesArevisar?_=1683306392846 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:41:18] "GET /getInformesArevisar?_=1683306392853 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:42:18] "GET /getInformesArevisar?_=1683306392855 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:42:18] "GET /getInformesArevisar?_=1683306392857 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:42:18] "GET /getInformesArevisar?_=1683306392856 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:42:18] "GET /getInformesArevisar?_=1683306392854 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:43:18] "GET /getInformesArevisar?_=1683306392861 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:44:18] "GET /getInformesArevisar?_=1683306392864 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:44:18] "GET /getInformesArevisar?_=1683306392863 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:44:18] "GET /getInformesArevisar?_=1683306392862 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:44:18] "GET /getInformesArevisar?_=1683306392865 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:45:18] "GET /getInformesArevisar?_=1683306392869 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:46:18] "GET /getInformesArevisar?_=1683306392872 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:46:18] "GET /getInformesArevisar?_=1683306392871 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:46:18] "GET /getInformesArevisar?_=1683306392873 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:46:18] "GET /getInformesArevisar?_=1683306392870 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:47:18] "GET /getInformesArevisar?_=1683306392877 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:48:18] "GET /getInformesArevisar?_=1683306392878 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:48:18] "GET /getInformesArevisar?_=1683306392879 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:48:18] "GET /getInformesArevisar?_=1683306392880 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:48:18] "GET /getInformesArevisar?_=1683306392881 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:49:18] "GET /getInformesArevisar?_=1683306392885 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:50:18] "GET /getInformesArevisar?_=1683306392888 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:50:18] "GET /getInformesArevisar?_=1683306392887 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:50:18] "GET /getInformesArevisar?_=1683306392886 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:50:18] "GET /getInformesArevisar?_=1683306392889 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:51:18] "GET /getInformesArevisar?_=1683306392893 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:52:18] "GET /getInformesArevisar?_=1683306392896 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:52:18] "GET /getInformesArevisar?_=1683306392897 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:52:18] "GET /getInformesArevisar?_=1683306392894 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:52:18] "GET /getInformesArevisar?_=1683306392895 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:53:18] "GET /getInformesArevisar?_=1683306392901 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:54:18] "GET /getInformesArevisar?_=1683306392903 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:54:18] "GET /getInformesArevisar?_=1683306392905 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:54:18] "GET /getInformesArevisar?_=1683306392904 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:54:18] "GET /getInformesArevisar?_=1683306392902 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:55:18] "GET /getInformesArevisar?_=1683306392909 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:56:18] "GET /getInformesArevisar?_=1683306392912 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:56:18] "GET /getInformesArevisar?_=1683306392911 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:56:18] "GET /getInformesArevisar?_=1683306392910 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:56:18] "GET /getInformesArevisar?_=1683306392913 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:57:18] "GET /getInformesArevisar?_=1683306392917 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:58:18] "GET /getInformesArevisar?_=1683306392920 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:58:18] "GET /getInformesArevisar?_=1683306392919 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:58:18] "GET /getInformesArevisar?_=1683306392918 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:58:18] "GET /getInformesArevisar?_=1683306392921 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 18:59:18] "GET /getInformesArevisar?_=1683306392925 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 19:00:18] "GET /getInformesArevisar?_=1683306392927 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 19:00:18] "GET /getInformesArevisar?_=1683306392928 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 19:00:18] "GET /getInformesArevisar?_=1683306392926 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 19:00:18] "GET /getInformesArevisar?_=1683306392929 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 19:01:18] "GET /getInformesArevisar?_=1683306392933 HTTP/1.1" 200 -
+200.123.140.127 - - [05/May/2023 19:01:20] "GET /getInformesArevisar?_=1683306392934 HTTP/1.1" 200 -
+181.25.65.15 - - [05/May/2023 19:45:22] "GET /getcookie HTTP/1.1" 200 -
+[2023-05-05 19:45:28,753] INFO in app: path: /Getreservas | method: POST | email-reclutador: valentina.marco@conexion-hr.com | email: lucas.carrara88@gmail.com | retorno: {'Email Candidato': 'lucas.carrara88@gmail.com', 'Email Address': 'valentina.marco@conexion-hr.com', 'Nombre y Apellido del Candidato': 'Lucas Jorge Carrara', 'Linkedin del Candidato': '', 'IDs de reserva separdos con "_" sin la palabra "ID"': 2740, 'Tecnologías que sabe el candidato': '', 'Tipo de perfil del Candidato': '', 'Comentarios adicionales': ''} 
+181.25.65.15 - - [05/May/2023 19:45:28] "POST /Getreservas HTTP/1.1" 200 -
+[2023-05-05 19:45:44,288] INFO in app: path: /solicitudInforme | method: POST | email-reclutador: valentina.marco@conexion-hr.com | email: lucas.carrara88@gmail.com | retorno:  
+181.25.65.15 - - [05/May/2023 19:45:46] "POST /solicitudInforme HTTP/1.1" 200 -
+190.110.177.174 - - [05/May/2023 20:03:46] "GET /getcookie HTTP/1.1" 200 -
+190.110.177.174 - - [05/May/2023 20:03:51] "GET /getCliente?usuario=maria.flores@conexion-hr.com&_=1683327831583 HTTP/1.1" 200 -
+190.110.177.174 - - [05/May/2023 20:04:06] "GET /getInformesArevisar?_=1683327845144 HTTP/1.1" 200 -
+190.110.177.174 - - [05/May/2023 20:04:14] "GET /getCliente?usuario=maria.flores@conexion-hr.com&_=1683327854404 HTTP/1.1" 200 -
+ * Ignoring a call to 'app.run()' that would block the current 'flask' CLI command.
+   Only call 'app.run()' in an 'if __name__ == "__main__"' guard.
+ * Debug mode: off
+Address already in use
+Port 80 is in use by another program. Either identify and stop that program, or start the server with a different port.
+190.110.177.174 - - [05/May/2023 20:13:02] "GET /getCliente?usuario=maria.flores@conexion-hr.com&_=1683328382696 HTTP/1.1" 200 -
+190.110.177.174 - - [05/May/2023 20:13:03] "GET /getCliente?usuario=maria.flores@conexion-hr.com&_=1683328383601 HTTP/1.1" 200 -
+190.110.177.174 - - [05/May/2023 20:13:04] "GET /getCliente?usuario=maria.flores@conexion-hr.com&_=1683328384194 HTTP/1.1" 200 -
+190.110.177.174 - - [05/May/2023 20:13:05] "GET /getCliente?usuario=maria.flores@conexion-hr.com&_=1683328384754 HTTP/1.1" 200 -
+190.110.177.174 - - [05/May/2023 20:13:12] "GET /getCliente?usuario=maria.flores@conexion-hr.com&_=1683328392619 HTTP/1.1" 200 -
+190.110.177.174 - - [05/May/2023 20:13:13] "GET /getCliente?usuario=maria.flores@conexion-hr.com&_=1683328393203 HTTP/1.1" 200 -
+190.110.177.174 - - [05/May/2023 20:13:14] "GET /getCliente?usuario=maria.flores@conexion-hr.com&_=1683328394096 HTTP/1.1" 200 -
+190.110.177.174 - - [05/May/2023 20:16:16] "GET /getcookie HTTP/1.1" 200 -
+190.110.177.174 - - [05/May/2023 20:16:19] "GET /getCliente?usuario=maflorencialucas@gmail.com&_=1683328579480 HTTP/1.1" 200 -
+190.110.177.174 - - [05/May/2023 20:17:07] "GET /getcookie HTTP/1.1" 200 -
+190.110.177.174 - - [05/May/2023 20:17:10] "GET /getCliente?usuario=rominacmartini@gmail.com&_=1683328630704 HTTP/1.1" 200 -
+ * Ignoring a call to 'app.run()' that would block the current 'flask' CLI command.
+   Only call 'app.run()' in an 'if __name__ == "__main__"' guard.
+ * Debug mode: off
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on https://127.0.0.1:80
+ * Running on https://200.58.106.162:80
+Press CTRL+C to quit
+190.110.177.174 - - [05/May/2023 20:23:13] "GET /getCliente?usuario=lic.florenciacestoni@gmail.com&_=1683328993163 HTTP/1.1" 200 -
+190.110.177.174 - - [05/May/2023 20:23:14] "GET /getCliente?usuario=lic.florenciacestoni@gmail.com&_=1683328994019 HTTP/1.1" 200 -
+190.110.177.174 - - [05/May/2023 20:23:15] "GET /getCliente?usuario=lic.florenciacestoni@gmail.com&_=1683328994763 HTTP/1.1" 200 -
+190.110.177.174 - - [05/May/2023 20:23:16] "GET /getCliente?usuario=lic.florenciacestoni@gmail.com&_=1683328996307 HTTP/1.1" 200 -
+190.110.177.174 - - [05/May/2023 20:23:18] "GET /getCliente?usuario=lic.florenciacestoni@gmail.com&_=1683328997820 HTTP/1.1" 200 -
+190.110.177.174 - - [05/May/2023 20:23:18] "GET /getCliente?usuario=lic.florenciacestoni@gmail.com&_=1683328998344 HTTP/1.1" 200 -
+190.110.177.174 - - [05/May/2023 20:23:18] "GET /getCliente?usuario=lic.florenciacestoni@gmail.com&_=1683328998702 HTTP/1.1" 200 -
+[2023-05-05 20:28:36,674] INFO in app: path: /Getreservas | method: POST | email-reclutador: hartkopf.recruiting@gmail.com | email: aggarciaar@gmail.com | retorno: {'Email Candidato': 'aggarciaar@gmail.com', 'Email Address': 'hartkopf.recruiting@gmail.com', 'Nombre y Apellido del Candidato': 'Alejandro Garcia', 'Linkedin del Candidato': 'linkedin.com/in/alejandro-garcia-a54435146', 'IDs de reserva separdos con "_" sin la palabra "ID"': 2819, 'Tecnologías que sabe el candidato': 'QA Automation,QA Manual,Data,Devops,Otros', 'Tipo de perfil del Candidato': 'Senior', 'Comentarios adicionales': ''} 
+186.136.51.38 - - [05/May/2023 20:28:36] "POST /Getreservas HTTP/1.1" 200 -
+[2023-05-05 20:28:36,689] INFO in app: path: /Getreservas | method: POST | email-reclutador: hartkopf.recruiting@gmail.com | email: aggarciaar@gmail.com | retorno: {'Email Candidato': 'aggarciaar@gmail.com', 'Email Address': 'hartkopf.recruiting@gmail.com', 'Nombre y Apellido del Candidato': 'Alejandro Garcia', 'Linkedin del Candidato': 'linkedin.com/in/alejandro-garcia-a54435146', 'IDs de reserva separdos con "_" sin la palabra "ID"': 2819, 'Tecnologías que sabe el candidato': 'QA Automation,QA Manual,Data,Devops,Otros', 'Tipo de perfil del Candidato': 'Senior', 'Comentarios adicionales': ''} 
+186.136.51.38 - - [05/May/2023 20:28:36] "POST /Getreservas HTTP/1.1" 200 -
+[2023-05-05 20:29:46,411] INFO in app: path: /solicitudInforme | method: POST | email-reclutador: hartkopf.recruiting@gmail.com | email: aggarciaar@gmail.com | retorno:  
+186.136.51.38 - - [05/May/2023 20:29:48] "POST /solicitudInforme HTTP/1.1" 200 -
+190.110.177.174 - - [05/May/2023 20:30:40] "GET /getCliente?usuario=lic.florenciacestoni@gmail.com&_=1683329440683 HTTP/1.1" 200 -
+190.110.177.174 - - [05/May/2023 20:30:41] "GET /getCliente?usuario=lic.florenciacestoni@gmail.com&_=1683329441470 HTTP/1.1" 200 -
+190.110.177.174 - - [05/May/2023 20:30:42] "GET /getCliente?usuario=lic.florenciacestoni@gmail.com&_=1683329441989 HTTP/1.1" 200 -
+190.110.177.174 - - [05/May/2023 20:31:36] "GET /getCliente?usuario=lic.florenciacestoni@gmail.com&_=1683329496495 HTTP/1.1" 200 -
+190.110.177.174 - - [05/May/2023 20:34:07] "GET /getCliente?usuario=lic.florenciacestoni@gmail.com&_=1683329647131 HTTP/1.1" 200 -
+191.83.175.201 - - [05/May/2023 21:45:16] "POST /getPermitido HTTP/1.1" 403 -
+[2023-05-05 21:45:18,759] INFO in app: path: /Getreservas | method: POST | email-reclutador:  | email:  | retorno: {'datos': 'vacio'} 
+191.83.175.201 - - [05/May/2023 21:45:18] "POST /Getreservas HTTP/1.1" 502 -
+[2023-05-05 21:45:34,841] INFO in app: path: /Getreservas | method: POST | email-reclutador: veronicalmonteagudo@gmail.com | email: alfredoadrian4@hotmail.com | retorno: {'datos': 'vacio'} 
+191.83.175.201 - - [05/May/2023 21:45:34] "POST /Getreservas HTTP/1.1" 200 -
+[2023-05-05 21:51:51,859] INFO in app: path: /insert | method: POST | email-reclutador: veronicalmonteagudo@gmail.com | email: alfredoadrian4@hotmail.com | retorno: None 
+191.83.175.201 - - [05/May/2023 21:51:51] "POST /insert HTTP/1.1" 200 -
+200.117.121.179 - - [06/May/2023 00:12:43] "GET /getcookie HTTP/1.1" 200 -
+[2023-05-06 00:12:52,725] INFO in app: path: /Getreservas | method: POST | email-reclutador: mfstalentohumano@gmail.com | email: adrian_dutra@hotmail.com | retorno: {'datos': 'vacio'} 
+200.117.121.179 - - [06/May/2023 00:12:52] "POST /Getreservas HTTP/1.1" 200 -
+[2023-05-06 00:14:59,982] INFO in app: path: /insert | method: POST | email-reclutador: mfstalentohumano@gmail.com | email: adrian_dutra@hotmail.com | retorno: None 
+200.117.121.179 - - [06/May/2023 00:14:59] "POST /insert HTTP/1.1" 200 -
+200.117.121.179 - - [06/May/2023 00:18:22] "GET /getcookie HTTP/1.1" 200 -
+[2023-05-06 00:18:26,486] INFO in app: path: /Getreservas | method: POST | email-reclutador: mfstalentohumano@gmail.com | email: dibernardi.patricio@gmail.com | retorno: {'datos': 'vacio'} 
+200.117.121.179 - - [06/May/2023 00:18:26] "POST /Getreservas HTTP/1.1" 200 -
+[2023-05-06 00:20:23,156] INFO in app: path: /insert | method: POST | email-reclutador: mfstalentohumano@gmail.com | email: dibernardi.patricio@gmail.com | retorno: None 
+200.117.121.179 - - [06/May/2023 00:20:23] "POST /insert HTTP/1.1" 200 -
+200.117.121.179 - - [06/May/2023 00:21:37] "GET /getcookie HTTP/1.1" 200 -
+[2023-05-06 00:21:46,356] INFO in app: path: /Getreservas | method: POST | email-reclutador: mfstalentohumano@gmail.com | email: alejabrice1305@gmail.com | retorno: {'datos': 'vacio'} 
+200.117.121.179 - - [06/May/2023 00:21:46] "POST /Getreservas HTTP/1.1" 200 -
+[2023-05-06 00:22:44,525] INFO in app: path: /insert | method: POST | email-reclutador: mfstalentohumano@gmail.com | email: alejabrice1305@gmail.com | retorno: None 
+200.117.121.179 - - [06/May/2023 00:22:44] "POST /insert HTTP/1.1" 200 -
+200.117.121.179 - - [06/May/2023 00:24:23] "GET /getcookie HTTP/1.1" 200 -
+[2023-05-06 00:24:28,614] INFO in app: path: /Getreservas | method: POST | email-reclutador: mfstalentohumano@gmail.com | email: alexanderuribe98@gmail.com | retorno: {'datos': 'vacio'} 
+200.117.121.179 - - [06/May/2023 00:24:28] "POST /Getreservas HTTP/1.1" 200 -
+[2023-05-06 00:27:35,717] INFO in app: path: /insert | method: POST | email-reclutador: mfstalentohumano@gmail.com | email: alexanderuribe98@gmail.com | retorno: None 
+200.117.121.179 - - [06/May/2023 00:27:35] "POST /insert HTTP/1.1" 200 -
+200.117.121.179 - - [06/May/2023 00:28:03] "GET /getcookie HTTP/1.1" 200 -
+[2023-05-06 00:28:54,388] INFO in app: path: /insert | method: POST | email-reclutador: mfstalentohumano@gmail.com | email:  | retorno: None 
+200.117.121.179 - - [06/May/2023 00:28:54] "POST /insert HTTP/1.1" 200 -
+205.210.31.50 - - [06/May/2023 02:37:22] "GET / HTTP/1.1" 200 -
+ * Ignoring a call to 'app.run()' that would block the current 'flask' CLI command.
+   Only call 'app.run()' in an 'if __name__ == "__main__"' guard.
+ * Debug mode: off
+Address already in use
+Port 80 is in use by another program. Either identify and stop that program, or start the server with a different port.
+ * Ignoring a call to 'app.run()' that would block the current 'flask' CLI command.
+   Only call 'app.run()' in an 'if __name__ == "__main__"' guard.
+ * Debug mode: off
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on https://127.0.0.1:80
+ * Running on https://200.58.106.162:80
+Press CTRL+C to quit
+190.110.177.181 - - [07/May/2023 13:37:35] "GET /getCliente?usuario=alderetebrian@hotmail.com&_=1683477457209 HTTP/1.1" 200 -
+190.110.177.181 - - [07/May/2023 13:37:36] "GET /getCliente?usuario=alderetebrian@hotmail.com&_=1683477458194 HTTP/1.1" 200 -
+190.110.177.181 - - [07/May/2023 13:45:30] "GET /getCliente?usuario=alderetebrian@hotmail.com&_=1683477931871 HTTP/1.1" 200 -
+190.110.177.181 - - [07/May/2023 13:45:31] "GET /getCliente?usuario=alderetebrian@hotmail.com&_=1683477932469 HTTP/1.1" 200 -
+170.64.188.45 - - [07/May/2023 14:52:01] "GET /ab2g HTTP/1.1" 404 -
+170.64.188.45 - - [07/May/2023 14:52:02] "GET /ab2h HTTP/1.1" 404 -
+170.64.188.45 - - [07/May/2023 14:52:06] "GET /t4 HTTP/1.1" 404 -
+45.79.172.21 - - [07/May/2023 16:33:06] "GET / HTTP/1.1" 200 -
+Error on request:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/werkzeug/serving.py", line 364, in run_wsgi
+    execute(self.server.app)
+  File "/usr/local/lib/python3.10/dist-packages/werkzeug/serving.py", line 328, in execute
+    write(data)
+  File "/usr/local/lib/python3.10/dist-packages/werkzeug/serving.py", line 303, in write
+    self.wfile.write(data)
+  File "/usr/lib/python3.10/socketserver.py", line 826, in write
+    self._sock.sendall(b)
+  File "/usr/lib/python3.10/ssl.py", line 1237, in sendall
+    v = self.send(byte_view[count:])
+  File "/usr/lib/python3.10/ssl.py", line 1206, in send
+    return self._sslobj.write(data)
+ssl.SSLEOFError: EOF occurred in violation of protocol (_ssl.c:2396)
+200.123.140.127 - - [07/May/2023 16:54:54] "GET /getInformesArevisar?_=1683489293270 HTTP/1.1" 200 -
+200.123.140.127 - - [07/May/2023 16:59:18] "GET /getcookie HTTP/1.1" 200 -
+200.123.140.127 - - [07/May/2023 16:59:20] "GET /getcookie HTTP/1.1" 200 -
+200.123.140.127 - - [07/May/2023 16:59:21] "GET /getmetricas?usuario=maria.flores@conexion-hr.com&rol=admin&_=1683489561384 HTTP/1.1" 200 -
+181.15.96.132 - - [07/May/2023 16:59:27] "GET /getmetricas?usuario=&rol=&_=1683489562351 HTTP/1.1" 200 -
+66.249.79.161 - - [07/May/2023 17:10:30] "GET /robots.txt HTTP/1.1" 404 -
+66.249.79.167 - - [07/May/2023 17:10:34] "HEAD /base64?id=2819&email=hartkopf.recruiting@gmail.com&emailc=aggarciaar@gmail.com&campo=informeesp HTTP/1.1" 200 -
+66.249.79.167 - - [07/May/2023 17:10:35] "HEAD /base64?id=2828&email=veronicalmonteagudo@gmail.com&emailc=alfredoadrian4@hotmail.com&campo=informeesp HTTP/1.1" 200 -
+66.249.79.161 - - [07/May/2023 17:10:37] "HEAD /base64?id=2713&email=mfstalentohumano@gmail.com&emailc=abinaya5794@gmail.com&campo=cvingInf HTTP/1.1" 200 -
+66.249.79.164 - - [07/May/2023 17:10:40] "HEAD /base64?id=2819&email=hartkopf.recruiting@gmail.com&emailc=aggarciaar@gmail.com&campo=cvespinf HTTP/1.1" 200 -
+66.249.79.161 - - [07/May/2023 17:10:41] "HEAD /base64?id=2828&email=veronicalmonteagudo@gmail.com&emailc=alfredoadrian4@hotmail.com&campo=cvespinf HTTP/1.1" 200 -
+191.83.160.210 - - [07/May/2023 18:17:29] "GET /getcookie HTTP/1.1" 200 -
+191.83.160.210 - - [07/May/2023 18:17:31] "GET /getCliente?usuario=veronicalmonteagudo@gmail.com&_=1683494247257 HTTP/1.1" 200 -
+185.233.19.71 - - [07/May/2023 18:25:53] "GET / HTTP/1.1" 200 -
+161.35.155.246 - - [07/May/2023 19:26:19] "GET / HTTP/1.1" 200 -
+Error on request:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/werkzeug/serving.py", line 364, in run_wsgi
+    execute(self.server.app)
+  File "/usr/local/lib/python3.10/dist-packages/werkzeug/serving.py", line 328, in execute
+    write(data)
+  File "/usr/local/lib/python3.10/dist-packages/werkzeug/serving.py", line 303, in write
+    self.wfile.write(data)
+  File "/usr/lib/python3.10/socketserver.py", line 826, in write
+    self._sock.sendall(b)
+  File "/usr/lib/python3.10/ssl.py", line 1237, in sendall
+    v = self.send(byte_view[count:])
+  File "/usr/lib/python3.10/ssl.py", line 1206, in send
+    return self._sslobj.write(data)
+ssl.SSLEOFError: EOF occurred in violation of protocol (_ssl.c:2396)
+161.35.155.246 - - [07/May/2023 19:26:30] "GET / HTTP/1.1" 200 -
+Error on request:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/werkzeug/serving.py", line 364, in run_wsgi
+    execute(self.server.app)
+  File "/usr/local/lib/python3.10/dist-packages/werkzeug/serving.py", line 328, in execute
+    write(data)
+  File "/usr/local/lib/python3.10/dist-packages/werkzeug/serving.py", line 303, in write
+    self.wfile.write(data)
+  File "/usr/lib/python3.10/socketserver.py", line 826, in write
+    self._sock.sendall(b)
+  File "/usr/lib/python3.10/ssl.py", line 1237, in sendall
+    v = self.send(byte_view[count:])
+  File "/usr/lib/python3.10/ssl.py", line 1206, in send
+    return self._sslobj.write(data)
+ssl.SSLEOFError: EOF occurred in violation of protocol (_ssl.c:2396)
+161.35.155.246 - - [07/May/2023 19:26:31] "GET /.vscode/sftp.json HTTP/1.1" 404 -
+161.35.155.246 - - [07/May/2023 19:26:32] "GET /about HTTP/1.1" 404 -
+161.35.155.246 - - [07/May/2023 19:26:33] "GET /debug/default/view?panel=config HTTP/1.1" 404 -
+161.35.155.246 - - [07/May/2023 19:26:33] "GET /v2/_catalog HTTP/1.1" 404 -
+161.35.155.246 - - [07/May/2023 19:26:34] "GET /ecp/Current/exporttool/microsoft.exchange.ediscovery.exporttool.application HTTP/1.1" 404 -
+161.35.155.246 - - [07/May/2023 19:26:35] "GET /server-status HTTP/1.1" 404 -
+161.35.155.246 - - [07/May/2023 19:26:36] "GET /login.action HTTP/1.1" 404 -
+161.35.155.246 - - [07/May/2023 19:26:37] "GET /_all_dbs HTTP/1.1" 404 -
+161.35.155.246 - - [07/May/2023 19:26:38] "GET /.DS_Store HTTP/1.1" 404 -
+161.35.155.246 - - [07/May/2023 19:26:39] "GET /.env HTTP/1.1" 404 -
+161.35.155.246 - - [07/May/2023 19:26:40] "GET /.git/config HTTP/1.1" 404 -
+161.35.155.246 - - [07/May/2023 19:26:41] "GET /s/236313e2630313e28353e2030323/_/;/META-INF/maven/com.atlassian.jira/jira-webapp-dist/pom.properties HTTP/1.1" 404 -
+161.35.155.246 - - [07/May/2023 19:26:42] "GET /config.json HTTP/1.1" 404 -
+161.35.155.246 - - [07/May/2023 19:26:44] "GET /telescope/requests HTTP/1.1" 404 -
+161.35.155.246 - - [07/May/2023 19:26:49] "GET /?rest_route=/wp/v2/users/ HTTP/1.1" 200 -
+Error on request:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/werkzeug/serving.py", line 364, in run_wsgi
+    execute(self.server.app)
+  File "/usr/local/lib/python3.10/dist-packages/werkzeug/serving.py", line 328, in execute
+    write(data)
+  File "/usr/local/lib/python3.10/dist-packages/werkzeug/serving.py", line 294, in write
+    self.end_headers()
+  File "/usr/lib/python3.10/http/server.py", line 534, in end_headers
+    self.flush_headers()
+  File "/usr/lib/python3.10/http/server.py", line 538, in flush_headers
+    self.wfile.write(b"".join(self._headers_buffer))
+  File "/usr/lib/python3.10/socketserver.py", line 826, in write
+    self._sock.sendall(b)
+  File "/usr/lib/python3.10/ssl.py", line 1237, in sendall
+    v = self.send(byte_view[count:])
+  File "/usr/lib/python3.10/ssl.py", line 1206, in send
+    return self._sslobj.write(data)
+ssl.SSLEOFError: EOF occurred in violation of protocol (_ssl.c:2396)
+143.244.170.114 - - [07/May/2023 20:36:31] "GET /ab2g HTTP/1.1" 404 -
+143.244.170.114 - - [07/May/2023 20:36:31] "GET /ab2h HTTP/1.1" 404 -
+143.244.170.114 - - [07/May/2023 20:36:33] "GET /t4 HTTP/1.1" 404 -
+190.110.178.10 - - [07/May/2023 22:25:09] "GET /getCliente?usuario=alderetebrian@hotmail.com&_=1683509110621 HTTP/1.1" 200 -
+190.110.178.10 - - [07/May/2023 22:25:10] "GET /getCliente?usuario=alderetebrian@hotmail.com&_=1683509111448 HTTP/1.1" 200 -
+143.198.202.87 - - [08/May/2023 01:05:07] "GET /ab2g HTTP/1.1" 404 -
+143.198.202.87 - - [08/May/2023 01:05:08] "GET /ab2h HTTP/1.1" 404 -
+143.198.202.87 - - [08/May/2023 01:05:12] "GET /t4 HTTP/1.1" 404 -
+198.235.24.88 - - [08/May/2023 02:50:16] "GET / HTTP/1.1" 200 -
+35.198.44.245 - - [08/May/2023 05:22:21] "OPTIONS / HTTP/1.0" 200 -
